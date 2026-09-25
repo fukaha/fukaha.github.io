@@ -167,7 +167,6 @@ tr:
     theses_lead: YÖK Ulusal Tez Merkezi’nde bu fakihi konu alan tezler, yeniden eskiye.
     show_all: Bütün tezleri göster
     source_text: Kaynak metin
-    source_lead: Leknevî’nin el-Fevâidü’l-behiyye’deki terceme maddesi, Arapça aslıyla.
     page: s.
     entry: madde
     cite: Bu sayfaya atıf
@@ -403,7 +402,6 @@ en:
     theses_lead: Theses in the YÖK National Thesis Centre that study this jurist, newest first.
     show_all: Show all theses
     source_text: Source text
-    source_lead: The entry in al-Laknawī’s al-Fawāʾid al-bahiyya, in the original Arabic.
     page: p.
     entry: entry
     cite: Cite this page
@@ -639,7 +637,6 @@ ar:
     theses_lead: الرسائل المسجلة في المركز الوطني للرسائل الجامعية (YÖK) عن هذا الفقيه، الأحدث أولًا.
     show_all: عرض جميع الرسائل
     source_text: نص المصدر
-    source_lead: الترجمة كما وردت في «الفوائد البهية» للكنوي.
     page: ص
     entry: الترجمة
     cite: الإحالة إلى هذه الصفحة
