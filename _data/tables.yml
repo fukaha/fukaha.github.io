@@ -1,0 +1,91 @@
+# Columns of the collection tables. Read by _layouts/collection.html and assets/js/table.js.
+#
+# field   key in data/<file>.json
+# label   key under `col` in _data/i18n.yml
+# kind    text (default) | ar (Arabic text) | loc (object with tr/en/ar) | madhhab |
+#         thesis (thesis type) | lang (language code) | hijri (with the Gregorian in `alt`) |
+#         num | yok (YÖK links) | doi | list (list of tr/en/ar objects)
+# detail  true: shown only in the row's detail panel
+# hide    languages in which the column is left out
+# filter  fields offered as drop-down filters above the table
+# sort    initial sort: field and direction
+
+klasik:
+  data: /data/klasik-eserler.json
+  sort: { field: death, dir: asc }
+  filter: [madhhab]
+  columns:
+    - { field: title, label: work, kind: ar }
+    - { field: author, label: authorc, kind: loc }
+    - { field: death, label: death, kind: hijri, alt: deathM }
+    - { field: madhhab, label: madhhab, kind: madhhab }
+    - { field: source, label: source, kind: loc }
+
+kitaplar:
+  data: /data/kitaplar.json
+  sort: { field: year, dir: desc }
+  filter: [lang]
+  columns:
+    - { field: title, label: title }
+    - { field: author, label: author }
+    - { field: editor, label: editor }
+    - { field: publisher, label: publisher }
+    - { field: city, label: city }
+    - { field: year, label: year, kind: num }
+    - { field: lang, label: lang, kind: lang }
+    - { field: pages, label: pages, kind: num }
+    - { field: isbn, label: isbn }
+    - { field: topics, label: topics, detail: true }
+
+tezler:
+  data: /data/tezler.json
+  sort: { field: year, dir: desc }
+  filter: [type, lang]
+  columns:
+    - { field: title, label: title }
+    - { field: author, label: author }
+    - { field: advisor, label: advisor }
+    - { field: type, label: type, kind: thesis }
+    - { field: university, label: university }
+    - { field: year, label: year, kind: num }
+    - { field: lang, label: lang, kind: lang }
+    - { field: yok, label: links, kind: yok }
+    - { field: titleTr, label: title_tr, detail: true }
+    - { field: department, label: department, detail: true }
+    - { field: city, label: city, detail: true }
+    - { field: pages, label: pages, detail: true }
+    - { field: topics, label: topics, detail: true }
+    - { field: jurists, label: jurists, kind: list, detail: true }
+    - { field: yokNo, label: yok, detail: true }
+
+makaleler:
+  data: /data/makaleler.json
+  sort: { field: year, dir: desc }
+  filter: [lang]
+  columns:
+    - { field: title, label: title }
+    - { field: author, label: author }
+    - { field: journal, label: journal }
+    - { field: volume, label: volume }
+    - { field: issue, label: issue }
+    - { field: pages, label: pages }
+    - { field: year, label: year, kind: num }
+    - { field: lang, label: lang, kind: lang }
+    - { field: doi, label: doi, kind: doi }
+    - { field: topics, label: topics, detail: true }
+
+fukaha:
+  data: /data/fukaha.json
+  sort: { field: death, dir: asc }
+  filter: [madhhab]
+  columns:
+    - { field: name, label: name, kind: loc }
+    - { field: name.ar, label: name_ar, kind: ar, hide: [ar] }
+    - { field: madhhab, label: madhhab, kind: madhhab }
+    - { field: birth, label: birth, kind: hijri, alt: birthM }
+    - { field: death, label: death, kind: hijri, alt: deathM }
+    - { field: place, label: death_place, kind: loc }
+    - { field: works, label: works, kind: num }
+    - { field: theses, label: theses, kind: num }
+    - { field: source, label: source, kind: loc }
+    - { field: summary, label: summary, kind: loc, detail: true }

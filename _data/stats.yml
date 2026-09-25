@@ -1,0 +1,109 @@
+# Written by tools/import_fuqaha.py.
+counts:
+  klasik: 720
+  kitaplar: 0
+  tezler: 8812
+  makaleler: 0
+  fukaha: 525
+latest_theses:
+- title: İbnü'l-Hümâm'ın Fethu'l-Kadîr İsimli Eserinde Hanefî Mezhebine Muhalefet Ettiği Görüşleri
+  titleTr: Ibn al-Humam's divergent opinions in the field of muamalat
+  author: Demirtaş, Muhammet
+  type: doktora
+  university: Marmara Üniversitesi, Sosyal Bilimler Enstitüsü
+  year: 2026
+  lang: tr
+  yok: rKz8afJPwjP5ubQ97ehloQ
+- title: Şeyh Şehabettin'in Ribâ Risalesi Eserinin Günümüz Türkçesine Aktarımı ve Değerlendirilmesi
+  titleTr: Translati̇on and evaluati̇on of Şeyh Şehabetti̇n's treati̇se on Ri̇bâ in modern Turki̇sh
+  author: Savaş, Fatmagül
+  type: yl
+  university: Atatürk Üniversitesi, Sosyal Bilimler Enstitüsü
+  year: 2026
+  lang: tr
+  yok: -5nzoDQ0ecZiUKI3LtMerg
+- title: Fethu'l-Kadîr ve et-Tefsîru'l-Münîr Adlı Eserlerin Kur'ân İlimleri Açısından Mukayesesi
+  titleTr: A comparison of the works titled Fethu'l-Kadir and et-Tefsîru'l-Münîr from the perspective of Qur'an sciences
+  author: Kaya, Sıtkı
+  type: doktora
+  university: Ondokuz Mayıs Üniversitesi, Lisansüstü Eğitim Enstitüsü
+  year: 2026
+  lang: tr
+  yok: vnTz2nrr5SfnJiCuv5eCiA
+- title: Fıkıh Usûlü-Meânî İlişkisi (Bâbertî Örneği)
+  titleTr: The relationship between usûl al-fiqh and maânî (the case of Bâbertî)
+  author: Matpan, Osman
+  type: doktora
+  university: İnönü Üniversitesi, Sosyal Bilimler Ensitütüsü
+  year: 2026
+  lang: tr
+  yok: rVtdXCaA4OVgAASLKJJt6A
+- title: Şâtıbî'ye Göre Şerî Hüküm
+  titleTr: Shari'i rule according to Shatibi
+  author: Çelik, Ayşe Bütün
+  type: yl
+  university: Atatürk Üniversitesi, Sosyal Bilimler Enstitüsü
+  year: 2026
+  lang: tr
+  yok: i-Rw2E9aWqfXQ0pRuKCqzw
+- title: İngiltere'de Şeriat Konseylerinin İslâm Aile Hukuku Uygulamaları
+  titleTr: Islamic family law practices of sharia councils in the United Kingdom
+  author: Balbaba, Ümmü Eymen
+  type: doktora
+  university: İstanbul Üniversitesi, Sosyal Bilimler Enstitüsü
+  year: 2026
+  lang: tr
+  yok: o3Dhu5qFlrcd6SMH0n313g
+jurists:
+- id: ebu-bekir-ahmed-b-ali-er-razi-el-cessas
+  name:
+    tr: Ebu Bekir Ahmed b. Ali er-Razi el-Cessas
+    en: Abu Bakr Ahmad b. 'Ali al-Razi al-Jassas
+    ar: أبو بكر الرازي الجصاص
+  madhhab: hanefi
+  death: 370
+  deathM: 980-81
+  summary:
+    tr: Asrının Hanefî imamı; Kerhî'nin yolunda zühd ve vera sahibiydi, Bağdat'ta tedris ona intikal etti. Kendisine iki kez teklif edilen kadılığı reddetti; Ahkâmü'l-Kur'ân en meşhur eseridir.
+    en: The leading Hanafi of his age who followed al-Karkhi's asceticism and took over teaching in Baghdad; he twice refused a judgeship. Ahkam al-Qur'an is his best-known work.
+  theses: 53
+  works: 7
+- id: semsuleimme-ebu-bekir-muhammed-b-ahmed-es-serahsi
+  name:
+    tr: Şemsüleimme Ebu Bekir Muhammed b. Ahmed es-Serahsi
+    en: Shams al-A'imma Abu Bakr Muhammad b. Ahmad al-Sarakhsi
+    ar: شمس الأئمة السرخسي
+  madhhab: hanefi
+  death: 490
+  deathM: 1096-97
+  summary:
+    tr: Hulvani'nin talebesi, mesail müctehidi. Hakana nasihati yüzünden Özcend'de kuyuya hapsedildi; on beş ciltlik el-Mebsût'u kitaba bakmadan kuyunun dibinden imla etti, talebeleri yukarıda yazdı.
+    en: A student of al-Hulwani and mujtahid on particular questions; imprisoned in a well at Uzjand for counselling the Khaqan, he dictated the fifteen-volume al-Mabsut from memory while his students wrote above.
+  theses: 52
+  works: 4
+- id: ebu-cafer-ahmed-b-muhammed-et-tahavi
+  name:
+    tr: Ebu Cafer Ahmed b. Muhammed et-Tahavi
+    en: Abu Ja'far Ahmad b. Muhammad al-Tahawi
+    ar: أبو جعفر الطحاوي
+  madhhab: hanefi
+  death: 321
+  deathM: '933'
+  summary:
+    tr: Önce dayısı Müzeni'den Şafiî fıkhı okudu, sonra Hanefî mezhebine geçti; Şam'da Kadı Ebu Hazim'den ders aldı. Mısır'da Hanefî riyasetine ulaştı; Şerhu Meâni'l-âsâr ve Müşkilü'l-âsâr en tanınan eserleridir.
+    en: He first studied Shafi'i law with his uncle al-Muzani, then turned Hanafi and studied with Abu Khazim in Syria. He became head of the Hanafis of Egypt; Sharh ma'ani al-athar and Mushkil al-athar are his best-known works.
+  theses: 27
+  works: 8
+- id: mecduddin-ebul-fazl-abdullah-b-mahmud-el-mevsili
+  name:
+    tr: Mecdüddin Ebu'l-Fazl Abdullah b. Mahmud el-Mevsıli
+    en: Majd al-Din Abu al-Fadl 'Abd Allah b. Mahmud al-Mawsili
+    ar: عبد الله بن محمود الموصلي
+  madhhab: hanefi
+  death: 683
+  deathM: 1284-85
+  summary:
+    tr: Musul'da doğdu, Dımaşk'ta Hasiri'den okudu; Kûfe kadılığından sonra Bağdat'ta Ebu Hanife meşhedinde ders verdi. Dört muteber metinden el-Muhtâr ve şerhi el-İhtiyâr onundur.
+    en: Born in Mosul, he studied with al-Hasiri in Damascus, was judge of Kufa and then taught at Abu Hanifa's shrine in Baghdad; author of al-Mukhtar, one of the four standard texts, and its commentary al-Ikhtiyar.
+  theses: 15
+  works: 2

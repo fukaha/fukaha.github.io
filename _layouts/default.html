@@ -1,0 +1,45 @@
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- if page.key == "home" -%}{%- assign doc_title = t.name | append: " · " | append: t.tagline -%}
+{%- elsif page.title -%}{%- assign doc_title = page.title | append: " · " | append: t.name -%}
+{%- else -%}{%- assign doc_title = t.nav[page.key] | append: " · " | append: t.name -%}{%- endif -%}
+{%- assign desc = page.summary | default: page.description | default: t.description -%}
+<!doctype html>
+<html lang="{{ lang }}" dir="{{ t.dir }}" id="top">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ doc_title | strip_html }}</title>
+  <meta name="description" content="{{ desc | strip_html | escape }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {%- for l in site.data.i18n %}{% assign code = l[0] %}
+  <link rel="alternate" hreflang="{{ code }}" href="{{ site.url }}{% include alt-url.html l=code %}">
+  {%- endfor %}
+  <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{{ doc_title | strip_html | escape }}">
+  <meta property="og:description" content="{{ desc | strip_html | escape }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:locale" content="{{ t.locale }}">
+  {%- assign _navi = site.data.nav | where: "key", page.key | first -%}
+  {%- assign _ogid = page.image | default: _navi.image | default: "muwatta" -%}
+  {%- assign og = site.data.images[_ogid] | default: site.data.images.muwatta %}
+  <meta property="og:image" content="{{ site.url }}{{ og.src }}">
+  <meta name="theme-color" content="#14332f">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Naskh+Arabic:wght@400;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css?v={{ site.time | date: '%s' }}">
+  <script src="/assets/js/site.js?v={{ site.time | date: '%s' }}" defer></script>
+  {%- if page.layout == "collection" %}
+  <script src="/assets/js/table.js?v={{ site.time | date: '%s' }}" defer></script>
+  {%- endif %}
+</head>
+<body class="page-{{ page.key | default: page.kind | default: 'page' }}">
+{% include header.html %}
+<main id="main">
+{{ content }}
+</main>
+{% include footer.html %}
+</body>
+</html>

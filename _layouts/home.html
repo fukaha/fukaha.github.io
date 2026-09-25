@@ -1,0 +1,157 @@
+---
+layout: default
+---
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign stats = site.data.stats -%}
+{%- assign collection_keys = "klasik,kitaplar,tezler,makaleler,fukaha" | split: "," -%}
+{%- assign post_kinds = "haber,blog" | split: "," -%}
+{%- assign hero = site.data.images.muwatta | default: site.data.images.multaqa -%}
+{%- assign theses_url = site.data.nav | where: "key", "tezler" | first -%}
+{%- assign jurists_url = site.data.nav | where: "key", "fukaha" | first -%}
+{%- assign news_url = site.data.nav | where: "key", "haberler" | first -%}
+{%- assign blog_url = site.data.nav | where: "key", "blog" | first -%}
+{%- assign about_url = site.data.nav | where: "key", "hakkinda" | first -%}
+
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-text">
+      <p class="eyebrow">{{ t.home.eyebrow }}</p>
+      <h1>{{ t.home.title }}</h1>
+      <p class="lead">{{ t.home.lead }}</p>
+      <form class="hero-search" action="{{ theses_url.url[lang] }}" method="get" role="search">
+        <label for="hero-q">{{ t.home.search_label }}</label>
+        <div class="search-row">
+          <input id="hero-q" type="search" name="q" placeholder="{{ t.home.search_placeholder }}" autocomplete="off">
+          <button type="submit">{{ t.home.search_button }}</button>
+        </div>
+      </form>
+    </div>
+    {%- if hero %}
+    <figure class="hero-art">
+      <div class="arch-frame"><div class="arch"><img src="{{ hero.src }}" alt="{{ hero[lang] | escape }}" width="{{ hero.width }}" height="{{ hero.height }}" fetchpriority="high"></div></div>
+      <figcaption>{{ hero[lang] }} · <a href="{{ hero.page }}" rel="noopener">{% if hero.license == "Public domain" %}{{ t.about.public_domain }}{% else %}{{ hero.license }}{% endif %}</a></figcaption>
+    </figure>
+    {%- endif %}
+  </div>
+</section>
+
+<section class="stats wrap" aria-label="{{ t.home.collections }}">
+  <ul>
+    {%- for key in collection_keys %}
+    {%- assign item = site.data.nav | where: "key", key | first -%}
+    {%- assign n = stats.counts[key] | default: 0 %}
+    <li{% if n == 0 %} class="soon"{% endif %}><a href="{{ item.url[lang] }}"><strong>{% if n > 0 %}{% include number.html n=n %}{% else %}{{ t.home.soon }}{% endif %}</strong><span>{{ t.nav[key] }}</span></a></li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="section wrap" aria-labelledby="h-collections">
+  <div class="section-head">
+    <div>
+      <h2 id="h-collections">{{ t.home.collections }}</h2>
+      <p>{{ t.home.collections_lead }}</p>
+    </div>
+  </div>
+  <div class="cards">
+    {%- for key in collection_keys %}
+    {%- assign item = site.data.nav | where: "key", key | first -%}
+    {%- assign img = site.data.images[item.image] -%}
+    {%- assign n = stats.counts[key] | default: 0 %}
+    <article class="card">
+      {%- if img %}
+      <div class="card-img"><img src="{{ img.small }}" alt="" width="720" loading="lazy" decoding="async"></div>
+      {%- endif %}
+      <div class="card-body">
+        <h3><a href="{{ item.url[lang] }}">{{ t.nav[key] }}</a></h3>
+        <p>{{ t.collection[key] }}</p>
+        {% if n > 0 %}<p class="count">{% include number.html n=n %} {{ t.home.records }}</p>{% else %}<p class="count soon">{{ t.home.soon }}</p>{% endif %}
+      </div>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+{%- if stats.jurists.size > 0 %}
+<section class="band" aria-labelledby="h-jurists">
+  <div class="wrap section">
+    <div class="section-head">
+      <div>
+        <h2 id="h-jurists">{{ t.home.jurists }}</h2>
+        <p>{{ t.home.jurists_lead }}</p>
+      </div>
+      <a class="more" href="{{ jurists_url.url[lang] }}">{{ t.home.all_jurists }}</a>
+    </div>
+    <div class="jurists">
+      {%- for j in stats.jurists %}
+      <article class="jurist">
+        <p class="ar-name" lang="ar" dir="rtl">{{ j.name.ar }}</p>
+        <h3>{{ j.name[lang] | default: j.name.tr }}</h3>
+        <p class="dates">{{ t.madhhab[j.madhhab] }}{% if j.death %} · {{ t.died }} <span dir="ltr">{{ j.death }}/{{ j.deathM }}</span>{% endif %}</p>
+        {%- assign summary = j.summary[lang] | default: j.summary.tr %}
+        {%- if lang == "ar" %}{% assign summary = j.summary.ar %}{% endif %}
+        {%- if summary %}
+        <p>{{ summary | truncatewords: 34 }}</p>
+        {%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<section class="section wrap" aria-labelledby="h-theses">
+  <div class="section-head">
+    <h2 id="h-theses">{{ t.home.latest_theses }}</h2>
+    <a class="more" href="{{ theses_url.url[lang] }}">{{ t.home.all_theses }}</a>
+  </div>
+  <ul class="list">
+    {%- for th in stats.latest_theses %}
+    <li>
+      <p class="meta"><span class="tag t-{{ th.type }}">{{ t.thesis[th.type] }}</span><span>{{ th.year }}</span><span>{{ t.lang[th.lang] | default: th.lang }}</span></p>
+      <h3><a href="https://tez.yok.gov.tr/UlusalTezMerkezi/tezDetay.jsp?id={{ th.yok }}" rel="noopener" target="_blank"{% if th.lang == "ar" %} lang="ar" dir="rtl"{% elsif lang == "ar" %} dir="ltr"{% endif %}>{{ th.title }}</a></h3>
+      <p class="by"{% if lang == "ar" %} dir="ltr"{% endif %}>{{ th.author }} · {{ th.university }}</p>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+{%- assign feat = site.data.images.shahizinda %}
+{%- if feat %}
+<section class="wrap" aria-labelledby="h-about">
+  <div class="feature">
+    {% include figure.html id="shahizinda" nocaption=true %}
+    <div class="feature-body">
+      <p class="eyebrow">{{ t.nav.hakkinda }}</p>
+      <h2 id="h-about">{{ t.name }}</h2>
+      <p>{{ t.footer.about }}</p>
+      <p><a class="more" href="{{ about_url.url[lang] }}">{{ t.nav.hakkinda }}</a></p>
+      <p class="feature-credit">{{ feat[lang] }} · <a href="{{ feat.page }}" rel="noopener">{{ feat.license }}</a></p>
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<section class="section wrap">
+  <div class="two-col">
+    {%- for kind in post_kinds %}
+    {%- if kind == "haber" %}{% assign head = t.home.news %}{% assign link = news_url %}{% else %}{% assign head = t.home.blog %}{% assign link = blog_url %}{% endif %}
+    {%- assign posts = site.posts | where: "lang", lang | where: "kind", kind %}
+    <div>
+      <div class="section-head">
+        <h2>{{ head }}</h2>
+        <a class="more" href="{{ link.url[lang] }}">{{ t.home.all }}</a>
+      </div>
+      {%- if posts.size > 0 %}
+      <ul class="post-list">
+        {%- for post in posts limit: 3 %}
+        {% include post-item.html post=post %}
+        {%- endfor %}
+      </ul>
+      {%- else %}
+      <p class="empty-note">{{ t.post.no_posts }}</p>
+      {%- endif %}
+    </div>
+    {%- endfor %}
+  </div>
+</section>

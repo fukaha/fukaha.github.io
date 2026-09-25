@@ -1,0 +1,29 @@
+# Site sections in menu order. `url` is the address of the page in each language;
+# `image` is the id of its picture in _data/images.yml.
+- key: home
+  image: muwatta
+  url: { tr: /, en: /en/, ar: /ar/ }
+- key: klasik
+  image: mabsut
+  url: { tr: /klasik-eserler/, en: /en/classical-works/, ar: /ar/classical-works/ }
+- key: kitaplar
+  image: kharaj
+  url: { tr: /kitaplar/, en: /en/books/, ar: /ar/books/ }
+- key: tezler
+  image: bouinania
+  url: { tr: /tezler/, en: /en/theses/, ar: /ar/theses/ }
+- key: makaleler
+  image: multaqa
+  url: { tr: /makaleler/, en: /en/articles/, ar: /ar/articles/ }
+- key: haberler
+  image: bayezid
+  url: { tr: /haberler/, en: /en/news/, ar: /ar/news/ }
+- key: fukaha
+  image: ulughbeg
+  url: { tr: /fukaha/, en: /en/jurists/, ar: /ar/jurists/ }
+- key: blog
+  image: library
+  url: { tr: /blog/, en: /en/blog/, ar: /ar/blog/ }
+- key: hakkinda
+  image: mustansiriya
+  url: { tr: /hakkinda/, en: /en/about/, ar: /ar/about/ }

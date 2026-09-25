@@ -1,0 +1,11 @@
+---
+layout: default
+---
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{% include page-head.html %}
+<div class="wrap prose-wrap">
+  <article class="prose">
+    {{ content }}
+  </article>
+</div>

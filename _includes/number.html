@@ -1,0 +1,6 @@
+{%- comment -%}Thousands separator in the page language: 8.812 / 8,812 / ٨٬٨١٢ is left to Western digits for legibility.{%- endcomment -%}
+{%- assign _lang = page.lang | default: "tr" -%}
+{%- if _lang == "tr" -%}{%- assign _sep = "." -%}{%- else -%}{%- assign _sep = "," -%}{%- endif -%}
+{%- assign _s = include.n | append: "" -%}
+{%- assign _len = _s | size -%}
+{%- if _len > 3 -%}{%- assign _cut = _len | minus: 3 -%}{{ _s | slice: 0, _cut }}{{ _sep }}{{ _s | slice: _cut, 3 }}{%- else -%}{{ _s }}{%- endif -%}

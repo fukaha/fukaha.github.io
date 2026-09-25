@@ -1,0 +1,11 @@
+{%- assign _p = include.post -%}
+{%- assign _img = site.data.images[_p.image] -%}
+{%- assign _t = site.data.i18n[_p.lang] -%}
+<li class="post-item">
+  {%- if _img %}<a href="{{ _p.url }}" tabindex="-1" aria-hidden="true"><img src="{{ _img.small }}" alt="" loading="lazy" decoding="async"></a>{% else %}<span></span>{% endif %}
+  <div>
+    <time datetime="{{ _p.date | date: '%Y-%m-%d' }}">{% include date.html date=_p.date lang=_p.lang %}</time>
+    <h3><a href="{{ _p.url }}">{{ _p.title }}</a></h3>
+    {%- if _p.summary %}<p>{{ _p.summary }}</p>{% endif %}
+  </div>
+</li>

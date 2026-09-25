@@ -1,0 +1,132 @@
+# Written by tools/fetch_images.py. Captions are edited in that script.
+
+mabsut:
+  src: /assets/img/mabsut.jpg
+  small: /assets/img/mabsut-sm.jpg
+  width: 960
+  height: 716
+  tr: "Serahsî, el-Mebsût. 622/1225 tarihli nüsha"
+  en: "Al-Sarakhsī, al-Mabsūṭ. Copy dated 622/1225"
+  ar: "المبسوط للسرخسي، نسخة مؤرخة ٦٢٢هـ"
+  title: "A 622 AH Handwritten Manuscript Excerpt of Al-Mabsut.jpg"
+  page: "https://commons.wikimedia.org/wiki/File:A_622_AH_Handwritten_Manuscript_Excerpt_of_Al-Mabsut.jpg"
+  artist: "Al-Sarakhsi, Uploaded by Owais Al Qarni"
+  license: "Public domain"
+  licenseUrl: null
+kharaj:
+  src: /assets/img/kharaj.jpg
+  small: /assets/img/kharaj-sm.jpg
+  width: 1600
+  height: 1183
+  tr: "Ebû Yûsuf, Kitâbü’l-Harâc. 961/1554 tarihli nüsha"
+  en: "Abū Yūsuf, Kitāb al-Kharāj. Copy dated 961/1554"
+  ar: "كتاب الخراج لأبي يوسف، نسخة مؤرخة ٩٦١هـ"
+  title: "961 AH manuscripts of Kitab al-Kharaj.jpg"
+  page: "https://commons.wikimedia.org/wiki/File:961_AH_manuscripts_of_Kitab_al-Kharaj.jpg"
+  artist: "Abu Yusuf, Uploaded by Owais Al Qarni"
+  license: "Public domain"
+  licenseUrl: null
+multaqa:
+  src: /assets/img/multaqa.jpg
+  small: /assets/img/multaqa-sm.jpg
+  width: 1303
+  height: 2200
+  tr: "İbrâhim el-Halebî, Mülteka’l-ebhur. 11./17. yüzyıl nüshası"
+  en: "Ibrāhīm al-Ḥalabī, Multaqā al-abḥur. 11th/17th-century copy"
+  ar: "ملتقى الأبحر لإبراهيم الحلبي، نسخة من القرن الحادي عشر"
+  title: "Multaqa al abhur.jpg"
+  page: "https://commons.wikimedia.org/wiki/File:Multaqa_al_abhur.jpg"
+  artist: "anonymous copyist; lived in the 17th-century."
+  license: "Public domain"
+  licenseUrl: null
+library:
+  src: /assets/img/library.jpg
+  small: /assets/img/library-sm.jpg
+  width: 974
+  height: 989
+  tr: "Kütüphanede bir ilim meclisi. Vâsıtî’nin Harîrî’nin Makāmât’ı için yaptığı tasvir, Bağdat, 634/1237"
+  en: "A gathering of scholars in a library. Al-Wāsiṭī’s illustration to al-Ḥarīrī’s Maqāmāt, Baghdad, 634/1237"
+  ar: "مجلس علم في مكتبة، من تصاوير الواسطي لمقامات الحريري، بغداد، ٦٣٤هـ"
+  title: "Maqamat hariri.jpg"
+  page: "https://commons.wikimedia.org/wiki/File:Maqamat_hariri.jpg"
+  artist: "Zereshk"
+  license: "Public domain"
+  licenseUrl: null
+ulughbeg:
+  src: /assets/img/ulughbeg.jpg
+  small: /assets/img/ulughbeg-sm.jpg
+  width: 1600
+  height: 1076
+  tr: "Uluğ Bey Medresesi, Semerkant, 823/1420"
+  en: "The Ulugh Beg Madrasa, Samarkand, 823/1420"
+  ar: "مدرسة ألغ بيك، سمرقند، ٨٢٣هـ"
+  title: "Ulugh Beg Madrasa, Samarkand.jpg"
+  page: "https://commons.wikimedia.org/wiki/File:Ulugh_Beg_Madrasa,_Samarkand.jpg"
+  artist: "Bgag"
+  license: "CC0"
+  licenseUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+registan:
+  src: /assets/img/registan.jpg
+  small: /assets/img/registan-sm.jpg
+  width: 1600
+  height: 713
+  tr: "Registan Meydanı ve medreseleri, Semerkant"
+  en: "The Registan and its madrasas, Samarkand"
+  ar: "ساحة ريكستان ومدارسها، سمرقند"
+  title: "Registan 01.jpg"
+  page: "https://commons.wikimedia.org/wiki/File:Registan_01.jpg"
+  artist: "Bernard Gagnon"
+  license: "CC0"
+  licenseUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+mustansiriya:
+  src: /assets/img/mustansiriya.jpg
+  small: /assets/img/mustansiriya-sm.jpg
+  width: 1600
+  height: 977
+  tr: "Müstansıriye Medresesi, Bağdat, 631/1234"
+  en: "The Mustanṣiriyya Madrasa, Baghdad, 631/1234"
+  ar: "المدرسة المستنصرية، بغداد، ٦٣١هـ"
+  title: "المدرسة المستنصرية في بغداد (3) cropped edited.jpg"
+  page: "https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%86%D8%B5%D8%B1%D9%8A%D8%A9_%D9%81%D9%8A_%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF_(3)_cropped_edited.jpg"
+  artist: "Taisir Mahdi"
+  license: "CC BY-SA 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0"
+bouinania:
+  src: /assets/img/bouinania.jpg
+  small: /assets/img/bouinania-sm.jpg
+  width: 1600
+  height: 1200
+  tr: "Bû İnâniyye Medresesi’nin avlusu, Fas, 756/1355"
+  en: "Courtyard of the Bū ʿInāniyya Madrasa, Fez, 756/1355"
+  ar: "صحن المدرسة البوعنانية، فاس، ٧٥٦هـ"
+  title: "Main courtyard of Bou Inania Madrasa, Fez, Marocco.jpg"
+  page: "https://commons.wikimedia.org/wiki/File:Main_courtyard_of_Bou_Inania_Madrasa,_Fez,_Marocco.jpg"
+  artist: "Petar Milošević"
+  license: "CC BY-SA 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0"
+bayezid:
+  src: /assets/img/bayezid.jpg
+  small: /assets/img/bayezid-sm.jpg
+  width: 1600
+  height: 1137
+  tr: "Yıldırım Bayezid Medresesi, Bursa"
+  en: "The Yıldırım Bayezid Madrasa, Bursa"
+  ar: "مدرسة يلدرم بايزيد، بورصة"
+  title: "Yıldırım Bayezid medresesi bursa - panoramio.jpg"
+  page: "https://commons.wikimedia.org/wiki/File:Y%C4%B1ld%C4%B1r%C4%B1m_Bayezid_medresesi_bursa_-_panoramio.jpg"
+  artist: "Mustafa DUMAN"
+  license: "CC BY 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/3.0"
+istakhri:
+  src: /assets/img/istakhri.jpg
+  small: /assets/img/istakhri-sm.jpg
+  width: 1600
+  height: 2158
+  tr: "Fars Denizi. İstahrî’nin Mesâlikü’l-memâlik’inin bir nüshasından"
+  en: "The Persian Sea, from a copy of al-Iṣṭakhrī’s Masālik al-mamālik"
+  ar: "بحر فارس، من نسخة من مسالك الممالك للإصطخري"
+  title: "Bahr-e Fars.jpg"
+  page: "https://commons.wikimedia.org/wiki/File:Bahr-e_Fars.jpg"
+  artist: "Istakhri"
+  license: "Public domain"
+  licenseUrl: null

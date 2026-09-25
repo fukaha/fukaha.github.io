@@ -1,0 +1,28 @@
+---
+layout: default
+---
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{% include page-head.html %}
+<div class="wrap prose-wrap">
+  <article class="prose">
+    {{ content }}
+  </article>
+  <section class="about-wide" aria-labelledby="gorseller">
+    <h2 id="gorseller" class="credits-title">{{ t.about.images }}</h2>
+    <div class="credits">
+      {%- for pair in site.data.images %}
+      {%- assign img = pair[1] %}{% assign img_id = pair[0] %}
+      <div>
+        {% include figure.html id=img_id small=true nocaption=true %}
+        <p class="credit-caption">{{ img[lang] }}</p>
+        <dl>
+          <dt>{{ t.about.image }}</dt><dd><a href="{{ img.page }}" rel="noopener" dir="auto">{{ img.title }}</a></dd>
+          {%- if img.artist and img.artist != "" %}<dt>{{ t.about.author }}</dt><dd dir="auto">{{ img.artist }}</dd>{% endif %}
+          <dt>{{ t.about.license }}</dt><dd>{% if img.licenseUrl %}<a href="{{ img.licenseUrl }}" rel="noopener license">{{ img.license }}</a>{% elsif img.license == "Public domain" %}{{ t.about.public_domain }}{% else %}{{ img.license }}{% endif %}</dd>
+        </dl>
+      </div>
+      {%- endfor %}
+    </div>
+  </section>
+</div>

@@ -1,0 +1,8 @@
+{%- assign _l = include.lang | default: "tr" -%}
+{%- assign _m = include.date | date: "%-m" | minus: 1 -%}
+{%- assign _tr = "Ocak,Şubat,Mart,Nisan,Mayıs,Haziran,Temmuz,Ağustos,Eylül,Ekim,Kasım,Aralık" | split: "," -%}
+{%- assign _en = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," -%}
+{%- assign _ar = "يناير,فبراير,مارس,أبريل,مايو,يونيو,يوليو,أغسطس,سبتمبر,أكتوبر,نوفمبر,ديسمبر" | split: "," -%}
+{%- if _l == "en" -%}{{ include.date | date: "%-d" }} {{ _en[_m] }} {{ include.date | date: "%Y" }}
+{%- elsif _l == "ar" -%}{{ include.date | date: "%-d" }} {{ _ar[_m] }} {{ include.date | date: "%Y" }}
+{%- else -%}{{ include.date | date: "%-d" }} {{ _tr[_m] }} {{ include.date | date: "%Y" }}{%- endif -%}

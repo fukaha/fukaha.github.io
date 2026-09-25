@@ -1,0 +1,22 @@
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign _navi = site.data.nav | where: "key", page.key | first -%}
+{%- assign _imgid = page.image | default: _navi.image -%}
+{%- assign _img = site.data.images[_imgid] -%}
+<header class="page-head{% if _img %} has-image{% endif %}">
+  {%- if _img %}
+  <div class="page-head-img" aria-hidden="true"><img src="{{ _img.src }}" alt="" width="{{ _img.width }}" height="{{ _img.height }}" fetchpriority="high"></div>
+  {%- endif %}
+  <div class="page-head-pattern" aria-hidden="true"></div>
+  <div class="wrap page-head-in">
+    <p class="eyebrow">{% if include.eyebrow %}{{ include.eyebrow }}{% else %}{{ t.name }}{% endif %}</p>
+    <h1>{{ page.title | default: t.nav[page.key] }}</h1>
+    {%- assign lead = include.lead | default: page.lead | default: t.collection[page.key] -%}
+    {%- if lead %}
+    <p class="lead">{{ lead }}</p>
+    {%- endif %}
+  </div>
+  {%- if _img %}
+  <p class="page-head-credit wrap">{{ _img[lang] }} · <a href="{{ _img.page }}" rel="noopener">{% if _img.license == "Public domain" %}{{ t.about.public_domain }}{% else %}{{ _img.license }}{% endif %}</a></p>
+  {%- endif %}
+</header>

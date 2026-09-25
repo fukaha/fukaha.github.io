@@ -1,0 +1,55 @@
+---
+layout: default
+---
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign cfg = site.data.tables[page.key] -%}
+{% include page-head.html %}
+<section class="wrap collection" aria-labelledby="table-title">
+  {{ content }}
+  <div class="table-app" data-table>
+    <h2 id="table-title" class="visually-hidden">{{ t.nav[page.key] }}</h2>
+    <div class="toolbar">
+      <label class="field field-search">
+        <span class="field-label">{{ t.table.search }}</span>
+        <input type="search" data-search placeholder="{{ t.table.search_placeholder }}" autocomplete="off" spellcheck="false">
+      </label>
+      <div class="filters" data-filters></div>
+      <label class="field field-size">
+        <span class="field-label">{{ t.table.per_page }}</span>
+        <select data-size><option>25</option><option selected>50</option><option>100</option><option>250</option></select>
+      </label>
+      <div class="toolbar-actions">
+        <button type="button" class="btn btn-quiet" data-reset>{{ t.table.reset }}</button>
+        <button type="button" class="btn" data-csv>{{ t.table.download }}</button>
+      </div>
+    </div>
+    <div class="table-meta">
+      <p class="count" data-count aria-live="polite">{{ t.table.loading }}</p>
+      <p class="hint">{{ t.table.sort_hint }}</p>
+    </div>
+    <div class="table-scroll" data-scroll tabindex="0">
+      <table class="data-table" data-grid>
+        <caption class="visually-hidden">{{ t.nav[page.key] }}. {{ t.table.sort_hint }}</caption>
+      </table>
+    </div>
+    <p class="table-status" data-status hidden></p>
+    <nav class="pager" data-pager aria-label="{{ t.table.page }}"></nav>
+  </div>
+</section>
+<script type="application/json" id="table-config">
+{
+  "lang": {{ lang | jsonify }},
+  "name": {{ page.key | jsonify }},
+  "data": {{ cfg.data | jsonify }},
+  "sort": {{ cfg.sort | jsonify }},
+  "filter": {{ cfg.filter | jsonify }},
+  "columns": [{% for c in cfg.columns %}{"field": {{ c.field | jsonify }}, "label": {{ t.col[c.label] | jsonify }}, "kind": {{ c.kind | default: "text" | jsonify }}, "alt": {{ c.alt | jsonify }}, "detail": {% if c.detail %}true{% else %}false{% endif %}, "hide": {{ c.hide | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}],
+  "text": {{ t.table | jsonify }},
+  "madhhab": {{ t.madhhab | jsonify }},
+  "thesis": {{ t.thesis | jsonify }},
+  "langs": {{ t.lang | jsonify }},
+  "links": {{ t.link | jsonify }},
+  "filterLabels": { "madhhab": {{ t.col.madhhab | jsonify }}, "type": {{ t.col.type | jsonify }}, "lang": {{ t.col.lang | jsonify }} }
+}
+</script>

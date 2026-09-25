@@ -1,0 +1,12 @@
+{%- comment -%}An image from _data/images.yml with its caption and credit. include.id, include.class, include.small{%- endcomment -%}
+{%- assign _img = site.data.images[include.id] -%}
+{%- if _img -%}
+{%- assign _lang = page.lang | default: "tr" -%}
+{%- assign _t = site.data.i18n[_lang] -%}
+<figure class="figure {{ include.class }}">
+  <img src="{% if include.small %}{{ _img.small }}{% else %}{{ _img.src }}{% endif %}" alt="{{ _img[_lang] | escape }}" width="{{ _img.width }}" height="{{ _img.height }}" loading="{{ include.loading | default: 'lazy' }}" decoding="async">
+  {%- unless include.nocaption %}
+  <figcaption>{{ _img[_lang] }} <span class="credit">· <a href="{{ _img.page }}" rel="noopener">{% if _img.license == "Public domain" %}{{ _t.about.public_domain }}{% else %}{{ _img.license }}{% endif %}</a></span></figcaption>
+  {%- endunless %}
+</figure>
+{%- endif -%}

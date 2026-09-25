@@ -1,0 +1,16 @@
+---
+layout: default
+---
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- if page.kind == "haber" -%}{%- assign list = site.data.nav | where: "key", "haberler" | first -%}{%- assign back = t.post.back_news -%}
+{%- else -%}{%- assign list = site.data.nav | where: "key", "blog" | first -%}{%- assign back = t.post.back_blog -%}{%- endif -%}
+{%- capture eyebrow -%}{% if page.kind == "haber" %}{{ t.nav.haberler }}{% else %}{{ t.nav.blog }}{% endif %}{%- endcapture -%}
+{% include page-head.html eyebrow=eyebrow lead=page.summary %}
+<div class="wrap prose-wrap">
+  <article class="prose">
+    <p class="post-date"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{% include date.html date=page.date lang=lang %}</time></p>
+    {{ content }}
+    <a class="back" href="{{ list.url[lang] }}">{{ back }}</a>
+  </article>
+</div>

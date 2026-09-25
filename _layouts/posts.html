@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{% include page-head.html %}
+{%- assign posts = site.posts | where: "lang", lang | where: "kind", page.kind %}
+<section class="wrap section">
+  {{ content }}
+  {%- if posts.size > 0 %}
+  <ul class="post-list post-list-page">
+    {%- for post in posts %}
+    {% include post-item.html post=post %}
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p class="empty-note">{{ t.post.no_posts }}</p>
+  {%- endif %}
+</section>

@@ -1,0 +1,436 @@
+# Interface text in the three languages of the site.
+
+tr:
+  name: Fukahâ
+  lang_name: Türkçe
+  locale: tr_TR
+  dir: ltr
+  tagline: Fıkıh mirası ve fıkıh araştırmaları için kaynak rehberi
+  description: Klasik fıkıh eserleri, fakihler, tezler, kitaplar ve makaleler için üç dilli, sıralanabilir bir kaynak rehberi.
+  nav:
+    home: Ana Sayfa
+    klasik: Klasik Eserler
+    kitaplar: Kitaplar
+    tezler: Tezler
+    makaleler: Makaleler
+    haberler: Haberler
+    fukaha: Fukahâ
+    blog: Blog
+    hakkinda: Hakkında
+  died: "ö."
+  menu: Menü
+  close: Kapat
+  skip: İçeriğe geç
+  languages: Dil
+  home:
+    eyebrow: İslam hukuku kaynak rehberi
+    title: Fakihlerin mirası, bugünün araştırmaları
+    lead: Klasik fıkıh eserlerini, onları yazan fakihleri ve bu mirası çalışan tez, kitap ve makaleleri tek bir yerde; aranabilir ve sıralanabilir tablolar hâlinde.
+    search_label: Tezlerde ara
+    search_placeholder: Başlık, yazar, danışman, üniversite…
+    search_button: Ara
+    collections: Koleksiyonlar
+    collections_lead: Her koleksiyon, bütün künye bilgilerini gösteren bir tablodur. Sütun başlığına tıklayarak sıralayabilir, arama kutusuyla daraltabilirsiniz.
+    records: kayıt
+    soon: Hazırlanıyor
+    latest_theses: Son eklenen tezler
+    all_theses: Bütün tezler
+    jurists: Fukahâ’dan
+    jurists_lead: Leknevî’nin el-Fevâidü’l-behiyye’sinden Hanefî fakihler.
+    all_jurists: Bütün fakihler
+    news: Haberler
+    blog: Blog’dan
+    all: Tümü
+  collection:
+    klasik: Fakihlerin kaleme aldığı fıkıh, usûl ve fetva eserleri; müellif, vefat tarihi ve mezheple birlikte.
+    kitaplar: İslam hukuku üzerine modern kitaplar, tahkikler ve çeviriler.
+    tezler: Türkiye’de İslam hukuku alanında yapılmış yüksek lisans ve doktora tezleri.
+    makaleler: Hakemli dergilerde yayımlanmış İslam hukuku makaleleri.
+    fukaha: Tabakât kitaplarından aktarılmış fakih biyografileri.
+    haberler: Sitedeki yenilikler ve duyurular.
+    blog: Fıkıh, kaynaklar ve yöntem üzerine yazılar.
+  table:
+    search: Tabloda ara
+    search_placeholder: Yazmaya başlayın…
+    all: Tümü
+    loading: Kayıtlar yükleniyor…
+    error: Kayıtlar yüklenemedi. Sayfayı yenilemeyi deneyin.
+    empty: Bu koleksiyona henüz kayıt eklenmedi. Kayıtlar hazırlanıyor.
+    no_match: Aramanıza uyan kayıt bulunamadı.
+    showing: "{from}–{to} / {total} kayıt"
+    filtered: "({all} kayıt içinden)"
+    per_page: Sayfa başına
+    prev: Önceki
+    next: Sonraki
+    page: Sayfa
+    sort_hint: Sıralamak için sütun başlığına tıklayın; ayrıntılar için satıra tıklayın.
+    download: CSV indir
+    reset: Temizle
+    details: Ayrıntılar
+    open: Aç
+  col:
+    name: Ad
+    name_ar: Arapça ad
+    madhhab: Mezhep
+    birth: Doğum (H/M)
+    death: Vefat (H/M)
+    death_place: Vefat yeri
+    works: Eser
+    theses: Hakkında tez
+    source: Kaynak
+    summary: Özet
+    work: Eser
+    work_tr: Okunuşu
+    author: Yazar
+    authorc: Müellif
+    advisor: Danışman
+    type: Tür
+    university: Üniversite / Enstitü
+    department: Ana bilim / Bilim dalı
+    city: Şehir
+    year: Yıl
+    lang: Dil
+    pages: Sayfa
+    topics: Konular
+    title: Başlık
+    title_tr: Başlık çevirisi
+    jurists: İlgili fakih
+    yok: YÖK no
+    links: Bağlantı
+    editor: Editör / Mütercim
+    publisher: Yayınevi
+    isbn: ISBN
+    journal: Dergi
+    volume: Cilt
+    issue: Sayı
+    doi: DOI
+  madhhab:
+    hanefi: Hanefî
+    maliki: Mâlikî
+    safii: Şâfiî
+    hanbeli: Hanbelî
+    zahiri: Zâhirî
+    diger: Diğer
+  thesis:
+    yl: Yüksek lisans
+    doktora: Doktora
+  lang:
+    tr: Türkçe
+    ar: Arapça
+    en: İngilizce
+    de: Almanca
+    fr: Fransızca
+    fa: Farsça
+    ur: Urduca
+    kk: Kazakça
+  link:
+    detail: YÖK
+    pdf: PDF
+  post:
+    read: Devamını oku
+    back_news: Bütün haberler
+    back_blog: Bütün yazılar
+    no_posts: Henüz yazı yok.
+  about:
+    images: Görseller ve lisansları
+    image: Görsel
+    author: Sahibi
+    license: Lisans
+    public_domain: Kamu malı
+  footer:
+    about: Fukahâ, klasik fıkıh mirasını ve bu mirası çalışan akademik literatürü üç dilde, kaynaklarıyla birlikte sunan bağımsız bir rehberdir.
+    sections: Bölümler
+    credits: Görseller Wikimedia Commons’tan, kamu malı ya da açık lisanslı olarak alınmıştır.
+    credits_link: Görsel kaynakları
+    data: Tez verileri YÖK Ulusal Tez Merkezi’nden, biyografiler Leknevî’nin el-Fevâidü’l-behiyye’sinden alınmıştır.
+    top: Başa dön
+
+en:
+  name: Fukahâ
+  lang_name: English
+  locale: en_GB
+  dir: ltr
+  tagline: A guide to the sources of Islamic law and its scholarship
+  description: A trilingual, sortable guide to classical works of fiqh, the jurists who wrote them, and the theses, books and articles that study them.
+  nav:
+    home: Home
+    klasik: Classical Works
+    kitaplar: Books
+    tezler: Theses
+    makaleler: Articles
+    haberler: News
+    fukaha: Jurists
+    blog: Blog
+    hakkinda: About
+  died: "d."
+  menu: Menu
+  close: Close
+  skip: Skip to content
+  languages: Language
+  home:
+    eyebrow: A guide to Islamic legal sources
+    title: The legacy of the jurists, the research of today
+    lead: Classical works of fiqh, the jurists who wrote them, and the theses, books and articles that study this legacy, gathered in one place as searchable, sortable tables.
+    search_label: Search the theses
+    search_placeholder: Title, author, supervisor, university…
+    search_button: Search
+    collections: Collections
+    collections_lead: Each collection is a table showing the full bibliographic record. Click a column heading to sort; use the search box to narrow the list.
+    records: records
+    soon: In preparation
+    latest_theses: Recently added theses
+    all_theses: All theses
+    jurists: From the jurists
+    jurists_lead: Ḥanafī jurists from al-Laknawī’s al-Fawāʾid al-bahiyya.
+    all_jurists: All jurists
+    news: News
+    blog: From the blog
+    all: All
+  collection:
+    klasik: Works of law, legal theory and fatwa written by the jurists, with author, date of death and school.
+    kitaplar: Modern books, critical editions and translations on Islamic law.
+    tezler: Master’s and doctoral theses on Islamic law written in Turkey.
+    makaleler: Articles on Islamic law published in peer-reviewed journals.
+    fukaha: Biographies of jurists taken from the ṭabaqāt literature.
+    haberler: What is new on the site.
+    blog: Writing on fiqh, its sources and method.
+  table:
+    search: Search the table
+    search_placeholder: Start typing…
+    all: All
+    loading: Loading records…
+    error: The records could not be loaded. Please try reloading the page.
+    empty: No records have been added to this collection yet. They are in preparation.
+    no_match: No records match your search.
+    showing: "{from}–{to} of {total} records"
+    filtered: "(from {all})"
+    per_page: Per page
+    prev: Previous
+    next: Next
+    page: Page
+    sort_hint: Click a column heading to sort; click a row for details.
+    download: Download CSV
+    reset: Clear
+    details: Details
+    open: Open
+  col:
+    name: Name
+    name_ar: Arabic name
+    madhhab: School
+    birth: Born (AH/CE)
+    death: Died (AH/CE)
+    death_place: Place of death
+    works: Works
+    theses: Theses about
+    source: Source
+    summary: Summary
+    work: Work
+    work_tr: Transliteration
+    author: Author
+    authorc: Author
+    advisor: Supervisor
+    type: Type
+    university: University / Institute
+    department: Department
+    city: City
+    year: Year
+    lang: Language
+    pages: Pages
+    topics: Subjects
+    title: Title
+    title_tr: Translated title
+    jurists: Related jurist
+    yok: YÖK no.
+    links: Links
+    editor: Editor / Translator
+    publisher: Publisher
+    isbn: ISBN
+    journal: Journal
+    volume: Volume
+    issue: Issue
+    doi: DOI
+  madhhab:
+    hanefi: Ḥanafī
+    maliki: Mālikī
+    safii: Shāfiʿī
+    hanbeli: Ḥanbalī
+    zahiri: Ẓāhirī
+    diger: Other
+  thesis:
+    yl: Master’s
+    doktora: Doctoral
+  lang:
+    tr: Turkish
+    ar: Arabic
+    en: English
+    de: German
+    fr: French
+    fa: Persian
+    ur: Urdu
+    kk: Kazakh
+  link:
+    detail: YÖK
+    pdf: PDF
+  post:
+    read: Read more
+    back_news: All news
+    back_blog: All posts
+    no_posts: No posts yet.
+  about:
+    images: Images and licences
+    image: Image
+    author: Author
+    license: Licence
+    public_domain: Public domain
+  footer:
+    about: Fukahâ is an independent guide that presents the classical legacy of Islamic law and the scholarship on it in three languages, with its sources.
+    sections: Sections
+    credits: Images come from Wikimedia Commons and are in the public domain or openly licensed.
+    credits_link: Image credits
+    data: Thesis data come from the YÖK National Thesis Centre; biographies from al-Laknawī’s al-Fawāʾid al-bahiyya.
+    top: Back to top
+
+ar:
+  name: فقهاء
+  lang_name: العربية
+  locale: ar_AR
+  dir: rtl
+  tagline: دليل إلى مصادر الفقه الإسلامي ودراساته
+  description: دليل ثلاثي اللغة قابل للترتيب إلى كتب الفقه الكلاسيكية والفقهاء الذين صنّفوها والرسائل والكتب والبحوث التي تدرسها.
+  nav:
+    home: الرئيسية
+    klasik: المصنفات الكلاسيكية
+    kitaplar: الكتب
+    tezler: الرسائل الجامعية
+    makaleler: البحوث
+    haberler: الأخبار
+    fukaha: الفقهاء
+    blog: المدونة
+    hakkinda: عن الموقع
+  died: "ت"
+  menu: القائمة
+  close: إغلاق
+  skip: انتقل إلى المحتوى
+  languages: اللغة
+  home:
+    eyebrow: دليل إلى مصادر الفقه الإسلامي
+    title: تراث الفقهاء وبحوث اليوم
+    lead: كتب الفقه الكلاسيكية، والفقهاء الذين صنّفوها، والرسائل والكتب والبحوث التي تدرس هذا التراث، مجموعةً في مكان واحد في جداول قابلة للبحث والترتيب.
+    search_label: ابحث في الرسائل الجامعية
+    search_placeholder: العنوان، الباحث، المشرف، الجامعة…
+    search_button: بحث
+    collections: المجموعات
+    collections_lead: كل مجموعة جدول يعرض بيانات النشر كاملة. انقر عنوان العمود للترتيب، واستعمل مربع البحث لتضييق القائمة.
+    records: مدخلًا
+    soon: قيد الإعداد
+    latest_theses: رسائل أضيفت حديثًا
+    all_theses: جميع الرسائل
+    jurists: من الفقهاء
+    jurists_lead: فقهاء الحنفية من «الفوائد البهية» للكنوي.
+    all_jurists: جميع الفقهاء
+    news: الأخبار
+    blog: من المدونة
+    all: الكل
+  collection:
+    klasik: مصنفات الفقه وأصوله والفتاوى التي ألّفها الفقهاء، مع المؤلف وسنة الوفاة والمذهب.
+    kitaplar: كتب حديثة وتحقيقات وترجمات في الفقه الإسلامي.
+    tezler: رسائل الماجستير وأطروحات الدكتوراه في الفقه الإسلامي المنجزة في تركيا.
+    makaleler: بحوث في الفقه الإسلامي منشورة في مجلات محكّمة.
+    fukaha: تراجم الفقهاء منقولة من كتب الطبقات.
+    haberler: جديد الموقع وإعلاناته.
+    blog: مقالات في الفقه ومصادره ومنهجه.
+  table:
+    search: ابحث في الجدول
+    search_placeholder: ابدأ الكتابة…
+    all: الكل
+    loading: جارٍ تحميل المداخل…
+    error: تعذّر تحميل المداخل. حاول إعادة تحميل الصفحة.
+    empty: لم تُضف مداخل إلى هذه المجموعة بعد، وهي قيد الإعداد.
+    no_match: لا توجد مداخل تطابق بحثك.
+    showing: "{from}–{to} من {total} مدخلًا"
+    filtered: "(من أصل {all})"
+    per_page: في الصفحة
+    prev: السابق
+    next: التالي
+    page: الصفحة
+    sort_hint: انقر عنوان العمود للترتيب، وانقر الصف لعرض التفاصيل.
+    download: تنزيل CSV
+    reset: مسح
+    details: التفاصيل
+    open: فتح
+  col:
+    name: الاسم
+    name_ar: الاسم بالعربية
+    madhhab: المذهب
+    birth: المولد (هـ/م)
+    death: الوفاة (هـ/م)
+    death_place: مكان الوفاة
+    works: المصنفات
+    theses: رسائل عنه
+    source: المصدر
+    summary: الخلاصة
+    work: المصنَّف
+    work_tr: النطق اللاتيني
+    author: الباحث
+    authorc: المؤلف
+    advisor: المشرف
+    type: النوع
+    university: الجامعة / المعهد
+    department: القسم
+    city: المدينة
+    year: السنة
+    lang: اللغة
+    pages: الصفحات
+    topics: الموضوعات
+    title: العنوان
+    title_tr: ترجمة العنوان
+    jurists: الفقيه المتعلق
+    yok: رقم YÖK
+    links: روابط
+    editor: المحقق / المترجم
+    publisher: الناشر
+    isbn: ردمك
+    journal: المجلة
+    volume: المجلد
+    issue: العدد
+    doi: DOI
+  madhhab:
+    hanefi: الحنفي
+    maliki: المالكي
+    safii: الشافعي
+    hanbeli: الحنبلي
+    zahiri: الظاهري
+    diger: غير ذلك
+  thesis:
+    yl: ماجستير
+    doktora: دكتوراه
+  lang:
+    tr: التركية
+    ar: العربية
+    en: الإنجليزية
+    de: الألمانية
+    fr: الفرنسية
+    fa: الفارسية
+    ur: الأردية
+    kk: الكازاخية
+  link:
+    detail: YÖK
+    pdf: PDF
+  post:
+    read: اقرأ المزيد
+    back_news: جميع الأخبار
+    back_blog: جميع المقالات
+    no_posts: لا توجد مقالات بعد.
+  about:
+    images: الصور وتراخيصها
+    image: الصورة
+    author: صاحبها
+    license: الترخيص
+    public_domain: ملك عام
+  footer:
+    about: «فقهاء» دليل مستقل يعرض التراث الفقهي الكلاسيكي والدراسات الأكاديمية فيه بثلاث لغات مع مصادرها.
+    sections: الأقسام
+    credits: الصور مأخوذة من ويكيميديا كومنز، وهي ملك عام أو ذات ترخيص مفتوح.
+    credits_link: مصادر الصور
+    data: بيانات الرسائل من المركز الوطني للرسائل الجامعية (YÖK)، والتراجم من «الفوائد البهية» للكنوي.
+    top: العودة إلى الأعلى

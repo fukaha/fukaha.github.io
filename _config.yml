@@ -1,0 +1,37 @@
+title: Fukahâ
+url: https://fukaha.github.io
+baseurl: ""
+timezone: Europe/Istanbul
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - tools
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+# Posts: _posts/<lang>/<kind>/YYYY-MM-DD-slug.md
+# The folder gives the language and whether it is a news item or a blog post.
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "_posts/tr/haber", type: posts }
+    values: { lang: tr, kind: haber, permalink: "/haberler/:title/" }
+  - scope: { path: "_posts/tr/blog", type: posts }
+    values: { lang: tr, kind: blog, permalink: "/blog/:title/" }
+  - scope: { path: "_posts/en/haber", type: posts }
+    values: { lang: en, kind: haber, permalink: "/en/news/:title/" }
+  - scope: { path: "_posts/en/blog", type: posts }
+    values: { lang: en, kind: blog, permalink: "/en/blog/:title/" }
+  - scope: { path: "_posts/ar/haber", type: posts }
+    values: { lang: ar, kind: haber, permalink: "/ar/news/:title/" }
+  - scope: { path: "_posts/ar/blog", type: posts }
+    values: { lang: ar, kind: blog, permalink: "/ar/blog/:title/" }
