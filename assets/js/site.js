@@ -99,11 +99,12 @@
         s.inert = !on;
         // load the next image early so the fade never shows a blank
         if (n === (current + 1) % slides.length) {
-          var img = s.querySelector('img[loading="lazy"]');
-          if (img) img.loading = 'eager';
+          s.querySelectorAll('img[loading="lazy"]').forEach(function (img) { img.loading = 'eager'; });
         }
       });
       if (counter) counter.textContent = slides[current].dataset.no;
+      // the poster of an event slide takes the corner where the seal turns
+      box.classList.toggle('on-event', slides[current].classList.contains('slide-event'));
       schedule(true);
     }
     function schedule(restart) {

@@ -221,6 +221,18 @@ tr:
     back_news: Bütün haberler
     back_blog: Bütün yazılar
     no_posts: Henüz yazı yok.
+  event:
+    kind: Sempozyum
+    details: Duyuruyu oku
+    when: Tarih
+    place: Yer
+    format: Katılım
+    organizer: Düzenleyen
+    web: Etkinliğin sayfası
+    source: DAVET sempozyum duyuruları
+    source_lead: Kaynak
+    poster: Afiş
+    past: Bu etkinlik sona erdi.
   about:
     images: Görseller ve lisansları
     image: Görsel
@@ -456,6 +468,18 @@ en:
     back_news: All news
     back_blog: All posts
     no_posts: No posts yet.
+  event:
+    kind: Symposium
+    details: Read the notice
+    when: Dates
+    place: Place
+    format: Attendance
+    organizer: Organised by
+    web: Event page
+    source: DAVET symposium notices
+    source_lead: Source
+    poster: Poster
+    past: This event has ended.
   about:
     images: Images and licences
     image: Image
@@ -691,6 +715,18 @@ ar:
     back_news: جميع الأخبار
     back_blog: جميع المقالات
     no_posts: لا توجد مقالات بعد.
+  event:
+    kind: ندوة علمية
+    details: اقرأ الإعلان
+    when: التاريخ
+    place: المكان
+    format: الحضور
+    organizer: الجهة المنظمة
+    web: صفحة الفعالية
+    source: إعلانات الندوات في DAVET
+    source_lead: المصدر
+    poster: الملصق
+    past: انتهت هذه الفعالية.
   about:
     images: الصور وتراخيصها
     image: الصورة

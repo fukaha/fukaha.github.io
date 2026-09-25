@@ -1,0 +1,38 @@
+{%- comment -%}
+A symposium slide of the home page showcase: tile pattern behind, the short title on one side
+and the poster in a frame on the other. When a symposium has no poster, a card with its
+dates and place stands in the frame.
+n, total, post
+{%- endcomment -%}
+{%- assign _l = page.lang | default: "tr" -%}
+{%- assign _t = site.data.i18n[_l] -%}
+{%- assign _p = include.post -%}
+{%- assign _e = _p.event -%}
+{%- assign _img = site.data.images.cini -%}
+{%- capture _no %}{% if include.n < 10 %}0{% endif %}{{ include.n }}{% endcapture -%}
+<article class="slide slide-event{% if include.n == 1 %} is-active{% endif %}" id="slide-{{ include.n }}" aria-roledescription="slide" aria-label="{{ include.n }} / {{ include.total }}" data-no="{{ _no }}">
+  <img class="slide-img" src="{{ _img.src }}" alt="" width="{{ _img.width }}" height="{{ _img.height }}"{% if include.n == 1 %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+  <div class="wrap slide-in">
+    <div class="slide-text">
+      <p class="slide-kind"><span class="kind-line" aria-hidden="true"></span>{{ _t.event.kind }}<span class="slide-meta">{{ _e.when }}</span></p>
+      <h2><a href="{{ _p.url }}">{{ _p.short | default: _p.title }}</a></h2>
+      <p class="slide-sum">{{ _e.place }} · {{ _e.organizer }}</p>
+      <p class="slide-cta"><span class="cta-line" aria-hidden="true"></span><a class="cta" href="{{ _p.url }}">{{ _t.event.details }}</a></p>
+    </div>
+    <a class="poster-frame" href="{{ _p.url }}" tabindex="-1" aria-hidden="true">
+      {%- if _e.poster %}
+      <img src="{{ _e.poster }}" alt="" loading="lazy">
+      {%- else %}
+      <span class="poster-card">
+        <span class="pc-kind">{{ _t.event.kind }}</span>
+        <span class="pc-title">{{ _p.short | default: _p.title }}</span>
+        <span class="pc-rule"></span>
+        <span class="pc-when">{{ _e.when }}</span>
+        <span class="pc-place">{{ _e.place }}</span>
+        <span class="pc-org">{{ _e.organizer }}</span>
+      </span>
+      {%- endif %}
+    </a>
+  </div>
+  <p class="slide-credit">{% if _e.poster_credit %}{{ _e.poster_credit }} · {% endif %}{{ _img[_l] }} · <a href="{{ _img.page }}" rel="noopener">{{ _img.license }}</a></p>
+</article>

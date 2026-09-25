@@ -130,3 +130,16 @@ istakhri:
   artist: "Istakhri"
   license: "Public domain"
   licenseUrl: null
+cini:
+  src: /assets/img/cini.jpg
+  small: /assets/img/cini-sm.jpg
+  width: 1600
+  height: 1067
+  tr: "İznik çinileri, Rüstem Paşa Camii, İstanbul"
+  en: "Iznik tiles, Rüstem Pasha Mosque, Istanbul"
+  ar: "خزف إزنيق، جامع رستم باشا، إسطنبول"
+  title: "Rüstem Pasha mosque tiles.jpg"
+  page: "https://commons.wikimedia.org/wiki/File:R%C3%BCstem_Pasha_mosque_tiles.jpg"
+  artist: "Till Niermann"
+  license: "CC BY-SA 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0"

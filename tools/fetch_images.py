@@ -7,6 +7,7 @@ the licence and the author are read from Commons at download time, not typed by 
     python3 tools/fetch_images.py          # downloads what is missing
     python3 tools/fetch_images.py --force  # downloads everything again
     python3 tools/fetch_images.py --local DIR  # uses DIR/<id>.jpg when it exists
+    python3 tools/fetch_images.py --only ID,ID # downloads only these; other missing files are left out
     python3 tools/fetch_images.py --local DIR --offline CREDITS.json
         # no network: only the images found in DIR, with credits read from CREDITS.json
         # ({id: {title, page, artist, license, licenseUrl}}, as recorded at an earlier download)
@@ -123,6 +124,13 @@ IMAGES = {
         "en": "The Persian Sea, from a copy of al-Iṣṭakhrī’s Masālik al-mamālik",
         "ar": "بحر فارس، من نسخة من مسالك الممالك للإصطخري",
     },
+    # background of the symposium slides
+    "cini": {
+        "file": "Rüstem Pasha mosque tiles.jpg",
+        "tr": "İznik çinileri, Rüstem Paşa Camii, İstanbul",
+        "en": "Iznik tiles, Rüstem Pasha Mosque, Istanbul",
+        "ar": "خزف إزنيق، جامع رستم باشا، إسطنبول",
+    },
 }
 
 
@@ -190,6 +198,7 @@ def main():
     IMG.mkdir(parents=True, exist_ok=True)
     out = ["# Written by tools/fetch_images.py. Captions are edited in that script.", ""]
     offline = Path(sys.argv[sys.argv.index("--offline") + 1]) if "--offline" in sys.argv else None
+    only = sys.argv[sys.argv.index("--only") + 1].split(",") if "--only" in sys.argv else None
     if offline:
         recorded = json.loads(offline.read_text(encoding="utf-8"))
         metas = {IMAGES[k]["file"]: recorded[k] for k in IMAGES
@@ -199,6 +208,9 @@ def main():
     for key, item in IMAGES.items():
         if item["file"] not in metas:
             print(key, "skipped (not available offline)")
+            continue
+        if only and key not in only and not (IMG / f"{key}.jpg").exists():
+            print(key, "skipped (not in --only)")
             continue
         print(key)
         meta = metas[item["file"]]

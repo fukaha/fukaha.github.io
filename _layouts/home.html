@@ -15,13 +15,24 @@ layout: default
 {%- assign thesis = stats.latest_theses[0] -%}
 {%- assign jurist = stats.jurists[0] -%}
 {%- assign jurist2 = stats.jurists[1] -%}
-{%- assign slide_posts = home_posts | slice: 0, 3 -%}
-{%- assign total = slide_posts.size | plus: 3 -%}
+{%- comment -%}Symposia that have not ended yet come first, in the order their posts give.{%- endcomment -%}
+{%- assign today = site.time | date: "%Y-%m-%d" -%}
+{%- assign event_posts = "" | split: "" -%}
+{%- assign plain_posts = "" | split: "" -%}
+{%- for o in (1..9) %}{% for p in home_posts %}{% if p.event and p.event.order == o and p.event.end >= today %}{% assign event_posts = event_posts | push: p %}{% endif %}{% endfor %}{% endfor -%}
+{%- for p in home_posts %}{% unless p.event %}{% assign plain_posts = plain_posts | push: p %}{% endunless %}{% endfor -%}
+{%- assign event_posts = event_posts | slice: 0, 3 -%}
+{%- assign slide_posts = plain_posts | slice: 0, 3 -%}
+{%- assign total = slide_posts.size | plus: event_posts.size | plus: 3 -%}
 {%- capture yok %}https://tez.yok.gov.tr/UlusalTezMerkezi/tezDetay.jsp?id={% endcapture -%}
 
-<section class="showcase" data-showcase aria-roledescription="carousel" aria-label="{{ t.home.showcase }}">
+<section class="showcase{% if event_posts.size > 0 %} on-event{% endif %}" data-showcase aria-roledescription="carousel" aria-label="{{ t.home.showcase }}">
   <div class="slides">
     {%- assign n = 0 %}
+    {%- for post in event_posts %}
+    {%- assign n = n | plus: 1 %}
+    {% include slide-event.html n=n total=total post=post %}
+    {%- endfor %}
     {%- if jurist %}
     {%- assign n = n | plus: 1 %}
     {%- assign jname = jurist.name[lang] | default: jurist.name.tr %}

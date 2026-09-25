@@ -289,6 +289,38 @@ html[lang="ar"] .cta { letter-spacing: 0; font-size: 1.05rem; }
 }
 .slide-credit a { color: inherit; }
 
+/* symposium slides: tiles behind, short title on one side, the poster framed on the other */
+.slide-event::after { background: linear-gradient(90deg, rgb(10 18 16 / 90%) 0%, rgb(10 18 16 / 74%) 45%, rgb(10 18 16 / 46%) 100%); }
+html[dir="rtl"] .slide-event::after { background: linear-gradient(270deg, rgb(10 18 16 / 90%) 0%, rgb(10 18 16 / 74%) 45%, rgb(10 18 16 / 46%) 100%); }
+.slide-event .slide-in { justify-content: space-between; gap: clamp(2rem, 5vw, 5rem); }
+.slide-event .slide-text { flex: 1 1 32rem; }
+.slide-event h2 { max-width: 14ch; }
+.slide-event .slide-sum { -webkit-line-clamp: 2; }
+.poster-frame { text-decoration: none;
+  flex: 0 0 auto; display: block; margin-block: calc(var(--header-h) + 1rem) 5.5rem; padding: 0.7rem;
+  background: #f6efdf; border: 1px solid #c9a55c; outline: 1px solid rgb(201 165 92 / 55%); outline-offset: 0.45rem;
+  box-shadow: 0 1.6rem 3.5rem rgb(0 0 0 / 55%);
+}
+.poster-frame img { display: block; height: min(58vh, 36rem); width: auto; max-width: 38vw; object-fit: contain; }
+.slide.is-active .poster-frame { animation: frame-in 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) 0.55s both; }
+@keyframes frame-in { from { opacity: 0; transform: translateY(1.8rem) rotate(0.6deg); } to { opacity: 1; transform: none; } }
+.poster-card {
+  height: min(58vh, 36rem); aspect-ratio: 4 / 5; display: flex; flex-direction: column; justify-content: center; gap: 0.9rem;
+  padding: 2.2rem 2rem; text-align: center; color: #1d2a26;
+  background: radial-gradient(circle at 50% 0%, rgb(201 165 92 / 18%), transparent 60%), #f6efdf;
+  border: 1px solid rgb(29 42 38 / 25%);
+}
+.pc-kind { font-size: 0.85rem; letter-spacing: 0.3em; text-transform: uppercase; color: #9a3f2a; }
+html[lang="ar"] .pc-kind { letter-spacing: 0; font-size: 1rem; }
+.pc-title { font-size: clamp(1.5rem, 2.3vw, 2.2rem); line-height: 1.15; font-weight: 500; }
+html[lang="ar"] .pc-title { font-family: var(--font-ar-display); font-weight: 700; line-height: 1.5; }
+.pc-rule { width: 3rem; height: 1px; background: #c9a55c; margin: 0.4rem auto; }
+.pc-when { font-size: 1.25rem; font-weight: 600; font-variant-numeric: lining-nums; }
+.pc-place { font-size: 1.05rem; }
+.pc-org { font-size: 0.9rem; line-height: 1.45; color: rgb(29 42 38 / 72%); }
+.seal > * { transition: opacity 0.6s; }
+.showcase.on-event .seal > * { opacity: 0; }
+
 /* turning seal at the top corner */
 .seal { position: absolute; top: calc(var(--header-h) + 1.5rem); inset-inline-end: clamp(1.5rem, 4vw, 3.5rem); z-index: 3; width: 8.5rem; height: 8.5rem; color: #f3ecdd; pointer-events: none; }
 .seal svg { width: 100%; height: 100%; overflow: visible; animation: seal-turn 40s linear infinite; }
@@ -339,6 +371,14 @@ html[dir="rtl"] .pp { scale: -1 1; }
   .slide-credit { inset-inline-start: var(--gutter); text-align: start; bottom: 4.6rem; font-size: 0.82rem; }
   .seal { display: none; }
   .progress { flex: 1; }
+  .slide-event .slide-in { flex-direction: column; justify-content: flex-end; align-items: stretch; gap: 1.6rem; }
+  .slide-event .slide-text { flex: 0 0 auto; padding-block: 0 7.5rem; }
+  .slide-event h2 { font-size: clamp(2rem, 8.5vw, 2.6rem); }
+  .poster-frame { order: -1; margin: 0 auto; padding: 0.4rem; outline-offset: 0.3rem; }
+  .poster-frame img { height: 28svh; max-width: 70vw; }
+  .poster-card { height: 28svh; padding: 1rem; gap: 0.4rem; }
+  .pc-title { font-size: 1.2rem; }
+  .pc-org { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .seal svg { animation: none; } }
 
@@ -859,3 +899,28 @@ html[dir="rtl"] .hb-bar { border-radius: 4px 0 0 4px; }
 .quick { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 0.8rem; margin: 0 0 1.4rem; }
 .quick-label { color: var(--muted); font-style: italic; }
 .quick .chips a { font-size: 0.98rem; padding: 0.2rem 0.65rem; }
+
+/* ---------- symposium notice on a news page ---------- */
+.event-card {
+  display: grid; gap: 1.6rem; margin: 0 0 2.4rem; padding: 1.4rem;
+  border-block: 1px solid var(--line); background: var(--surface);
+}
+.event-card.has-poster { grid-template-columns: minmax(0, 15rem) 1fr; align-items: start; }
+.event-poster { margin: 0; }
+.event-poster a { display: block; padding: 0.4rem; background: #f6efdf; border: 1px solid #c9a55c; box-shadow: 0 0.6rem 1.4rem rgb(0 0 0 / 18%); }
+.event-poster img { display: block; width: 100%; height: auto; }
+.event-poster figcaption { margin-top: 0.6rem; font-size: 0.85rem; font-style: italic; color: var(--muted); }
+.event-kind { margin: 0 0 0.6rem; font-size: 0.85rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rubric); }
+html[lang="ar"] .event-kind { letter-spacing: 0; font-size: 1rem; }
+.event-past { margin: 0 0 0.8rem; font-style: italic; color: var(--muted); }
+.event-facts { margin: 0 0 1.2rem; display: grid; gap: 0.55rem; }
+.event-facts div { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; }
+.event-facts dt { color: var(--muted); }
+.event-facts dd { margin: 0; }
+.event-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem 1.4rem; margin: 0; }
+.event-source { font-size: 0.92rem; color: var(--muted); }
+@media (max-width: 640px) {
+  .event-card.has-poster { grid-template-columns: 1fr; }
+  .event-poster { max-width: 16rem; }
+  .event-facts div { grid-template-columns: 1fr; gap: 0.1rem; }
+}

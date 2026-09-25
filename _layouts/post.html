@@ -10,6 +10,32 @@ layout: default
 <div class="wrap prose-wrap">
   <article class="prose">
     <p class="post-date"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{% include date.html date=page.date lang=lang %}</time></p>
+    {%- if page.event %}
+    {%- assign ev = page.event %}{% assign te = t.event %}
+    {%- assign today = site.time | date: "%Y-%m-%d" %}
+    <aside class="event-card{% if ev.poster %} has-poster{% endif %}">
+      {%- if ev.poster %}
+      <figure class="event-poster">
+        <a href="{{ ev.poster }}"><img src="{{ ev.poster }}" alt="{{ te.poster }}: {{ page.short | default: page.title }}"></a>
+        {%- if ev.poster_credit %}<figcaption>{{ ev.poster_credit }}</figcaption>{% endif %}
+      </figure>
+      {%- endif %}
+      <div class="event-body">
+        <p class="event-kind">{{ te.kind }}</p>
+        {%- if ev.end < today %}<p class="event-past">{{ te.past }}</p>{% endif %}
+        <dl class="event-facts">
+          <div><dt>{{ te.when }}</dt><dd>{{ ev.when }}</dd></div>
+          <div><dt>{{ te.place }}</dt><dd>{{ ev.place }}</dd></div>
+          {%- if ev.format %}<div><dt>{{ te.format }}</dt><dd>{{ ev.format }}</dd></div>{% endif %}
+          <div><dt>{{ te.organizer }}</dt><dd>{{ ev.organizer }}</dd></div>
+        </dl>
+        <p class="event-links">
+          {%- if ev.web %}<a class="btn" href="{{ ev.web }}" rel="noopener">{{ te.web }}</a>{% endif %}
+          <span class="event-source">{{ te.source_lead }}: <a href="{{ ev.source }}" rel="noopener">{{ te.source }}</a></span>
+        </p>
+      </div>
+    </aside>
+    {%- endif %}
     {{ content }}
     <a class="back" href="{{ list.url[lang] }}">{{ back }}</a>
   </article>
