@@ -144,9 +144,14 @@
         jurists.forEach(function (j) {
           if (c && String(j.century) !== c) return;
           if (focus && j.id !== focus) return;
+          var mine = {};
           j.geo.forEach(function (g) {
             if (role && g[1] !== role) return;
-            (out[g[0]] = out[g[0]] || []).push({ j: j, role: g[1] });
+            if (!mine[g[0]]) {
+              mine[g[0]] = { j: j, roles: [] };
+              (out[g[0]] = out[g[0]] || []).push(mine[g[0]]);
+            }
+            mine[g[0]].roles.push(g[1]);
           });
         });
         return out;
@@ -223,7 +228,7 @@
         html += '<ul class="map-list">' + rows.map(function (x) {
           var j = x.j;
           return '<li><a href="' + i18n.base + j.id + '/">' + esc(j.name[lang] || j.name.tr) + '</a>' +
-            '<span class="map-role">' + esc(i18n.roles[x.role] || x.role) + '</span>' +
+            '<span class="map-role">' + esc(x.roles.map(function (r) { return i18n.roles[r] || r; }).join(', ')) + '</span>' +
             (j.death ? '<span class="map-date" dir="ltr">' + esc(i18n.died + ' ' + j.death + '/' + j.deathM) + '</span>' : '') + '</li>';
         }).join('') + '</ul>';
         html += p.uri ? '<p class="map-src"><a href="https://althurayya.github.io/#' + esc(p.uri) + '" rel="noopener">' + esc(i18n.thurayya) + '</a> · <span dir="ltr">' + esc(p.uri) + '</span></p>'

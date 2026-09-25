@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{%- comment -%}The whole teacher-student network, drawn by assets/js/silsile.js.{%- endcomment -%}
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign tn = t.net -%}
+{%- assign fk = site.data.nav | where: "key", "fukaha" | first -%}
+{%- capture centuries -%}{
+  {%- for c in (1..15) -%}"{{ c }}":{% capture lab %}{% include century.html n=c tpl=t.jurist.century %}{% endcapture %}{{ lab | jsonify }}{% unless forloop.last %},{% endunless %}{%- endfor -%}
+}{%- endcapture -%}
+{% include page-head.html %}
+<section class="net-app" data-net data-src="/data/silsile.json" aria-label="{{ tn.title }}">
+  <div class="wrap map-tools">
+    <label class="map-find"><span>{{ tn.focus }}</span>
+      <input type="search" data-net-find list="net-names" placeholder="{{ tn.focus_ph }}" autocomplete="off"></label>
+    <datalist id="net-names"></datalist>
+    <label class="net-check"><input type="checkbox" data-net-outside checked> {{ tn.show_outside }}</label>
+    <button type="button" class="btn btn-quiet" data-net-reset>{{ tn.all }}</button>
+    <p class="map-stats" data-net-stats aria-live="polite"></p>
+  </div>
+  <div class="net-stage">
+    <div class="net-canvas" data-net-canvas dir="ltr"></div>
+    <div class="net-tip" data-net-tip hidden></div>
+    <ul class="net-legend">
+      <li><span class="lg-node"></span>{{ t.nav.fukaha }}</li>
+      <li><span class="lg-node out"></span>{{ tn.legend_ext }}</li>
+      <li><span class="lg-line"></span>{{ tn.legend_link }}</li>
+    </ul>
+  </div>
+  <p class="wrap map-credit">{{ tn.hint }}</p>
+  <script type="application/json" data-net-i18n>{"lang":{{ lang | jsonify }},"base":{{ fk.url[lang] | jsonify }},"title":{{ tn.title | jsonify }},"died":{{ t.died | jsonify }},"jurists_n":{{ tn.jurists_n | jsonify }},"links_n":{{ tn.links_n | jsonify }},"outside":{{ tn.outside | jsonify }},"outside_n":{{ tn.outside_n | jsonify }},"centuries":{{ centuries }}}</script>
+</section>
+<script src="/assets/js/silsile.js?v={{ site.time | date: '%s' }}" defer></script>

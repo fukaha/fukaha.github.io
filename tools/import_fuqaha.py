@@ -15,9 +15,11 @@ Writes:
   _data/stats.yml           counts, charts and the short lists shown on the home page
   _data/places.json         the places on the map (coordinates from al-Thurayya where it has them)
   data/harita.json          places and jurists for the map page
+  data/silsile.json         the teacher-student network, laid out along the years of death
 
 Turkish readings of the Arabic work titles and of the teachers' and students' names come from
-tools/translit/*.tsv (Arabic <tab> Turkish), kept by hand.
+tools/translit/*.tsv (Arabic <tab> Turkish), kept by hand. tools/translit/eslesme.tsv ties names
+written differently from a jurist's own entry (“صاحب الهداية”, “أبو يوسف”) to that jurist.
 """
 import collections
 import json
@@ -132,6 +134,110 @@ def compact(d):
     return {k: v for k, v in d.items() if v not in (None, "", [], {})}
 
 
+RELATION = re.compile(r"^(?:أبوه|ابنه|ابنته|ولده|والده|جده لأمه|جده|عمه|خاله|أخوه|حفيده|ابن ابنه|ابن أخيه|ابن أخته|أخو)\s+")
+RELATION_TR = re.compile(r"^(?:babası|oğlu|kızı|anne tarafından dedesi|dedesi|amcası|dayısı|kardeşi|torunu|yeğeni|kız kardeşinin oğlu)\s+")
+
+
+def network(pages, jurists):
+    """The teacher-student network: every tie either side records, among jurists and the people
+    they name who have no entry of their own. Written to data/silsile.json with a layout whose
+    x is the year of death, and to each page as its two steps up and down ("ego")."""
+    names = {j["id"]: j["name"] for j in jurists}
+    death = {j["id"]: j.get("death") for j in jurists}
+    outside = {}
+
+    def key(x):
+        if x.get("id"):
+            return x["id"]
+        ar = RELATION.sub("", x["ar"])  # "his father Hammad" and "Hammad" are one person
+        if ar not in outside:
+            outside[ar] = {"ar": ar, "tr": RELATION_TR.sub("", x.get("tr") or ar)}
+        return "~" + ar
+
+    edges = set()
+    for sid, page in pages.items():
+        for x in page.get("teachers", []):
+            edges.add((key(x), sid))
+        for x in page.get("students", []):
+            edges.add((sid, key(x)))
+    edges = sorted(e for e in edges if e[0] != e[1])
+    up, down = collections.defaultdict(list), collections.defaultdict(list)
+    for a, b in edges:
+        down[a].append(b)
+        up[b].append(a)
+
+    def label(k):
+        if k.startswith("~"):
+            o = outside[k[1:]]
+            return {"ar": o["ar"], "tr": o["tr"], "en": o["tr"]}
+        return names[k]
+
+    # each page: teachers and their teachers, students and their students
+    for sid, page in pages.items():
+        def node(k, more):
+            n = compact({"id": None if k.startswith("~") else k, "n": label(k), "d": death.get(k)})
+            if more:
+                n["m"] = [compact({"id": None if m.startswith("~") else m, "n": label(m)}) for m in more[:6]]
+            return n
+        t = sorted(up.get(sid, []), key=lambda k: death.get(k) or 0)
+        st = sorted(down.get(sid, []), key=lambda k: death.get(k) or 9999)
+        if t or st:
+            page["ego"] = {"t": [node(k, sorted(up.get(k, []), key=lambda m: death.get(m) or 0)) for k in t],
+                           "s": [node(k, sorted(down.get(k, []), key=lambda m: death.get(m) or 9999)) for k in st]}
+
+    # layout: x from the year of death; people without one sit a generation after their
+    # teachers or before their students; y from a simple force layout
+    keys = sorted({k for e in edges for k in e})
+    x = {k: death.get(k) for k in keys}
+    for _ in range(12):
+        for k in keys:
+            if x[k] is None or k.startswith("~"):
+                guesses = [x[t] + 35 for t in up.get(k, []) if x.get(t) is not None and not t.startswith("~")] + \
+                          [x[s] - 35 for s in down.get(k, []) if x.get(s) is not None and not s.startswith("~")]
+                if not guesses:
+                    guesses = [x[t] + 35 for t in up.get(k, []) if x.get(t) is not None] + \
+                              [x[s] - 35 for s in down.get(k, []) if x.get(s) is not None]
+                if guesses:
+                    x[k] = sum(guesses) / len(guesses)
+    keys = [k for k in keys if x[k] is not None]
+    # columns of 25 years; within a column each person has a row of his own, and the rows are
+    # ordered so that people sit near those they are tied to (a few barycentre sweeps)
+    SLICE, GAP = 25, 24
+    col = {k: int(x[k] // SLICE) for k in keys}
+    cols = collections.defaultdict(list)
+    for k in sorted(keys, key=lambda k: (-(len(up.get(k, [])) + len(down.get(k, []))), k)):
+        cols[col[k]].append(k)
+    nbr = {k: [n for n in up.get(k, []) + down.get(k, []) if n in col and col[n] != col[k]] for k in keys}
+
+    def rows():
+        return {k: i - (len(ks) - 1) / 2 for ks in cols.values() for i, k in enumerate(ks)}
+    for sweep in range(10):
+        pos = rows()
+        order = sorted(cols) if sweep % 2 == 0 else sorted(cols, reverse=True)
+        for c in order:
+            ks = cols[c]
+            bary = {k: (sum(pos[n] for n in nbr[k]) / len(nbr[k]) if nbr[k] else pos[k]) for k in ks}
+            ks.sort(key=lambda k: bary[k])
+            pos.update({k: i - (len(ks) - 1) / 2 for i, k in enumerate(ks)})
+    pos = rows()
+    x = {k: (col[k] + 0.5) * SLICE for k in keys}
+    y = {k: pos[k] * GAP for k in keys}
+    nodes = []
+    index = {}
+    for k in sorted(keys, key=lambda k: (x[k], y[k])):
+        index[k] = len(nodes)
+        n = {"x": x[k], "y": y[k], "n": label(k)}
+        if not k.startswith("~"):
+            n["id"] = k
+            if death.get(k):
+                n["d"] = death[k]
+        nodes.append(n)
+    links = [[index[a], index[b]] for a, b in edges if a in index and b in index]
+    (OUT / "silsile.json").write_text(json.dumps({"nodes": nodes, "links": links}, ensure_ascii=False, separators=(",", ":")),
+                                      encoding="utf-8")
+    print(f"data/silsile.json: {len(nodes)} kişi, {len(links)} bağ, {sum(1 for n in nodes if n.get('id'))} fakih")
+
+
 def main():
     if len(sys.argv) != 2:
         sys.exit(__doc__)
@@ -144,7 +250,7 @@ def main():
         fm = front_matter(path)
         names_ar.setdefault(fm["name"]["ar"], path.stem)
         names_tr[path.stem] = fm["name"]["tr"]
-    people_tr, works_tr = load_tsv("kisiler"), load_tsv("eserler")
+    people_tr, works_tr, same = load_tsv("kisiler"), load_tsv("eserler"), load_tsv("eslesme")
 
     def place(pid):
         return places.get(pid, {}).get("name") if pid else None
@@ -195,8 +301,11 @@ def main():
             "featured": bool(d.get("featured")) or None,
         }))
         def person(n):
-            pid = names_ar.get(n) if names_ar.get(n) != sid else None
-            return compact({"ar": n, "tr": names_tr[pid] if pid else people_tr.get(n), "id": pid})
+            pid = names_ar.get(n) or same.get(n)
+            pid = pid if pid != sid else None
+            # a name written as in the jurist's own entry takes his name; "his father X" keeps its reading
+            tr = names_tr[pid] if pid and n in names_ar else people_tr.get(n)
+            return compact({"ar": n, "tr": tr, "id": pid})
         works = [compact({"ar": w.get("ar"), "tr": w.get("tr") or works_tr.get(w.get("ar")), "en": w.get("en")})
                  for w in d.get("works") or []]
         pages[sid] = compact({
@@ -284,6 +393,8 @@ def main():
         if spots:
             page["spots"] = [{"id": pid, "roles": roles} for pid, roles in spots.items()]
 
+    OUT.mkdir(exist_ok=True)
+    network(pages, jurists)
     brief = {j["id"]: {k: j.get(k) for k in ("name", "death", "deathM", "madhhab")} for j in jurists}
     (ROOT / "_data/jurists.json").write_text(
         json.dumps({"pages": pages, "brief": brief}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

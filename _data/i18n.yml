@@ -153,6 +153,14 @@ tr:
     detail: YÖK
     pdf: PDF
   jurist:
+    ib_name: İsim
+    ib_full: Tam isim
+    ib_intro: Kısa tanıtım
+    ib_life: Yaşadığı tarih
+    ib_greg: Milâdî
+    ib_hijri: Hicrî
+    ib_birthplace: Doğum yeri
+    ib_school: Mezhebi
     months: "Muharrem,Safer,Rebîülevvel,Rebîülâhir,Cemâziyelevvel,Cemâziyelâhir,Receb,Şâban,Ramazan,Şevval,Zilkade,Zilhicce"
     facts: Künye
     born: Doğum
@@ -265,6 +273,14 @@ tr:
     none: Bu fakih için hoca ya da talebe kaydı yok.
     legend_link: Hoca → talebe
     legend_ext: Kaydı olmayan kişi
+    t2: Hocalarının hocaları
+    s2: Talebelerinin talebeleri
+    outside_n: kaydı olmayan kişi
+    section: Silsile
+    section_lead: Leknevî’nin kaydettiği hoca ve talebe bağları, iki kuşak yukarı ve aşağı. Diğer fakihlerin biyografilerinde geçen bağlar da dahildir.
+    whole: Bütün ağda göster
+    show_outside: Kaydı olmayanları da göster
+    more: "+{n} kişi daha"
   event:
     kind: Sempozyum
     details: Duyuruyu oku
@@ -444,6 +460,14 @@ en:
     detail: YÖK
     pdf: PDF
   jurist:
+    ib_name: Name
+    ib_full: Full name
+    ib_intro: In brief
+    ib_life: Dates
+    ib_greg: Gregorian
+    ib_hijri: Hijri
+    ib_birthplace: Place of birth
+    ib_school: School
     months: "Muḥarram,Ṣafar,Rabīʿ I,Rabīʿ II,Jumādā I,Jumādā II,Rajab,Shaʿbān,Ramaḍān,Shawwāl,Dhū l-Qaʿda,Dhū l-Ḥijja"
     facts: Record
     born: Born
@@ -556,6 +580,14 @@ en:
     none: No teachers or students are recorded for this jurist.
     legend_link: Teacher → student
     legend_ext: Person not in Fukahâ
+    t2: Their teachers
+    s2: Their students
+    outside_n: people not in Fukahâ
+    section: Chain of learning
+    section_lead: The teachers and students recorded by al-Laknawī, two generations up and down, including ties named in other jurists’ entries.
+    whole: Show in the whole network
+    show_outside: Also show people not in Fukahâ
+    more: "+{n} more"
   event:
     kind: Symposium
     details: Read the notice
@@ -735,6 +767,14 @@ ar:
     detail: YÖK
     pdf: PDF
   jurist:
+    ib_name: الاسم
+    ib_full: الاسم الكامل
+    ib_intro: تعريف موجز
+    ib_life: التاريخ
+    ib_greg: الميلادي
+    ib_hijri: الهجري
+    ib_birthplace: مكان الولادة
+    ib_school: المذهب
     months: "محرم,صفر,ربيع الأول,ربيع الآخر,جمادى الأولى,جمادى الآخرة,رجب,شعبان,رمضان,شوال,ذو القعدة,ذو الحجة"
     facts: البطاقة
     born: المولد
@@ -847,6 +887,14 @@ ar:
     none: لم تذكر له شيوخ ولا تلاميذ.
     legend_link: شيخ ← تلميذ
     legend_ext: شخص ليست له ترجمة
+    t2: شيوخ شيوخه
+    s2: تلاميذ تلاميذه
+    outside_n: شخصا ليست لهم ترجمة
+    section: السلسلة
+    section_lead: الشيوخ والتلاميذ كما ذكرهم اللكنوي، جيلين صعودا ونزولا، ومنها الصلات المذكورة في تراجم غيره.
+    whole: عرضه في الشبكة كلها
+    show_outside: أظهر من ليست لهم ترجمة
+    more: "و{n} آخرون"
   event:
     kind: ندوة علمية
     details: اقرأ الإعلان
