@@ -44,6 +44,8 @@ tr:
     pause: Durdur
     play: Oynat
     theses_n: tez
+    details: Detaylar
+    badge: FUKAHÂ · FAKİHLER VE ESERLERİ ·
     search_label: Tezlerde ara
     search_placeholder: Başlık, yazar, danışman, üniversite…
     search_button: Ara
@@ -207,6 +209,8 @@ en:
     pause: Pause
     play: Play
     theses_n: theses
+    details: Details
+    badge: FUKAHÂ · THE JURISTS AND THEIR WORKS ·
     search_label: Search the theses
     search_placeholder: Title, author, supervisor, university…
     search_button: Search
@@ -370,6 +374,8 @@ ar:
     pause: إيقاف
     play: تشغيل
     theses_n: رسالة
+    details: التفاصيل
+    badge: فقهاء · الفقهاء ومصنفاتهم · تراجم وكتب · فقهاء ·
     search_label: ابحث في الرسائل الجامعية
     search_placeholder: العنوان، الباحث، المشرف، الجامعة…
     search_button: بحث

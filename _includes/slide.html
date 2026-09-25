@@ -1,0 +1,30 @@
+{%- comment -%}
+One slide of the home page showcase.
+n, total, img (image id), kind, meta, ar (Arabic line above the title), title, title_lang,
+summary, summary_ltr, href, external, cta
+{%- endcomment -%}
+{%- assign _l = page.lang | default: "tr" -%}
+{%- assign _t = site.data.i18n[_l] -%}
+{%- assign _img = site.data.images[include.img] -%}
+{%- capture _no %}{% if include.n < 10 %}0{% endif %}{{ include.n }}{% endcapture -%}
+<article class="slide{% if include.n == 1 %} is-active{% endif %}" id="slide-{{ include.n }}" aria-roledescription="slide" aria-label="{{ include.n }} / {{ include.total }}" data-no="{{ _no }}">
+  {%- if _img %}
+  <img class="slide-img" src="{{ _img.src }}" alt="" width="{{ _img.width }}" height="{{ _img.height }}"{% if include.n == 1 %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+  {%- endif %}
+  <div class="wrap slide-in">
+    <div class="slide-text">
+      <p class="slide-kind"><span class="kind-line" aria-hidden="true"></span>{{ include.kind }}{% if include.meta %}<span class="slide-meta">{{ include.meta }}</span>{% endif %}</p>
+      {%- if include.ar %}
+      <p class="slide-ar" lang="ar" dir="rtl">{{ include.ar }}</p>
+      {%- endif %}
+      <h2{% if include.title_lang == "ar" %} lang="ar" dir="rtl"{% elsif _l == "ar" and include.title_lang %} dir="ltr"{% endif %}><a href="{{ include.href }}"{% if include.external %} rel="noopener" target="_blank"{% endif %}>{{ include.title }}</a></h2>
+      {%- if include.summary %}
+      <p class="slide-sum"{% if include.summary_ltr and _l == "ar" %} dir="ltr"{% endif %}>{{ include.summary }}</p>
+      {%- endif %}
+      <p class="slide-cta"><span class="cta-line" aria-hidden="true"></span><a class="cta" href="{{ include.href }}"{% if include.external %} rel="noopener" target="_blank"{% endif %}>{{ include.cta }}</a></p>
+    </div>
+  </div>
+  {%- if _img %}
+  <p class="slide-credit">{{ _img[_l] }} · <a href="{{ _img.page }}" rel="noopener">{% if _img.license == "Public domain" %}{{ _t.about.public_domain }}{% else %}{{ _img.license }}{% endif %}</a></p>
+  {%- endif %}
+</article>

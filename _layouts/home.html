@@ -13,88 +13,64 @@ layout: default
 {%- assign home_posts = site.posts | where: "lang", lang -%}
 {%- assign thesis = stats.latest_theses[0] -%}
 {%- assign jurist = stats.jurists[0] -%}
-{%- assign slide_count = home_posts.size | at_most: 3 | plus: 2 -%}
+{%- assign jurist2 = stats.jurists[1] -%}
+{%- assign slide_posts = home_posts | slice: 0, 3 -%}
+{%- assign total = slide_posts.size | plus: 3 -%}
 {%- capture yok %}https://tez.yok.gov.tr/UlusalTezMerkezi/tezDetay.jsp?id={% endcapture -%}
 
 <section class="showcase" data-showcase aria-roledescription="carousel" aria-label="{{ t.home.showcase }}">
   <div class="slides">
     {%- assign n = 0 %}
-    {%- for post in home_posts limit: 3 %}
-    {%- assign n = n | plus: 1 %}
-    {%- assign img = site.data.images[post.image] %}
-    {%- if post.kind == "haber" %}{% assign kind = t.home.kind_haber %}{% else %}{% assign kind = t.home.kind_blog %}{% endif %}
-    <article class="slide{% if n == 1 %} is-active{% endif %}" id="slide-{{ n }}" aria-roledescription="slide" aria-label="{{ n }} / {{ slide_count }}">
-      {%- if img %}<img class="slide-img" src="{{ img.src }}" alt="" width="{{ img.width }}" height="{{ img.height }}"{% if n > 1 %} loading="lazy"{% else %} fetchpriority="high"{% endif %}>{% endif %}
-      <div class="wrap slide-in">
-        <div class="slide-text">
-          <p class="slide-kind">{{ kind }} <span>{% include date.html date=post.date lang=lang %}</span></p>
-          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-          {%- if post.summary %}<p class="slide-sum">{{ post.summary }}</p>{% endif %}
-          <a class="slide-link" href="{{ post.url }}">{{ t.post.read }}</a>
-        </div>
-      </div>
-      {%- if img %}<p class="slide-credit">{{ img[lang] }} · <a href="{{ img.page }}" rel="noopener">{% if img.license == "Public domain" %}{{ t.about.public_domain }}{% else %}{{ img.license }}{% endif %}</a></p>{% endif %}
-    </article>
-    {%- endfor %}
-
-    {%- if thesis %}
-    {%- assign n = n | plus: 1 %}
-    {%- assign img = site.data.images.ulughbeg %}
-    <article class="slide" id="slide-{{ n }}" aria-roledescription="slide" aria-label="{{ n }} / {{ slide_count }}">
-      {%- if img %}<img class="slide-img" src="{{ img.src }}" alt="" width="{{ img.width }}" height="{{ img.height }}" loading="lazy">{% endif %}
-      <div class="wrap slide-in">
-        <div class="slide-text">
-          <p class="slide-kind">{{ t.home.kind_tez }} <span>{{ t.thesis[thesis.type] }} · {{ thesis.year }}</span></p>
-          <h2{% if thesis.lang == "ar" %} lang="ar" dir="rtl"{% elsif lang == "ar" %} dir="ltr"{% endif %}><a href="{{ yok }}{{ thesis.yok }}" rel="noopener" target="_blank">{{ thesis.title }}</a></h2>
-          <p class="slide-sum"{% if lang == "ar" %} dir="ltr"{% endif %}>{{ thesis.author }} · {{ thesis.university }}</p>
-          <a class="slide-link" href="{{ yok }}{{ thesis.yok }}" rel="noopener" target="_blank">{{ t.home.open_yok }}</a>
-        </div>
-      </div>
-      {%- if img %}<p class="slide-credit">{{ img[lang] }} · <a href="{{ img.page }}" rel="noopener">{% if img.license == "Public domain" %}{{ t.about.public_domain }}{% else %}{{ img.license }}{% endif %}</a></p>{% endif %}
-    </article>
-    {%- endif %}
-
     {%- if jurist %}
     {%- assign n = n | plus: 1 %}
-    {%- assign img = site.data.images.multaqa %}
     {%- assign jname = jurist.name[lang] | default: jurist.name.tr %}
-    {%- if lang == "ar" %}{% assign jsum = jurist.summary.ar %}{% else %}{% assign jsum = jurist.summary[lang] | default: jurist.summary.tr %}{% endif %}
-    <article class="slide" id="slide-{{ n }}" aria-roledescription="slide" aria-label="{{ n }} / {{ slide_count }}">
-      {%- if img %}<img class="slide-img" src="{{ img.src }}" alt="" width="{{ img.width }}" height="{{ img.height }}" loading="lazy">{% endif %}
-      <div class="wrap slide-in">
-        <div class="slide-text">
-          <p class="slide-kind">{{ t.home.kind_fakih }} <span>{{ t.madhhab[jurist.madhhab] }} · {{ t.died }} <bdi dir="ltr">{{ jurist.death }}/{{ jurist.deathM }}</bdi></span></p>
-          {%- unless lang == "ar" %}<p class="slide-ar" lang="ar" dir="rtl">{{ jurist.name.ar }}</p>{% endunless %}
-          <h2><a href="{{ jurists_url.url[lang] }}?q={{ jname | url_encode }}">{{ jname }}</a></h2>
-          {%- if jsum %}<p class="slide-sum">{{ jsum | truncatewords: 40 }}</p>{% endif %}
-          <a class="slide-link" href="{{ jurists_url.url[lang] }}?q={{ jname | url_encode }}">{{ t.home.open_jurist }}</a>
-        </div>
-      </div>
-      {%- if img %}<p class="slide-credit">{{ img[lang] }} · <a href="{{ img.page }}" rel="noopener">{% if img.license == "Public domain" %}{{ t.about.public_domain }}{% else %}{{ img.license }}{% endif %}</a></p>{% endif %}
-    </article>
+    {%- if lang == "ar" %}{% assign jsum = jurist.summary.ar %}{% else %}{% assign jsum = jurist.summary[lang] | default: jurist.summary.tr | truncatewords: 42 %}{% endif %}
+    {%- capture jmeta %}{{ t.madhhab[jurist.madhhab] }} · {{ t.died }} {{ jurist.death }}/{{ jurist.deathM }}{% endcapture %}
+    {%- capture jhref %}{{ jurists_url.url[lang] }}?q={{ jname | url_encode }}{% endcapture %}
+    {%- if lang == "ar" %}{% assign jar = nil %}{% else %}{% assign jar = jurist.name.ar %}{% endif %}
+    {% include slide.html n=n total=total img="ulughbeg" kind=t.home.kind_fakih meta=jmeta ar=jar title=jname summary=jsum href=jhref cta=t.home.details %}
+    {%- endif %}
+
+    {%- for post in slide_posts %}
+    {%- assign n = n | plus: 1 %}
+    {%- if post.kind == "haber" %}{% assign kind = t.home.kind_haber %}{% else %}{% assign kind = t.home.kind_blog %}{% endif %}
+    {%- capture pdate %}{% include date.html date=post.date lang=lang %}{% endcapture %}
+    {% include slide.html n=n total=total img=post.image kind=kind meta=pdate title=post.title summary=post.summary href=post.url cta=t.post.read %}
+    {%- if forloop.first and thesis %}
+    {%- assign n = n | plus: 1 %}
+    {%- capture tmeta %}{{ t.thesis[thesis.type] }} · {{ thesis.year }}{% endcapture %}
+    {%- capture tsum %}{{ thesis.author }} · {{ thesis.university }}{% endcapture %}
+    {%- capture thref %}{{ yok }}{{ thesis.yok }}{% endcapture %}
+    {% include slide.html n=n total=total img="library" kind=t.home.kind_tez meta=tmeta title=thesis.title title_lang=thesis.lang summary=tsum summary_ltr=true href=thref external=true cta=t.home.open_yok %}
+    {%- endif %}
+    {%- endfor %}
+
+    {%- if jurist2 %}
+    {%- assign n = n | plus: 1 %}
+    {%- assign jname = jurist2.name[lang] | default: jurist2.name.tr %}
+    {%- if lang == "ar" %}{% assign jsum = jurist2.summary.ar %}{% else %}{% assign jsum = jurist2.summary[lang] | default: jurist2.summary.tr | truncatewords: 42 %}{% endif %}
+    {%- capture jmeta %}{{ t.madhhab[jurist2.madhhab] }} · {{ t.died }} {{ jurist2.death }}/{{ jurist2.deathM }}{% endcapture %}
+    {%- capture jhref %}{{ jurists_url.url[lang] }}?q={{ jname | url_encode }}{% endcapture %}
+    {%- if lang == "ar" %}{% assign jar = nil %}{% else %}{% assign jar = jurist2.name.ar %}{% endif %}
+    {% include slide.html n=n total=total img="mustansiriya" kind=t.home.kind_fakih meta=jmeta ar=jar title=jname summary=jsum href=jhref cta=t.home.details %}
     {%- endif %}
   </div>
 
-  <div class="showcase-bar">
-    <div class="wrap showcase-bar-in">
-      <div class="slide-tabs" role="tablist" aria-label="{{ t.home.showcase }}">
-        {%- assign n = 0 %}
-        {%- for post in home_posts limit: 3 %}
-        {%- assign n = n | plus: 1 %}
-        <button class="slide-tab" type="button" role="tab" aria-controls="slide-{{ n }}"{% if n == 1 %} aria-selected="true"{% endif %}><span class="tab-no">{{ n }}</span><span class="tab-title">{{ post.title }}</span></button>
-        {%- endfor %}
-        {%- if thesis %}{% assign n = n | plus: 1 %}
-        <button class="slide-tab" type="button" role="tab" aria-controls="slide-{{ n }}"><span class="tab-no">{{ n }}</span><span class="tab-title">{{ t.home.kind_tez }}: <bdi>{{ thesis.title }}</bdi></span></button>
-        {%- endif %}
-        {%- if jurist %}{% assign n = n | plus: 1 %}
-        <button class="slide-tab" type="button" role="tab" aria-controls="slide-{{ n }}"><span class="tab-no">{{ n }}</span><span class="tab-title">{{ t.home.kind_fakih }}: <bdi>{{ jurist.name[lang] | default: jurist.name.tr }}</bdi></span></button>
-        {%- endif %}
-      </div>
-      <div class="showcase-nav">
-        <button type="button" class="round-btn" data-step="-1" aria-label="{{ t.table.prev }}"><span class="chev-s prev" aria-hidden="true"></span></button>
-        <button type="button" class="round-btn showcase-toggle" data-pause="{{ t.home.pause }}" data-play="{{ t.home.play }}" aria-label="{{ t.home.pause }}"><span class="pp" aria-hidden="true"></span></button>
-        <button type="button" class="round-btn" data-step="1" aria-label="{{ t.table.next }}"><span class="chev-s next" aria-hidden="true"></span></button>
-      </div>
+  <div class="seal" aria-hidden="true">
+    <svg viewBox="0 0 120 120">
+      <defs><path id="seal-path" d="M60 60 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs>
+      <text><textPath href="#seal-path"{% unless lang == "ar" %} textLength="286" lengthAdjust="spacing"{% endunless %}>{{ t.home.badge }}</textPath></text>
+    </svg>
+    <span class="seal-mark">{% include mark.html %}</span>
+  </div>
+
+  <div class="showcase-controls">
+    <div class="wrap controls-in">
+      <p class="counter" aria-hidden="true"><strong data-current>01</strong> / <span>{% if n < 10 %}0{% endif %}{{ n }}</span></p>
+      <span class="progress" aria-hidden="true"><span class="progress-fill"></span></span>
+      <button type="button" class="round-btn" data-step="-1" aria-label="{{ t.table.prev }}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+      <button type="button" class="round-btn" data-step="1" aria-label="{{ t.table.next }}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+      <button type="button" class="round-btn small showcase-toggle" data-pause="{{ t.home.pause }}" data-play="{{ t.home.play }}" aria-label="{{ t.home.pause }}"><span class="pp" aria-hidden="true"></span></button>
     </div>
   </div>
 </section>

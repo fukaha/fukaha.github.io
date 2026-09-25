@@ -81,12 +81,14 @@
   }
   paintTheme();
 
-  // --- showcase: one slide at a time, with tabs ---
+  // --- showcase: full-screen slides with a counter and a progress line ---
   document.querySelectorAll('[data-showcase]').forEach(function (box) {
     var slides = [].slice.call(box.querySelectorAll('.slide'));
-    var tabs = [].slice.call(box.querySelectorAll('.slide-tab'));
+    var counter = box.querySelector('[data-current]');
+    var fill = box.querySelector('.progress-fill');
     var toggle = box.querySelector('.showcase-toggle');
     var delay = 7000, current = 0, timer = null, playing = !still, held = false;
+    if (slides.length < 2) return;
 
     function show(i) {
       current = (i + slides.length) % slides.length;
@@ -95,21 +97,32 @@
         s.classList.toggle('is-active', on);
         s.setAttribute('aria-hidden', String(!on));
         s.inert = !on;
+        // load the next image early so the fade never shows a blank
+        if (n === (current + 1) % slides.length) {
+          var img = s.querySelector('img[loading="lazy"]');
+          if (img) img.loading = 'eager';
+        }
       });
-      tabs.forEach(function (t, n) {
-        t.setAttribute('aria-selected', String(n === current));
-        t.classList.remove('is-running');
-      });
-      schedule();
+      if (counter) counter.textContent = slides[current].dataset.no;
+      schedule(true);
     }
-    function schedule() {
+    function schedule(restart) {
       clearTimeout(timer);
-      var tab = tabs[current];
-      if (playing && !held) {
-        if (tab) { void tab.offsetWidth; tab.classList.add('is-running'); }
-        timer = setTimeout(function () { show(current + 1); }, delay);
-      }
-      box.classList.toggle('is-paused', !playing || held);
+      var run = playing && !held;
+      if (fill && restart) { fill.classList.remove('run'); void fill.offsetWidth; }
+      if (fill) fill.classList.toggle('run', playing);
+      box.classList.toggle('is-paused', !run);
+      if (run) timer = setTimeout(function () { show(current + 1); }, restart ? delay : remaining());
+      started = restart ? Date.now() : started;
+    }
+    // time left on the current slide after a pause
+    var started = Date.now(), spent = 0;
+    function remaining() { return Math.max(800, delay - spent); }
+    function hold(on) {
+      if (held === on) return;
+      if (on) spent += Date.now() - started; else started = Date.now();
+      held = on;
+      schedule(false);
     }
     function setPlaying(on) {
       playing = on;
@@ -117,25 +130,22 @@
         toggle.setAttribute('aria-label', on ? toggle.dataset.pause : toggle.dataset.play);
         toggle.classList.toggle('is-playing', on);
       }
-      tabs.forEach(function (t) { t.classList.remove('is-running'); });
-      schedule();
+      spent = 0;
+      schedule(true);
     }
-    tabs.forEach(function (t, n) { t.addEventListener('click', function () { show(n); }); });
     box.querySelectorAll('[data-step]').forEach(function (b) {
-      b.addEventListener('click', function () { show(current + Number(b.dataset.step)); });
+      b.addEventListener('click', function () { spent = 0; show(current + Number(b.dataset.step)); });
     });
     if (toggle) toggle.addEventListener('click', function () { setPlaying(!playing); });
-    // hold while the reader is pointing at or working inside the slides
     var stage = box.querySelector('.slides');
-    stage.addEventListener('mouseenter', function () { held = true; tabs.forEach(function (t) { t.classList.remove('is-running'); }); schedule(); });
-    stage.addEventListener('mouseleave', function () { held = false; schedule(); });
-    box.addEventListener('focusin', function () { held = true; schedule(); });
-    box.addEventListener('focusout', function (e) { if (!box.contains(e.relatedTarget)) { held = false; schedule(); } });
+    stage.addEventListener('mouseenter', function () { hold(true); });
+    stage.addEventListener('mouseleave', function () { hold(false); });
+    box.addEventListener('focusin', function () { hold(true); });
+    box.addEventListener('focusout', function (e) { if (!box.contains(e.relatedTarget)) hold(false); });
     box.addEventListener('keydown', function (e) {
       if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-      var fwd = (e.key === 'ArrowRight') !== rtl;
-      show(current + (fwd ? 1 : -1));
-      if (e.target.classList.contains('slide-tab')) tabs[current].focus();
+      spent = 0;
+      show(current + (((e.key === 'ArrowRight') !== rtl) ? 1 : -1));
     });
     // swipe
     var x0 = null;
@@ -143,8 +153,10 @@
     stage.addEventListener('pointerup', function (e) {
       if (x0 === null) return;
       var dx = e.clientX - x0; x0 = null;
-      if (Math.abs(dx) > 40) show(current + ((dx < 0) !== rtl ? 1 : -1));
+      if (Math.abs(dx) > 40) { spent = 0; show(current + ((dx < 0) !== rtl ? 1 : -1)); }
     });
+    // hold while the tab is hidden
+    document.addEventListener('visibilitychange', function () { hold(document.hidden); });
     setPlaying(playing);
     show(0);
   });
