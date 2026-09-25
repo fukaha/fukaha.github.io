@@ -149,7 +149,7 @@ def infos(titles):
     """Licence, author and download URL of every file, in a single API request."""
     raw = get(API, {
         "action": "query", "format": "json", "titles": "|".join("File:" + t for t in titles),
-        "prop": "imageinfo", "iiprop": "url|extmetadata", "iiurlwidth": 1920,
+        "prop": "imageinfo", "iiprop": "url|size|extmetadata", "iiurlwidth": 1920,
         "iiextmetadatafilter": "LicenseShortName|LicenseUrl|Artist|Credit",
     })
     data = json.loads(raw)["query"]
@@ -162,7 +162,9 @@ def infos(titles):
         meta = ii["extmetadata"]
         title = names.get(page["title"], page["title"])[len("File:"):]
         result[title] = {
-            "thumb": ii.get("thumburl") or ii["url"],
+            # 1920 is one of Wikimedia's standard thumbnail widths; smaller files are taken
+            # as they are, since other thumbnail sizes are refused
+            "thumb": ii["url"] if ii["width"] <= 1920 or not ii.get("thumburl") else ii["thumburl"],
             "page": ii["descriptionurl"],
             "license": text(meta.get("LicenseShortName", {}).get("value")),
             "licenseUrl": text(meta.get("LicenseUrl", {}).get("value")) or None,
