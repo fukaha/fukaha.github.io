@@ -5,8 +5,11 @@ tr:
   lang_name: Türkçe
   locale: tr_TR
   dir: ltr
-  tagline: Fıkıh mirası ve fıkıh araştırmaları için kaynak rehberi
-  description: Klasik fıkıh eserleri, fakihler, tezler, kitaplar ve makaleler için üç dilli, sıralanabilir bir kaynak rehberi.
+  tagline: Fakihler, eserleri ve onlar üzerine yapılan çalışmalar
+  description: Tabakât kitaplarındaki fakihler, yazdıkları eserler ve bu eserler üzerine yapılmış tez, kitap ve makalelerin künyeleri.
+  theme:
+    to_dark: Koyu görünüm
+    to_light: Açık görünüm
   nav:
     home: Ana Sayfa
     klasik: Klasik Eserler
@@ -23,9 +26,19 @@ tr:
   skip: İçeriğe geç
   languages: Dil
   home:
-    eyebrow: İslam hukuku kaynak rehberi
-    title: Fakihlerin mirası, bugünün araştırmaları
-    lead: Klasik fıkıh eserlerini, onları yazan fakihleri ve bu mirası çalışan tez, kitap ve makaleleri tek bir yerde; aranabilir ve sıralanabilir tablolar hâlinde.
+    title: Fakihler, eserleri ve onlar hakkında yazılanlar
+    lead: Leknevî’nin el-Fevâidü’l-behiyye’sindeki fakihleri, bu fakihlerin eserlerini ve Türkiye’de İslam hukuku alanında yazılmış tezleri künyeleriyle arayabilirsiniz.
+    showcase: Öne çıkanlar
+    shelf_lead: YÖK’e en son girilen tezler. Kapağa tıklayınca tezin YÖK kaydı açılır.
+    kind_haber: Haber
+    kind_blog: Blog
+    kind_tez: Yeni tez
+    kind_fakih: Fakih
+    open_yok: YÖK kaydını aç
+    open_jurist: Fakihin kaydı
+    pause: Durdur
+    play: Oynat
+    theses_n: tez
     search_label: Tezlerde ara
     search_placeholder: Başlık, yazar, danışman, üniversite…
     search_button: Ara
@@ -36,13 +49,13 @@ tr:
     latest_theses: Son eklenen tezler
     all_theses: Bütün tezler
     jurists: Fukahâ’dan
-    jurists_lead: Leknevî’nin el-Fevâidü’l-behiyye’sinden Hanefî fakihler.
+    jurists_lead: Hakkında en çok tez yazılmış dört fakih.
     all_jurists: Bütün fakihler
     news: Haberler
     blog: Blog’dan
     all: Tümü
   collection:
-    klasik: Fakihlerin kaleme aldığı fıkıh, usûl ve fetva eserleri; müellif, vefat tarihi ve mezheple birlikte.
+    klasik: Fakihlerin yazdığı fıkıh, usûl ve fetva eserleri. Her eser müellifi, müellifin vefat tarihi ve mezhebiyle listelenir.
     kitaplar: İslam hukuku üzerine modern kitaplar, tahkikler ve çeviriler.
     tezler: Türkiye’de İslam hukuku alanında yapılmış yüksek lisans ve doktora tezleri.
     makaleler: Hakemli dergilerde yayımlanmış İslam hukuku makaleleri.
@@ -63,7 +76,7 @@ tr:
     prev: Önceki
     next: Sonraki
     page: Sayfa
-    sort_hint: Sıralamak için sütun başlığına tıklayın; ayrıntılar için satıra tıklayın.
+    sort_hint: Sıralamak için sütun başlığına, ayrıntılar için satıra tıklayın.
     download: CSV indir
     reset: Temizle
     details: Ayrıntılar
@@ -138,7 +151,7 @@ tr:
     license: Lisans
     public_domain: Kamu malı
   footer:
-    about: Fukahâ, klasik fıkıh mirasını ve bu mirası çalışan akademik literatürü üç dilde, kaynaklarıyla birlikte sunan bağımsız bir rehberdir.
+    about: Fukahâ, fakihleri ve onlar üzerine yapılan çalışmaları kaynak göstererek listeleyen bağımsız bir çalışmadır. Türkçe, Arapça ve İngilizce okunabilir.
     sections: Bölümler
     credits: Görseller Wikimedia Commons’tan, kamu malı ya da açık lisanslı olarak alınmıştır.
     credits_link: Görsel kaynakları
@@ -152,6 +165,9 @@ en:
   dir: ltr
   tagline: A guide to the sources of Islamic law and its scholarship
   description: A trilingual, sortable guide to classical works of fiqh, the jurists who wrote them, and the theses, books and articles that study them.
+  theme:
+    to_dark: Dark mode
+    to_light: Light mode
   nav:
     home: Home
     klasik: Classical Works
@@ -168,9 +184,19 @@ en:
   skip: Skip to content
   languages: Language
   home:
-    eyebrow: A guide to Islamic legal sources
-    title: The legacy of the jurists, the research of today
-    lead: Classical works of fiqh, the jurists who wrote them, and the theses, books and articles that study this legacy, gathered in one place as searchable, sortable tables.
+    title: The jurists, their works, and what has been written about them
+    lead: Search the jurists of al-Laknawī’s al-Fawāʾid al-bahiyya, the works they wrote, and the theses on Islamic law written in Turkey, with full bibliographic records.
+    showcase: Highlights
+    shelf_lead: The theses most recently entered in YÖK. Click a cover to open its YÖK record.
+    kind_haber: News
+    kind_blog: Blog
+    kind_tez: New thesis
+    kind_fakih: Jurist
+    open_yok: Open the YÖK record
+    open_jurist: See the record
+    pause: Pause
+    play: Play
+    theses_n: theses
     search_label: Search the theses
     search_placeholder: Title, author, supervisor, university…
     search_button: Search
@@ -181,7 +207,7 @@ en:
     latest_theses: Recently added theses
     all_theses: All theses
     jurists: From the jurists
-    jurists_lead: Ḥanafī jurists from al-Laknawī’s al-Fawāʾid al-bahiyya.
+    jurists_lead: The four jurists most often studied in theses.
     all_jurists: All jurists
     news: News
     blog: From the blog
@@ -297,6 +323,9 @@ ar:
   dir: rtl
   tagline: دليل إلى مصادر الفقه الإسلامي ودراساته
   description: دليل ثلاثي اللغة قابل للترتيب إلى كتب الفقه الكلاسيكية والفقهاء الذين صنّفوها والرسائل والكتب والبحوث التي تدرسها.
+  theme:
+    to_dark: الوضع الداكن
+    to_light: الوضع الفاتح
   nav:
     home: الرئيسية
     klasik: المصنفات الكلاسيكية
@@ -313,9 +342,19 @@ ar:
   skip: انتقل إلى المحتوى
   languages: اللغة
   home:
-    eyebrow: دليل إلى مصادر الفقه الإسلامي
-    title: تراث الفقهاء وبحوث اليوم
-    lead: كتب الفقه الكلاسيكية، والفقهاء الذين صنّفوها، والرسائل والكتب والبحوث التي تدرس هذا التراث، مجموعةً في مكان واحد في جداول قابلة للبحث والترتيب.
+    title: الفقهاء ومصنفاتهم وما كُتب عنهم
+    lead: ابحث في تراجم فقهاء «الفوائد البهية» للكنوي، وفي مصنفاتهم، وفي الرسائل الجامعية في الفقه الإسلامي المنجزة في تركيا، مع بياناتها كاملة.
+    showcase: مختارات
+    shelf_lead: أحدث الرسائل المسجّلة في YÖK. انقر الغلاف لفتح سجل الرسالة.
+    kind_haber: خبر
+    kind_blog: مدونة
+    kind_tez: رسالة جديدة
+    kind_fakih: فقيه
+    open_yok: افتح سجل YÖK
+    open_jurist: عرض الترجمة
+    pause: إيقاف
+    play: تشغيل
+    theses_n: رسالة
     search_label: ابحث في الرسائل الجامعية
     search_placeholder: العنوان، الباحث، المشرف، الجامعة…
     search_button: بحث
@@ -326,7 +365,7 @@ ar:
     latest_theses: رسائل أضيفت حديثًا
     all_theses: جميع الرسائل
     jurists: من الفقهاء
-    jurists_lead: فقهاء الحنفية من «الفوائد البهية» للكنوي.
+    jurists_lead: أكثر أربعة فقهاء كُتبت عنهم رسائل جامعية.
     all_jurists: جميع الفقهاء
     news: الأخبار
     blog: من المدونة

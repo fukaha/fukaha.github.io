@@ -189,7 +189,7 @@ def main():
         print(f"{path.relative_to(ROOT)}: {len(rows)} kayıt, {path.stat().st_size // 1024} KB")
 
     # home page: counts, newest theses, jurists most written about
-    latest = sorted(theses, key=lambda t: (t.get("year") or 0, t.get("yokNo") or 0), reverse=True)[:6]
+    latest = sorted(theses, key=lambda t: (t.get("year") or 0, t.get("yokNo") or 0), reverse=True)[:12]
     studied = sorted(jurists, key=lambda j: (-j.get("theses", 0), j.get("death") or 9999))[:4]
     stats = {
         "counts": {

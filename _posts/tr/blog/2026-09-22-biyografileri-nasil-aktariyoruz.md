@@ -1,7 +1,7 @@
 ---
 ref: yontem
 title: Biyografileri kaynaklardan nasıl aktarıyoruz?
-summary: Tabakât kitaplarından yapılan her aktarımda metin, atıf ve sayfa numarası nasıl korunuyor; hangi bilgiye neden güveniyoruz.
+summary: Tabakât kitaplarından aktarım yaparken metni, atıfı ve sayfa numarasını nasıl koruduğumuzu anlatıyoruz.
 image: mabsut
 ---
 
@@ -9,14 +9,14 @@ Fukahâ’daki her biyografi, klasik tabakât ve terâcim kitaplarındaki bir te
 
 ## 1. Metin kaynaktan gelir
 
-Bir fakih hakkında verilen doğum ve vefat tarihleri, hocalar, talebeler ve eserler yalnızca kaynak kitaptaki metinden alınır. Kaynakta olmayan bir bilgi hafızadan tamamlanmaz. Farklı kaynaklar çeliştiğinde bu çelişki gizlenmez; her rivayet kendi kaynağıyla birlikte gösterilir.
+Bir fakih hakkında verilen doğum ve vefat tarihleri, hocalar, talebeler ve eserler yalnızca kaynak kitaptaki metinden alınır. Kaynakta olmayan bir bilgi hafızadan tamamlanmaz. Farklı kaynaklar çeliştiğinde bu çelişkiyi gizlemiyor, her rivayeti kendi kaynağıyla birlikte veriyoruz.
 
 ## 2. Metin ile hâşiye ayrılır
 
-Tahkikli neşirlerde sayfanın altındaki notlar musannife değil, muhakkike aittir. Bu yüzden hâşiyeden alınan bilgi musannifin sözü gibi sunulmaz; muhakkikin notu olarak ayrıca belirtilir.
+Tahkikli neşirlerde sayfanın altındaki notlar musannife değil, muhakkike aittir. Bu yüzden hâşiyeden aldığımız bilgiyi musannifin sözü gibi sunmuyor, muhakkikin notu olarak ayrıca belirtiyoruz.
 
 ## 3. Her bilgi cilt ve sayfayla verilir
 
-Atıflarda kitabın adı, müellifi, cildi ve sayfası yer alır. Dijital nüshalarda sayfa numarası bazen matbu nüshaya değil, dijital kütüphanenin otomatik numaralandırmasına aittir. Böyle durumlarda atıfta bu ayrıca belirtilir; okuyucu matbu nüshada ararken yanılmasın diye.
+Atıflarda kitabın adı, müellifi, cildi ve sayfası yer alır. Dijital nüshalarda sayfa numarası bazen matbu nüshaya değil, dijital kütüphanenin otomatik numaralandırmasına aittir. Okuyucu matbu nüshada ararken yanılmasın diye böyle durumları atıfta ayrıca belirtiyoruz.
 
-Bu kurallar işi yavaşlatıyor, ama her kaydı doğrulanabilir kılıyor.
+Bu kurallar işi yavaşlatıyor ama her kaydın kaynağına dönüp bakmayı mümkün kılıyor.

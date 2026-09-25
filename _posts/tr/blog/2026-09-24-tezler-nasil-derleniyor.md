@@ -9,7 +9,7 @@ image: bouinania
 
 ## Hangi tezler giriyor?
 
-Fıkıh, İslam hukuku, fıkıh usûlü, fıkıh tarihi, mukayeseli hukuk ve İslam iktisadı alanlarındaki yüksek lisans ve doktora tezleri. Tezler önce ana bilim dalı ve bilim dalına, sonra başlık, anahtar kelime ve özetlerindeki terimlere göre ayıklanıyor. Emin olunamayan tezler elle inceleniyor.
+Koleksiyona fıkıh, İslam hukuku, fıkıh usûlü, fıkıh tarihi, mukayeseli hukuk ve İslam iktisadı alanlarındaki yüksek lisans ve doktora tezleri giriyor. Tezler önce ana bilim dalı ve bilim dalına, sonra başlık, anahtar kelime ve özetlerindeki terimlere göre ayıklanıyor. Emin olunamayan tezler elle inceleniyor.
 
 ## Tabloda neler var?
 
@@ -17,4 +17,4 @@ Her satırda tezin başlığı, yazarı, danışmanı, türü, üniversitesi, y�
 
 ## Nasıl aranır?
 
-Arama kutusu bütün sütunlarda birlikte arar ve şapkalı harflere, büyük-küçük harfe ya da Arapça harekelere takılmaz. Birden fazla kelime yazarsanız hepsini içeren tezler listelenir: örneğin “serahsi doktora” yazmak, Serahsî hakkındaki doktora tezlerini getirir.
+Arama kutusu bütün sütunlarda birlikte arar ve şapkalı harflere, büyük-küçük harfe ya da Arapça harekelere takılmaz. Birden fazla kelime yazarsanız hepsini içeren tezler listelenir. Örneğin “serahsi doktora” yazınca Serahsî hakkındaki doktora tezleri gelir.

@@ -4,11 +4,14 @@
 <div class="topbar">
   <div class="wrap topbar-in">
     <p class="topbar-tag">{{ t.tagline }}</p>
+    <div class="topbar-tools">
+    <button class="theme-btn" type="button" hidden data-dark="{{ t.theme.to_dark }}" data-light="{{ t.theme.to_light }}"><span class="theme-icon" aria-hidden="true"></span><span class="theme-label">{{ t.theme.to_dark }}</span></button>
     <nav class="langs" aria-label="{{ t.languages }}">
       {%- for l in site.data.i18n %}{% assign code = l[0] %}
       <a href="{% include alt-url.html l=code %}" lang="{{ code }}" hreflang="{{ code }}"{% if code == lang %} aria-current="true"{% endif %}>{{ l[1].lang_name }}</a>
       {%- endfor %}
     </nav>
+    </div>
   </div>
 </div>
 <header class="site-header">
