@@ -24,6 +24,7 @@
   {%- assign _ogid = page.image | default: _navi.image | default: "muwatta" -%}
   {%- assign og = site.data.images[_ogid] | default: site.data.images.muwatta %}
   <meta property="og:image" content="{{ site.url }}{{ og.src }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ t.name }}" href="{% if lang == "tr" %}/feed.xml{% else %}/{{ lang }}/feed.xml{% endif %}">
   <meta name="theme-color" content="#14332f">
   <script>
     // Apply the saved or system colour scheme before the page paints.

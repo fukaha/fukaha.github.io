@@ -1,0 +1,25 @@
+{%- assign lang = include.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign posts = site.posts | where: "lang", lang -%}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}">
+  <title>{{ t.name | xml_escape }} · {{ t.tagline | xml_escape }}</title>
+  <subtitle>{{ t.description | xml_escape }}</subtitle>
+  <link href="{{ site.url }}{{ page.url }}" rel="self"/>
+  <link href="{{ site.url }}{{ site.data.nav[0].url[lang] }}"/>
+  <id>{{ site.url }}{{ page.url }}</id>
+  <updated>{{ posts.first.date | default: site.time | date_to_xmlschema }}</updated>
+  <icon>{{ site.url }}/assets/img/favicon.svg</icon>
+  {%- for post in posts limit: 20 %}
+  <entry>
+    <title>{{ post.title | xml_escape }}</title>
+    <link href="{{ site.url }}{{ post.url }}"/>
+    <id>{{ site.url }}{{ post.url }}</id>
+    <published>{{ post.date | date_to_xmlschema }}</published>
+    <updated>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</updated>
+    <author><name>{{ t.name | xml_escape }}</name></author>
+    {%- if post.summary %}<summary>{{ post.summary | xml_escape }}</summary>{% endif %}
+    <content type="html">{{ post.content | xml_escape }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

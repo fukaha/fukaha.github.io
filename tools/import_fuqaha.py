@@ -10,8 +10,11 @@ Writes:
   data/fukaha.json          jurists
   data/klasik-eserler.json  works named in the biographies
   data/tezler.json          MA and PhD theses
-  _data/stats.yml           counts and the short lists shown on the home page
+  _data/jurists.json        everything a jurist's own page shows, keyed by id
+  _fakihler/<lang>/*.md     one stub per jurist and language; the layout reads _data/jurists.json
+  _data/stats.yml           counts, charts and the short lists shown on the home page
 """
+import collections
 import json
 import math
 import re
@@ -67,6 +70,19 @@ def front_matter(path):
     return yaml.safe_load(clean(path.read_text(encoding="utf-8")).split("---")[1])
 
 
+def body(path):
+    """The source text under the front matter, as paragraphs."""
+    text = clean(path.read_text(encoding="utf-8")).split("---", 2)[2]
+    return [p.replace("**", "").strip() for p in re.split(r"\n\s*\n", text) if p.strip()]
+
+
+def century(h):
+    return (h - 1) // 100 + 1 if h else None
+
+
+LANGS = ("tr", "en", "ar")
+
+
 def load_yaml(path):
     return yaml.safe_load(clean(path.read_text(encoding="utf-8")))
 
@@ -93,6 +109,12 @@ def cite(source):
     }
 
 
+class NoAliases(yaml.SafeDumper):
+    """Writes repeated objects out in full; Jekyll's YAML reader refuses anchors."""
+    def ignore_aliases(self, data):
+        return True
+
+
 def compact(d):
     """Drops empty values so the JSON stays small."""
     return {k: v for k, v in d.items() if v not in (None, "", [], {})}
@@ -105,13 +127,20 @@ def main():
     places = load_yaml(src / "src/data/places.yaml")
     work_scholars = json.loads((src / "src/data/work-scholars.json").read_text(encoding="utf-8"))
 
+    names_ar = {}
+    for path in sorted((src / "src/content/scholars").glob("*.md")):
+        names_ar.setdefault(front_matter(path)["name"]["ar"], path.stem)
+
+    def place(pid):
+        return places.get(pid, {}).get("name") if pid else None
+
     theses_about = {}
     for work, ids in work_scholars.items():
         for sid in ids:
             theses_about.setdefault(sid, []).append(work)
 
     # jurists and the works named in their biographies
-    jurists, classics = [], []
+    jurists, classics, pages = [], [], {}
     for path in sorted((src / "src/content/scholars").glob("*.md")):
         d = front_matter(path)
         sid = path.stem
@@ -134,11 +163,31 @@ def main():
             "place": death_place,
             "works": len(d.get("works") or []),
             "theses": len(theses_about.get(sid, [])),
+            "century": century(dh),
             "summary": compact(d.get("summary") or {}),
             "source": cite(source),
             "order": d.get("order"),
             "featured": bool(d.get("featured")) or None,
         }))
+        person = lambda n: compact({"ar": n, "id": names_ar.get(n) if names_ar.get(n) != sid else None})
+        pages[sid] = compact({
+            "name": name,
+            "madhhab": madhhab,
+            "birth": compact({"h": birth.get("hijri"), "m": miladi(birth["hijri"]) if birth.get("hijri") else None,
+                              "place": place(birth.get("place"))}),
+            "death": compact({"h": dh, "m": miladi(dh) if dh else None, "place": death_place,
+                              "month": death.get("month"), "day": death.get("day"),
+                              "alt": death.get("alt"), "approx": bool(death.get("approx")) or None}),
+            "century": century(dh),
+            "places": [compact({"place": place(x.get("place")), "role": x.get("role")}) for x in d.get("places") or [] if place(x.get("place"))],
+            "teachers": [person(n) for n in d.get("teachers") or []],
+            "students": [person(n) for n in d.get("students") or []],
+            "works": [compact({k: w.get(k) for k in LANGS}) for w in d.get("works") or []],
+            "summary": compact(d.get("summary") or {}),
+            "source": compact({k: source.get(k) for k in ("book", "bookTr", "author", "authorTr", "edition", "page", "entry")}),
+            "text": body(path),
+            "order": d.get("order"),
+        })
         for w in d.get("works") or []:
             classics.append(compact({
                 "title": w.get("ar"),
@@ -149,13 +198,14 @@ def main():
                 "death": dh,
                 "deathM": miladi(dh) if dh else None,
                 "madhhab": madhhab,
+                "century": century(dh),
                 "source": cite(source),
             }))
 
     names = {j["id"]: j["name"] for j in jurists}
 
     # theses
-    theses = []
+    theses, by_stem = [], {}
     for path in sorted((src / "src/content/works").glob("*.y*ml")):
         d = load_yaml(path)
         if not d["type"].startswith("tez-"):
@@ -178,9 +228,40 @@ def main():
             # only the query values are kept; the page adds the YÖK addresses back
             "yok": short(d.get("url"), YOK_DETAIL),
             "pdf": short(d.get("fullText"), YOK_PDF),
-            "jurists": [names[s] for s in work_scholars.get(path.stem, []) if s in names],
+            "jurists": [dict(names[s], id=s) for s in work_scholars.get(path.stem, []) if s in names],
         }))
+        by_stem[path.stem] = theses[-1]
     theses.sort(key=lambda t: (-(t.get("year") or 0), t["author"]))
+
+    for sid, page in pages.items():
+        about = [by_stem[w] for w in theses_about.get(sid, []) if w in by_stem]
+        about.sort(key=lambda t: (-(t.get("year") or 0), t["author"]))
+        page["theses"] = [{k: t.get(k) for k in ("title", "author", "type", "university", "year", "lang", "yok")} for t in about]
+
+    # neighbours in time: jurists with a known death year, in order
+    dated = sorted((j for j in jurists if j.get("death")), key=lambda j: (j["death"], j.get("order") or 0))
+    for i, j in enumerate(dated):
+        page = pages[j["id"]]
+        if i: page["prev"] = dated[i - 1]["id"]
+        if i < len(dated) - 1: page["next"] = dated[i + 1]["id"]
+        near = sorted(dated[max(0, i - 6):i] + dated[i + 1:i + 7], key=lambda o: abs(o["death"] - j["death"]))[:6]
+        page["peers"] = sorted((o["id"] for o in near), key=lambda x: pages[x]["death"]["h"])
+    brief = {j["id"]: {k: j.get(k) for k in ("name", "death", "deathM", "madhhab")} for j in jurists}
+    (ROOT / "_data/jurists.json").write_text(
+        json.dumps({"pages": pages, "brief": brief}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+    stubs = ROOT / "_fakihler"
+    for lang in LANGS:
+        folder = stubs / lang
+        folder.mkdir(parents=True, exist_ok=True)
+        for old in folder.glob("*.md"):
+            old.unlink()
+        for j in jurists:
+            title = j["name"].get(lang) or j["name"]["tr"]
+            summary = (j.get("summary") or {}).get(lang) or (j.get("summary") or {}).get("tr") or ""
+            (folder / f"{j['id']}.md").write_text(
+                "---\n" + yaml.safe_dump({"title": title, "summary": summary}, allow_unicode=True, width=1000) + "---\n",
+                encoding="utf-8")
 
     OUT.mkdir(exist_ok=True)
     for name, rows in (("fukaha", jurists), ("klasik-eserler", classics), ("tezler", theses)):
@@ -207,10 +288,32 @@ def main():
             {k: j.get(k) for k in ("id", "name", "madhhab", "death", "deathM", "summary", "theses", "works")}
             for j in studied
         ],
+        # "jurist of the day": the 60 dated, summarised jurists with the most works and theses
+        "daily": [
+            {k: j.get(k) for k in ("id", "name", "madhhab", "death", "deathM", "place", "summary", "theses", "works")}
+            for j in sorted(sorted((j for j in jurists if j.get("death") and j.get("summary") and (j["works"] or j["theses"])),
+                                   key=lambda j: -(j["works"] + 3 * j["theses"]))[:60],
+                            key=lambda j: j.get("order") or 0)
+        ],
+        "centuries": [{"c": c, "n": n} for c, n in sorted(collections.Counter(j["century"] for j in jurists if j.get("century")).items())],
+        "undated": sum(1 for j in jurists if not j.get("century")),
+        "places": [{"place": p, "n": n} for p, n in collections.Counter(
+            json.dumps(j["place"], ensure_ascii=False, sort_keys=True) for j in jurists if j.get("place")).most_common(10)],
+        "years": [{"y": y, "n": n} for y, n in sorted(collections.Counter(t["year"] for t in theses if t.get("year") and t["year"] >= 1990).items())],
+        "years_before": sum(1 for t in theses if t.get("year") and t["year"] < 1990),
+        "first_year": min(t["year"] for t in theses if t.get("year")),
+        "universities": [{"name": u, "n": n} for u, n in collections.Counter(
+            t["university"].split(",")[0] for t in theses if t.get("university")).most_common(8)],
+        "topics": [{"name": x, "n": n} for x, n in collections.Counter(
+            x.strip() for t in theses for x in (t.get("topics") or "").split(",") if x.strip()).most_common(10)],
+        "thesis_langs": dict(collections.Counter(t.get("lang") for t in theses).most_common(3)),
+        "doktora": sum(1 for t in theses if t["type"] == "doktora"),
     }
+    for p in stats["places"]:
+        p["place"] = json.loads(p["place"])
     path = ROOT / "_data/stats.yml"
     header = "# Written by tools/import_fuqaha.py.\n"
-    path.write_text(header + yaml.safe_dump(stats, allow_unicode=True, sort_keys=False, width=1000), encoding="utf-8")
+    path.write_text(header + yaml.dump(stats, Dumper=NoAliases, allow_unicode=True, sort_keys=False, width=1000), encoding="utf-8")
     print(f"{path.relative_to(ROOT)} yazıldı")
 
 

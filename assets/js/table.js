@@ -70,6 +70,20 @@
 
   function isArabic(s) { return /[؀-ۿ]/.test(s); }
 
+  // Address of a jurist's own page, when the column links to one.
+  function juristUrl(id) { return id && cfg.juristBase ? cfg.juristBase + encodeURIComponent(id) + '/' : null; }
+  function linked(html, url) { return url ? '<a class="cell-link" href="' + esc(url) + '">' + html + '</a>' : html; }
+
+  // "4. asır", "4th century", "القرن 4"
+  function centuryLabel(n) {
+    var s = String(n);
+    if (lang === 'en') {
+      var r = n % 10, h = n % 100;
+      s += (h > 10 && h < 14) ? 'th' : r === 1 ? 'st' : r === 2 ? 'nd' : r === 3 ? 'rd' : 'th';
+    }
+    return T.century.replace('{n}', s);
+  }
+
   function wrapLang(text) {
     // Arabic inside a Latin page (and the reverse) keeps its own direction and font.
     if (!text) return '';
@@ -85,7 +99,8 @@
     switch (col.kind) {
       case 'loc': {
         var s = loc(v);
-        return s ? { text: s, html: wrapLang(s), sort: s } : empty;
+        var url = col.link === 'jurist' ? juristUrl(get(row, col.id)) : null;
+        return s ? { text: s, html: linked(wrapLang(s), url), sort: s } : empty;
       }
       case 'ar':
         return v ? { text: v, html: '<span lang="ar" dir="rtl" class="ar">' + esc(v) + '</span>', sort: v } : empty;
@@ -121,8 +136,10 @@
       case 'doi':
         return v ? { text: 'https://doi.org/' + v, html: '<a href="https://doi.org/' + esc(v) + '" target="_blank" rel="noopener" dir="ltr">' + esc(v) + '</a>', sort: v } : empty;
       case 'list': {
-        var items = (v || []).map(loc).filter(Boolean);
-        return items.length ? { text: items.join('; '), html: items.map(wrapLang).join('<br>'), sort: items[0] } : empty;
+        var list = (v || []).filter(function (x) { return loc(x); });
+        var items = list.map(loc);
+        var html = list.map(function (x) { return linked(wrapLang(loc(x)), col.link === 'jurist' ? juristUrl(x[col.id]) : null); });
+        return items.length ? { text: items.join('; '), html: html.join('<br>'), sort: items[0] } : empty;
       }
       default:
         return v == null || v === '' ? empty : { text: String(v), html: wrapLang(String(v)), sort: String(v) };
@@ -306,9 +323,10 @@
         if (col.kind === 'madhhab') return cfg.madhhab[k] || k;
         if (col.kind === 'thesis') return cfg.thesis[k] || k;
         if (col.kind === 'lang') return cfg.langs[k] || k;
+        if (f === 'century') return centuryLabel(Number(k));
         return k;
       };
-      keys.sort(function (a, b) { return counts[b] - counts[a]; });
+      keys.sort(f === 'century' ? function (a, b) { return a - b; } : function (a, b) { return counts[b] - counts[a]; });
       var wrap = document.createElement('label');
       wrap.className = 'field';
       var html = '<span class="field-label">' + esc((cfg.filterLabels || {})[f] || f) + '</span><select data-filter="' + esc(f) + '">' +

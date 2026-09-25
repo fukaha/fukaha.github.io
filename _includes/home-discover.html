@@ -1,0 +1,61 @@
+{%- comment -%}Home page: the jurist of the day next to the jurists across the centuries.{%- endcomment -%}
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign te = t.explore -%}
+{%- assign ph = "{n}" -%}
+{%- assign stats = site.data.stats -%}
+{%- assign fk = site.data.nav | where: "key", "fukaha" | first -%}
+{%- assign base = fk.url[lang] -%}
+{%- assign daily = stats.daily -%}
+{%- assign day = site.time | date: "%s" | divided_by: 86400 -%}
+{%- assign pick = day | modulo: daily.size -%}
+{%- assign d = daily[pick] -%}
+{%- assign dname = d.name[lang] | default: d.name.tr -%}
+{%- if lang == "ar" %}{% assign dsum = "" %}{% else %}{% assign dsum = d.summary[lang] | default: d.summary.tr %}{% endif -%}
+{%- assign cmax = 0 -%}{%- for c in stats.centuries %}{% if c.n > cmax %}{% assign cmax = c.n %}{% endif %}{% endfor -%}
+{%- assign dated = 0 -%}{%- for c in stats.centuries %}{% assign dated = dated | plus: c.n %}{% endfor -%}
+
+<section class="discover wrap" aria-label="{{ te.daily }} · {{ te.centuries }}">
+  <article class="daily" data-daily aria-labelledby="h-daily">
+    <header class="daily-head">
+      <h2 id="h-daily">{{ te.daily }}</h2>
+      <p>{{ te.daily_lead }}</p>
+    </header>
+    <div class="daily-body" aria-live="polite">
+      {%- unless lang == "ar" %}<p class="daily-ar" lang="ar" dir="rtl" data-f="ar">{{ d.name.ar }}</p>{% endunless %}
+      <h3><a href="{{ base }}{{ d.id }}/" data-f="link">{{ dname }}</a></h3>
+      <p class="daily-meta"><span class="tag m-{{ d.madhhab }}" data-f="madhhab">{{ t.madhhab[d.madhhab] }}</span> <span data-f="dates">{{ t.died }} <bdi dir="ltr">{{ d.death }}/{{ d.deathM }}</bdi>{% if d.place %} · {{ d.place[lang] }}{% endif %}</span></p>
+      <p class="daily-sum" data-f="summary"{% if dsum == "" %} hidden{% endif %}>{{ dsum }}</p>
+      <p class="daily-counts" data-f="counts">{% if d.works > 0 %}<span><strong>{{ d.works }}</strong> {{ te.works_n }}</span>{% endif %}{% if d.theses > 0 %}<span><strong>{{ d.theses }}</strong> {{ te.theses_n }}</span>{% endif %}</p>
+    </div>
+    <p class="daily-actions">
+      <a class="btn" href="{{ base }}{{ d.id }}/" data-f="page">{{ te.open_page }}</a>
+      <button type="button" class="btn btn-quiet" data-another hidden>{{ te.another }}</button>
+    </p>
+    <script type="application/json" data-daily-list>{"lang":{{ lang | jsonify }},"base":{{ base | jsonify }},"died":{{ t.died | jsonify }},"works":{{ te.works_n | jsonify }},"theses":{{ te.theses_n | jsonify }},"madhhab":{{ t.madhhab | jsonify }},"items":{{ daily | jsonify }}}</script>
+  </article>
+
+  <div class="centuries" aria-labelledby="h-centuries">
+    <h2 id="h-centuries">{{ te.centuries }}</h2>
+    <p class="chart-lead">{{ te.centuries_lead | replace: ph, dated }}</p>
+    <ol class="cols" style="--max: {{ cmax }}">
+      {%- for c in stats.centuries %}
+      {%- capture label %}{% include century.html n=c.c tpl=te.century %}{% endcapture %}
+      <li style="--v: {{ c.n }}">
+        <a href="{{ base }}?century={{ c.c }}" aria-label="{{ label }}: {{ c.n }}" data-tip="{{ label }} · {{ c.n }}">
+          <span class="col-val">{{ c.n }}</span>
+          <span class="col-bar"></span>
+          <span class="col-lab">{{ label }}</span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ol>
+    <p class="chart-note">{{ te.undated | replace: ph, stats.undated }}</p>
+    <h3>{{ te.cities }}</h3>
+    <ul class="chips">
+      {%- for p in stats.places %}
+      <li><a href="{{ base }}?q={{ p.place[lang] | url_encode }}">{{ p.place[lang] }} <span>{{ p.n }}</span></a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

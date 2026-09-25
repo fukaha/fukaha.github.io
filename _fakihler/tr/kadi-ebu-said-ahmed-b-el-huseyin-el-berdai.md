@@ -1,0 +1,4 @@
+---
+summary: Azerbaycan'daki Berdea'dan; Bağdat'ta ders okuttu, Davud ez-Zahiri ile münazarası meşhurdur. Kerhî'nin hocasıdır; 317'de hacılarla birlikte Karmatiler tarafından öldürüldü.
+title: Kadı Ebu Said Ahmed b. el-Hüseyin el-Berdai
+---

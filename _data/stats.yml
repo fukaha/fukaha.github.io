@@ -155,3 +155,1131 @@ jurists:
     en: Born in Mosul, he studied with al-Hasiri in Damascus, was judge of Kufa and then taught at Abu Hanifa's shrine in Baghdad; author of al-Mukhtar, one of the four standard texts, and its commentary al-Ikhtiyar.
   theses: 15
   works: 2
+daily:
+- id: sehabeddin-ahmed-b-ibrahim-el-ayintabi
+  name:
+    tr: Şehabeddin Ahmed b. İbrahim el-Ayintabi
+    en: Shihab al-Din Ahmad b. Ibrahim al-'Ayntabi
+    ar: أحمد بن إبراهيم العينتابي
+  madhhab: hanefi
+  death: 767
+  deathM: 1365-66
+  place: null
+  summary:
+    tr: Dımaşk ordu kadılığı yaptı, fetva verip ders okuttu. Mecmau'l-bahreyn şerhi el-Menba' ve Muğnî şerhi onundur.
+    en: Military judge of Damascus who taught and gave fatwas; author of al-Manba', a commentary on Majma' al-bahrayn, and a commentary on al-Mughni.
+  theses: 2
+  works: 2
+- id: ebul-abbas-ahmed-b-ibrahim-es-seruci
+  name:
+    tr: Ebu'l-Abbas Ahmed b. İbrahim es-Serûcî
+    en: Abu al-'Abbas Ahmad b. Ibrahim al-Saruji
+    ar: أحمد بن إبراهيم السروجي
+  madhhab: hanefi
+  death: 710
+  deathM: 1310-11
+  place:
+    tr: Kahire
+    en: Cairo
+    ar: القاهرة
+  summary:
+    tr: Mısır kadılkudatı; fıkıh ve usulde önder, akli ve nakli ilimlerde şeyh. Hidâye'ye yazdığı ve eyman bahsine kadar ulaştırdığı el-Ğâye şerhiyle tanınır.
+    en: Chief judge of Egypt, a master of fiqh and usul, known for al-Ghaya, his unfinished commentary on al-Hidaya.
+  theses: 2
+  works: 4
+- id: kemalpasazade-ahmed-b-suleyman
+  name:
+    tr: Kemalpaşazade Ahmed b. Süleyman
+    en: Kemalpashazade Ahmad b. Sulayman
+    ar: ابن كمال باشا أحمد بن سليمان
+  madhhab: hanefi
+  death: 940
+  deathM: 1533-34
+  place:
+    tr: İstanbul
+    en: Istanbul
+    ar: القسطنطينية
+  summary:
+    tr: Edirne'de müderris ve kadı, Yavuz Sultan Selim döneminde kazasker oldu; 932'den ölümüne kadar İstanbul'da şeyhülislamlık yaptı. Sayısı üç yüzü aşan eser ve risaleleriyle tanınır.
+    en: Teacher and judge at Edirne, military judge under Selim I, and mufti of Constantinople from 932 until his death; known for some three hundred works and treatises.
+  theses: 0
+  works: 6
+- id: ebu-bekir-ahmed-b-ali-er-razi-el-cessas
+  name:
+    tr: Ebu Bekir Ahmed b. Ali er-Razi el-Cessas
+    en: Abu Bakr Ahmad b. 'Ali al-Razi al-Jassas
+    ar: أبو بكر الرازي الجصاص
+  madhhab: hanefi
+  death: 370
+  deathM: 980-81
+  place: null
+  summary:
+    tr: Asrının Hanefî imamı; Kerhî'nin yolunda zühd ve vera sahibiydi, Bağdat'ta tedris ona intikal etti. Kendisine iki kez teklif edilen kadılığı reddetti; Ahkâmü'l-Kur'ân en meşhur eseridir.
+    en: The leading Hanafi of his age who followed al-Karkhi's asceticism and took over teaching in Baghdad; he twice refused a judgeship. Ahkam al-Qur'an is his best-known work.
+  theses: 53
+  works: 7
+- id: ahmed-b-omer-el-hassaf
+  name:
+    tr: Ahmed b. Ömer el-Hassaf
+    en: Ahmad b. 'Umar al-Khassaf
+    ar: الخصاف أحمد بن عمر
+  madhhab: hanefi
+  death: 261
+  deathM: 874-75
+  place: null
+  summary:
+    tr: Feraiz ve hesapta mahir, geçimini el emeğiyle sağlayan zahid fakih. Halife Mühtedi için Kitâbü'l-Harâc'ı yazdı; Edebü'l-kâdî ve Ahkâmü'l-vakf başlıca eserlerindendir.
+    en: An ascetic jurist expert in inheritance and arithmetic who lived by his own craft; he wrote Kitab al-Kharaj for the caliph al-Muhtadi, as well as Adab al-qadi and Ahkam al-waqf.
+  theses: 1
+  works: 9
+- id: ebu-cafer-ahmed-b-muhammed-et-tahavi
+  name:
+    tr: Ebu Cafer Ahmed b. Muhammed et-Tahavi
+    en: Abu Ja'far Ahmad b. Muhammad al-Tahawi
+    ar: أبو جعفر الطحاوي
+  madhhab: hanefi
+  death: 321
+  deathM: '933'
+  place:
+    tr: Fustat
+    en: Fustat
+    ar: الفسطاط
+  summary:
+    tr: Önce dayısı Müzeni'den Şafiî fıkhı okudu, sonra Hanefî mezhebine geçti; Şam'da Kadı Ebu Hazim'den ders aldı. Mısır'da Hanefî riyasetine ulaştı; Şerhu Meâni'l-âsâr ve Müşkilü'l-âsâr en tanınan eserleridir.
+    en: He first studied Shafi'i law with his uncle al-Muzani, then turned Hanafi and studied with Abu Khazim in Syria. He became head of the Hanafis of Egypt; Sharh ma'ani al-athar and Mushkil al-athar are his best-known works.
+  theses: 27
+  works: 8
+- id: ebul-abbas-ahmed-b-muhammed-en-natifi
+  name:
+    tr: Ebu'l-Abbas Ahmed b. Muhammed en-Natıfi
+    en: Abu al-'Abbas Ahmad b. Muhammad al-Natifi
+    ar: أبو العباس الناطفي
+  madhhab: hanefi
+  death: 446
+  deathM: 1054-55
+  place:
+    tr: Rey
+    en: Rayy
+    ar: الري
+  summary:
+    tr: Irak Hanefîlerinin büyüklerinden ve vâkıât-nevâzil sahiplerinden; Ebu Abdullah el-Cürcani'nin talebesidir. Rey'de vefat etti.
+    en: A leading Iraqi Hanafi and author of works on new cases (waqi'at); a student of Abu 'Abd Allah al-Jurjani, he died at Rayy.
+  theses: 1
+  works: 4
+- id: zahiduddin-ebu-nasr-ahmed-b-muhammed-el-attabi
+  name:
+    tr: Zahidüddin Ebu Nasr Ahmed b. Muhammed el-Attabi
+    en: Zahid al-Din Abu Nasr Ahmad b. Muhammad al-'Attabi
+    ar: أبو نصر العتابي
+  madhhab: hanefi
+  death: 586
+  deathM: 1190-91
+  place: null
+  summary:
+    tr: Buhara'nın Attabiyye mahallesinden zahid âlim; Ziyâdât şerhi, derinliği ve özgünlüğüyle övülür.
+    en: An ascetic scholar from the 'Attabiyya quarter of Bukhara, praised for the depth of his commentary on al-Ziyadat.
+  theses: 2
+  works: 5
+- id: ahmed-b-muhammed-b-mahmud-el-gaznevi
+  name:
+    tr: Ahmed b. Muhammed b. Mahmud el-Gaznevi
+    en: Ahmad b. Muhammad b. Mahmud al-Ghaznawi
+    ar: أحمد بن محمد الغزنوي
+  madhhab: hanefi
+  death: 593
+  deathM: 1196-97
+  place:
+    tr: Halep
+    en: Aleppo
+    ar: حلب
+  summary:
+    tr: Meşhur el-Mukaddimetü'l-Gazneviyye'nin müellifi; Bedâi' sahibi Kâsânî'den ilim aldı ve mezhepte riyasete ulaştı. Halep'te vefat etti.
+    en: Author of the well-known al-Muqaddima al-Ghaznawiyya; he studied with al-Kasani, author of al-Bada'i', and died in Aleppo.
+  theses: 0
+  works: 4
+- id: nureddin-ahmed-b-mahmud-es-sabuni
+  name:
+    tr: Nureddin Ahmed b. Mahmud es-Sabuni
+    en: Nur al-Din Ahmad b. Mahmud al-Sabuni
+    ar: نور الدين الصابوني
+  madhhab: hanefi
+  death: 580
+  deathM: 1184-85
+  place:
+    tr: Buhara
+    en: Bukhara
+    ar: بخارى
+  summary:
+    tr: Kelamda el-Bidâye müellifi; Reşidüddin ile ma'dumun görülemeyeceği meselesindeki uzun münazarası meşhurdur. Buhara'da Kadılar Kabristanı'na defnedildi.
+    en: Author of al-Bidaya on theology, known for a long debate with Rashid al-Din on whether the non-existent can be seen; buried in the Judges' Cemetery at Bukhara.
+  theses: 7
+  works: 3
+- id: kivameddin-emir-katib-el-itkani
+  name:
+    tr: Kıvameddin Emir Katib el-İtkani
+    en: Qiwam al-Din Amir Katib al-Itqani
+    ar: أمير كاتب الإتقاني
+  madhhab: hanefi
+  death: 758
+  deathM: 1356-57
+  place:
+    tr: Kahire
+    en: Cairo
+    ar: القاهرة
+  summary:
+    tr: Farab'a bağlı İtkan'da doğdu; Bağdat'ta Ebu Hanife meşhedinde, sonra Dımaşk'ta ders verdi. Kahire'de Sarğatmış Medresesi'nin şeyhi oldu; mezhep taassubuyla bilinir.
+    en: Born at Itqan in Farab, he taught at the shrine of Abu Hanifa in Baghdad and in Damascus, and became head of the Sarghitmish madrasa in Cairo; known for his partisanship.
+  theses: 1
+  works: 2
+- id: husameddin-el-huseyin-b-ali-es-signaki
+  name:
+    tr: Hüsameddin el-Hüseyin b. Ali es-Siğnâkî
+    en: Husam al-Din al-Husayn b. 'Ali al-Sighnaqi
+    ar: حسام الدين السغناقي
+  madhhab: hanefi
+  death: 714
+  deathM: 1314-15
+  place:
+    tr: Halep
+    en: Aleppo
+    ar: حلب
+  summary:
+    tr: Türkistan'daki Siğnak'tan; genç yaşta fetva yetkisi verildi. Hidâye'nin ilk ve en geniş şerhlerinden en-Nihâye'yi 700'de tamamladı; Bağdat'ta Ebu Hanife meşhedinde ders okuttu.
+    en: From Sighnaq in Turkestan, authorised to give fatwas while young; he completed al-Nihaya, among the first and fullest commentaries on al-Hidaya, in 700 and taught at Abu Hanifa's shrine in Baghdad.
+  theses: 4
+  works: 4
+- id: radiyyuddin-el-hasan-b-muhammed-es-sagani
+  name:
+    tr: Radiyyüddin el-Hasan b. Muhammed es-Sağani
+    en: Radi al-Din al-Hasan b. Muhammad al-Saghani
+    ar: الصغاني الحسن بن محمد
+  madhhab: hanefi
+  death: 650
+  deathM: 1252-53
+  place:
+    tr: Bağdat
+    en: Baghdad
+    ar: بغداد
+  summary:
+    tr: Lahor'da doğdu, Gazne'de yetişti; asrında lügatin bayraktarıydı. Bağdat ile Hindistan arasında gidip geldi, Bağdat'ta vefat etti ve vasiyeti üzerine Mekke'ye defnedildi.
+    en: Born in Lahore and raised in Ghazna, the leading lexicographer of his age; he travelled between Baghdad and India, died in Baghdad and was buried in Mecca at his request.
+  theses: 1
+  works: 6
+- id: fahreddin-kadihan-el-hasan-b-mansur-el-ozcendi
+  name:
+    tr: Fahreddin Kadıhan el-Hasan b. Mansur el-Özcendi
+    en: Fakhr al-Din Qadikhan al-Hasan b. Mansur al-Uzjandi
+    ar: قاضيخان الحسن بن منصور الأوزجندي
+  madhhab: hanefi
+  death: 592
+  deathM: 1195-96
+  place: null
+  summary:
+    tr: Derin bir müctehid; İbn Kemal onu mesail müctehidleri tabakasında sayar. Dört ciltlik Fetâvâ'sı fakihler nezdinde muteberdir; Kasım b. Kutluboğa 'Kadıhan'ın tashihi başkasınınkinden önce gelir' der.
+    en: A profound jurist counted by Ibn Kamal among those capable of ijtihad on particular questions; his four-volume Fatawa is authoritative, and Qasim b. Qutlubugha gave his rulings precedence.
+  theses: 0
+  works: 7
+- id: kadi-ebu-abdullah-el-huseyin-b-ali-es-saymeri
+  name:
+    tr: Kadı Ebu Abdullah el-Hüseyin b. Ali es-Saymeri
+    en: Qadi Abu 'Abd Allah al-Husayn b. 'Ali al-Saymari
+    ar: أبو عبد الله الصيمري
+  madhhab: hanefi
+  death: 436
+  deathM: 1044-45
+  place:
+    tr: Bağdat
+    en: Baghdad
+    ar: بغداد
+  summary:
+    tr: Zamanında Hanefîlerin şeyhi; Medain kadılığı yaptı. Ebu Hanife ve talebelerinin haberlerini topladığı hacimli eseri bu tabakatın başlıca kaynaklarındandır.
+    en: Shaykh of the Hanafis in his time and judge of al-Mada'in; his large work on Abu Hanifa and his companions is a main source of this book.
+  theses: 2
+  works: 1
+- id: ebussuud-efendi-muhammed-b-muhammed-el-imadi
+  name:
+    tr: Ebussuud Efendi Muhammed b. Muhammed el-İmadi
+    en: Abu al-Su'ud Muhammad b. Muhammad al-'Imadi
+    ar: أبو السعود العمادي
+  madhhab: hanefi
+  death: 982
+  deathM: 1574-75
+  place:
+    tr: İstanbul
+    en: Istanbul
+    ar: القسطنطينية
+  summary:
+    tr: İskilip'te doğdu; Bursa ve İstanbul kadılığı, Rumeli kazaskerliği ve otuz yılı aşkın İstanbul müftülüğü yaptı. İrşâdü'l-akli's-selîm tefsiriyle 'Hatibü'l-müfessirin' diye anıldı.
+    en: Born at Iskilip, he was judge of Bursa and Constantinople, military judge of Rumelia and mufti of Constantinople for over thirty years; his commentary Irshad al-'aql al-salim earned him the title 'orator of the exegetes'.
+  theses: 4
+  works: 1
+- id: nureddin-abdurrahman-b-ahmed-el-cami
+  name:
+    tr: Nureddin Abdurrahman b. Ahmed el-Cami (Molla Cami)
+    en: Nur al-Din 'Abd al-Rahman b. Ahmad al-Jami
+    ar: عبد الرحمن الجامي
+  madhhab: hanefi
+  death: 898
+  deathM: 1492-93
+  place:
+    tr: Herat
+    en: Herat
+    ar: هراة
+  summary:
+    tr: Cam'da doğdu; Herat ve Semerkant'ta akli ve nakli ilimlerde temayüz ettikten sonra Nakşibendi yoluna girdi. Nefehâtü'l-üns ve el-Fevâidü'd-Ziyâiyye başta olmak üzere çok sayıda eser yazdı.
+    en: Born in Jam, he excelled in the rational and transmitted sciences at Herat and Samarqand before joining the Naqshbandi path; author of Nafahat al-uns and al-Fawa'id al-Diya'iyya among many works.
+  theses: 0
+  works: 6
+- id: mueyyedzade-abdurrahman-b-ali-el-amasi
+  name:
+    tr: Müeyyedzade Abdurrahman b. Ali el-Amasi
+    en: Mu'ayyadzade 'Abd al-Rahman b. 'Ali al-Amasi
+    ar: مؤيد زاده عبد الرحمن بن علي الأماسي
+  madhhab: hanefi
+  death: 922
+  deathM: 1516-17
+  place: null
+  summary:
+    tr: Amasya'da doğdu; Şehzade Bayezid'in yakını iken Fatih'in öfkesinden kaçıp Şiraz'da Devvani'den okudu. II. Bayezid tahta çıkınca döndü; müderrislik ve kadılık yaptı.
+    en: Born in Amasya, a companion of Prince Bayezid, he fled Mehmed II's anger and studied with al-Dawani in Shiraz; he returned under Bayezid II and held teaching and judicial posts.
+  theses: 2
+  works: 0
+- id: ruknulislam-ebul-fazl-abdurrahman-b-muhammed-el-kirmani
+  name:
+    tr: Rüknülislam Ebu'l-Fazl Abdurrahman b. Muhammed el-Kirmani
+    en: Rukn al-Islam Abu al-Fadl 'Abd al-Rahman b. Muhammad al-Kirmani
+    ar: عبد الرحمن بن محمد الكرماني
+  madhhab: hanefi
+  death: 543
+  deathM: 1148-49
+  place:
+    tr: Merv
+    en: Marw
+    ar: مرو
+  summary:
+    tr: Kirman'da doğdu, Merv'e gelip Ersâbendi'den okudu; Horasan'da mezhebin riyaseti ona ulaştı. et-Tecrîd ve şerhi el-Îzâh başlıca eserleridir.
+    en: Born in Kirman, he studied with al-Arsabandi in Marw and became head of the school in Khurasan; al-Tajrid and its commentary al-Idah are his main works.
+  theses: 0
+  works: 5
+- id: tacuddin-ebul-mefahir-abdulgafur-b-lokman-el-kerderi
+  name:
+    tr: Tacüddin Ebu'l-Mefahir Abdülgafur b. Lokman el-Kerderi
+    en: Taj al-Din Abu al-Mafakhir 'Abd al-Ghafur b. Luqman al-Kardari
+    ar: عبد الغفور بن لقمان الكردري
+  madhhab: hanefi
+  death: 562
+  deathM: 1166-67
+  place:
+    tr: Halep
+    en: Aleppo
+    ar: حلب
+  summary:
+    tr: Harezm'deki Kerder'den; Kirmani'den fıkıh okudu, Nureddin Zengi adına Halep kadılığı yaptı. Âlimleri şaşırtan meseleleri Hayretü'l-fukahâ'da topladı.
+    en: From Kardar in Khwarazm, a student of al-Kirmani and judge of Aleppo for Nur al-Din Zangi; he gathered puzzling questions in Hayrat al-fuqaha'.
+  theses: 0
+  works: 6
+- id: muhyiddin-ebu-muhammed-abdulkadir-b-muhammed-el-kuresi
+  name:
+    tr: Muhyiddin Ebu Muhammed Abdülkadir b. Muhammed el-Kureşi
+    en: Muhyi al-Din Abu Muhammad 'Abd al-Qadir b. Muhammad al-Qurashi
+    ar: عبد القادر القرشي
+  madhhab: hanefi
+  death: 775
+  deathM: 1373-74
+  place: null
+  summary:
+    tr: Hanefî tabakatının temel kaynağı el-Cevâhirü'l-mudıyye'nin müellifi; Hidâye hadislerini tahriç etti ve Ebu Hanife menakıbı yazdı. İbn Hacer ömrünün sonunda hafızasının bozulduğunu kaydeder.
+    en: Author of al-Jawahir al-mudiyya, the foundational Hanafi biographical dictionary; he also traced the hadith of al-Hidaya and wrote on Abu Hanifa's virtues.
+  theses: 0
+  works: 5
+- id: hafizuddin-ebul-berekat-abdullah-b-ahmed-en-nesefi
+  name:
+    tr: Hafızüddin Ebu'l-Berekat Abdullah b. Ahmed en-Nesefi
+    en: Hafiz al-Din Abu al-Barakat 'Abd Allah b. Ahmad al-Nasafi
+    ar: حافظ الدين النسفي
+  madhhab: hanefi
+  death: 710
+  deathM: 1310-11
+  place: null
+  summary:
+    tr: Zamanında benzersiz fıkıh ve usul imamı; Kenzü'd-dekâik ve el-Menâr metinleri ile Medârik tefsiri en tanınmış eserleridir. 710'da Bağdat'a girdi ve aynı yıl vefat etti.
+    en: The unrivalled master of law and legal theory in his time; Kanz al-daqa'iq, al-Manar and the Qur'an commentary Madarik are his best-known works. He entered Baghdad in 710 and died that year.
+  theses: 0
+  works: 9
+- id: mecduddin-ebul-fazl-abdullah-b-mahmud-el-mevsili
+  name:
+    tr: Mecdüddin Ebu'l-Fazl Abdullah b. Mahmud el-Mevsıli
+    en: Majd al-Din Abu al-Fadl 'Abd Allah b. Mahmud al-Mawsili
+    ar: عبد الله بن محمود الموصلي
+  madhhab: hanefi
+  death: 683
+  deathM: 1284-85
+  place:
+    tr: Bağdat
+    en: Baghdad
+    ar: بغداد
+  summary:
+    tr: Musul'da doğdu, Dımaşk'ta Hasiri'den okudu; Kûfe kadılığından sonra Bağdat'ta Ebu Hanife meşhedinde ders verdi. Dört muteber metinden el-Muhtâr ve şerhi el-İhtiyâr onundur.
+    en: Born in Mosul, he studied with al-Hasiri in Damascus, was judge of Kufa and then taught at Abu Hanifa's shrine in Baghdad; author of al-Mukhtar, one of the four standard texts, and its commentary al-Ikhtiyar.
+  theses: 15
+  works: 2
+- id: ebul-hasan-ubeydullah-b-el-huseyin-el-kerhi
+  name:
+    tr: Ebu'l-Hasan Ubeydullah b. el-Hüseyin el-Kerhî
+    en: Abu al-Hasan 'Ubayd Allah b. al-Husayn al-Karkhi
+    ar: أبو الحسن الكرخي
+  madhhab: hanefi
+  death: 340
+  deathM: 951-52
+  place: null
+  summary:
+    tr: Ebu Hazim ve Berdai'den sonra Irak'ta Hanefî riyaseti ona geçti; mesail müctehidlerinden sayılır. Felç olduğunda Seyfüddevle'nin göndereceği yardımı beklemeden kanaatkâr olarak vefat etti.
+    en: Head of the Hanafis of Iraq after Abu Khazim and al-Barda'i, counted among the mujtahids on particular questions; he died in contentment before Sayf al-Dawla's gift reached him.
+  theses: 6
+  works: 3
+- id: sadrusseria-el-asgar-ubeydullah-b-mesud-el-mahbubi
+  name:
+    tr: Sadrüşşeria el-Asgar Ubeydullah b. Mesud el-Mahbubi
+    en: Sadr al-Shari'a al-Asghar 'Ubayd Allah b. Mas'ud al-Mahbubi
+    ar: صدر الشريعة عبيد الله بن مسعود
+  madhhab: hanefi
+  death: 747
+  deathM: 1346-47
+  place:
+    tr: Buhara
+    en: Bukhara
+    ar: بخارى
+  summary:
+    tr: Ceddi Tacüşşeria'dan okudu; Vikâye'nin en iyi şerhini ve usulde et-Tenkîh ile şerhi et-Tavzîh'i yazdı. Leknevi, Mahbubi ailesinin nesebi hakkındaki karışıklıkları bu maddede uzunca düzeltir.
+    en: He studied with his grandfather Taj al-Shari'a and wrote the best commentary on al-Wiqaya, as well as al-Tanqih and its commentary al-Tawdih; al-Laknawi here untangles long-standing confusion over the Mahbubi genealogy.
+  theses: 0
+  works: 8
+- id: alaeddin-ali-b-belban-el-farisi
+  name:
+    tr: Alaeddin Ali b. Belban el-Farisi
+    en: '''Ala'' al-Din ''Ali b. Balaban al-Farisi'
+    ar: علي بن بلبان الفارسي
+  madhhab: hanefi
+  death: 739
+  deathM: 1338-39
+  place:
+    tr: Kahire
+    en: Cairo
+    ar: القاهرة
+  summary:
+    tr: Türk asıllı emir ve fakih; mezhep ve usulde temayüz etti. İbn Hibban'ın Sahîh'ini ve Taberani'nin Mu'cem'ini bablara göre tertip etti.
+    en: A Turkish emir and jurist, eminent in the school and legal theory, who arranged Ibn Hibban's Sahih and al-Tabarani's Mu'jam by chapter.
+  theses: 0
+  works: 5
+- id: alaeddin-ali-b-osman-ibnut-turkmani-el-mardini
+  name:
+    tr: Alaeddin Ali b. Osman İbnü't-Türkmani el-Mardini
+    en: '''Ala'' al-Din ''Ali b. ''Uthman Ibn al-Turkumani al-Maridini'
+    ar: علاء الدين ابن التركماني
+  madhhab: hanefi
+  death: 750
+  deathM: 1349-50
+  place: null
+  summary:
+    tr: Hadis, tefsir, feraiz ve tarihte geniş birikimli; Mısır kadılkudatı oldu. Beyhaki'ye reddiyesi el-Cevherü'n-nakî en tanınan eseridir.
+    en: Widely learned in hadith, exegesis, inheritance and history, he became chief judge of Egypt; al-Jawhar al-naqi, his rejoinder to al-Bayhaqi, is his best-known work.
+  theses: 0
+  works: 6
+- id: fahrulislam-ebul-hasan-ali-b-muhammed-el-pezdevi
+  name:
+    tr: Fahrülislam Ebu'l-Hasan Ali b. Muhammed el-Pezdevi
+    en: Fakhr al-Islam Abu al-Hasan 'Ali b. Muhammad al-Bazdawi
+    ar: فخر الإسلام البزدوي
+  madhhab: hanefi
+  death: 482
+  deathM: 1089-90
+  place:
+    tr: Keş
+    en: Kish
+    ar: كش
+  summary:
+    tr: Fürû ve usulde 'dünya imamı'; Semerkant'ta ders verdi. Usûlü'l-Pezdevî Hanefî usulünün temel kitaplarındandır; Keş'te vefat edip Semerkant'a götürüldü.
+    en: '''Imam of the world'' in law and legal theory who taught in Samarqand; his Usul is a foundational Hanafi text. He died at Kish and was carried to Samarqand.'
+  theses: 0
+  works: 6
+- id: es-seyyid-es-serif-ali-b-muhammed-el-curcani
+  name:
+    tr: es-Seyyid eş-Şerif Ali b. Muhammed el-Cürcani
+    en: al-Sayyid al-Sharif 'Ali b. Muhammad al-Jurjani
+    ar: السيد الشريف الجرجاني
+  madhhab: hanefi
+  death: 816
+  deathM: 1413-14
+  place:
+    tr: Şiraz
+    en: Shiraz
+    ar: شيراز
+  summary:
+    tr: Cürcan'da doğdu; Herat, Mısır ve Karaman'da okudu, Bâbertî'den fıkıh aldı. Şiraz'da ders verdi, Timur onu Semerkant'a götürdü; Teftazani ile münazarası meşhurdur. Elliyi aşkın eseriyle Şiraz'da vefat etti.
+    en: Born in Jurjan, he studied at Herat, Cairo and Karaman and took fiqh from al-Babarti; he taught in Shiraz, was taken to Samarqand by Timur and famously debated al-Taftazani. He died in Shiraz, leaving over fifty works.
+  theses: 0
+  works: 9
+- id: burhaneddin-ali-b-ebu-bekir-el-merginani
+  name:
+    tr: Burhaneddin Ali b. Ebu Bekir el-Merginani (Hidâye sahibi)
+    en: Burhan al-Din 'Ali b. Abi Bakr al-Marghinani, author of al-Hidaya
+    ar: صاحب الهداية علي بن أبي بكر المرغيناني
+  madhhab: hanefi
+  death: 593
+  deathM: 1196-97
+  place: null
+  summary:
+    tr: Kuduri ile Câmiu's-sağîr'i birleştiren Bidâyetü'l-mübtedî'yi ve onun şerhi el-Hidâye'yi yazdı; Hidâye asırlarca Hanefî fıkhının merkez kitabı oldu. Kadıhan dahil çağdaşları üstünlüğünü kabul etti.
+    en: He combined al-Quduri and al-Jami' al-saghir in Bidayat al-mubtadi and wrote its commentary al-Hidaya, for centuries the central book of Hanafi law; contemporaries including Qadikhan acknowledged his eminence.
+  theses: 0
+  works: 7
+- id: alaeddin-ali-et-tusi
+  name:
+    tr: Alaeddin Ali et-Tusi
+    en: '''Ala'' al-Din ''Ali al-Tusi'
+    ar: المولى علاء الدين الطوسي
+  madhhab: hanefi
+  death: 887
+  deathM: 1482-83
+  place: null
+  summary:
+    tr: II. Murad döneminde Anadolu'ya gelip Bursa'da, Fatih döneminde Sahn-ı Seman'da müderris oldu. Fatih'in emriyle Tehâfüt muhakemesi olarak ez-Zahîre'yi yazdı; Hocazade'nin eseri üstün tutulunca memleketine döndü.
+    en: He taught at Bursa under Murad II and at the eight madrasas under Mehmed II, for whom he wrote al-Dhakhira on the Incoherence debate; when Khwajazade's treatment was preferred he returned east.
+  theses: 0
+  works: 4
+- id: siraceddin-ebu-hafs-omer-b-ishak-el-hindi-el-gaznevi
+  name:
+    tr: Sirâceddin Ebu Hafs Ömer b. İshak el-Hindi el-Gaznevi
+    en: Siraj al-Din Abu Hafs 'Umar b. Ishaq al-Hindi al-Ghaznawi
+    ar: سراج الدين الهندي
+  madhhab: hanefi
+  death: 773
+  deathM: 1371-72
+  place: null
+  summary:
+    tr: Delhi'de yetişti; Mısır Hanefî kadılkudatı oldu. Hidâye şerhi et-Tevşîh ve Ebu Hanife mezhebini tercih eden el-Gurretü'l-münîfe en tanınan eserleridir.
+    en: Trained in Delhi, he became Hanafi chief judge of Egypt; his commentary al-Tawshih on al-Hidaya and al-Ghurra al-munifa are his best-known works.
+  theses: 0
+  works: 7
+- id: es-sadrus-sehid-husameddin-omer-b-abdulaziz-b-maze
+  name:
+    tr: es-Sadrü'ş-Şehid Hüsameddin Ömer b. Abdülaziz b. Maze
+    en: al-Sadr al-Shahid Husam al-Din 'Umar b. 'Abd al-'Aziz b. Maza
+    ar: الصدر الشهيد عمر بن عبد العزيز
+  madhhab: hanefi
+  death: 536
+  deathM: 1141-42
+  place:
+    tr: Semerkant
+    en: Samarqand
+    ar: سمرقند
+  summary:
+    tr: Babası Burhaneddin el-Kebir'den okudu; Horasan'da ve Maveraünnehir'de sultanların hürmet ettiği imam oldu. Katvan savaşından sonra Semerkant'ta şehit edildi, Buhara'ya defnedildi.
+    en: He studied with his father Burhan al-Din al-Kabir and became an imam honoured by sultans in Khurasan and Transoxiana; he was killed after the battle of Qatwan at Samarqand and buried in Bukhara.
+  theses: 0
+  works: 6
+- id: necmeddin-ebu-hafs-omer-b-muhammed-en-nesefi
+  name:
+    tr: Necmeddin Ebu Hafs Ömer b. Muhammed en-Nesefi
+    en: Najm al-Din Abu Hafs 'Umar b. Muhammad al-Nasafi
+    ar: نجم الدين عمر النسفي
+  madhhab: hanefi
+  death: 537
+  deathM: 1142-43
+  place:
+    tr: Semerkant
+    en: Samarqand
+    ar: سمرقند
+  summary:
+    tr: '''Müftiyü''s-sekaleyn'' diye anılan imam; Ebu''l-Yüsr el-Pezdevi''den okudu. Yüz kadar eseri arasında et-Teysîr tefsiri, fıkhı ilk nazma çeken el-Manzûme ve el-Kand vardır.'
+    en: Called 'mufti of men and jinn', a student of Abu al-Yusr al-Bazdawi; among some hundred works are the Qur'an commentary al-Taysir, al-Manzuma (the first versification of fiqh) and al-Qand.
+  theses: 0
+  works: 7
+- id: celaleddin-omer-b-muhammed-el-habbazi
+  name:
+    tr: Celaleddin Ömer b. Muhammed el-Habbazi
+    en: Jalal al-Din 'Umar b. Muhammad al-Khabbazi
+    ar: جلال الدين الخبازي
+  madhhab: hanefi
+  death: 691
+  deathM: 1291-92
+  place: null
+  summary:
+    tr: Usulde el-Muğnî'nin müellifi; abid ve zahid bir âlim. Dımaşk'a gelip ders verdi ve fetva verdi.
+    en: Author of al-Mughni on legal theory, a devout ascetic scholar who taught and gave fatwas in Damascus.
+  theses: 3
+  works: 2
+- id: semsuleimme-ebu-bekir-muhammed-b-ahmed-es-serahsi
+  name:
+    tr: Şemsüleimme Ebu Bekir Muhammed b. Ahmed es-Serahsi
+    en: Shams al-A'imma Abu Bakr Muhammad b. Ahmad al-Sarakhsi
+    ar: شمس الأئمة السرخسي
+  madhhab: hanefi
+  death: 490
+  deathM: 1096-97
+  place: null
+  summary:
+    tr: Hulvani'nin talebesi, mesail müctehidi. Hakana nasihati yüzünden Özcend'de kuyuya hapsedildi; on beş ciltlik el-Mebsût'u kitaba bakmadan kuyunun dibinden imla etti, talebeleri yukarıda yazdı.
+    en: A student of al-Hulwani and mujtahid on particular questions; imprisoned in a well at Uzjand for counselling the Khaqan, he dictated the fifteen-volume al-Mabsut from memory while his students wrote above.
+  theses: 52
+  works: 4
+- id: zeynul-mesayih-ebul-fazl-muhammed-b-ebul-kasim-el-bakkali
+  name:
+    tr: Zeynü'l-Meşayih Ebu'l-Fazl Muhammed b. Ebu'l-Kasım el-Bakkali
+    en: Zayn al-Mashayikh Abu al-Fadl Muhammad b. Abi al-Qasim al-Baqqali
+    ar: محمد بن أبي القاسم البقالي
+  madhhab: hanefi
+  death: 576
+  deathM: 1180-81
+  place:
+    tr: Harezm (Cürcaniyye)
+    en: Khwarazm (Gurganj)
+    ar: خوارزم
+  summary:
+    tr: Zemahşeri'nin talebesi ve onun yerine geçen edip fakih; fetva, tefsir ve belagat eserleri yazdı. Harezm'in Cürcaniyye şehrinde doksanını aşkın vefat etti.
+    en: A student and successor of al-Zamakhshari who wrote on fatwas, exegesis and rhetoric; he died at Gurganj in Khwarazm aged over ninety.
+  theses: 0
+  works: 7
+- id: molla-fenari-semseddin-muhammed-b-hamza
+  name:
+    tr: Molla Fenari Şemseddin Muhammed b. Hamza
+    en: Mulla Fanari Shams al-Din Muhammad b. Hamza
+    ar: شمس الدين محمد بن حمزة الفناري
+  madhhab: hanefi
+  death: 834
+  deathM: 1430-31
+  place: null
+  summary:
+    tr: Sekizinci asrın başında akli ve nakli ilimlerde müceddid sayılan dört âlimden biri; Bâbertî'den okudu, Bursa kadısı oldu. Fusûlü'l-bedâi' usul eserini otuz yılda tamamladı; ömrünün sonunda âmâ oldu.
+    en: Counted among the four renewers of learning at the turn of the ninth century, a student of al-Babarti and judge of Bursa; he spent thirty years on Fusul al-bada'i' and went blind late in life.
+  theses: 0
+  works: 6
+- id: muhyiddin-muhammed-b-suleyman-el-kafiyeci
+  name:
+    tr: Muhyiddin Muhammed b. Süleyman el-Kâfiyeci
+    en: Muhyi al-Din Muhammad b. Sulayman al-Kafiyaji
+    ar: الكافيجي محمد بن سليمان
+  madhhab: hanefi
+  death: 873
+  deathM: 1468-69
+  place:
+    tr: Kahire
+    en: Cairo
+    ar: القاهرة
+  summary:
+    tr: Kâfiye ile çok meşgul olduğu için 'Kâfiyeci' diye anıldı; Acem diyarında okuyup Kahire'ye yerleşti, Şeyhuniyye meşihatını üstlendi. Suyuti on dört yıl ona mülazemet etti.
+    en: Named for his devotion to al-Kafiya; after studying in Persia he settled in Cairo and headed the Shaykhuniyya. Al-Suyuti studied with him for fourteen years.
+  theses: 2
+  works: 4
+- id: ebu-abdullah-muhammed-b-semaa-et-temimi
+  name:
+    tr: Ebu Abdullah Muhammed b. Semaa et-Temimi
+    en: Abu 'Abd Allah Muhammad b. Sama'a al-Tamimi
+    ar: محمد بن سماعة
+  madhhab: hanefi
+  death: 233
+  deathM: 847-48
+  place: null
+  summary:
+    tr: Ebu Yusuf ve Muhammed'den fıkıh okudu, Nevâdir'lerini yazdı; Me'mun zamanında Bağdat kadısı oldu. Yüz yaşını geçtiği hâlde ata biner, günde iki yüz rekât kılardı; Yahya b. Maîn onun için 're'y ehlinin reyhanı' dedi.
+    en: A student of Abu Yusuf and Muhammad who recorded their Nawadir and became judge of Baghdad under al-Ma'mun; past a hundred he still rode and prayed two hundred rak'as daily. Ibn Ma'in called him 'the sweet basil of the ahl al-ra'y'.
+  theses: 1
+  works: 3
+- id: ebu-abdullah-muhammed-b-suca-es-selci
+  name:
+    tr: Ebu Abdullah Muhammed b. Şuca' es-Selci
+    en: Abu 'Abd Allah Muhammad b. Shuja' al-Thalji
+    ar: محمد بن شجاع الثلجي
+  madhhab: hanefi
+  death: 266
+  deathM: 879-80
+  place: null
+  summary:
+    tr: Vaktinde Irak'ın fakihi; fıkıh, hadis ve kıraatte önde, vera ve ibadet sahibiydi. İkindi namazında secdede iken vefat etti; muhaddisler onu rivayette zayıf saymıştır.
+    en: The jurist of Iraq in his time, eminent in law, hadith and recitation and devout; he died prostrate in the afternoon prayer. Traditionists considered him weak in transmission.
+  theses: 1
+  works: 5
+- id: semseddin-muhammed-b-abdurrahman-ibnus-saig
+  name:
+    tr: Şemseddin Muhammed b. Abdurrahman İbnü's-Sâiğ
+    en: Shams al-Din Muhammad b. 'Abd al-Rahman Ibn al-Sa'igh
+    ar: ابن الصائغ محمد بن عبد الرحمن
+  madhhab: hanefi
+  death: 777
+  deathM: 1375-76
+  place: null
+  summary:
+    tr: Lugat ve nahivde temayüz etti; ordu kadılığı ve Dâru'l-adl müftülüğü yaptı, Tolunoğlu Camii'nde ders verdi.
+    en: Eminent in lexicography and grammar, he was military judge and mufti of the Dar al-'Adl and taught at the mosque of Ibn Tulun.
+  theses: 0
+  works: 5
+- id: kadilkudat-semseddin-muhammed-b-abdullah-ed-deyri-el-makdisi
+  name:
+    tr: Kadılkudat Şemseddin Muhammed b. Abdullah ed-Deyri el-Makdisi
+    en: Chief Judge Shams al-Din Muhammad b. 'Abd Allah al-Dayri al-Maqdisi
+    ar: شمس الدين الديري
+  madhhab: hanefi
+  death: 827
+  deathM: 1423-24
+  place:
+    tr: Kudüs
+    en: Jerusalem
+    ar: القدس
+  summary:
+    tr: Hadis dışındaki bütün fenlerde çalıştığını söylerdi; Kahire Hanefî kadılığı ve Müeyyediyye meşihatı yaptı. Kudüs'e gidip orada vefat etti.
+    en: He said he had studied every science except hadith; Hanafi judge of Cairo and head of the Mu'ayyadiyya, he died in Jerusalem.
+  theses: 2
+  works: 0
+- id: molla-husrev-muhammed-b-feramurz
+  name:
+    tr: Molla Hüsrev Muhammed b. Feramurz
+    en: Mulla Khusraw Muhammad b. Faramurz
+    ar: المولى خسرو
+  madhhab: hanefi
+  death: 885
+  deathM: 1480-81
+  place:
+    tr: İstanbul
+    en: Istanbul
+    ar: القسطنطينية
+  summary:
+    tr: Teftâzânî'nin talebesi Heravi'den okudu; II. Murad döneminde müderris, Fatih döneminde kazasker ve Hızır Bey'den sonra İstanbul kadısı oldu. Dürerü'l-hükkâm Osmanlı fıkhının temel metinlerindendir.
+    en: A student of al-Taftazani's pupil Haydar al-Harawi, he taught under Murad II and became military judge and then judge of Constantinople under Mehmed II; his Durar al-hukkam is a core Ottoman legal text.
+  theses: 0
+  works: 6
+- id: cemaleddin-muhammed-b-muhammed-el-aksarayi
+  name:
+    tr: Cemaleddin Muhammed b. Muhammed el-Aksarayi
+    en: Jamal al-Din Muhammad b. Muhammad al-Aqsara'i
+    ar: جمال الدين الأقسرائي
+  madhhab: hanefi
+  death: 775
+  deathM: 1373-74
+  place: null
+  summary:
+    tr: Karaman'daki, ancak Sıhâh'ı ezbere bilenin ders verebileceği Müselsele Medresesi'nin müderrisi. Leknevi, Fahreddin er-Razi'ye uzanan nesebini ve Musannifek meselesini tartışır.
+    en: Professor at the Musalsala madrasa in Karaman, whose founder required its teacher to know al-Jawhari's Sihah by heart; al-Laknawi discusses his claimed descent from Fakhr al-Din al-Razi.
+  theses: 2
+  works: 3
+- id: imamul-huda-ebu-mansur-muhammed-b-muhammed-el-maturidi
+  name:
+    tr: İmamü'l-Hüda Ebu Mansur Muhammed b. Muhammed el-Maturidi
+    en: Imam al-Huda Abu Mansur Muhammad b. Muhammad al-Maturidi
+    ar: أبو منصور الماتريدي
+  madhhab: hanefi
+  death: 333
+  deathM: 944-45
+  place: null
+  summary:
+    tr: Kelamcıların imamı ve Müslümanların akidesini tashih eden âlim; Semerkant'ın Maturid mahallesinden. Kitâbü't-Tevhîd başta olmak üzere batıl fırkalara reddiyeler yazdı.
+    en: The imam of theologians who set Sunni belief in order, from the Maturid quarter of Samarqand; author of Kitab al-Tawhid and refutations of sectarian doctrines.
+  theses: 0
+  works: 6
+- id: ekmeleddin-muhammed-b-muhammed-el-baberti
+  name:
+    tr: Ekmeleddin Muhammed b. Muhammed el-Bâbertî
+    en: Akmal al-Din Muhammad b. Muhammad al-Babarti
+    ar: أكمل الدين البابرتي
+  madhhab: hanefi
+  death: 786
+  deathM: 1384-85
+  place:
+    tr: Kahire
+    en: Cairo
+    ar: القاهرة
+  summary:
+    tr: Halep'te, sonra Kahire'de okudu; Şeyhuniyye'nin ilk şeyhi oldu ve kadılığı defalarca reddetti. Hidâye şerhi el-İnâye muteberdir; Seyyid Şerif ve Molla Fenari onun talebesidir.
+    en: He studied in Aleppo and Cairo, became the first head of the Shaykhuniyya and repeatedly refused judgeships; his al-'Inaya on al-Hidaya is authoritative, and al-Sayyid al-Sharif and Mulla Fanari were his students.
+  theses: 6
+  works: 7
+- id: semseddin-muhammed-b-yusuf-el-konevi
+  name:
+    tr: Şemseddin Muhammed b. Yusuf el-Konevi
+    en: Shams al-Din Muhammad b. Yusuf al-Qunawi
+    ar: شمس الدين القونوي صاحب درر البحار
+  madhhab: hanefi
+  death: 788
+  deathM: 1386-87
+  place: null
+  summary:
+    tr: İlim ve amelde vaktinin imamı, zahidlerin önderi. Mecmau'l-bahreyn'e Hanbelî mezhebini ekleyerek Dürerü'l-bihâr'ı yazdı.
+    en: The imam of his time in learning and practice; in Durar al-bihar he expanded Majma' al-bahrayn to include the Hanbali school.
+  theses: 0
+  works: 5
+- id: hatibzade-muhyiddin-muhammed
+  name:
+    tr: Hatibzade Muhyiddin Muhammed
+    en: Khatibzade Muhyi al-Din Muhammad
+    ar: خطيب زاده محيي الدين محمد
+  madhhab: hanefi
+  death: 901
+  deathM: 1495-96
+  place: null
+  summary:
+    tr: Babası, Tusi ve Hızır Bey'den okudu; İstanbul'da müderris oldu. Keskin dili ve münazaradaki cesaretiyle tanınırdı; İbn Kemal onun talebesidir.
+    en: A student of his father, al-Tusi and Khidr Beg who taught in Constantinople, known for a sharp tongue in debate; Ibn Kamal was his student.
+  theses: 0
+  works: 5
+- id: cemaleddin-ebus-sena-mahmud-b-ahmed-el-konevi
+  name:
+    tr: Cemaleddin Ebu's-Sena Mahmud b. Ahmed el-Konevi
+    en: Jamal al-Din Abu al-Thana' Mahmud b. Ahmad al-Qunawi
+    ar: محمود بن أحمد القونوي
+  madhhab: hanefi
+  death: 777
+  deathM: 1375-76
+  place:
+    tr: Dımaşk
+    en: Damascus
+    ar: دمشق
+  summary:
+    tr: Babasından okudu; Dımaşk kadılığı yaptı. Rükûda elleri kaldırmanın namazı bozmadığını ispat eden risalesi Leknevi'nin övgüsüne mazhardır.
+    en: A student of his father and judge of Damascus; al-Laknawi praises his treatise proving that raising the hands does not invalidate the prayer.
+  theses: 0
+  works: 7
+- id: kadilkudat-bedreddin-mahmud-b-ahmed-el-ayni
+  name:
+    tr: Kadılkudat Bedreddin Mahmud b. Ahmed el-Ayni
+    en: Chief Judge Badr al-Din Mahmud b. Ahmad al-'Ayni
+    ar: بدر الدين العيني
+  madhhab: hanefi
+  death: 855
+  deathM: 1451-52
+  place:
+    tr: Kahire
+    en: Cairo
+    ar: القاهرة
+  summary:
+    tr: Babası Ayıntab kadısıydı; 787'de Kahire'ye gelip muhtesiplik ve Hanefî kadılkudatlığı yaptı. Buhari şerhi Umdetü'l-kârî ile Hidâye şerhi el-Binâye başlıca eserleridir.
+    en: Son of a judge of 'Ayntab, he came to Cairo in 787 and served as market inspector and Hanafi chief judge; his main works are 'Umdat al-qari on al-Bukhari and al-Binaya on al-Hidaya.
+  theses: 0
+  works: 7
+- id: carullah-ebul-kasim-mahmud-b-omer-ez-zemahseri
+  name:
+    tr: Carullah Ebu'l-Kasım Mahmud b. Ömer ez-Zemahşeri
+    en: Jar Allah Abu al-Qasim Mahmud b. 'Umar al-Zamakhshari
+    ar: جار الله الزمخشري
+  madhhab: hanefi
+  death: 538
+  deathM: 1143-44
+  place:
+    tr: Harezm (Cürcaniyye)
+    en: Khwarazm (Gurganj)
+    ar: خوارزم
+  summary:
+    tr: Harezm'in Zemahşer köyünden; fürûda Hanefî, itikatta Mutezili. Mekke'de mücavir kaldığı için 'Cârullah' diye anıldı; Keşşâf tefsiri ve el-Mufassal nahvi en tanınan eserleridir.
+    en: From Zamakhshar in Khwarazm, Hanafi in law and Mu'tazili in creed; called Jar Allah for his stay in Mecca, he is best known for the Kashshaf and al-Mufassal.
+  theses: 7
+  works: 8
+- id: necmeddin-ebur-reca-muhtar-b-mahmud-ez-zahidi
+  name:
+    tr: Necmeddin Ebu'r-Reca Muhtar b. Mahmud ez-Zahidi
+    en: Najm al-Din Abu al-Raja' Mukhtar b. Mahmud al-Zahidi
+    ar: مختار بن محمود الزاهدي
+  madhhab: hanefi
+  death: 658
+  deathM: 1259-60
+  place: null
+  summary:
+    tr: Harezm'in Gazmin kasabasından; Mutarrizi ve Sekkaki gibi büyüklerden okudu, Bağdat'ta münazaralar yaptı ve bir süre Anadolu'da kaldı. Leknevi, fürûda Hanefî itikatta Mutezili olduğunu ve eserlerinin başka kaynaklarla teyit edilmeden kullanılmaması gerektiğini belirtir.
+    en: From Ghazmin in Khwarazm, a student of al-Mutarrizi and al-Sakkaki who debated in Baghdad and lived for a time in Anatolia; al-Laknawi warns that as a Mu'tazili his works need corroboration.
+  theses: 3
+  works: 7
+- id: burhaneddin-ebul-muvaffak-mesud-b-suca-el-emevi
+  name:
+    tr: Burhaneddin Ebu'l-Muvaffak Mesud b. Şuca' el-Emevi
+    en: Burhan al-Din Abu al-Muwaffaq Mas'ud b. Shuja' al-Umawi
+    ar: مسعود بن شجاع الأموي
+  madhhab: hanefi
+  death: 599
+  deathM: 1202-03
+  place: null
+  summary:
+    tr: Dımaşk'ta doğdu, Burhan el-Belhi'den okudu; ordu kadılığı yaptı ve Nuriyye'de ders verdi, mezhepte önder sayıldı.
+    en: Born in Damascus and taught by al-Burhan al-Balkhi; he was military judge, taught at the Nuriyya and led the school.
+  theses: 4
+  works: 0
+- id: hocazade-muslihuddin-mustafa-b-yusuf-el-bursevi
+  name:
+    tr: Hocazade Muslihuddin Mustafa b. Yusuf el-Bursevi
+    en: Khwajazade Muslih al-Din Mustafa b. Yusuf al-Burusawi
+    ar: خواجه زاده مصطفى بن يوسف
+  madhhab: hanefi
+  death: 893
+  deathM: 1487-88
+  place:
+    tr: Bursa
+    en: Bursa
+    ar: بروسة
+  summary:
+    tr: Hızır Bey'in talebesi; Fatih'in hocası ve İstanbul kadısı oldu. Fatih'in emriyle yazdığı Tehâfüt, Devvani ve Ali Kuşçu gibi âlimlerce övüldü.
+    en: A student of Khidr Beg, tutor to Mehmed II and judge of Constantinople; his Tahafut, written at Mehmed's request, was praised by al-Dawani and 'Ali Qushji.
+  theses: 4
+  works: 4
+- id: kadilkudat-cemaleddin-ebu-sad-el-mutahhar-b-el-huseyin-el-yezdi
+  name:
+    tr: Kadılkudat Cemaleddin Ebu Sa'd el-Mutahhar b. el-Hüseyin el-Yezdi
+    en: Chief Judge Jamal al-Din Abu Sa'd al-Mutahhar b. al-Husayn al-Yazdi
+    ar: المطهر بن الحسين اليزدي
+  madhhab: hanefi
+  death: 591
+  deathM: 1194-95
+  place:
+    tr: Kus
+    en: Qus
+    ar: قوص
+  summary:
+    tr: Za'ferani tertibindeki el-Câmiu's-sağîr'e iki ciltlik et-Tehzîb şerhini yazdı. Suyuti'ye göre memleketinde bin iki yüz talebeli on iki medrese onun idaresindeydi; Kus'ta vefat etti.
+    en: Author of al-Tahdhib, a two-volume commentary on al-Jami' al-saghir; al-Suyuti says he ran twelve madrasas with 1,200 students at home, and he died at Qus in Egypt.
+  theses: 0
+  works: 5
+- id: ebul-feth-nasir-b-abdusseyyid-el-mutarrizi
+  name:
+    tr: Ebu'l-Feth Nasır b. Abdüsseyyid el-Mutarrizi
+    en: Abu al-Fath Nasir b. 'Abd al-Sayyid al-Mutarrizi
+    ar: ناصر بن عبد السيد المطرزي
+  madhhab: hanefi
+  death: 610
+  deathM: 1213-14
+  place:
+    tr: Harezm (Cürcaniyye)
+    en: Khwarazm (Gurganj)
+    ar: خوارزم
+  summary:
+    tr: Zemahşeri'nin vefat ettiği yıl doğduğu için 'halefi' diye anıldı; fıkıh, Arapça ve lügatte imamdı. Fıkıh terimlerinin sözlüğü el-Muğrib onundur.
+    en: Born the year al-Zamakhshari died and so called his successor; a master of law, Arabic and lexicography, author of al-Mughrib, a dictionary of legal terms.
+  theses: 0
+  works: 6
+- id: fakih-ebul-leys-nasr-b-muhammed-es-semerkandi
+  name:
+    tr: Fakih Ebu'l-Leys Nasr b. Muhammed es-Semerkandi
+    en: Abu al-Layth al-Faqih Nasr b. Muhammad al-Samarqandi
+    ar: أبو الليث السمرقندي
+  madhhab: hanefi
+  death: 373
+  deathM: 983-84
+  place: null
+  summary:
+    tr: '''İmamü''l-hüdâ'' diye anılır; Hinduvani''den okudu. Tefsiri, Nevâzil''i, Tenbîhü''l-gâfilîn ve Bostânü''l-ârifîn''i yaygındır; vefat tarihinde farklı rivayetler vardır.'
+    en: Called 'Imam al-Huda', a student of al-Hinduwani; his Qur'an commentary, al-Nawazil, Tanbih al-ghafilin and Bustan al-'arifin were widely read. Sources differ on his death date.
+  theses: 0
+  works: 8
+- id: ahi-celebi-yusuf-b-cuneyd-et-tokadi
+  name:
+    tr: Ahi Çelebi Yusuf b. Cüneyd et-Tokadi
+    en: Akhi Chalabi Yusuf b. Junayd al-Tuqati
+    ar: أخي جلبي يوسف بن جنيد
+  madhhab: hanefi
+  death: 905
+  deathM: 1499-1500
+  place: null
+  summary:
+    tr: Molla Hüsrev'in talebesi; Kalenderhane'de ve Sahn-ı Seman'da müderris. Yaygın Vikâye haşiyesi Zahîretü'l-ukbâ'yı 891-901 yıllarında yazdı; Leknevi bunun Hasan Çelebi'ye ait olmadığını ispatlar.
+    en: A student of Mulla Khusraw who taught at the Qalandariyya and the eight madrasas; he wrote the widely used gloss Dhakhirat al-'uqba (891-901), which al-Laknawi shows is not by Hasan Chalabi.
+  theses: 2
+  works: 2
+- id: sibt-ibnul-cevzi-semseddin-yusuf-b-kizoglu
+  name:
+    tr: Sıbt İbnü'l-Cevzi Şemseddin Yusuf b. Kızoğlu
+    en: Sibt Ibn al-Jawzi Shams al-Din Yusuf b. Qizoghlu
+    ar: سبط ابن الجوزي
+  madhhab: hanefi
+  death: 654
+  deathM: 1256-57
+  place: null
+  summary:
+    tr: İbnü'l-Cevzi'nin kız torunu; Hanbelî yetişti, Dımaşk'ta Hasiri'den okuyup el-Melikü'l-Muazzam'ın etkisiyle Hanefî oldu. Kalpleri yumuşatan vaazları ve Mir'âtü'z-zamân tarihiyle meşhurdur.
+    en: Grandson of Ibn al-Jawzi, raised Hanbali, he turned Hanafi in Damascus under al-Mu'azzam and al-Hasiri; famed for his moving sermons and the chronicle Mir'at al-zaman.
+  theses: 0
+  works: 6
+centuries:
+- c: 2
+  n: 11
+- c: 3
+  n: 32
+- c: 4
+  n: 36
+- c: 5
+  n: 40
+- c: 6
+  n: 56
+- c: 7
+  n: 58
+- c: 8
+  n: 65
+- c: 9
+  n: 32
+- c: 10
+  n: 29
+undated: 166
+places:
+- place:
+    ar: بخارى
+    en: Bukhara
+    tr: Buhara
+  n: 24
+- place:
+    ar: القاهرة
+    en: Cairo
+    tr: Kahire
+  n: 19
+- place:
+    ar: دمشق
+    en: Damascus
+    tr: Dımaşk
+  n: 14
+- place:
+    ar: القسطنطينية
+    en: Istanbul
+    tr: İstanbul
+  n: 10
+- place:
+    ar: بغداد
+    en: Baghdad
+    tr: Bağdat
+  n: 10
+- place:
+    ar: سمرقند
+    en: Samarqand
+    tr: Semerkant
+  n: 8
+- place:
+    ar: خوارزم
+    en: Khwarazm (Gurganj)
+    tr: Harezm (Cürcaniyye)
+  n: 7
+- place:
+    ar: حلب
+    en: Aleppo
+    tr: Halep
+  n: 6
+- place:
+    ar: نيسابور
+    en: Nishapur
+    tr: Nîşâbûr
+  n: 5
+- place:
+    ar: بروسة
+    en: Bursa
+    tr: Bursa
+  n: 4
+years:
+- y: 1990
+  n: 10
+- y: 1991
+  n: 26
+- y: 1992
+  n: 31
+- y: 1993
+  n: 27
+- y: 1994
+  n: 45
+- y: 1995
+  n: 53
+- y: 1996
+  n: 68
+- y: 1997
+  n: 71
+- y: 1998
+  n: 71
+- y: 1999
+  n: 71
+- y: 2000
+  n: 51
+- y: 2001
+  n: 79
+- y: 2002
+  n: 91
+- y: 2003
+  n: 76
+- y: 2004
+  n: 69
+- y: 2005
+  n: 56
+- y: 2006
+  n: 135
+- y: 2007
+  n: 129
+- y: 2008
+  n: 93
+- y: 2009
+  n: 96
+- y: 2010
+  n: 164
+- y: 2011
+  n: 143
+- y: 2012
+  n: 116
+- y: 2013
+  n: 162
+- y: 2014
+  n: 196
+- y: 2015
+  n: 219
+- y: 2016
+  n: 256
+- y: 2017
+  n: 324
+- y: 2018
+  n: 390
+- y: 2019
+  n: 867
+- y: 2020
+  n: 461
+- y: 2021
+  n: 534
+- y: 2022
+  n: 748
+- y: 2023
+  n: 801
+- y: 2024
+  n: 791
+- y: 2025
+  n: 773
+- y: 2026
+  n: 277
+years_before: 82
+first_year: 1970
+universities:
+- name: Marmara Üniversitesi
+  n: 974
+- name: İstanbul Sabahattin Zaim Üniversitesi
+  n: 574
+- name: İstanbul Üniversitesi
+  n: 510
+- name: Ankara Üniversitesi
+  n: 330
+- name: Sakarya Üniversitesi
+  n: 326
+- name: Necmettin Erbakan Üniversitesi
+  n: 306
+- name: Atatürk Üniversitesi
+  n: 302
+- name: Selçuk Üniversitesi
+  n: 267
+topics:
+- name: Şahıs çalışmaları
+  n: 2634
+- name: İslam iktisadı
+  n: 2419
+- name: Fıkıh tarihi
+  n: 1139
+- name: Fıkıh usulü
+  n: 885
+- name: Mukayeseli hukuk
+  n: 824
+- name: Hanefîlik
+  n: 389
+- name: Şâfiîlik
+  n: 190
+- name: Mâlikîlik
+  n: 95
+- name: Osmanlı
+  n: 45
+- name: Hanbelîlik
+  n: 26
+thesis_langs:
+  tr: 7457
+  ar: 990
+  en: 362
+doktora: 2204

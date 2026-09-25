@@ -12,6 +12,8 @@ Site [Jekyll](https://jekyllrb.com/) ile yazıldı ve GitHub Pages tarafından o
 | `en/`, `ar/` | İngilizce ve Arapça sayfalar |
 | `_posts/<dil>/haber/`, `_posts/<dil>/blog/` | Haberler ve blog yazıları (Markdown) |
 | `data/*.json` | Tablo verileri |
+| `_data/jurists.json`, `_fakihler/` | Fakih sayfaları: sayfa başına veri ve her dil için birer boş sayfa dosyası (ikisi de içe aktarma betiğiyle yazılır) |
+| `_data/stats.yml` | Ana sayfadaki sayılar, grafikler ve “Günün fakihi” listesi (içe aktarma betiğiyle yazılır) |
 | `_data/tables.yml` | Her tablonun sütunları, filtreleri ve ilk sıralaması |
 | `_data/i18n.yml` | Arayüz metinleri (üç dil) |
 | `_data/nav.yml` | Menü, sayfa adresleri ve bölüm görselleri |
@@ -47,7 +49,7 @@ Haberler için `haber` klasörünü, diğer diller için `en` ve `ar` klasörler
 ## Verileri yenilemek
 
 ```sh
-python3 tools/import_fuqaha.py ../fuqaha   # fakihler, klasik eserler, tezler
+python3 tools/import_fuqaha.py ../fuqaha   # fakihler, fakih sayfaları, klasik eserler, tezler
 python3 tools/fetch_images.py              # görseller (Wikimedia Commons)
 ```
 

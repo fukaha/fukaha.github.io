@@ -1,0 +1,7 @@
+{%- assign _l = page.lang | default: "tr" -%}
+{%- assign _t = site.data.i18n[_l] -%}
+{%- assign _th = include.th %}
+<li>
+  <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/tezDetay.jsp?id={{ _th.yok }}" rel="noopener" target="_blank"{% if _th.lang == "ar" %} lang="ar" dir="rtl"{% elsif _l == "ar" %} dir="ltr"{% endif %}>{{ _th.title }}</a>
+  <span class="by"{% if _l == "ar" %} dir="ltr"{% endif %}><span class="tag t-{{ _th.type }}">{{ _t.thesis[_th.type] }}</span> {{ _th.author }} · {{ _th.university | split: "," | first }} · {{ _th.year }}</span>
+</li>

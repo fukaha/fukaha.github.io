@@ -191,4 +191,59 @@
     track.addEventListener('touchstart', function () { held = true; restart(); }, { passive: true });
     restart();
   });
+
+  // --- jurist of the day: chosen by today's date, with a button for another ---
+  document.querySelectorAll('[data-daily]').forEach(function (box) {
+    var data = JSON.parse(box.querySelector('[data-daily-list]').textContent);
+    var items = data.items || [];
+    if (!items.length) return;
+    var L = data.lang;
+    var today = Math.floor((Date.now() - new Date().getTimezoneOffset() * 60000) / 86400000);
+    var index = today % items.length;
+    var f = function (name) { return box.querySelector('[data-f="' + name + '"]'); };
+    var escHtml = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    function paint(j) {
+      var name = (j.name && (j.name[L] || j.name.tr)) || '';
+      var url = data.base + j.id + '/';
+      if (f('ar')) f('ar').textContent = j.name.ar || '';
+      f('link').textContent = name; f('link').href = url; f('page').href = url;
+      f('madhhab').className = 'tag m-' + j.madhhab; f('madhhab').textContent = data.madhhab[j.madhhab] || j.madhhab;
+      var place = j.place ? ' · ' + escHtml(j.place[L] || j.place.tr) : '';
+      f('dates').innerHTML = escHtml(data.died) + ' <bdi dir="ltr">' + escHtml(j.death + '/' + j.deathM) + '</bdi>' + place;
+      var sum = L === 'ar' ? '' : (j.summary && (j.summary[L] || j.summary.tr)) || '';
+      f('summary').textContent = sum; f('summary').hidden = !sum;
+      var counts = '';
+      if (j.works) counts += '<span><strong>' + j.works + '</strong> ' + escHtml(data.works) + '</span>';
+      if (j.theses) counts += '<span><strong>' + j.theses + '</strong> ' + escHtml(data.theses) + '</span>';
+      f('counts').innerHTML = counts;
+    }
+    paint(items[index]);
+    var another = box.querySelector('[data-another]');
+    another.hidden = false;
+    another.addEventListener('click', function () {
+      index = (index + 1 + Math.floor(Math.random() * (items.length - 1))) % items.length;
+      box.classList.remove('is-turning'); void box.offsetWidth; box.classList.add('is-turning');
+      paint(items[index]);
+    });
+  });
+
+  // --- citation box: today's date and a copy button ---
+  document.querySelectorAll('[data-cite]').forEach(function (box) {
+    var L = document.documentElement.lang;
+    var day = box.querySelector('[data-today]');
+    if (day) {
+      try { day.textContent = new Intl.DateTimeFormat(L === 'ar' ? 'ar-u-nu-latn' : L === 'en' ? 'en-GB' : 'tr-TR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date()); } catch (e) {}
+    }
+    var btn = box.querySelector('[data-copy]');
+    var text = box.querySelector('[data-cite-text]');
+    if (!btn || !text || !navigator.clipboard) return;
+    btn.hidden = false;
+    var label = btn.textContent;
+    btn.addEventListener('click', function () {
+      navigator.clipboard.writeText(text.textContent.trim()).then(function () {
+        btn.textContent = btn.dataset.done;
+        setTimeout(function () { btn.textContent = label; }, 1800);
+      });
+    });
+  });
 })();

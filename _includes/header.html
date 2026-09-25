@@ -18,7 +18,8 @@
         {%- assign active = false -%}
         {%- if page.key == item.key -%}{%- assign active = true -%}{%- endif -%}
         {%- if page.kind == "haber" and item.key == "haberler" -%}{%- assign active = true -%}{%- endif -%}
-        {%- if page.kind == "blog" and item.key == "blog" -%}{%- assign active = true -%}{%- endif %}
+        {%- if page.kind == "blog" and item.key == "blog" -%}{%- assign active = true -%}{%- endif -%}
+        {%- if page.kind == "fakih" and item.key == "fukaha" -%}{%- assign active = true -%}{%- endif %}
         <li><a href="{{ item.url[lang] }}"{% if active %} aria-current="page"{% endif %}>{{ t.nav[item.key] }}</a></li>
         {%- endfor %}
       </ul>

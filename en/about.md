@@ -16,10 +16,17 @@ What a student of Islamic law needs is scattered: a jurist’s life is told in t
 - **Books.** Modern books, critical editions and translations on Islamic law.
 - **Theses.** Master’s and doctoral theses on Islamic law written in Turkey.
 - **Articles.** Articles on Islamic law published in peer-reviewed journals.
-- **Jurists.** Biographies of jurists taken from the *ṭabaqāt* literature.
+- **Jurists.** Biographies of jurists taken from the *ṭabaqāt* literature. Every jurist has his own page, with his works, teachers, students and the theses about him.
 - **News** and **Blog.** What is new on the site; writing on fiqh, its sources and method.
 
 All collections work the same way: each record is a table row and the full record is shown in columns. Click a column heading to sort, narrow the list with the search box and filters, and download the result as CSV.
+
+## Where to start
+
+- **Meet a jurist.** Every jurist has a page of his own. [Al-Jaṣṣāṣ’s page](/en/jurists/ebu-bekir-ahmed-b-ali-er-razi-el-cessas/), for example, brings together his works, teachers and students, the 53 theses written about him and al-Laknawī’s Arabic entry.
+- **Walk through a century.** Use the century filter of the [Jurists table](/en/jurists/) to list, say, [the jurists who died in the 5th century AH](/en/jurists/?century=5).
+- **Research a topic.** Type a topic, a jurist or a title into the search box of the [Theses table](/en/theses/). With several words, only theses containing all of them are listed.
+- **Come back.** The “Jurist of the day” on the home page changes daily, and what is new is also published as an [RSS feed](/en/feed.xml).
 
 ## Sources
 

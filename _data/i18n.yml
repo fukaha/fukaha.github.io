@@ -88,7 +88,9 @@ tr:
     reset: Temizle
     details: Ayrıntılar
     open: Aç
+    century: "{n}. asır"
   col:
+    century: Asır
     name: Ad
     name_ar: Arapça ad
     madhhab: Mezhep
@@ -146,6 +148,75 @@ tr:
   link:
     detail: YÖK
     pdf: PDF
+  jurist:
+    months: "Muharrem,Safer,Rebîülevvel,Rebîülâhir,Cemâziyelevvel,Cemâziyelâhir,Receb,Şâban,Ramazan,Şevval,Zilkade,Zilhicce"
+    facts: Künye
+    born: Doğum
+    died: Vefat
+    place_of_death: Vefat yeri
+    madhhab: Mezhep
+    century: "Hicrî {n}. asır"
+    alt_death: Başka bir rivayete göre
+    approx: yaklaşık
+    places: Yaşadığı yerler
+    teachers: Hocaları
+    students: Talebeleri
+    works: Eserleri
+    works_note: Leknevî’nin terceme maddesinde saydığı eserler.
+    theses: Hakkında yazılan tezler
+    theses_lead: YÖK Ulusal Tez Merkezi’nde bu fakihi konu alan tezler, yeniden eskiye.
+    show_all: Bütün tezleri göster
+    source_text: Kaynak metin
+    source_lead: Leknevî’nin el-Fevâidü’l-behiyye’deki terceme maddesi, Arapça aslıyla.
+    page: s.
+    entry: madde
+    cite: Bu sayfaya atıf
+    copy: Kopyala
+    copied: Kopyalandı
+    accessed: erişim
+    peers: Aynı dönemde vefat edenler
+    prev: Önceki fakih
+    next: Sonraki fakih
+    all: Bütün fakihler
+    has_page: Sayfası var
+    roles: { nisbe: nisbet, dogum: doğum, vefat: vefat, ikamet: ikamet, rihle: ilim yolculuğu, ders: tedris, kadilik: kadılık }
+  explore:
+    quick: Hızlı erişim
+    pages_hint: Fakih adına tıklayınca o fakihin sayfası açılır. Sayfada eserleri, hocaları, talebeleri, hakkındaki tezler ve kaynak metin yer alır.
+    doktora_only: Doktora tezleri
+    arabic_only: Arapça tezler
+    english_only: İngilizce tezler
+    daily: Günün fakihi
+    daily_lead: Her gün başka bir fakih. Yarın yine uğrayın.
+    another: Başka bir fakih göster
+    open_page: Fakihin sayfası
+    works_n: eser
+    theses_n: tez
+    centuries: Asırlar boyunca fakihler
+    centuries_lead: "{n} fakihin vefat ettiği hicrî asır. Bir sütuna tıklayınca o asrın fakihleri listelenir."
+    century: "{n}. asır"
+    undated: "Kaynakta vefat tarihi geçmeyen {n} fakih grafikte yer almıyor."
+    cities: En çok fakihin vefat ettiği şehirler
+    years: Yıllara göre tezler
+    years_lead: "{first} yılından bu yana YÖK’e girilen İslam hukuku tezleri. {doktora} tanesi doktora tezi."
+    years_note: "Grafik 1990’dan başlıyor. Daha önceki yıllarda {n} tez var."
+    peak: "En çok tez {year} yılında yazıldı ({n} tez)."
+    universities: En çok tez çıkan üniversiteler
+    topics: Konulara göre
+    popular: Sık arananlar
+    popular_items:
+      - { label: Ebû Hanîfe, q: Ebu Hanife }
+      - { label: Serahsî, q: Serahsi }
+      - { label: Mecelle, q: Mecelle }
+      - { label: vakıf, q: vakıf }
+      - { label: zekât, q: zekat }
+      - { label: sukuk, q: sukuk }
+      - { label: katılım bankacılığı, q: katılım }
+      - { label: Osmanlı, q: Osmanlı }
+    table: Tablo olarak
+    follow: Yenilikleri takip edin
+    follow_lead: Yeni haber ve yazılar RSS akışında da yayımlanıyor.
+    rss: RSS akışı
   post:
     read: Devamını oku
     back_news: Bütün haberler
@@ -253,7 +324,9 @@ en:
     reset: Clear
     details: Details
     open: Open
+    century: "{n} century"
   col:
+    century: Century
     name: Name
     name_ar: Arabic name
     madhhab: School
@@ -311,6 +384,75 @@ en:
   link:
     detail: YÖK
     pdf: PDF
+  jurist:
+    months: "Muḥarram,Ṣafar,Rabīʿ I,Rabīʿ II,Jumādā I,Jumādā II,Rajab,Shaʿbān,Ramaḍān,Shawwāl,Dhū l-Qaʿda,Dhū l-Ḥijja"
+    facts: Record
+    born: Born
+    died: Died
+    place_of_death: Place of death
+    madhhab: School
+    century: "{n} century AH"
+    alt_death: According to another report
+    approx: about
+    places: Places in his life
+    teachers: Teachers
+    students: Students
+    works: Works
+    works_note: Works named in al-Laknawī’s entry.
+    theses: Theses about him
+    theses_lead: Theses in the YÖK National Thesis Centre that study this jurist, newest first.
+    show_all: Show all theses
+    source_text: Source text
+    source_lead: The entry in al-Laknawī’s al-Fawāʾid al-bahiyya, in the original Arabic.
+    page: p.
+    entry: entry
+    cite: Cite this page
+    copy: Copy
+    copied: Copied
+    accessed: accessed
+    peers: Died in the same period
+    prev: Previous jurist
+    next: Next jurist
+    all: All jurists
+    has_page: Has a page
+    roles: { nisbe: origin, dogum: birth, vefat: death, ikamet: residence, rihle: study travel, ders: teaching, kadilik: judgeship }
+  explore:
+    quick: Quick links
+    pages_hint: Click a jurist’s name to open his page, with his works, teachers, students, the theses about him and the source text.
+    doktora_only: Doctoral theses
+    arabic_only: Theses in Arabic
+    english_only: Theses in English
+    daily: Jurist of the day
+    daily_lead: A different jurist every day. Come back tomorrow.
+    another: Show another jurist
+    open_page: The jurist’s page
+    works_n: works
+    theses_n: theses
+    centuries: The jurists across the centuries
+    centuries_lead: "The Hijri century in which {n} jurists died. Click a column to list that century’s jurists."
+    century: "{n} c."
+    undated: "{n} jurists whose date of death the source does not give are left out."
+    cities: Cities where most jurists died
+    years: Theses by year
+    years_lead: "Theses on Islamic law entered in YÖK since {first}; {doktora} of them are doctoral."
+    years_note: "The chart starts in 1990; {n} theses are older."
+    peak: "The busiest year was {year}, with {n} theses."
+    universities: Universities with the most theses
+    topics: By topic
+    popular: Popular searches
+    popular_items:
+      - { label: Abū Ḥanīfa, q: Ebu Hanife }
+      - { label: al-Sarakhsī, q: Serahsi }
+      - { label: Majalla, q: Mecelle }
+      - { label: waqf, q: vakıf }
+      - { label: zakāt, q: zekat }
+      - { label: sukuk, q: sukuk }
+      - { label: Islamic banking, q: katılım }
+      - { label: Ottoman, q: Osmanlı }
+    table: As a table
+    follow: Follow what is new
+    follow_lead: New news items and posts are also published as an RSS feed.
+    rss: RSS feed
   post:
     read: Read more
     back_news: All news
@@ -418,7 +560,9 @@ ar:
     reset: مسح
     details: التفاصيل
     open: فتح
+    century: "القرن {n}"
   col:
+    century: القرن
     name: الاسم
     name_ar: الاسم بالعربية
     madhhab: المذهب
@@ -476,6 +620,75 @@ ar:
   link:
     detail: YÖK
     pdf: PDF
+  jurist:
+    months: "محرم,صفر,ربيع الأول,ربيع الآخر,جمادى الأولى,جمادى الآخرة,رجب,شعبان,رمضان,شوال,ذو القعدة,ذو الحجة"
+    facts: البطاقة
+    born: المولد
+    died: الوفاة
+    place_of_death: مكان الوفاة
+    madhhab: المذهب
+    century: "القرن {n} الهجري"
+    alt_death: وفي رواية أخرى
+    approx: نحو
+    places: أماكن في حياته
+    teachers: شيوخه
+    students: تلاميذه
+    works: مصنفاته
+    works_note: المصنفات التي ذكرها اللكنوي في ترجمته.
+    theses: رسائل جامعية عنه
+    theses_lead: الرسائل المسجلة في المركز الوطني للرسائل الجامعية (YÖK) عن هذا الفقيه، الأحدث أولًا.
+    show_all: عرض جميع الرسائل
+    source_text: نص المصدر
+    source_lead: الترجمة كما وردت في «الفوائد البهية» للكنوي.
+    page: ص
+    entry: الترجمة
+    cite: الإحالة إلى هذه الصفحة
+    copy: نسخ
+    copied: تم النسخ
+    accessed: تاريخ الاطلاع
+    peers: من توفي في الحقبة نفسها
+    prev: الفقيه السابق
+    next: الفقيه التالي
+    all: جميع الفقهاء
+    has_page: له صفحة
+    roles: { nisbe: النسبة, dogum: المولد, vefat: الوفاة, ikamet: الإقامة, rihle: الرحلة, ders: التدريس, kadilik: القضاء }
+  explore:
+    quick: روابط سريعة
+    pages_hint: انقر اسم الفقيه لفتح صفحته، وفيها مصنفاته وشيوخه وتلاميذه والرسائل المكتوبة عنه ونص الترجمة.
+    doktora_only: رسائل الدكتوراه
+    arabic_only: الرسائل بالعربية
+    english_only: الرسائل بالإنجليزية
+    daily: فقيه اليوم
+    daily_lead: فقيه مختلف كل يوم. عد غدًا.
+    another: اعرض فقيهًا آخر
+    open_page: صفحة الفقيه
+    works_n: مصنفًا
+    theses_n: رسالة
+    centuries: الفقهاء عبر القرون
+    centuries_lead: "القرن الهجري الذي توفي فيه {n} فقيهًا. انقر عمودًا لعرض فقهاء ذلك القرن."
+    century: "ق {n}"
+    undated: "لم يُذكر في المصدر تاريخ وفاة {n} فقيهًا فلم يدخلوا في الرسم."
+    cities: المدن التي توفي فيها أكثر الفقهاء
+    years: الرسائل حسب السنة
+    years_lead: "الرسائل في الفقه الإسلامي المسجلة في YÖK منذ {first}، منها {doktora} رسالة دكتوراه."
+    years_note: "يبدأ الرسم من 1990، وقبلها {n} رسالة."
+    peak: "أكثر السنوات رسائل {year} ({n} رسالة)."
+    universities: الجامعات الأكثر رسائل
+    topics: حسب الموضوع
+    popular: عمليات بحث شائعة
+    popular_items:
+      - { label: أبو حنيفة, q: Ebu Hanife }
+      - { label: السرخسي, q: Serahsi }
+      - { label: مجلة الأحكام العدلية, q: Mecelle }
+      - { label: الوقف, q: vakıf }
+      - { label: الزكاة, q: zekat }
+      - { label: الصكوك, q: sukuk }
+      - { label: المصارف الإسلامية, q: katılım }
+      - { label: العهد العثماني, q: Osmanlı }
+    table: عرض كجدول
+    follow: تابع الجديد
+    follow_lead: تُنشر الأخبار والمقالات الجديدة أيضًا في موجز RSS.
+    rss: موجز RSS
   post:
     read: اقرأ المزيد
     back_news: جميع الأخبار

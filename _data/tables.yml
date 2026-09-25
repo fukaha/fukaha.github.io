@@ -9,14 +9,15 @@
 # hide    languages in which the column is left out
 # filter  fields offered as drop-down filters above the table
 # sort    initial sort: field and direction
+# link    jurist: the cell links to the jurist's page, whose id is in the field named by `id`
 
 klasik:
   data: /data/klasik-eserler.json
   sort: { field: death, dir: asc }
-  filter: [madhhab]
+  filter: [century, madhhab]
   columns:
     - { field: title, label: work, kind: ar }
-    - { field: author, label: authorc, kind: loc }
+    - { field: author, label: authorc, kind: loc, link: jurist, id: authorId }
     - { field: death, label: death, kind: hijri, alt: deathM }
     - { field: madhhab, label: madhhab, kind: madhhab }
     - { field: source, label: source, kind: loc }
@@ -55,7 +56,7 @@ tezler:
     - { field: city, label: city, detail: true }
     - { field: pages, label: pages, detail: true }
     - { field: topics, label: topics, detail: true }
-    - { field: jurists, label: jurists, kind: list, detail: true }
+    - { field: jurists, label: jurists, kind: list, detail: true, link: jurist, id: id }
     - { field: yokNo, label: yok, detail: true }
 
 makaleler:
@@ -77,9 +78,9 @@ makaleler:
 fukaha:
   data: /data/fukaha.json
   sort: { field: death, dir: asc }
-  filter: [madhhab]
+  filter: [century, madhhab]
   columns:
-    - { field: name, label: name, kind: loc }
+    - { field: name, label: name, kind: loc, link: jurist, id: id }
     - { field: name.ar, label: name_ar, kind: ar, hide: [ar] }
     - { field: madhhab, label: madhhab, kind: madhhab }
     - { field: birth, label: birth, kind: hijri, alt: birthM }

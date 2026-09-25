@@ -1,0 +1,4 @@
+---
+summary: Ankara'da doğdu; babası Hüsameddin er-Razi'den fıkıh okudu, Dımaşk kadılığı yaptı. İbn Hacer ise vefatını 791 olarak kaydeder.
+title: Celaleddin Ahmed b. el-Hasan er-Razi el-Enkaravi
+---

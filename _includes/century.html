@@ -1,0 +1,6 @@
+{%- comment -%}A century number in the page language's template: include.n, include.tpl.{%- endcomment -%}
+{%- assign _l = page.lang | default: "tr" -%}
+{%- assign _n = include.n | plus: 0 -%}
+{%- capture _s -%}{{ _n }}{%- if _l == "en" -%}{%- assign _r = _n | modulo: 10 -%}{%- assign _h = _n | modulo: 100 -%}{%- if _h > 10 and _h < 14 -%}th{%- elsif _r == 1 -%}st{%- elsif _r == 2 -%}nd{%- elsif _r == 3 -%}rd{%- else -%}th{%- endif -%}{%- endif -%}{%- endcapture -%}
+{%- assign _ph = "{n}" -%}
+{{- include.tpl | replace: _ph, _s -}}

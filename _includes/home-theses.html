@@ -1,0 +1,60 @@
+{%- comment -%}Home page: the theses by year, by university and by topic.{%- endcomment -%}
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign te = t.explore -%}
+{%- assign p_first = "{first}" -%}{%- assign p_dok = "{doktora}" -%}{%- assign p_year = "{year}" -%}{%- assign p_n = "{n}" -%}
+{%- assign stats = site.data.stats -%}
+{%- assign tz = site.data.nav | where: "key", "tezler" | first -%}
+{%- assign base = tz.url[lang] -%}
+{%- assign this_year = site.time | date: "%Y" | plus: 0 -%}
+{%- assign ymax = 0 -%}{%- assign peak = stats.years[0] -%}
+{%- for y in stats.years %}{% if y.n > ymax %}{% assign ymax = y.n %}{% assign peak = y %}{% endif %}{% endfor -%}
+{%- assign step = 250 -%}{%- if ymax < 400 %}{% assign step = 100 %}{% endif -%}
+{%- assign top = ymax | divided_by: step | plus: 1 | times: step -%}
+{%- assign umax = stats.universities[0].n -%}
+{%- capture dok %}{% include number.html n=stats.doktora %}{% endcapture -%}
+{%- capture peak_n %}{% include number.html n=peak.n %}{% endcapture -%}
+
+<section class="overview wrap" aria-labelledby="h-years">
+  <div class="years">
+    <h2 id="h-years">{{ te.years }}</h2>
+    <p class="chart-lead">{{ te.years_lead | replace: p_first, stats.first_year | replace: p_dok, dok }}</p>
+    <div class="ychart" style="--top: {{ top }}">
+      <div class="grid" aria-hidden="true">
+        {%- assign ticks = top | divided_by: step %}
+        {%- for i in (0..ticks) %}{% assign v = i | times: step %}
+        <span style="--g: {{ v }}"><em>{% include number.html n=v %}</em></span>
+        {%- endfor %}
+      </div>
+      <ol class="ybars">
+        {%- for y in stats.years %}
+        {%- assign partial = false %}{% if y.y == this_year %}{% assign partial = true %}{% endif %}
+        <li style="--v: {{ y.n }}"{% if partial %} class="partial"{% endif %}{% if y.y == peak.y %} data-peak{% endif %}>
+          <a href="{{ base }}?q={{ y.y }}" aria-label="{{ y.y }}: {{ y.n }}" data-tip="{{ y.y }} · {% include number.html n=y.n %}"><span class="ybar"></span></a>
+          {%- if y.y == peak.y %}<span class="peak-label" aria-hidden="true">{% include number.html n=y.n %}</span>{% endif %}
+          {%- assign mod = y.y | modulo: 5 %}
+          {%- if mod == 0 or forloop.last and mod > 2 %}<span class="ylab" aria-hidden="true">{{ y.y }}</span>{% endif %}
+        </li>
+        {%- endfor %}
+      </ol>
+    </div>
+    <p class="chart-note">{{ te.peak | replace: p_year, peak.y | replace: p_n, peak_n }} {{ te.years_note | replace: p_n, stats.years_before }}</p>
+  </div>
+
+  <div class="ranks">
+    <h3>{{ te.universities }}</h3>
+    <ol class="hbars">
+      {%- for u in stats.universities %}
+      <li style="--v: {{ u.n }}; --max: {{ umax }}">
+        <a href="{{ base }}?q={{ u.name | url_encode }}"><span class="hb-name"{% if lang == "ar" %} dir="ltr"{% endif %}>{{ u.name }}</span><span class="hb-n">{% include number.html n=u.n %}</span><span class="hb-bar" aria-hidden="true"></span></a>
+      </li>
+      {%- endfor %}
+    </ol>
+    <h3>{{ te.topics }}</h3>
+    <ul class="chips">
+      {%- for x in stats.topics limit: 8 %}
+      <li><a href="{{ base }}?q={{ x.name | url_encode }}"><span{% if lang == "ar" %} dir="ltr"{% endif %}>{{ x.name }}</span> <span>{% include number.html n=x.n %}</span></a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

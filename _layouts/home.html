@@ -11,6 +11,7 @@ layout: default
 {%- assign news_url = site.data.nav | where: "key", "haberler" | first -%}
 {%- assign blog_url = site.data.nav | where: "key", "blog" | first -%}
 {%- assign home_posts = site.posts | where: "lang", lang -%}
+{%- if lang == "tr" %}{% assign feed_url = "/feed.xml" %}{% else %}{% capture feed_url %}/{{ lang }}/feed.xml{% endcapture %}{% endif -%}
 {%- assign thesis = stats.latest_theses[0] -%}
 {%- assign jurist = stats.jurists[0] -%}
 {%- assign jurist2 = stats.jurists[1] -%}
@@ -26,7 +27,7 @@ layout: default
     {%- assign jname = jurist.name[lang] | default: jurist.name.tr %}
     {%- if lang == "ar" %}{% assign jsum = jurist.summary.ar %}{% else %}{% assign jsum = jurist.summary[lang] | default: jurist.summary.tr | truncatewords: 42 %}{% endif %}
     {%- capture jmeta %}{{ t.madhhab[jurist.madhhab] }} · {{ t.died }} {{ jurist.death }}/{{ jurist.deathM }}{% endcapture %}
-    {%- capture jhref %}{{ jurists_url.url[lang] }}?q={{ jname | url_encode }}{% endcapture %}
+    {%- capture jhref %}{{ jurists_url.url[lang] }}{{ jurist.id }}/{% endcapture %}
     {%- if lang == "ar" %}{% assign jar = nil %}{% else %}{% assign jar = jurist.name.ar %}{% endif %}
     {% include slide.html n=n total=total img="ulughbeg" kind=t.home.kind_fakih meta=jmeta ar=jar title=jname summary=jsum href=jhref cta=t.home.details %}
     {%- endif %}
@@ -50,7 +51,7 @@ layout: default
     {%- assign jname = jurist2.name[lang] | default: jurist2.name.tr %}
     {%- if lang == "ar" %}{% assign jsum = jurist2.summary.ar %}{% else %}{% assign jsum = jurist2.summary[lang] | default: jurist2.summary.tr | truncatewords: 42 %}{% endif %}
     {%- capture jmeta %}{{ t.madhhab[jurist2.madhhab] }} · {{ t.died }} {{ jurist2.death }}/{{ jurist2.deathM }}{% endcapture %}
-    {%- capture jhref %}{{ jurists_url.url[lang] }}?q={{ jname | url_encode }}{% endcapture %}
+    {%- capture jhref %}{{ jurists_url.url[lang] }}{{ jurist2.id }}/{% endcapture %}
     {%- if lang == "ar" %}{% assign jar = nil %}{% else %}{% assign jar = jurist2.name.ar %}{% endif %}
     {% include slide.html n=n total=total img="mustansiriya" kind=t.home.kind_fakih meta=jmeta ar=jar title=jname summary=jsum href=jhref cta=t.home.details %}
     {%- endif %}
@@ -87,9 +88,16 @@ layout: default
         <input id="hero-q" type="search" name="q" placeholder="{{ t.home.search_placeholder }}" autocomplete="off">
         <button type="submit">{{ t.home.search_button }}</button>
       </div>
+      <p class="popular"><span>{{ t.explore.popular }}:</span>
+        {%- for x in t.explore.popular_items %}
+        <a href="{{ theses_url.url[lang] }}?q={{ x.q | url_encode }}">{{ x.label }}</a>
+        {%- endfor %}
+      </p>
     </form>
   </div>
 </section>
+
+{% include home-discover.html %}
 
 {%- if stats.latest_theses.size > 0 %}
 <section class="shelf-sec" data-shelf aria-labelledby="h-shelf">
@@ -121,6 +129,8 @@ layout: default
   </ul>
 </section>
 {%- endif %}
+
+{% include home-theses.html %}
 
 <section class="section wrap" aria-labelledby="h-collections">
   <div class="section-head">
@@ -160,7 +170,7 @@ layout: default
       {%- for j in stats.jurists %}
       <article class="jurist">
         <p class="ar-name" lang="ar" dir="rtl">{{ j.name.ar }}</p>
-        <h3>{{ j.name[lang] | default: j.name.tr }}</h3>
+        <h3><a href="{{ jurists_url.url[lang] }}{{ j.id }}/">{{ j.name[lang] | default: j.name.tr }}</a></h3>
         <p class="dates">{{ t.madhhab[j.madhhab] }}{% if j.death %} · {{ t.died }} <bdi dir="ltr">{{ j.death }}/{{ j.deathM }}</bdi>{% endif %} · {{ j.theses }} {{ t.home.theses_n }}</p>
         {%- if lang == "ar" %}{% assign summary = j.summary.ar %}{% else %}{% assign summary = j.summary[lang] | default: j.summary.tr %}{% endif %}
         {%- if summary %}
@@ -195,4 +205,5 @@ layout: default
     </div>
     {%- endfor %}
   </div>
+  <p class="follow"><span class="follow-icon" aria-hidden="true"></span><span><strong>{{ t.explore.follow }}.</strong> {{ t.explore.follow_lead }}</span> <a href="{{ feed_url }}">{{ t.explore.rss }}</a></p>
 </section>

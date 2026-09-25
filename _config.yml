@@ -35,3 +35,16 @@ defaults:
     values: { lang: ar, kind: haber, permalink: "/ar/news/:title/" }
   - scope: { path: "_posts/ar/blog", type: posts }
     values: { lang: ar, kind: blog, permalink: "/ar/blog/:title/" }
+  # One page per jurist and language, written by tools/import_fuqaha.py.
+  - scope: { path: "_fakihler", type: fakihler }
+    values: { layout: jurist, kind: fakih }
+  - scope: { path: "_fakihler/tr", type: fakihler }
+    values: { lang: tr, permalink: "/fukaha/:name/" }
+  - scope: { path: "_fakihler/en", type: fakihler }
+    values: { lang: en, permalink: "/en/jurists/:name/" }
+  - scope: { path: "_fakihler/ar", type: fakihler }
+    values: { lang: ar, permalink: "/ar/jurists/:name/" }
+
+collections:
+  fakihler:
+    output: true

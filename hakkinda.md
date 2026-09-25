@@ -16,10 +16,17 @@ lead: Fukahâ, fakihleri ve onlar üzerine yapılan çalışmaları kaynak göst
 - **Kitaplar.** İslam hukuku üzerine modern kitaplar, tahkikler ve çeviriler.
 - **Tezler.** Türkiye’de İslam hukuku alanında yapılmış yüksek lisans ve doktora tezleri.
 - **Makaleler.** Hakemli dergilerde yayımlanmış İslam hukuku makaleleri.
-- **Fukahâ.** Tabakât kitaplarından aktarılmış fakih biyografileri.
+- **Fukahâ.** Tabakât kitaplarından aktarılmış fakih biyografileri. Her fakihin eserleri, hocaları, talebeleri ve hakkında yazılan tezlerle birlikte kendi sayfası var.
 - **Haberler** ve **Blog.** Sitedeki yenilikler ile fıkıh, kaynaklar ve yöntem üzerine yazılar.
 
 Koleksiyonların hepsi aynı biçimde çalışır: her kayıt bir tablo satırıdır, bütün künye bilgileri sütunlarda görünür. Sütun başlığına tıklayarak sıralayabilir, arama kutusu ve filtrelerle listeyi daraltabilir, sonucu CSV olarak indirebilirsiniz.
+
+## Nereden başlamalı?
+
+- **Bir fakihi tanıyın.** Her fakihin kendi sayfası var. [Cessâs’ın sayfasında](/fukaha/ebu-bekir-ahmed-b-ali-er-razi-el-cessas/) örneğin eserlerini, hocalarını, talebelerini, hakkında yazılmış 53 tezi ve Leknevî’nin Arapça metnini bir arada görebilirsiniz.
+- **Bir asrı gezin.** [Fukahâ tablosundaki](/fukaha/) asır filtresiyle, örneğin [hicrî 5. asırda](/fukaha/?century=5) vefat eden fakihleri listeleyebilirsiniz.
+- **Bir konuyu araştırın.** [Tezler tablosunun](/tezler/) arama kutusuna bir konu, fakih ya da eser adı yazın. Birden çok kelime yazarsanız hepsini içeren tezler listelenir.
+- **Yine uğrayın.** Ana sayfadaki “Günün fakihi” her gün değişiyor. Yenilikleri [RSS akışından](/feed.xml) da takip edebilirsiniz.
 
 ## Kaynaklar
 

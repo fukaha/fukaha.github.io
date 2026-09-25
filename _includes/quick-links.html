@@ -1,0 +1,27 @@
+{%- comment -%}Ready-made views of a collection table, shown above it.{%- endcomment -%}
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign te = t.explore -%}
+{%- assign stats = site.data.stats -%}
+{%- if page.key == "fukaha" or page.key == "klasik" %}
+<p class="pages-hint">{{ te.pages_hint }}</p>
+{%- endif %}
+{%- if page.key == "fukaha" or page.key == "klasik" or page.key == "tezler" %}
+<nav class="quick" aria-label="{{ te.quick }}">
+  <span class="quick-label">{{ te.quick }}:</span>
+  <ul class="chips">
+    {%- if page.key == "tezler" %}
+    <li><a href="?type=doktora">{{ te.doktora_only }} <span>{% include number.html n=stats.doktora %}</span></a></li>
+    <li><a href="?lang=ar">{{ te.arabic_only }} <span>{% include number.html n=stats.thesis_langs.ar %}</span></a></li>
+    <li><a href="?lang=en">{{ te.english_only }} <span>{% include number.html n=stats.thesis_langs.en %}</span></a></li>
+    {%- for x in te.popular_items limit: 5 %}
+    <li><a href="?q={{ x.q | url_encode }}">{{ x.label }}</a></li>
+    {%- endfor %}
+    {%- else %}
+    {%- for c in stats.centuries %}
+    <li><a href="?century={{ c.c }}">{% include century.html n=c.c tpl=t.table.century %}{% if page.key == "fukaha" %} <span>{{ c.n }}</span>{% endif %}</a></li>
+    {%- endfor %}
+    {%- endif %}
+  </ul>
+</nav>
+{%- endif %}

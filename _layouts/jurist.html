@@ -1,0 +1,160 @@
+---
+layout: default
+---
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign tj = t.jurist -%}
+{%- assign J = site.data.jurists.pages[page.slug] -%}
+{%- assign brief = site.data.jurists.brief -%}
+{%- assign base = site.data.nav | where: "key", "fukaha" | first -%}
+{%- assign base = base.url[lang] -%}
+{%- assign img = site.data.images.mabsut -%}
+{%- assign name = J.name[lang] | default: J.name.tr -%}
+{%- if lang == "ar" %}{% assign summary = J.summary.ar %}{% else %}{% assign summary = J.summary[lang] | default: J.summary.tr %}{% endif -%}
+{%- assign months = tj.months | split: "," -%}
+
+<header class="page-head has-image jurist-head">
+  <div class="page-head-img" aria-hidden="true"><img src="{{ img.src }}" alt="" width="{{ img.width }}" height="{{ img.height }}"></div>
+  <div class="page-head-pattern" aria-hidden="true"></div>
+  <div class="wrap page-head-in">
+    <p class="crumbs"><a href="{{ base }}">{{ t.nav.fukaha }}</a>{% if J.century %}<span aria-hidden="true"> / </span><a href="{{ base }}?century={{ J.century }}">{% include century.html n=J.century tpl=tj.century %}</a>{% endif %}</p>
+    {%- unless lang == "ar" %}
+    <p class="jurist-ar" lang="ar" dir="rtl">{{ J.name.ar }}</p>
+    {%- endunless %}
+    <h1>{{ name }}</h1>
+    <p class="jurist-meta">
+      <span class="tag m-{{ J.madhhab }}">{{ t.madhhab[J.madhhab] }}</span>
+      {%- if J.birth.h %}<span>{{ tj.born }} <bdi dir="ltr">{{ J.birth.h }}/{{ J.birth.m }}</bdi></span>{% endif %}
+      {%- if J.death.h %}<span>{{ tj.died }} {% if J.death.approx %}{{ tj.approx }} {% endif %}<bdi dir="ltr">{{ J.death.h }}/{{ J.death.m }}</bdi></span>{% endif %}
+      {%- if J.death.place %}<span>{{ J.death.place[lang] }}</span>{% endif %}
+    </p>
+    {%- if summary %}
+    <p class="lead">{{ summary }}</p>
+    {%- endif %}
+  </div>
+  <p class="page-head-credit wrap">{{ img[lang] }} · <a href="{{ img.page }}" rel="noopener">{% if img.license == "Public domain" %}{{ t.about.public_domain }}{% else %}{{ img.license }}{% endif %}</a></p>
+</header>
+
+<div class="wrap jurist-body">
+  <div class="jurist-main">
+    {%- if J.works.size > 0 %}
+    <section class="j-sec" aria-labelledby="h-works">
+      <h2 id="h-works">{{ tj.works }} <span class="n">{{ J.works.size }}</span></h2>
+      <p class="j-note">{{ tj.works_note }}</p>
+      <ol class="works">
+        {%- for w in J.works %}
+        <li><span lang="ar" dir="rtl">{{ w.ar }}</span>{% if w[lang] and lang != "ar" %}<span class="tr">{{ w[lang] }}</span>{% endif %}</li>
+        {%- endfor %}
+      </ol>
+    </section>
+    {%- endif %}
+
+    {%- if J.teachers.size > 0 or J.students.size > 0 %}
+    <section class="j-sec j-chain" aria-label="{{ tj.teachers }} · {{ tj.students }}">
+      {%- assign groups = "teachers,students" | split: "," %}
+      {%- for g in groups %}
+      {%- assign people = J[g] %}
+      {%- if people.size > 0 %}
+      <div>
+        <h2>{{ tj[g] }}</h2>
+        <ul class="people">
+          {%- for x in people %}
+          <li lang="ar" dir="rtl">{% if x.id %}<a href="{{ base }}{{ x.id }}/">{{ x.ar }}</a>{% else %}{{ x.ar }}{% endif %}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endif %}
+      {%- endfor %}
+    </section>
+    {%- endif %}
+
+    {%- if J.theses.size > 0 %}
+    <section class="j-sec" aria-labelledby="h-theses">
+      <h2 id="h-theses">{{ tj.theses }} <span class="n">{{ J.theses.size }}</span></h2>
+      <p class="j-note">{{ tj.theses_lead }}</p>
+      <ul class="j-theses">
+        {%- for th in J.theses limit: 8 %}{% include thesis-item.html th=th %}{% endfor %}
+      </ul>
+      {%- if J.theses.size > 8 %}
+      <details class="more-theses">
+        <summary>{{ tj.show_all }} ({{ J.theses.size }})</summary>
+        <ul class="j-theses">
+          {%- for th in J.theses offset: 8 %}{% include thesis-item.html th=th %}{% endfor %}
+        </ul>
+      </details>
+      {%- endif %}
+    </section>
+    {%- endif %}
+
+    {%- if J.text.size > 0 %}
+    <section class="j-sec" aria-labelledby="h-source">
+      <h2 id="h-source">{{ tj.source_text }}</h2>
+      <p class="j-note">{{ tj.source_lead }}</p>
+      <div class="source-text" lang="ar" dir="rtl">
+        {%- for para in J.text %}
+        <p>{{ para }}</p>
+        {%- endfor %}
+      </div>
+      <p class="source-ref">{% if lang == "ar" %}{{ J.source.book }}{% else %}<em>{{ J.source.bookTr }}</em>{% endif %}{% if J.source.edition %}, {{ J.source.edition }}{% endif %}{% if J.source.page %}, {{ tj.page }} {{ J.source.page }}{% endif %}{% if J.source.entry %} ({{ tj.entry }} {{ J.source.entry }}){% endif %}.</p>
+    </section>
+    {%- endif %}
+  </div>
+
+  <aside class="jurist-aside">
+    <section class="j-card">
+      <h2>{{ tj.facts }}</h2>
+      <dl class="facts">
+        <div><dt>{{ tj.madhhab }}</dt><dd>{{ t.madhhab[J.madhhab] }}</dd></div>
+        {%- if J.birth.h %}
+        <div><dt>{{ tj.born }}</dt><dd><bdi dir="ltr">{{ J.birth.h }}/{{ J.birth.m }}</bdi>{% if J.birth.place %} · {{ J.birth.place[lang] }}{% endif %}</dd></div>
+        {%- endif %}
+        {%- if J.death.h %}
+        {%- assign mi = J.death.month | minus: 1 %}
+        <div><dt>{{ tj.died }}</dt><dd>{% if J.death.day %}{{ J.death.day }} {% endif %}{% if J.death.month %}{{ months[mi] }} {% endif %}<bdi dir="ltr">{{ J.death.h }}/{{ J.death.m }}</bdi>{% if J.death.alt %}<span class="alt">{{ tj.alt_death }}: {{ J.death.alt | join: ", " }}</span>{% endif %}</dd></div>
+        {%- endif %}
+        {%- if J.death.place %}
+        <div><dt>{{ tj.place_of_death }}</dt><dd>{{ J.death.place[lang] }}</dd></div>
+        {%- endif %}
+        {%- if J.century %}
+        <div><dt>{{ t.col.century }}</dt><dd><a href="{{ base }}?century={{ J.century }}">{% include century.html n=J.century tpl=tj.century %}</a></dd></div>
+        {%- endif %}
+      </dl>
+      {%- if J.places.size > 0 %}
+      <h3>{{ tj.places }}</h3>
+      <ul class="places">
+        {%- for x in J.places %}
+        <li><span>{{ x.place[lang] }}</span> <span class="role">{{ tj.roles[x.role] }}</span></li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </section>
+
+    <section class="j-card cite" data-cite>
+      <h2>{{ tj.cite }}</h2>
+      <p class="cite-text" data-cite-text>{% if lang == "ar" %}«{{ name }}»، فقهاء، {{ site.url }}{{ page.url }}، {{ tj.accessed }} <span data-today>{% include date.html date=site.time lang=lang %}</span>.{% else %}“{{ name }}”, <em>Fukahâ</em>, {{ site.url }}{{ page.url }} ({{ tj.accessed }} <span data-today>{% include date.html date=site.time lang=lang %}</span>).{% endif %}</p>
+      <button type="button" class="btn btn-quiet" data-copy data-done="{{ tj.copied }}" hidden>{{ tj.copy }}</button>
+    </section>
+
+    {%- if J.peers.size > 0 %}
+    <section class="j-card">
+      <h2>{{ tj.peers }}</h2>
+      <ul class="peers">
+        {%- for id in J.peers %}
+        {%- assign b = brief[id] %}
+        <li><a href="{{ base }}{{ id }}/">{{ b.name[lang] | default: b.name.tr }}</a> <span dir="ltr">{{ b.death }}/{{ b.deathM }}</span></li>
+        {%- endfor %}
+      </ul>
+    </section>
+    {%- endif %}
+  </aside>
+</div>
+
+<nav class="wrap jurist-nav" aria-label="{{ tj.all }}">
+  {%- if J.prev %}{% assign b = brief[J.prev] %}
+  <a class="jn prev" href="{{ base }}{{ J.prev }}/"><span class="jn-label">{{ tj.prev }}</span><span class="jn-name">{{ b.name[lang] | default: b.name.tr }}</span><span class="jn-date" dir="ltr">{{ b.death }}/{{ b.deathM }}</span></a>
+  {%- else %}<span></span>{% endif %}
+  <a class="jn-all" href="{{ base }}">{{ tj.all }}</a>
+  {%- if J.next %}{% assign b = brief[J.next] %}
+  <a class="jn next" href="{{ base }}{{ J.next }}/"><span class="jn-label">{{ tj.next }}</span><span class="jn-name">{{ b.name[lang] | default: b.name.tr }}</span><span class="jn-date" dir="ltr">{{ b.death }}/{{ b.deathM }}</span></a>
+  {%- else %}<span></span>{% endif %}
+</nav>

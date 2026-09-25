@@ -4,9 +4,11 @@ layout: default
 {%- assign lang = page.lang | default: "tr" -%}
 {%- assign t = site.data.i18n[lang] -%}
 {%- assign cfg = site.data.tables[page.key] -%}
+{%- assign jurist_base = site.data.nav | where: "key", "fukaha" | first -%}
 {% include page-head.html %}
 <section class="wrap collection" aria-labelledby="table-title">
   {{ content }}
+  {% include quick-links.html %}
   <div class="table-app" data-table>
     <h2 id="table-title" class="visually-hidden">{{ t.nav[page.key] }}</h2>
     <div class="toolbar">
@@ -43,13 +45,14 @@ layout: default
   "name": {{ page.key | jsonify }},
   "data": {{ cfg.data | jsonify }},
   "sort": {{ cfg.sort | jsonify }},
+  "juristBase": {{ jurist_base.url[lang] | jsonify }},
   "filter": {{ cfg.filter | jsonify }},
-  "columns": [{% for c in cfg.columns %}{"field": {{ c.field | jsonify }}, "label": {{ t.col[c.label] | jsonify }}, "kind": {{ c.kind | default: "text" | jsonify }}, "alt": {{ c.alt | jsonify }}, "detail": {% if c.detail %}true{% else %}false{% endif %}, "hide": {{ c.hide | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}],
+  "columns": [{% for c in cfg.columns %}{"field": {{ c.field | jsonify }}, "label": {{ t.col[c.label] | jsonify }}, "kind": {{ c.kind | default: "text" | jsonify }}, "alt": {{ c.alt | jsonify }}, "link": {{ c.link | jsonify }}, "id": {{ c.id | jsonify }}, "detail": {% if c.detail %}true{% else %}false{% endif %}, "hide": {{ c.hide | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}],
   "text": {{ t.table | jsonify }},
   "madhhab": {{ t.madhhab | jsonify }},
   "thesis": {{ t.thesis | jsonify }},
   "langs": {{ t.lang | jsonify }},
   "links": {{ t.link | jsonify }},
-  "filterLabels": { "madhhab": {{ t.col.madhhab | jsonify }}, "type": {{ t.col.type | jsonify }}, "lang": {{ t.col.lang | jsonify }} }
+  "filterLabels": { "century": {{ t.col.century | jsonify }}, "madhhab": {{ t.col.madhhab | jsonify }}, "type": {{ t.col.type | jsonify }}, "lang": {{ t.col.lang | jsonify }} }
 }
 </script>

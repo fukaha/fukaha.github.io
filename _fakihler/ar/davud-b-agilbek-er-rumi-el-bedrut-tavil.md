@@ -1,0 +1,4 @@
+---
+summary: Konya'da yetişti; Habbazi'den fıkıh okudu, otuz yıl kadar Dımaşk'ta kaldı, sonra Halep'te on beş yıl ders verdi. Kal'atü'l-Müslimin yolunda vefat etti.
+title: داود بن أغلبك الرومي
+---
