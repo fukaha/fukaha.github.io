@@ -43,7 +43,8 @@ layout: default
       <p class="j-note">{{ tj.works_note }}</p>
       <ol class="works">
         {%- for w in J.works %}
-        <li><span lang="ar" dir="rtl">{{ w.ar }}</span>{% if w[lang] and lang != "ar" %}<span class="tr">{{ w[lang] }}</span>{% endif %}</li>
+        {%- assign wtr = w[lang] | default: w.tr %}
+        <li><span lang="ar" dir="rtl">{{ w.ar }}</span>{% if wtr and lang != "ar" %}<span class="tr">{{ wtr }}</span>{% endif %}</li>
         {%- endfor %}
       </ol>
     </section>
@@ -59,7 +60,7 @@ layout: default
         <h2>{{ tj[g] }}</h2>
         <ul class="people">
           {%- for x in people %}
-          <li lang="ar" dir="rtl">{% if x.id %}<a href="{{ base }}{{ x.id }}/">{{ x.ar }}</a>{% else %}{{ x.ar }}{% endif %}</li>
+          <li>{% if x.id %}<a href="{{ base }}{{ x.id }}/">{% endif %}<span lang="ar" dir="rtl">{{ x.ar }}</span>{% if x.tr and lang != "ar" %}<span class="tr">{{ x.tr }}</span>{% endif %}{% if x.id %}</a>{% endif %}</li>
           {%- endfor %}
         </ul>
       </div>

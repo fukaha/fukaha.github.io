@@ -13,6 +13,9 @@ Writes:
   _data/jurists.json        everything a jurist's own page shows, keyed by id
   _fakihler/<lang>/*.md     one stub per jurist and language; the layout reads _data/jurists.json
   _data/stats.yml           counts, charts and the short lists shown on the home page
+
+Turkish readings of the Arabic work titles and of the teachers' and students' names come from
+tools/translit/*.tsv (Arabic <tab> Turkish), kept by hand.
 """
 import collections
 import json
@@ -83,6 +86,13 @@ def century(h):
 LANGS = ("tr", "en", "ar")
 
 
+def load_tsv(name):
+    """Arabic → Turkish readings kept by hand in tools/translit/<name>.tsv."""
+    rows = (line.split("\t") for line in (ROOT / "tools/translit" / f"{name}.tsv").read_text(encoding="utf-8").splitlines()
+            if line and not line.startswith("#"))
+    return {ar: tr for ar, tr in rows}
+
+
 def load_yaml(path):
     return yaml.safe_load(clean(path.read_text(encoding="utf-8")))
 
@@ -127,9 +137,12 @@ def main():
     places = load_yaml(src / "src/data/places.yaml")
     work_scholars = json.loads((src / "src/data/work-scholars.json").read_text(encoding="utf-8"))
 
-    names_ar = {}
+    names_ar, names_tr = {}, {}
     for path in sorted((src / "src/content/scholars").glob("*.md")):
-        names_ar.setdefault(front_matter(path)["name"]["ar"], path.stem)
+        fm = front_matter(path)
+        names_ar.setdefault(fm["name"]["ar"], path.stem)
+        names_tr[path.stem] = fm["name"]["tr"]
+    people_tr, works_tr = load_tsv("kisiler"), load_tsv("eserler")
 
     def place(pid):
         return places.get(pid, {}).get("name") if pid else None
@@ -169,7 +182,11 @@ def main():
             "order": d.get("order"),
             "featured": bool(d.get("featured")) or None,
         }))
-        person = lambda n: compact({"ar": n, "id": names_ar.get(n) if names_ar.get(n) != sid else None})
+        def person(n):
+            pid = names_ar.get(n) if names_ar.get(n) != sid else None
+            return compact({"ar": n, "tr": names_tr[pid] if pid else people_tr.get(n), "id": pid})
+        works = [compact({"ar": w.get("ar"), "tr": w.get("tr") or works_tr.get(w.get("ar")), "en": w.get("en")})
+                 for w in d.get("works") or []]
         pages[sid] = compact({
             "name": name,
             "madhhab": madhhab,
@@ -182,13 +199,13 @@ def main():
             "places": [compact({"place": place(x.get("place")), "role": x.get("role")}) for x in d.get("places") or [] if place(x.get("place"))],
             "teachers": [person(n) for n in d.get("teachers") or []],
             "students": [person(n) for n in d.get("students") or []],
-            "works": [compact({k: w.get(k) for k in LANGS}) for w in d.get("works") or []],
+            "works": works,
             "summary": compact(d.get("summary") or {}),
             "source": compact({k: source.get(k) for k in ("book", "bookTr", "author", "authorTr", "edition", "page", "entry")}),
             "text": body(path),
             "order": d.get("order"),
         })
-        for w in d.get("works") or []:
+        for w in works:
             classics.append(compact({
                 "title": w.get("ar"),
                 "titleTr": w.get("tr"),
