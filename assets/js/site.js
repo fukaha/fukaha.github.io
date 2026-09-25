@@ -1,26 +1,57 @@
-// Mobile menu, colour theme and the home page carousels.
+// Header panels, colour theme and the home page carousels.
 (function () {
   'use strict';
   var root = document.documentElement;
   var rtl = root.dir === 'rtl';
   var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // --- mobile menu ---
-  var btn = document.querySelector('.menu-btn');
-  var nav = document.getElementById('site-nav');
-  if (btn && nav) {
-    var setMenu = function (open) {
+  // --- header: solid once scrolled or while a panel is open ---
+  var header = document.querySelector('[data-header]');
+  var panels = [];   // {btn, el, set}
+  function anyOpen() { return panels.some(function (p) { return p.btn.getAttribute('aria-expanded') === 'true'; }); }
+  function paintHeader() { if (header) header.classList.toggle('is-solid', window.scrollY > 8 || anyOpen()); }
+  function panel(btn, el, onOpen) {
+    if (!btn || !el) return;
+    var item = { btn: btn, el: el };
+    item.set = function (open) {
       btn.setAttribute('aria-expanded', String(open));
-      nav.classList.toggle('is-open', open);
+      if (el.id === 'site-nav') el.classList.toggle('is-open', open); else el.hidden = !open;
+      if (open) {
+        panels.forEach(function (p) { if (p !== item) p.set(false); });
+        if (onOpen) onOpen();
+      }
+      paintHeader();
     };
-    btn.addEventListener('click', function () { setMenu(btn.getAttribute('aria-expanded') !== 'true'); });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); btn.focus(); }
-    });
-    document.addEventListener('click', function (e) {
-      if (nav.classList.contains('is-open') && !nav.contains(e.target) && !btn.contains(e.target)) setMenu(false);
-    });
+    btn.addEventListener('click', function () { item.set(btn.getAttribute('aria-expanded') !== 'true'); });
+    panels.push(item);
   }
+  var searchBtn = document.querySelector('.search-btn');
+  var searchPanel = document.getElementById('search-panel');
+  panel(document.querySelector('.menu-btn'), document.getElementById('site-nav'));
+  panel(searchBtn, searchPanel, function () { searchPanel.querySelector('input').focus(); });
+  panel(document.querySelector('.lang-btn'), document.getElementById('lang-list'));
+  if (searchBtn) {
+    new MutationObserver(function () {
+      var open = searchBtn.getAttribute('aria-expanded') === 'true';
+      searchBtn.setAttribute('aria-label', open ? searchBtn.dataset.close : searchBtn.dataset.open);
+    }).observe(searchBtn, { attributes: true, attributeFilter: ['aria-expanded'] });
+  }
+  // the search box sends the query to the chosen collection
+  var target = document.querySelector('[data-search-target]');
+  if (target) target.addEventListener('change', function () { target.form.action = target.value; });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    panels.forEach(function (p) {
+      if (p.btn.getAttribute('aria-expanded') === 'true') { p.set(false); p.btn.focus(); }
+    });
+  });
+  document.addEventListener('click', function (e) {
+    panels.forEach(function (p) {
+      if (p.btn.getAttribute('aria-expanded') === 'true' && !p.el.contains(e.target) && !p.btn.contains(e.target)) p.set(false);
+    });
+  });
+  window.addEventListener('scroll', paintHeader, { passive: true });
+  paintHeader();
 
   // --- light / dark ---
   var themeBtn = document.querySelector('.theme-btn');
@@ -28,10 +59,10 @@
   function paintTheme() {
     var dark = root.getAttribute('data-theme') === 'dark';
     if (themeBtn) {
-      themeBtn.querySelector('.theme-label').textContent = dark ? themeBtn.dataset.light : themeBtn.dataset.dark;
-      themeBtn.setAttribute('aria-pressed', String(dark));
+      themeBtn.setAttribute('aria-label', dark ? themeBtn.dataset.light : themeBtn.dataset.dark);
+      themeBtn.title = themeBtn.getAttribute('aria-label');
     }
-    if (themeMeta) themeMeta.content = dark ? '#0c201d' : '#14332f';
+    if (themeMeta) themeMeta.content = dark ? '#0f1413' : '#f5f0e6';
   }
   if (themeBtn) {
     themeBtn.hidden = false;

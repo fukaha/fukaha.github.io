@@ -1,29 +1,20 @@
 {%- assign lang = page.lang | default: "tr" -%}
 {%- assign t = site.data.i18n[lang] -%}
+{%- assign stats = site.data.stats -%}
+{%- assign tez_item = site.data.nav | where: "key", "tezler" | first -%}
+{%- assign search_keys = "tezler,klasik,fukaha,kitaplar,makaleler" | split: "," -%}
 <a class="skip" href="#main">{{ t.skip }}</a>
-<div class="topbar">
-  <div class="wrap topbar-in">
-    <p class="topbar-tag">{{ t.tagline }}</p>
-    <div class="topbar-tools">
-    <button class="theme-btn" type="button" hidden data-dark="{{ t.theme.to_dark }}" data-light="{{ t.theme.to_light }}"><span class="theme-icon" aria-hidden="true"></span><span class="theme-label">{{ t.theme.to_dark }}</span></button>
-    <nav class="langs" aria-label="{{ t.languages }}">
-      {%- for l in site.data.i18n %}{% assign code = l[0] %}
-      <a href="{% include alt-url.html l=code %}" lang="{{ code }}" hreflang="{{ code }}"{% if code == lang %} aria-current="true"{% endif %}>{{ l[1].lang_name }}</a>
-      {%- endfor %}
-    </nav>
-    </div>
-  </div>
-</div>
-<header class="site-header">
+<header class="site-header" data-header>
   <div class="wrap header-in">
-    <a class="brand" href="{{ site.data.nav[0].url[lang] }}">
+    <a class="brand" href="{{ site.data.nav[0].url[lang] }}" aria-label="Fukahâ · {{ t.nav.home }}">
       {% include mark.html %}
-      <span class="brand-text"><span class="brand-name">Fukahâ</span><span class="brand-ar" lang="ar">فقهاء</span></span>
+      <span class="brand-name">Fukahâ</span>
+      <span class="brand-sep" aria-hidden="true"></span>
+      <span class="brand-ar" lang="ar">فقهاء</span>
     </a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon" aria-hidden="true"></span><span class="menu-label">{{ t.menu }}</span></button>
     <nav class="site-nav" id="site-nav" aria-label="{{ t.menu }}">
       <ul>
-        {%- for item in site.data.nav %}
+        {%- for item in site.data.nav offset: 1 %}
         {%- assign active = false -%}
         {%- if page.key == item.key -%}{%- assign active = true -%}{%- endif -%}
         {%- if page.kind == "haber" and item.key == "haberler" -%}{%- assign active = true -%}{%- endif -%}
@@ -32,5 +23,38 @@
         {%- endfor %}
       </ul>
     </nav>
+    <div class="header-tools">
+      <button class="icon-btn search-btn" type="button" aria-expanded="false" aria-controls="search-panel" aria-label="{{ t.search.open }}" data-open="{{ t.search.open }}" data-close="{{ t.search.close }}">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+      </button>
+      <button class="icon-btn theme-btn" type="button" hidden data-dark="{{ t.theme.to_dark }}" data-light="{{ t.theme.to_light }}" aria-label="{{ t.theme.to_dark }}">
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.5 14.6A8 8 0 0 1 9.4 4.5a8 8 0 1 0 10.1 10.1Z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      </button>
+      <span class="tools-sep" aria-hidden="true">/</span>
+      <div class="lang-menu">
+        <button class="lang-btn" type="button" aria-expanded="false" aria-controls="lang-list" aria-label="{{ t.languages }}: {{ t.lang_name }}">{{ lang | upcase }}<span class="chev-d" aria-hidden="true"></span></button>
+        <ul class="lang-list" id="lang-list" hidden>
+          {%- for l in site.data.i18n %}{% assign code = l[0] %}
+          <li><a href="{% include alt-url.html l=code %}" lang="{{ code }}" hreflang="{{ code }}"{% if code == lang %} aria-current="true"{% endif %}><span>{{ l[1].lang_name }}</span><span class="lang-code">{{ code | upcase }}</span></a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="{{ t.menu }}"><span class="menu-icon" aria-hidden="true"></span></button>
+    </div>
+  </div>
+  <div class="search-panel" id="search-panel" hidden>
+    <form class="wrap search-form" method="get" action="{{ tez_item.url[lang] }}" role="search">
+      <select aria-label="{{ t.search.in }}" data-search-target>
+        {%- for key in search_keys %}
+        {%- assign item = site.data.nav | where: "key", key | first %}
+        {%- if stats.counts[key] > 0 %}
+        <option value="{{ item.url[lang] }}">{{ t.nav[key] }}</option>
+        {%- endif %}
+        {%- endfor %}
+      </select>
+      <input type="search" name="q" placeholder="{{ t.search.placeholder }}" aria-label="{{ t.search.placeholder }}" autocomplete="off" spellcheck="false">
+      <button type="submit">{{ t.home.search_button }}</button>
+    </form>
   </div>
 </header>

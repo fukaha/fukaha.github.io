@@ -84,10 +84,10 @@ layout: default
         <button class="slide-tab" type="button" role="tab" aria-controls="slide-{{ n }}"{% if n == 1 %} aria-selected="true"{% endif %}><span class="tab-no">{{ n }}</span><span class="tab-title">{{ post.title }}</span></button>
         {%- endfor %}
         {%- if thesis %}{% assign n = n | plus: 1 %}
-        <button class="slide-tab" type="button" role="tab" aria-controls="slide-{{ n }}"><span class="tab-no">{{ n }}</span><span class="tab-title">{{ t.home.kind_tez }}: {{ thesis.title }}</span></button>
+        <button class="slide-tab" type="button" role="tab" aria-controls="slide-{{ n }}"><span class="tab-no">{{ n }}</span><span class="tab-title">{{ t.home.kind_tez }}: <bdi>{{ thesis.title }}</bdi></span></button>
         {%- endif %}
         {%- if jurist %}{% assign n = n | plus: 1 %}
-        <button class="slide-tab" type="button" role="tab" aria-controls="slide-{{ n }}"><span class="tab-no">{{ n }}</span><span class="tab-title">{{ t.home.kind_fakih }}: {{ jurist.name[lang] | default: jurist.name.tr }}</span></button>
+        <button class="slide-tab" type="button" role="tab" aria-controls="slide-{{ n }}"><span class="tab-no">{{ n }}</span><span class="tab-title">{{ t.home.kind_fakih }}: <bdi>{{ jurist.name[lang] | default: jurist.name.tr }}</bdi></span></button>
         {%- endif %}
       </div>
       <div class="showcase-nav">

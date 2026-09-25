@@ -7,6 +7,11 @@ tr:
   dir: ltr
   tagline: Fakihler, eserleri ve onlar üzerine yapılan çalışmalar
   description: Tabakât kitaplarındaki fakihler, yazdıkları eserler ve bu eserler üzerine yapılmış tez, kitap ve makalelerin künyeleri.
+  search:
+    open: Ara
+    close: Aramayı kapat
+    placeholder: Aranacak kelime…
+    in: Nerede aransın
   theme:
     to_dark: Koyu görünüm
     to_light: Açık görünüm
@@ -165,6 +170,11 @@ en:
   dir: ltr
   tagline: A guide to the sources of Islamic law and its scholarship
   description: A trilingual, sortable guide to classical works of fiqh, the jurists who wrote them, and the theses, books and articles that study them.
+  search:
+    open: Search
+    close: Close search
+    placeholder: Search for…
+    in: Search in
   theme:
     to_dark: Dark mode
     to_light: Light mode
@@ -323,6 +333,11 @@ ar:
   dir: rtl
   tagline: دليل إلى مصادر الفقه الإسلامي ودراساته
   description: دليل ثلاثي اللغة قابل للترتيب إلى كتب الفقه الكلاسيكية والفقهاء الذين صنّفوها والرسائل والكتب والبحوث التي تدرسها.
+  search:
+    open: بحث
+    close: إغلاق البحث
+    placeholder: كلمة البحث…
+    in: مكان البحث
   theme:
     to_dark: الوضع الداكن
     to_light: الوضع الفاتح
