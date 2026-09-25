@@ -4,7 +4,8 @@
 # label   key under `col` in _data/i18n.yml
 # kind    text (default) | ar (Arabic text) | loc (object with tr/en/ar) | madhhab |
 #         thesis (thesis type) | lang (language code) | hijri (with the Gregorian in `alt`) |
-#         num | yok (YÖK links) | doi | list (list of tr/en/ar objects)
+#         num | yok (YÖK links) | doi | list (list of tr/en/ar objects) | atype (article type) |
+#         long (paragraph, full width in the detail panel) | short (short text, column kept narrow)
 # detail  true: shown only in the row's detail panel
 # hide    languages in which the column is left out
 # filter  fields offered as drop-down filters above the table
@@ -62,18 +63,22 @@ tezler:
 makaleler:
   data: /data/makaleler.json
   sort: { field: year, dir: desc }
-  filter: [lang]
+  filter: [type, lang]
   columns:
     - { field: title, label: title }
     - { field: author, label: author }
     - { field: journal, label: journal }
-    - { field: volume, label: volume }
-    - { field: issue, label: issue }
-    - { field: pages, label: pages }
+    - { field: volume, label: volume, kind: short }
+    - { field: issue, label: issue, kind: short }
+    - { field: pages, label: pages, kind: short }
     - { field: year, label: year, kind: num }
+    - { field: type, label: type, kind: atype }
     - { field: lang, label: lang, kind: lang }
     - { field: doi, label: doi, kind: doi }
-    - { field: topics, label: topics, detail: true }
+    - { field: jurists, label: jurists, kind: list, detail: true, link: jurist, id: id }
+    - { field: translator, label: translator, detail: true }
+    - { field: keywords, label: keywords, detail: true }
+    - { field: abstract, label: abstract, kind: long, detail: true }
 
 fukaha:
   data: /data/fukaha.json

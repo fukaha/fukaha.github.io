@@ -41,6 +41,7 @@ All collections work the same way: each record is a table row and the full recor
 | Coordinates | [al-Ṯurayyā Gazetteer](https://althurayya.github.io/) (CC BY 4.0). The 34 places it does not cover, mostly towns of Anatolia and the Balkans, are placed approximately. |
 | Historical regions | Georgette Cornu, *Atlas du monde arabo-islamique à l’époque classique* (Leiden 1983), as digitised in al-Ṯurayyā. |
 | Base map | [Natural Earth](https://www.naturalearthdata.com/) (public domain), drawn with [Leaflet](https://leafletjs.com/). |
+| Articles | A [DergiPark](https://dergipark.org.tr) article search export: citation, DOI, abstract and keywords. The jurists the articles study were matched by hand. |
 | Symposium notices | The [DAVET](https://davet.org.tr/tr/sempozyum) symposium list and the organisers’ pages. Posters belong to the organisers. |
 
 ## Method

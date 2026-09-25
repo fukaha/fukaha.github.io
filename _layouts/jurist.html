@@ -12,6 +12,7 @@ layout: default
 {%- assign name = J.name[lang] | default: J.name.tr -%}
 {%- if lang == "ar" %}{% assign summary = J.summary.ar %}{% else %}{% assign summary = J.summary[lang] | default: J.summary.tr %}{% endif -%}
 {%- assign months = tj.months | split: "," -%}
+{%- assign arts = site.data.makale_fakih[page.slug] -%}
 
 <header class="page-head has-image jurist-head">
   <div class="page-head-img" aria-hidden="true"><img src="{{ img.src }}" alt="" width="{{ img.width }}" height="{{ img.height }}"></div>
@@ -50,7 +51,20 @@ layout: default
     </section>
     {%- endif %}
 
-
+    {%- if arts.size > 0 %}
+    <section class="j-sec" aria-labelledby="h-articles">
+      <h2 id="h-articles">{{ tj.articles }} <span class="n">{{ arts.size }}</span></h2>
+      <p class="j-note">{{ tj.articles_lead }}</p>
+      <ul class="j-theses">
+        {%- for a in arts %}
+        <li>
+          {% if a.doi %}<a href="https://doi.org/{{ a.doi }}" rel="noopener" target="_blank"{% if lang == "ar" %} dir="ltr"{% endif %}>{{ a.title }}</a>{% else %}<span class="t"{% if lang == "ar" %} dir="ltr"{% endif %}>{{ a.title }}</span>{% endif %}
+          <span class="by"{% if lang == "ar" %} dir="ltr"{% endif %}>{% if a.type %}<span class="tag a-{{ a.type }}">{{ t.atype[a.type] }}</span> {% endif %}{{ a.author }} · <em>{{ a.journal }}</em>{% if a.volume or a.issue %} {{ a.volume }}{% if a.volume and a.issue %}/{% endif %}{{ a.issue }}{% endif %} · {{ a.year }}</span>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+    {%- endif %}
 
     {%- if J.theses.size > 0 %}
     <section class="j-sec" aria-labelledby="h-theses">
@@ -81,11 +95,6 @@ layout: default
       <p class="source-ref">{% if lang == "ar" %}{{ J.source.book }}{% else %}<em>{{ J.source.bookTr }}</em>{% endif %}{% if J.source.edition %}, {{ J.source.edition }}{% endif %}{% if J.source.page %}, {{ tj.page }} {{ J.source.page }}{% endif %}{% if J.source.entry %} ({{ tj.entry }} {{ J.source.entry }}){% endif %}.</p>
     </section>
     {%- endif %}
-    <section class="j-card cite" data-cite>
-      <h2>{{ tj.cite }}</h2>
-      <p class="cite-text" data-cite-text>{% if lang == "ar" %}«{{ name }}»، فقهاء، {{ site.url }}{{ page.url }}، {{ tj.accessed }} <span data-today>{% include date.html date=site.time lang=lang %}</span>.{% else %}“{{ name }}”, <em>Fukahâ</em>, {{ site.url }}{{ page.url }} ({{ tj.accessed }} <span data-today>{% include date.html date=site.time lang=lang %}</span>).{% endif %}</p>
-      <button type="button" class="btn btn-quiet" data-copy data-done="{{ tj.copied }}" hidden>{{ tj.copy }}</button>
-    </section>
   </div>
 
   <aside class="jurist-aside">

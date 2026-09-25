@@ -41,6 +41,7 @@ Koleksiyonların hepsi aynı biçimde çalışır: her kayıt bir tablo satırı
 | Yer koordinatları | [al-Ṯurayyā Gazetteer](https://althurayya.github.io/) (CC BY 4.0). Anadolu ve Rumeli kasabaları gibi bu kaynakta bulunmayan 34 yerin konumu yaklaşıktır. |
 | Tarihî bölgeler | Georgette Cornu, *Atlas du monde arabo-islamique à l’époque classique* (Leiden 1983), al-Ṯurayyā’daki sayısal hâliyle. |
 | Harita zemini | [Natural Earth](https://www.naturalearthdata.com/) (kamu malı). Harita [Leaflet](https://leafletjs.com/) ile çiziliyor. |
+| Makaleler | [DergiPark](https://dergipark.org.tr) makale arama dökümü: künye, DOI, öz ve anahtar kelimeler. Makalelerin konu edindiği fakihler elle eşleştirildi. |
 | Sempozyum duyuruları | [DAVET](https://davet.org.tr/tr/sempozyum) sempozyum listesi ve düzenleyicilerin sayfaları. Afişler düzenleyicilere aittir. |
 
 ## Yöntem

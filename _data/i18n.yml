@@ -130,6 +130,9 @@ tr:
     volume: Cilt
     issue: Sayı
     doi: DOI
+    translator: Mütercim
+    keywords: Anahtar kelimeler
+    abstract: Öz
   madhhab:
     hanefi: Hanefî
     maliki: Mâlikî
@@ -140,6 +143,10 @@ tr:
   thesis:
     yl: Yüksek lisans
     doktora: Doktora
+  atype:
+    arastirma: Araştırma makalesi
+    inceleme: Kitap incelemesi
+    ceviri: Çeviri
   lang:
     tr: Türkçe
     ar: Arapça
@@ -177,14 +184,12 @@ tr:
     works_note: Leknevî’nin terceme maddesinde saydığı eserler.
     theses: Hakkında yazılan tezler
     theses_lead: YÖK Ulusal Tez Merkezi’nde bu fakihi konu alan tezler, yeniden eskiye.
+    articles: Hakkında yazılan makaleler
+    articles_lead: Hakemli dergilerde bu fakihi ya da eserini konu alan makaleler, yeniden eskiye.
     show_all: Bütün tezleri göster
     source_text: Kaynak metin
     page: s.
     entry: madde
-    cite: Bu sayfaya atıf
-    copy: Kopyala
-    copied: Kopyalandı
-    accessed: erişim
     peers: Aynı dönemde vefat edenler
     prev: Önceki fakih
     next: Sonraki fakih
@@ -437,6 +442,9 @@ en:
     volume: Volume
     issue: Issue
     doi: DOI
+    translator: Translator
+    keywords: Keywords
+    abstract: Abstract
   madhhab:
     hanefi: Ḥanafī
     maliki: Mālikī
@@ -447,6 +455,10 @@ en:
   thesis:
     yl: Master’s
     doktora: Doctoral
+  atype:
+    arastirma: Research article
+    inceleme: Book review
+    ceviri: Translation
   lang:
     tr: Turkish
     ar: Arabic
@@ -484,14 +496,12 @@ en:
     works_note: Works named in al-Laknawī’s entry.
     theses: Theses about him
     theses_lead: Theses in the YÖK National Thesis Centre that study this jurist, newest first.
+    articles: Articles about him
+    articles_lead: Articles in peer-reviewed journals on this jurist or his work, newest first.
     show_all: Show all theses
     source_text: Source text
     page: p.
     entry: entry
-    cite: Cite this page
-    copy: Copy
-    copied: Copied
-    accessed: accessed
     peers: Died in the same period
     prev: Previous jurist
     next: Next jurist
@@ -744,6 +754,9 @@ ar:
     volume: المجلد
     issue: العدد
     doi: DOI
+    translator: المترجم
+    keywords: الكلمات المفتاحية
+    abstract: الملخص
   madhhab:
     hanefi: الحنفي
     maliki: المالكي
@@ -754,6 +767,10 @@ ar:
   thesis:
     yl: ماجستير
     doktora: دكتوراه
+  atype:
+    arastirma: بحث
+    inceleme: مراجعة كتاب
+    ceviri: ترجمة
   lang:
     tr: التركية
     ar: العربية
@@ -791,14 +808,12 @@ ar:
     works_note: المصنفات التي ذكرها اللكنوي في ترجمته.
     theses: رسائل جامعية عنه
     theses_lead: الرسائل المسجلة في المركز الوطني للرسائل الجامعية (YÖK) عن هذا الفقيه، الأحدث أولًا.
+    articles: مقالات عنه
+    articles_lead: مقالات في مجلات محكّمة عن هذا الفقيه أو عن كتبه، الأحدث أولًا.
     show_all: عرض جميع الرسائل
     source_text: نص المصدر
     page: ص
     entry: الترجمة
-    cite: الإحالة إلى هذه الصفحة
-    copy: نسخ
-    copied: تم النسخ
-    accessed: تاريخ الاطلاع
     peers: من توفي في الحقبة نفسها
     prev: الفقيه السابق
     next: الفقيه التالي

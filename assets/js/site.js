@@ -228,23 +228,4 @@
     });
   });
 
-  // --- citation box: today's date and a copy button ---
-  document.querySelectorAll('[data-cite]').forEach(function (box) {
-    var L = document.documentElement.lang;
-    var day = box.querySelector('[data-today]');
-    if (day) {
-      try { day.textContent = new Intl.DateTimeFormat(L === 'ar' ? 'ar-u-nu-latn' : L === 'en' ? 'en-GB' : 'tr-TR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date()); } catch (e) {}
-    }
-    var btn = box.querySelector('[data-copy]');
-    var text = box.querySelector('[data-cite-text]');
-    if (!btn || !text || !navigator.clipboard) return;
-    btn.hidden = false;
-    var label = btn.textContent;
-    btn.addEventListener('click', function () {
-      navigator.clipboard.writeText(text.textContent.trim()).then(function () {
-        btn.textContent = btn.dataset.done;
-        setTimeout(function () { btn.textContent = label; }, 1800);
-      });
-    });
-  });
 })();

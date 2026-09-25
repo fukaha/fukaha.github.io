@@ -108,6 +108,10 @@
         return v ? { text: cfg.madhhab[v] || v, html: '<span class="tag m-' + esc(v) + '">' + esc(cfg.madhhab[v] || v) + '</span>', sort: cfg.madhhab[v] || v } : empty;
       case 'thesis':
         return v ? { text: cfg.thesis[v] || v, html: '<span class="tag t-' + esc(v) + '">' + esc(cfg.thesis[v] || v) + '</span>', sort: cfg.thesis[v] || v } : empty;
+      case 'atype':
+        return v ? { text: cfg.atype[v] || v, html: '<span class="tag a-' + esc(v) + '">' + esc(cfg.atype[v] || v) + '</span>', sort: cfg.atype[v] || v } : empty;
+      case 'long':
+        return v ? { text: v, html: '<p class="long">' + esc(v) + '</p>', sort: v } : empty;
       case 'lang':
         return v ? { text: cfg.langs[v] || v, html: esc(cfg.langs[v] || v), sort: cfg.langs[v] || v } : empty;
       case 'hijri': {
@@ -252,7 +256,7 @@
       html += '<tr class="detail" id="' + id + '"' + (isOpen ? '' : ' hidden') + '><td colspan="' + (mainCols.length + 1) + '"><dl>';
       columns.forEach(function (c, i) {
         if (!c.detail || !r.cells[i].text) return;
-        html += '<div><dt>' + esc(c.label) + '</dt><dd>' + r.cells[i].html + '</dd></div>';
+        html += '<div' + (c.kind === 'long' ? ' class="wide"' : '') + '><dt>' + esc(c.label) + '</dt><dd>' + r.cells[i].html + '</dd></div>';
       });
       html += '</dl></td></tr>';
     }
@@ -322,6 +326,7 @@
       var label = function (k) {
         if (col.kind === 'madhhab') return cfg.madhhab[k] || k;
         if (col.kind === 'thesis') return cfg.thesis[k] || k;
+        if (col.kind === 'atype') return cfg.atype[k] || k;
         if (col.kind === 'lang') return cfg.langs[k] || k;
         if (f === 'century') return centuryLabel(Number(k));
         return k;
