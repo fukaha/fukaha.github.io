@@ -1,0 +1,253 @@
+{
+ "bounds": {
+  "west": -11,
+  "east": 91,
+  "south": 6,
+  "north": 53
+ },
+ "ppd": 60,
+ "zooms": 4,
+ "tile": 256,
+ "regions": {
+  "endulus": {
+   "tr": "Endülüs",
+   "en": "al-Andalus",
+   "ar": "الأندلس",
+   "lat": 38.4,
+   "lng": -4.6
+  },
+  "sicilya": {
+   "tr": "Sicilya",
+   "en": "Sicily",
+   "ar": "صقلية",
+   "lat": 37.6,
+   "lng": 14.2
+  },
+  "magrib": {
+   "tr": "Mağrib",
+   "en": "Maghrib",
+   "ar": "المغرب",
+   "lat": 31.0,
+   "lng": 1.0
+  },
+  "berka": {
+   "tr": "Berka",
+   "en": "Barqa",
+   "ar": "برقة",
+   "lat": 31.2,
+   "lng": 21.6
+  },
+  "misir": {
+   "tr": "Mısır",
+   "en": "Egypt",
+   "ar": "مصر",
+   "lat": 26.2,
+   "lng": 30.6
+  },
+  "sam": {
+   "tr": "Şam",
+   "en": "Syria",
+   "ar": "الشام",
+   "lat": 33.3,
+   "lng": 37.2
+  },
+  "cezire": {
+   "tr": "Cezîre",
+   "en": "Jazira",
+   "ar": "الجزيرة",
+   "lat": 36.4,
+   "lng": 41.4
+  },
+  "irak": {
+   "tr": "Irak",
+   "en": "Iraq",
+   "ar": "العراق",
+   "lat": 32.2,
+   "lng": 44.9
+  },
+  "hicaz": {
+   "tr": "Hicaz",
+   "en": "Hijaz",
+   "ar": "الحجاز",
+   "lat": 23.2,
+   "lng": 39.6
+  },
+  "yemen": {
+   "tr": "Yemen",
+   "en": "Yemen",
+   "ar": "اليمن",
+   "lat": 15.4,
+   "lng": 45.4
+  },
+  "cibal": {
+   "tr": "Cibâl",
+   "en": "Jibal",
+   "ar": "الجبال",
+   "lat": 34.6,
+   "lng": 48.8
+  },
+  "huzistan": {
+   "tr": "Huzistan",
+   "en": "Khuzistan",
+   "ar": "خوزستان",
+   "lat": 31.6,
+   "lng": 49.0
+  },
+  "fars": {
+   "tr": "Fars",
+   "en": "Fars",
+   "ar": "فارس",
+   "lat": 29.4,
+   "lng": 53.2
+  },
+  "kirman": {
+   "tr": "Kirman",
+   "en": "Kirman",
+   "ar": "كرمان",
+   "lat": 29.2,
+   "lng": 57.6
+  },
+  "azerbaycan": {
+   "tr": "Azerbaycan",
+   "en": "Azerbaijan",
+   "ar": "أذربيجان",
+   "lat": 39.4,
+   "lng": 46.6
+  },
+  "taberistan": {
+   "tr": "Taberistan",
+   "en": "Tabaristan",
+   "ar": "طبرستان",
+   "lat": 36.6,
+   "lng": 52.4
+  },
+  "horasan": {
+   "tr": "Horasan",
+   "en": "Khurasan",
+   "ar": "خراسان",
+   "lat": 35.4,
+   "lng": 59.4
+  },
+  "sistan": {
+   "tr": "Sistan",
+   "en": "Sistan",
+   "ar": "سجستان",
+   "lat": 31.0,
+   "lng": 62.0
+  },
+  "sind": {
+   "tr": "Sind",
+   "en": "Sind",
+   "ar": "السند",
+   "lat": 26.6,
+   "lng": 68.2
+  },
+  "harezm": {
+   "tr": "Harezm",
+   "en": "Khwarazm",
+   "ar": "خوارزم",
+   "lat": 41.9,
+   "lng": 60.2
+  },
+  "maveraunnehir": {
+   "tr": "Mâverâünnehir",
+   "en": "Transoxiana",
+   "ar": "ما وراء النهر",
+   "lat": 40.6,
+   "lng": 66.0
+  },
+  "turkistan": {
+   "tr": "Türkistan",
+   "en": "Turkestan",
+   "ar": "تركستان",
+   "lat": 42.6,
+   "lng": 73.8
+  },
+  "hind": {
+   "tr": "Hind",
+   "en": "India",
+   "ar": "الهند",
+   "lat": 26.0,
+   "lng": 78.5
+  },
+  "rum": {
+   "tr": "Rum",
+   "en": "Rum",
+   "ar": "بلاد الروم",
+   "lat": 39.2,
+   "lng": 32.8
+  },
+  "kirim": {
+   "tr": "Kırım",
+   "en": "Crimea",
+   "ar": "القرم",
+   "lat": 45.4,
+   "lng": 34.0
+  }
+ },
+ "waters": [
+  {
+   "tr": "Akdeniz",
+   "en": "Mediterranean Sea",
+   "ar": "البحر الأبيض المتوسط",
+   "lat": 34.4,
+   "lng": 18.5
+  },
+  {
+   "tr": "Karadeniz",
+   "en": "Black Sea",
+   "ar": "البحر الأسود",
+   "lat": 43.3,
+   "lng": 34.5
+  },
+  {
+   "tr": "Hazar Denizi",
+   "en": "Caspian Sea",
+   "ar": "بحر قزوين",
+   "lat": 42.0,
+   "lng": 50.8
+  },
+  {
+   "tr": "Kızıldeniz",
+   "en": "Red Sea",
+   "ar": "البحر الأحمر",
+   "lat": 20.2,
+   "lng": 38.6
+  },
+  {
+   "tr": "Basra Körfezi",
+   "en": "Persian Gulf",
+   "ar": "الخليج",
+   "lat": 27.0,
+   "lng": 51.0
+  },
+  {
+   "tr": "Umman Denizi",
+   "en": "Arabian Sea",
+   "ar": "بحر العرب",
+   "lat": 16.5,
+   "lng": 62.5
+  },
+  {
+   "tr": "Hint Okyanusu",
+   "en": "Indian Ocean",
+   "ar": "المحيط الهندي",
+   "lat": 9.0,
+   "lng": 72.0
+  },
+  {
+   "tr": "Aral Gölü",
+   "en": "Aral Sea",
+   "ar": "بحيرة آرال",
+   "lat": 45.1,
+   "lng": 59.6
+  },
+  {
+   "tr": "Atlas Okyanusu",
+   "en": "Atlantic Ocean",
+   "ar": "المحيط الأطلسي",
+   "lat": 36.0,
+   "lng": -9.2
+  }
+ ]
+}

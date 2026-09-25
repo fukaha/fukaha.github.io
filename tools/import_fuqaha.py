@@ -13,6 +13,8 @@ Writes:
   _data/jurists.json        everything a jurist's own page shows, keyed by id
   _fakihler/<lang>/*.md     one stub per jurist and language; the layout reads _data/jurists.json
   _data/stats.yml           counts, charts and the short lists shown on the home page
+  _data/places.json         the places on the map (coordinates from al-Thurayya where it has them)
+  data/harita.json          places and jurists for the map page
 
 Turkish readings of the Arabic work titles and of the teachers' and students' names come from
 tools/translit/*.tsv (Arabic <tab> Turkish), kept by hand.
@@ -147,6 +149,16 @@ def main():
     def place(pid):
         return places.get(pid, {}).get("name") if pid else None
 
+    def geo(d):
+        """Every place tied to a jurist, with its role: [[place id, role], ...]."""
+        pairs = [[(d.get("birth") or {}).get("place"), "dogum"], [(d.get("death") or {}).get("place"), "vefat"]]
+        pairs += [[x.get("place"), x.get("role")] for x in d.get("places") or []]
+        out = []
+        for pid, role in pairs:
+            if pid in places and [pid, role] not in out:
+                out.append([pid, role])
+        return out
+
     theses_about = {}
     for work, ids in work_scholars.items():
         for sid in ids:
@@ -197,6 +209,7 @@ def main():
                               "alt": death.get("alt"), "approx": bool(death.get("approx")) or None}),
             "century": century(dh),
             "places": [compact({"place": place(x.get("place")), "role": x.get("role")}) for x in d.get("places") or [] if place(x.get("place"))],
+            "geo": geo(d),
             "teachers": [person(n) for n in d.get("teachers") or []],
             "students": [person(n) for n in d.get("students") or []],
             "works": works,
@@ -263,9 +276,32 @@ def main():
         if i < len(dated) - 1: page["next"] = dated[i + 1]["id"]
         near = sorted(dated[max(0, i - 6):i] + dated[i + 1:i + 7], key=lambda o: abs(o["death"] - j["death"]))[:6]
         page["peers"] = sorted((o["id"] for o in near), key=lambda x: pages[x]["death"]["h"])
+    # a jurist's places, each once with all its roles, for the small map on his page
+    for page in pages.values():
+        spots = {}
+        for pid, role in page.get("geo", []):
+            spots.setdefault(pid, []).append(role)
+        if spots:
+            page["spots"] = [{"id": pid, "roles": roles} for pid, roles in spots.items()]
+
     brief = {j["id"]: {k: j.get(k) for k in ("name", "death", "deathM", "madhhab")} for j in jurists}
     (ROOT / "_data/jurists.json").write_text(
         json.dumps({"pages": pages, "brief": brief}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+    # the map: places in use and the jurists tied to them
+    used = sorted({pid for page in pages.values() for pid, _ in page.get("geo", [])})
+    geo_places = {pid: compact({
+        "name": places[pid]["name"], "region": places[pid].get("regionId"),
+        "lat": places[pid]["lat"], "lng": places[pid]["lng"],
+        "uri": places[pid].get("uri") if places[pid].get("coordSource") == "thurayya" else None,
+        "approx": places[pid].get("coordSource") != "thurayya" or None,
+    }) for pid in used}
+    (ROOT / "_data/places.json").write_text(json.dumps(geo_places, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    geo_jurists = [compact({"id": j["id"], "name": j["name"], "madhhab": j["madhhab"], "death": j.get("death"),
+                            "deathM": j.get("deathM"), "century": j.get("century"), "geo": pages[j["id"]]["geo"]})
+                   for j in jurists if pages[j["id"]].get("geo")]
+    (OUT / "harita.json").write_text(json.dumps({"places": geo_places, "jurists": geo_jurists},
+                                                ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     stubs = ROOT / "_fakihler"
     for lang in LANGS:

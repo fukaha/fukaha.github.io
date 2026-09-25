@@ -23,6 +23,8 @@ tr:
     makaleler: Makaleler
     haberler: Haberler
     fukaha: Fukahâ
+    harita: Harita
+    silsile: Silsile
     blog: Blog
     hakkinda: Hakkında
   died: "ö."
@@ -67,6 +69,8 @@ tr:
     tezler: Türkiye’de İslam hukuku alanında yapılmış yüksek lisans ve doktora tezleri.
     makaleler: Hakemli dergilerde yayımlanmış İslam hukuku makaleleri.
     fukaha: Tabakât kitaplarından aktarılmış fakih biyografileri.
+    harita: Leknevî’nin fakihlerinin doğduğu, okuduğu, ders verdiği, kadılık yaptığı ve vefat ettiği yerler.
+    silsile: Fakihler arasındaki hoca ve talebe bağları. Bir ismin üzerine gelince kimden okuduğu ve kimleri yetiştirdiği belirir.
     haberler: Sitedeki yenilikler ve duyurular.
     blog: Fıkıh, kaynaklar ve yöntem üzerine yazılar.
   table:
@@ -221,6 +225,46 @@ tr:
     back_news: Bütün haberler
     back_blog: Bütün yazılar
     no_posts: Henüz yazı yok.
+  map:
+    title: Fakihlerin haritası
+    places_n: yer
+    jurists_n: fakih
+    century: Asır
+    all_centuries: Bütün asırlar
+    role: Bağ
+    all_roles: Bütün bağlar
+    search: Fakih ara
+    search_ph: Ad yazın
+    pick: Haritadan bir yer seçin. O yerle bağı olan fakihler burada listelenir.
+    at_place: "{n} fakih"
+    thurayya: al-Ṯurayyā kaydı
+    approx: Konum yaklaşık; bu yer al-Ṯurayyā’da yok.
+    reset: Temizle
+    zoom_in: Yakınlaştır
+    zoom_out: Uzaklaştır
+    fullmap: Bütün fakihlerin haritası
+    credit: "Zemin: Natural Earth (kamu malı). Bölgeler: G. Cornu, Atlas du monde arabo-islamique; koordinatlar: al-Ṯurayyā Gazetteer (CC BY 4.0). Yaklaşık konumlar içi boş halkayla gösterilir."
+    legend_many: Daha çok fakih
+    legend_approx: Yaklaşık konum
+    mini: Haritada
+  net:
+    title: Hoca ve talebe ağı
+    lead: Leknevî’nin biyografilerinde adı geçen hoca ve talebe bağları.
+    teachers: Hocaları
+    students: Talebeleri
+    self: Bu fakih
+    outside: Fukahâ’da kaydı olmayan
+    jurists_n: fakih
+    links_n: bağ
+    focus: Bir fakih seçin
+    focus_ph: Ad yazın
+    all: Bütün ağ
+    hint: Bir ismin üzerine gelin ya da dokunun, bağları öne çıksın. Tıklayınca fakihin sayfası açılır.
+    century: Asır
+    open: Ağı büyük göster
+    none: Bu fakih için hoca ya da talebe kaydı yok.
+    legend_link: Hoca → talebe
+    legend_ext: Kaydı olmayan kişi
   event:
     kind: Sempozyum
     details: Duyuruyu oku
@@ -270,6 +314,8 @@ en:
     makaleler: Articles
     haberler: News
     fukaha: Jurists
+    harita: Map
+    silsile: Network
     blog: Blog
     hakkinda: About
   died: "d."
@@ -314,6 +360,8 @@ en:
     tezler: Master’s and doctoral theses on Islamic law written in Turkey.
     makaleler: Articles on Islamic law published in peer-reviewed journals.
     fukaha: Biographies of jurists taken from the ṭabaqāt literature.
+    harita: Where al-Laknawī’s jurists were born, studied, taught, served as judges and died.
+    silsile: The teacher and student ties among the jurists. Point at a name to see from whom he learned and whom he trained.
     haberler: What is new on the site.
     blog: Writing on fiqh, its sources and method.
   table:
@@ -468,6 +516,46 @@ en:
     back_news: All news
     back_blog: All posts
     no_posts: No posts yet.
+  map:
+    title: Map of the jurists
+    places_n: places
+    jurists_n: jurists
+    century: Century
+    all_centuries: All centuries
+    role: Tie
+    all_roles: All ties
+    search: Find a jurist
+    search_ph: Type a name
+    pick: Choose a place on the map. The jurists tied to it are listed here.
+    at_place: "{n} jurists"
+    thurayya: al-Ṯurayyā record
+    approx: Approximate position; this place is not in al-Ṯurayyā.
+    reset: Clear
+    zoom_in: Zoom in
+    zoom_out: Zoom out
+    fullmap: Map of all jurists
+    credit: "Base map: Natural Earth (public domain). Regions after G. Cornu, Atlas du monde arabo-islamique; coordinates from the al-Ṯurayyā Gazetteer (CC BY 4.0). Approximate positions are drawn as open rings."
+    legend_many: More jurists
+    legend_approx: Approximate position
+    mini: On the map
+  net:
+    title: Teachers and students
+    lead: The ties between teachers and students named in al-Laknawī’s biographies.
+    teachers: Teachers
+    students: Students
+    self: This jurist
+    outside: Not in Fukahâ
+    jurists_n: jurists
+    links_n: ties
+    focus: Choose a jurist
+    focus_ph: Type a name
+    all: Whole network
+    hint: Point at or tap a name to bring its ties forward. Click to open the jurist’s page.
+    century: Century
+    open: Show the network large
+    none: No teachers or students are recorded for this jurist.
+    legend_link: Teacher → student
+    legend_ext: Person not in Fukahâ
   event:
     kind: Symposium
     details: Read the notice
@@ -517,6 +605,8 @@ ar:
     makaleler: البحوث
     haberler: الأخبار
     fukaha: الفقهاء
+    harita: الخريطة
+    silsile: السلاسل
     blog: المدونة
     hakkinda: عن الموقع
   died: "ت"
@@ -561,6 +651,8 @@ ar:
     tezler: رسائل الماجستير وأطروحات الدكتوراه في الفقه الإسلامي المنجزة في تركيا.
     makaleler: بحوث في الفقه الإسلامي منشورة في مجلات محكّمة.
     fukaha: تراجم الفقهاء منقولة من كتب الطبقات.
+    harita: الأماكن التي ولد فيها فقهاء «الفوائد البهية» ودرسوا ودرّسوا وقضوا وتوفوا.
+    silsile: صلات الشيوخ والتلاميذ بين الفقهاء. مرّر المؤشر على اسم لترى عمّن أخذ ومن أخذ عنه.
     haberler: جديد الموقع وإعلاناته.
     blog: مقالات في الفقه ومصادره ومنهجه.
   table:
@@ -715,6 +807,46 @@ ar:
     back_news: جميع الأخبار
     back_blog: جميع المقالات
     no_posts: لا توجد مقالات بعد.
+  map:
+    title: خريطة الفقهاء
+    places_n: مكانا
+    jurists_n: فقيها
+    century: القرن
+    all_centuries: كل القرون
+    role: الصلة
+    all_roles: كل الصلات
+    search: ابحث عن فقيه
+    search_ph: اكتب اسما
+    pick: اختر مكانا على الخريطة لتظهر هنا أسماء الفقهاء المتصلين به.
+    at_place: "{n} فقيها"
+    thurayya: سجل الثريا
+    approx: الموضع تقريبي، وهذا المكان غير موجود في الثريا.
+    reset: مسح
+    zoom_in: تكبير
+    zoom_out: تصغير
+    fullmap: خريطة جميع الفقهاء
+    credit: "الخريطة الأساسية: Natural Earth (ملك عام). الأقاليم عن أطلس جورجيت كورنو، والإحداثيات من معجم الثريا (CC BY 4.0). المواضع التقريبية مرسومة بحلقات مفرغة."
+    legend_many: فقهاء أكثر
+    legend_approx: موضع تقريبي
+    mini: على الخريطة
+  net:
+    title: الشيوخ والتلاميذ
+    lead: صلات الشيوخ والتلاميذ المذكورة في تراجم «الفوائد البهية».
+    teachers: شيوخه
+    students: تلاميذه
+    self: هذا الفقيه
+    outside: ليس له ترجمة في «فقهاء»
+    jurists_n: فقيها
+    links_n: صلة
+    focus: اختر فقيها
+    focus_ph: اكتب اسما
+    all: الشبكة كلها
+    hint: مرّر المؤشر على اسم أو المسه لتبرز صلاته، وانقر لفتح صفحة الفقيه.
+    century: القرن
+    open: عرض الشبكة كبيرة
+    none: لم تذكر له شيوخ ولا تلاميذ.
+    legend_link: شيخ ← تلميذ
+    legend_ext: شخص ليست له ترجمة
   event:
     kind: ندوة علمية
     details: اقرأ الإعلان

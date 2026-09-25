@@ -21,6 +21,12 @@
 - key: fukaha
   image: ulughbeg
   url: { tr: /fukaha/, en: /en/jurists/, ar: /ar/jurists/ }
+- key: harita
+  image: istakhri
+  url: { tr: /harita/, en: /en/map/, ar: /ar/map/ }
+- key: silsile
+  image: registan
+  url: { tr: /silsile/, en: /en/network/, ar: /ar/network/ }
 - key: blog
   image: library
   url: { tr: /blog/, en: /en/blog/, ar: /ar/blog/ }

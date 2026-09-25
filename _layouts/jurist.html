@@ -119,6 +119,17 @@ layout: default
         <div><dt>{{ t.col.century }}</dt><dd><a href="{{ base }}?century={{ J.century }}">{% include century.html n=J.century tpl=tj.century %}</a></dd></div>
         {%- endif %}
       </dl>
+      {%- if J.spots.size > 0 %}
+      {%- assign P = site.data.places %}
+      {%- assign hm = site.data.nav | where: "key", "harita" | first %}
+      <div class="mini-map" data-map="mini">
+        <div class="map-canvas" data-map-canvas dir="ltr" role="img" aria-label="{{ t.map.mini }}: {% for s in J.spots %}{% assign p = P[s.id] %}{{ p.name[lang] }}{% unless forloop.last %}, {% endunless %}{% endfor %}"></div>
+        <script type="application/json" data-map-i18n>{"lang":{{ lang | jsonify }},"zoom_in":{{ t.map.zoom_in | jsonify }},"zoom_out":{{ t.map.zoom_out | jsonify }},"places":[
+          {%- for s in J.spots %}{% assign p = P[s.id] %}{"name":{{ p.name[lang] | jsonify }},"lat":{{ p.lat }},"lng":{{ p.lng }},"approx":{% if p.approx %}true{% else %}false{% endif %},"roles":[{% for r in s.roles %}{{ tj.roles[r] | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}]}{% unless forloop.last %},{% endunless %}{% endfor -%}
+        ]}</script>
+        <a class="mini-map-link" href="{{ hm.url[lang] }}?j={{ page.slug }}">{{ t.map.fullmap }}</a>
+      </div>
+      {%- endif %}
       {%- if J.places.size > 0 %}
       <h3>{{ tj.places }}</h3>
       <ul class="places">
@@ -158,3 +169,6 @@ layout: default
   <a class="jn next" href="{{ base }}{{ J.next }}/"><span class="jn-label">{{ tj.next }}</span><span class="jn-name">{{ b.name[lang] | default: b.name.tr }}</span><span class="jn-date" dir="ltr">{{ b.death }}/{{ b.deathM }}</span></a>
   {%- else %}<span></span>{% endif %}
 </nav>
+{%- if J.spots.size > 0 %}
+<script src="/assets/js/map.js?v={{ site.time | date: '%s' }}" defer></script>
+{%- endif %}
