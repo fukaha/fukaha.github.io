@@ -1,0 +1,91 @@
+---
+layout: default
+---
+{%- comment -%}
+  One part of al-Jawahir al-mudiyya (a letter of the alphabet or one of the appended books),
+  read from _data/cevahir.json. Each entry has the anchor #t<id>.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign tc = t.cevahir -%}
+{%- assign parts = site.data.cevahir.parts -%}
+{%- assign P = parts | where: "slug", page.part | first -%}
+{%- assign nav_item = site.data.nav | where: "key", "cevahir" | first -%}
+{%- assign base = nav_item.url[lang] -%}
+{%- assign jnav = site.data.nav | where: "key", "fukaha" | first -%}
+{%- assign jbase = jnav.url[lang] -%}
+{%- assign JP = site.data.jurists.pages -%}
+{%- assign img = site.data.images.cini -%}
+{%- assign linked = P.entries | where_exp: "e", "e.jurists" -%}
+{%- for p in parts %}{% if p.slug == page.part %}{% assign pi = forloop.index0 %}{% endif %}{% endfor -%}
+{%- assign prev_i = pi | minus: 1 -%}
+{%- assign next_i = pi | plus: 1 -%}
+
+<header class="page-head has-image cv-head" id="part-top">
+  <div class="page-head-img" aria-hidden="true"><img src="{{ img.src }}" alt="" width="{{ img.width }}" height="{{ img.height }}" fetchpriority="high"></div>
+  <div class="page-head-pattern" aria-hidden="true"></div>
+  <div class="wrap page-head-in">
+    <p class="crumbs"><a href="{{ base }}">{{ tc.book_short }}</a></p>
+    {%- if P.letter %}
+    <p class="cv-letter" lang="ar" dir="rtl" aria-hidden="true">{{ P.letter }}</p>
+    {%- endif %}
+    <h1>{{ P.title[lang] }}</h1>
+    <p class="lead">{% if lang == "ar" %}{{ tc.book }}{% else %}<em>{{ tc.book }}</em>{% endif %} · {{ tc.author }}. {% include number.html n=P.count %} {{ tc.entries }}{% if linked.size > 0 %}, {% include number.html n=linked.size %} {{ tc.linked }}{% endif %}.</p>
+  </div>
+  <p class="page-head-credit wrap">{{ img[lang] }} · <a href="{{ img.page }}" rel="noopener">{{ img.license }}</a></p>
+</header>
+
+<div class="wrap cv-body">
+  <nav class="cv-parts" aria-label="{{ tc.parts }}">
+    <ul>
+      {%- for p in parts %}
+      <li><a href="{{ base }}{{ p.slug }}/"{% if p.slug == page.part %} aria-current="page"{% endif %} title="{{ p.title[lang] }} ({{ p.count }})">{% if p.letter %}<span lang="ar">{{ p.letter }}</span>{% else %}{{ p.title[lang] }}{% endif %}</a></li>
+      {%- endfor %}
+    </ul>
+  </nav>
+
+  <div class="cv-entries">
+    {%- assign chapter = "" %}
+    {%- for e in P.entries %}
+    {%- if e.chapter and e.chapter != chapter %}
+    {%- assign chapter = e.chapter %}
+    <h2 class="cv-chapter" lang="ar" dir="rtl">{{ e.chapter | replace: " · ", " ـ " }}</h2>
+    {%- endif %}
+    <article class="cv-entry{% if e.ref %} is-ref{% endif %}{% if e.jurists %} is-linked{% endif %}" id="t{{ e.id }}">
+      <p class="cv-meta">
+        <a class="cv-n" href="#t{{ e.id }}" aria-label="{{ t.col.entry }} {{ e.id }}">{{ e.id }}</a>
+        {%- if e.page %}<span class="cv-cite">{{ tc.vol }} {{ e.vol }}{% if lang == "ar" %}،{% else %},{% endif %} {{ tc.page }} {{ e.page }}{% if e.end %}-{{ e.end }}{% endif %}</span>{% endif %}
+        {%- if e.kind %}<span class="cv-kind">{{ tc.kinds[e.kind] }}</span>{% endif %}
+        {%- for j in e.jurists %}{% assign JJ = JP[j] %}
+        <a class="cv-jurist" href="{{ jbase }}{{ j }}/">{{ JJ.name[lang] | default: JJ.name.tr }}</a>
+        {%- endfor %}
+      </p>
+      <div class="cv-text" lang="ar" dir="rtl">
+        {%- for para in e.paras %}
+        {%- assign c0 = para | slice: 0 %}
+        {%- if c0 == "§" %}
+        <h3>{{ para | remove_first: "§" }}</h3>
+        {%- elsif forloop.first %}
+        {%- assign pre = para | slice: 0, e.name.size %}
+        <p>{% if pre == e.name %}<strong>{{ e.name }}</strong>{{ para | slice: e.name.size, para.size }}{% else %}{{ para }}{% endif %}</p>
+        {%- else %}
+        <p>{{ para }}</p>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+    </article>
+    {%- endfor %}
+  </div>
+
+  <nav class="cv-pager" aria-label="{{ tc.parts }}">
+    {%- if prev_i >= 0 %}{% assign pp = parts[prev_i] %}
+    <a class="cv-prev" href="{{ base }}{{ pp.slug }}/"><span>{{ tc.prev }}</span>{{ pp.title[lang] }}</a>
+    {%- endif %}
+    <a class="cv-up" href="#part-top">{{ tc.top }}</a>
+    {%- if next_i < parts.size %}{% assign np = parts[next_i] %}
+    <a class="cv-next" href="{{ base }}{{ np.slug }}/"><span>{{ tc.next }}</span>{{ np.title[lang] }}</a>
+    {%- endif %}
+  </nav>
+
+  <p class="source-note">{% if lang == "ar" %}{{ tc.book }}{% else %}<em>{{ tc.book }}</em>{% endif %}, {{ tc.edition }}. {{ tc.text_source }} <a href="https://github.com/OpenITI/0775AH/tree/master/data/0775IbnAbiWafa" rel="noopener">OpenITI</a> (CC BY-NC-SA 4.0).</p>
+</div>

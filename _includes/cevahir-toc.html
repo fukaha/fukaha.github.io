@@ -1,0 +1,19 @@
+{%- comment -%}The parts of al-Jawahir al-mudiyya, shown above the table of all entries.{%- endcomment -%}
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign tc = t.cevahir -%}
+{%- assign nav_item = site.data.nav | where: "key", "cevahir" | first -%}
+{%- assign parts = site.data.cevahir.parts -%}
+<p class="source-note">{% if lang == "ar" %}{{ tc.book }}{% else %}<em>{{ tc.book }}</em>{% endif %}, {{ tc.edition }}. {{ tc.text_source }} <a href="https://github.com/OpenITI/0775AH/tree/master/data/0775IbnAbiWafa" rel="noopener">OpenITI</a> (CC BY-NC-SA 4.0). {{ tc.death_note }}</p>
+<section class="cv-toc" aria-labelledby="cv-toc-h">
+  <h2 id="cv-toc-h" class="visually-hidden">{{ tc.parts }}</h2>
+  {%- assign groups = "harf,kitap" | split: "," %}
+  {%- for g in groups %}
+  <h3>{% if g == "harf" %}{{ tc.letters }}{% else %}{{ tc.books }}{% endif %}</h3>
+  <ul class="cv-toc-list cv-toc-{{ g }}">
+    {%- for p in parts %}{% if p.kind == g %}
+    <li><a href="{{ nav_item.url[lang] }}{{ p.slug }}/">{% if p.letter %}<span class="l" lang="ar">{{ p.letter }}</span>{% endif %}<span class="t">{% if p.letter %}{{ p.title[lang] | remove: " harfi" | remove: "Letter " }}{% else %}{{ p.title[lang] }}{% endif %}</span><span class="n">{% include number.html n=p.count %}</span></a></li>
+    {%- endif %}{% endfor %}
+  </ul>
+  {%- endfor %}
+</section>

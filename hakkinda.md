@@ -17,6 +17,7 @@ lead: Fukahâ, fakihleri ve onlar üzerine yapılan çalışmaları kaynak göst
 - **Tezler.** Türkiye’de İslam hukuku alanında yapılmış yüksek lisans ve doktora tezleri.
 - **Makaleler.** Hakemli dergilerde yayımlanmış İslam hukuku makaleleri.
 - **Fukahâ.** Tabakât kitaplarından aktarılmış fakih biyografileri. Her fakihin eserleri, hocaları, talebeleri ve hakkında yazılan tezlerle birlikte kendi sayfası var.
+- **Cevâhir.** İbn Ebi’l-Vefâ el-Kureşî’nin (ö. 775/1373) *el-Cevâhirü’l-mudıyye fî tabakâti’l-Hanefiyye*’si madde madde. Her harf ve ek kitap ayrı bir sayfada okunur, bütün maddeler bir tabloda aranabilir. Sitedeki fakihlerin 358’i buradaki maddesine bağlı ve bu madde fakihin sayfasında da gösteriliyor.
 - **Harita.** Fakihlerin doğduğu, okuduğu, ders verdiği, kadılık yaptığı ve vefat ettiği yerler, tarihî bölgeleriyle birlikte tek haritada.
 - **Silsile.** Hoca ve talebe bağları, zaman ekseninde bir ağ olarak. Her fakihin sayfasında da iki kuşak yukarı ve aşağı kendi silsilesi var.
 - **Haberler** ve **Blog.** Sitedeki yenilikler ile fıkıh, kaynaklar ve yöntem üzerine yazılar.
@@ -36,6 +37,7 @@ Koleksiyonların hepsi aynı biçimde çalışır: her kayıt bir tablo satırı
 | Veri | Kaynak |
 | --- | --- |
 | Fakih biyografileri ve klasik eserler | Ebü’l-Hasenât Abdülhay el-Leknevî (ö. 1304/1887), *el-Fevâidü’l-behiyye fî terâcimi’l-Hanefiyye*, Mısır: Matbaatü Dâri’s-saâde, 1324. |
+| el-Cevâhirü’l-mudıyye | İbn Ebi’l-Vefâ el-Kureşî (ö. 775/1373), *el-Cevâhirü’l-mudıyye fî tabakâti’l-Hanefiyye*, Karaçi: Mîr Muhammed Kütübhâne. Metin [OpenITI](https://github.com/OpenITI/0775AH/tree/master/data/0775IbnAbiWafa) külliyatındaki dijital nüshadan alındı (CC BY-NC-SA 4.0). Maddeler sitedeki fakihlerle elle eşleştirildi. |
 | Tezler | YÖK Ulusal Tez Merkezi. Künye, özet ve tam metin bağlantıları YÖK’teki kayda dayanır. |
 | Görseller | Wikimedia Commons. Hepsi kamu malı ya da açık lisanslıdır, ayrıntılar aşağıda. |
 | Yer koordinatları | [al-Ṯurayyā Gazetteer](https://althurayya.github.io/) (CC BY 4.0). Anadolu ve Rumeli kasabaları gibi bu kaynakta bulunmayan 34 yerin konumu yaklaşıktır. |

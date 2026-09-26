@@ -4,6 +4,8 @@
   {%- assign _item = site.data.nav | where: "key", page.key | first -%}{{ _item.url[_l] }}
 {%- elsif page.collection == "fakihler" -%}
   {%- assign _item = site.data.nav | where: "key", "fukaha" | first -%}{{ _item.url[_l] }}{{ page.slug }}/
+{%- elsif page.collection == "cevahir" -%}
+  {%- assign _item = site.data.nav | where: "key", "cevahir" | first -%}{{ _item.url[_l] }}{{ page.part }}/
 {%- elsif page.ref -%}
   {%- assign _tp = site.posts | where: "ref", page.ref | where: "lang", _l | first -%}
   {%- if _tp -%}{{ _tp.url }}{%- else -%}

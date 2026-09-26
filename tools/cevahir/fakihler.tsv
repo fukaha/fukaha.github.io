@@ -1,0 +1,361 @@
+# el-Cevâhirü'l-mudıyye maddesi <tab> fakih id <tab> (yalnızca okumak için) madde başı · fakih adı
+# Madde numarası tools/import_cevahir.py'nin verdiği sıra numarasıdır (kitaptaki sıraya göre, 1'den).
+# Eşleşmeler ad zinciri, nisbe ve vefat yılına göre bulunup tek tek elle kontrol edildi.
+12	ebu-ishak-ibrahim-b-ismail-es-saffar	إبراهيم بن إسماعيل بن أحمد بن إسحاق بن شيث بن نصر  · إبراهيم بن إسماعيل الصفار
+20	ebu-bekir-ibrahim-b-rustem-el-mervezi	إبراهيم بن رستم أبو بكر المروزي · إبراهيم بن رستم المروزي
+23	radiyyuddin-ibrahim-b-suleyman-er-rumi-el-konevi	إبراهيم بن سليمان الحموي المنطقي · إبراهيم بن سليمان القونوي
+42	ebu-ishak-ibrahim-b-muhammed-b-hamdan-el-muhellebi	إبراهيم بن محمد بن حمدان الخطيب المهدي أبو إسحاق · إبراهيم بن محمد المهلبي
+50	ibrahim-b-muhammed-ed-dihistani	إبراهيم بن محمد أبو إسحاق · إبراهيم بن محمد الدهستاني
+62	ibrahim-b-yusuf-el-belhi	إبراهيم بن يوسف بن ميمون بن قدامة البلخي وقيل ابن  · إبراهيم بن يوسف البلخي
+66	ebul-abbas-ahmed-b-ibrahim-es-seruci	أحمد بن إبراهيم بن عبد الغني بن أبي إسحاق السروجي  · أحمد بن إبراهيم السروجي
+76	ebu-nasr-ahmed-b-ishak-b-sis-es-saffar	أحمد بن إسحاق بن شبيب بن نصر بن شبيب أبو نصر · أحمد بن إسحاق الصفار
+77	ebu-bekir-ahmed-b-ishak-el-cuzcani	أحمد بن إسحاق المعروف بابن صبيح الجوزجاني أبو بكر · أحمد بن إسحاق الجوزجاني
+84	zahireddin-ebul-abbas-ahmed-b-ismail-et-timurtasi	أحمد بن إسماعيل التمرتاشي أبو العباس · أحمد بن إسماعيل التمرتاشي
+93	celaleddin-ahmed-b-el-hasan-er-razi-el-enkaravi	أحمد بن الحسن بن أحمد بن الحسن بن أبو شروان قاضي ا · أحمد بن الحسن الرازي الأنقروي
+97	sehabeddin-ahmed-b-el-hasan-ibnuz-zerkesi	أحمد بن الحسن عرف بإبن الزركشي شهاب الدين فاضل · أحمد بن الحسن ابن الزركشي
+103	kadi-ebu-said-ahmed-b-el-huseyin-el-berdai	أحمد بن الحسين أبو سعيد البردعي · أبو سعيد البردعي
+104	ebu-hafs-el-kebir-ahmed-b-hafs-el-buhari	أحمد بن حفص المعروف بأبي حفص الكبير البخاري · أبو حفص الكبير أحمد بن حفص البخاري
+111	takiyyuddin-ahmed-b-suleyman-ed-dimaski	أحمد بن سليمان بن أبي العز وهيب · أحمد بن سليمان الدمشقي
+112	ebu-hamid-ahmed-b-sehl-el-belhi	أحمد بن سهل · أحمد بن سهل البلخي
+116	ebu-nasr-ahmed-b-el-abbas-el-iyazi	أحمد بن العباس بن الحسين بن جبلة بن غالب بن جابر ب · أحمد بن العباس العياضي
+120	ebu-nasr-ahmed-b-abdullah-el-hayzahazi	أحمد بن عبد الله بن الفضل أبو نصر الخيزاخزي · أحمد بن عبد الله الخيزاخزي
+124	kadi-cemaleddin-ebu-nasr-ahmed-b-abdurrahman-er-rigdemuni	أحمد بن عبد الرحمن بن إسحاق بن أحمد بن عبد الله أب · أحمد بن عبد الرحمن الريغدموني
+126	ebu-hamid-ahmed-b-abdurrahman-es-serheki	أحمد بن عبد الرحمن أبو أحمد النيسابوري السرخكي · أحمد بن عبد الرحمن السرخكي
+127	kivameddin-ahmed-b-abdurresid-el-buhari	أحمد بن عبد الرشيد البخاري الملقب قوام الدين · أحمد بن عبد الرشيد البخاري
+129	tacuddin-ahmed-b-abdulaziz-b-maze	أحمد بن عبد العزيز بن عمر بن مارة المعروف ولده بره · أحمد بن عبد العزيز بن مازه
+137	sadrusseria-el-ekber-semseddin-ahmed-b-ubeydullah-el-mahbubi	أحمد بن عبيد الله بن إبراهيم بن أحمد بن عبد الملك  · صدر الشريعة الأكبر أحمد بن عبيد الله المحبوبي
+139	tacuddin-ahmed-b-osman-el-mardini-ibnut-turkmani	أحمد بن عثمان · أحمد بن عثمان ابن التركماني
+141	ebul-kasim-ahmed-b-ismet-es-saffar	أحمد بن عصمة أبو القاسم الصفار الملقب حم · أحمد بن عصمة الصفار
+144	fahreddin-ebu-talib-ahmed-b-ali-el-hemedani-ibnul-fasih	أحمد بن علي بن أحمد أبو طالب الهمداني عرف بإبن الف · ابن الفصيح أحمد بن علي الهمداني
+147	muzafferuddin-ahmed-b-ali-ibnus-saati	أحمد بن علي بن تغلب بن أبي الضياء البغدادي البعلبك · ابن الساعاتي أحمد بن علي
+148	necmeddin-ibrahim-b-ali-et-tarsusi	أحمد بن علي بن عبد الواحد بن عبد المنعم بن عبد الص · إبراهيم بن علي الطرسوسي
+154	ebu-bekir-ahmed-b-ali-el-verrak-et-tirmizi	أحمد بن علي أبو بكر الوراق · أبو بكر الوراق الترمذي
+155	ebu-bekir-ahmed-b-ali-er-razi-el-cessas	أحمد بن علي أبو بكر الرازي · أبو بكر الرازي الجصاص
+158	mecduddin-ebul-leys-ahmed-b-omer-en-nesefi	أحمد بن عمر بن محمد بن أحمد بن إسماعيل بن علي بن ل · المجد النسفي أحمد بن عمر
+159	kadi-ebun-nasr-ahmed-b-amr-el-iraki-el-buhari	أحمد بن عمرو بن محمد بن موسى بن عبد الله · أبو النصر العراقي أحمد بن عمرو
+160	ahmed-b-omer-el-hassaf	أحمد بن عمرو وقيل عمر بن مهير وقيل مهران الشيباني · الخصاف أحمد بن عمر
+179	ebul-huseyin-ahmed-b-muhammed-el-kuduri	أحمد بن محمد بن أحمد بن جعفر بن حمدان · أبو الحسين القدوري
+188	semseddin-ahmed-b-muhammed-el-ukayli-el-buhari	أحمد بن محمد بن أحمد العقيلي الأنصاري البخاري · أحمد بن محمد العقيلي البخاري
+191	ebu-ali-ahmed-b-muhammed-es-sasi	أحمد بن محمد بن إسحاق أبو علي الشاشي · أبو علي الشاشي
+195	ebu-bekir-ahmed-b-muhammed-et-tavavisi	أحمد بن محمد بن حامد بن هاشم أبو بكر الطواويسي يرو · أبو بكر الطواويسي
+204	ebu-cafer-ahmed-b-muhammed-et-tahavi	أحمد بن محمد بن سلامة بن سلمة بن عبد الملك بن سلمة · أبو جعفر الطحاوي
+207	ebu-mansur-ahmed-b-muhammed-b-said-el-istivai	أحمد بن محمد بن صاعد بن محمد أبو نصر الإستوائي قاض · أحمد بن محمد بن صاعد
+211	kadil-haremeyn-ahmed-b-muhammed-en-nisaburi	أحمد بن محمد بن عبد الله أبو الحسن النيسابوري · قاضي الحرمين أحمد بن محمد النيسابوري
+216	ebu-amr-ahmed-b-muhammed-et-taberi	أحمد بن محمد بن عبد الرحمن أبو عمر والطبري الملقب  · أبو عمرو الطبري
+221	ebul-abbas-ahmed-b-muhammed-en-natifi	أحمد بن محمد بن عمر أبو العباس الناطفي · أبو العباس الناطفي
+222	zahiduddin-ebu-nasr-ahmed-b-muhammed-el-attabi	أحمد بن محمد بن عمر أبو نصر العتابي البخاري وقيل أ · أبو نصر العتابي
+224	ebul-abbas-ahmed-b-muhammed-el-birti	أحمد بن محمد بن عيسى بن الأزهر أبو العباس البرتي · أبو العباس البرتي
+231	sadrul-eimme-ebul-meali-ahmed-b-muhammed-el-pezdevi	أحمد بن محمد بن محمد بن الحسين بن عبد الكريم بن مو · أبو المعالي أحمد بن محمد البزدوي
+233	ahmed-b-muhammed-el-akta	أحمد بن محمد بن محمد أبو نصر المعروف بالأقطع · الأقطع أحمد بن محمد
+236	ahmed-b-muhammed-b-mahmud-el-gaznevi	أحمد بن محمد بن محمود ابن سيد الغزنوي مفيد · أحمد بن محمد الغزنوي
+239	ebul-bedi-ahmed-b-muhammed-el-mekhuli	أحمد محمد بن مكحول بن الفضل أبو البديع المكحولي · أبو البديع المكحولي
+240	kadi-ebu-bekir-ahmed-b-muhammed-ed-damgani	أحمد بن محمد بن منصور · أبو بكر الدامغاني
+250	humameddin-ahmed-b-mahmud-el-hasiri	أحمد بن محمود بن أحمد بن عبد السيد همام الدين الحص · أحمد بن محمود الحصيري
+251	nureddin-ahmed-b-mahmud-es-sabuni	أحمد بن محمود بن بكر الصابوني أبو محمد الملقب نور  · نور الدين الصابوني
+255	ebul-abbas-ahmed-b-mesud-el-konevi	أحمد بن مسعود بن عبد الرحمن أبو العباس القونوي · أحمد بن مسعود القونوي
+260	kadi-ebu-nasr-ahmed-b-mansur-el-isbicabi	أحمد بن منصور أبو نصر الأسبيجابي · أبو نصر الإسبيجابي
+262	ebu-cafer-ahmed-b-ebu-imran-el-bagdadi	أحمد بن أبي عمران موسى بن عيسى أبو جعفر · أحمد بن أبي عمران البغدادي
+282	imaduddin-ebul-abbas-ahmed-b-yusuf	أحمد بن يوسف بن علي بن محمد بن أحمد أبو نصر وقيل أ · أحمد بن يوسف عماد الدين
+294	ishak-b-ibrahim-es-sasi-es-semerkandi	إسحاق بن إبراهيم أبو يعقوب الخرساني الشاشي · إسحاق بن إبراهيم الشاشي
+298	necmeddin-ebu-tahir-ishak-b-ali	إسحاق بن علي بن يحيى الملقب نجم الدين أبو الطاهر · إسحاق بن علي نجم الدين
+301	ebul-kasim-ishak-b-muhammed-el-hakim-es-semerkandi	إسحاق بن محمد بن إسماعيل بن إبراهيم بن زيد أبو الق · أبو القاسم الحكيم السمرقندي
+307	kadi-esed-b-amr-el-beceli-el-kufi	أسد بن عمرو بن عامر بن عبد الله بن عمرو بن عامر بن · أسد بن عمرو البجلي
+314	cemalulislam-ebul-muzaffer-esad-b-muhammed-el-kerabisi	أسعد بن محمد بن الحسين الكرابيسي النيسابوري أبو ال · أسعد بن محمد الكرابيسي
+321	ebu-ibrahim-ismail-b-ahmed-es-saffar	إسماعيل بن أحمد بن إسحاق بن شيث الصفار أبو إبراهيم · إسماعيل بن أحمد الصفار
+327	ebu-muhammed-ismail-b-el-hasan	إسماعيل بن الحسين بن علي بن الحسين بن هارون · إسماعيل بن الحسن
+328	ismail-b-hammad-b-ebu-hanife	إسماعيل بن حماد بن أبي حنيفة · إسماعيل بن حماد بن أبي حنيفة
+329	tacuddin-ismail-b-halil	إسماعيل بن خليل · إسماعيل بن خليل تاج الدين
+340	ismail-b-abdussadik-el-hatib-el-beyari	إسماعيل بن عبد الصادق بن عبد الله بن سعيد بن مسعدة · إسماعيل بن عبد الصادق البياري
+343	residuddin-ismail-b-osman-ibnul-muallim	إسماعيل بن عثمان بن عبد الكريم بن تمام بن محمد الق · ابن المعلم إسماعيل بن عثمان
+351	ebu-sad-ismail-b-muhammed-el-haccaci-el-kemari	إسماعيل بن محمد بن أحمد بن جعفر أبو سعيد · إسماعيل بن محمد الحجاجي الكماري
+363	esrefuddin-ebul-fazl-esref-b-necib	أشرف بن نجيب بن محمد بن محمد أبو الفضل الكاشاني · أشرف بن نجيب
+367	bahaeddin-ebu-sabir-eyyub-b-ebu-bekir-en-nehhas-el-halebi	أيوب بن أبي بكر بن إبراهيم بن هبة الله بن طارق بن  · أيوب بن أبي بكر النحاس الحلبي
+370	bisr-b-giyas-el-merisi	بشر بن غياث بن أبي كريمة عبد الرحمن المريسي العدوي · بشر بن غياث المريسي
+373	kadi-bisr-b-el-velid-el-kindi	بشر بن الوليد بن خالد بن الوليد الكندي · بشر بن الوليد الكندي
+375	kadi-bisr-b-ebul-ezher-en-nisaburi	بشر بن أبي الأزهر · بشر بن أبي الأزهر النيسابوري
+377	kadi-bekkar-b-kuteybe-el-basri	بكار بن قتيبة بن أسد بن أبي بردعة بن عبيد الله بن  · بكار بن قتيبة
+378	necmeddin-bukeyr-et-turki-en-nasiri	بكترس بن يلتفقلج أبو الفضائل وأبو شجاع الحنفي · بكير التركي الناصري
+380	semsuleimme-ebul-fazl-bekr-b-muhammed-ez-zerenceri	بكر بن محمد بن علي بن الفضل بن الحسن بن أحمد بن إب · شمس الأئمة الزرنجري
+381	kadi-bekr-b-muhammed-el-ammi	بكر بن محمد العمى · بكر بن محمد العمي
+393	ebu-isme-nuh-b-ebu-meryem-el-mervezi	الجامع لقب أبي عصمة المروزي واسمه نوح وإنما ذكرته  · نوح بن أبي مريم الجامع
+406	ebul-abbas-cafer-b-muhammed-el-mustagfiri-en-nesefi	جعفر بن محمد بن المعتز بن محمد بن المستغفر النسفي  · المستغفري جعفر بن محمد
+417	hamid-b-mahmud-b-makil-en-nisaburi	حامد بن محمود بن معقل النيسابوري الشاماتي القطان أ · حامد بن محمود النيسابوري
+421	habib-b-omer-el-fergani	حبيب بن عمر الفرغاني الحنفي · حبيب بن عمر الفرغاني
+427	kadilkudat-husameddin-el-hasan-b-ahmed-er-razi	الحسن بن أحمد بن الحسن بن أنوشروان الرازي قاضي الق · حسام الدين الحسن بن أحمد الرازي
+434	ebu-abdullah-el-hasan-b-ahmed-ez-zaferani	الحسن بن أحمد بن مالك أبو عبد الله الزعفراني · الحسن بن أحمد الزعفراني
+446	ebu-ali-el-hasan-b-davud-es-semerkandi	الحسن بن داود بن رضوان أبو علي · الحسن بن داود السمرقندي
+448	el-hasan-b-ziyad-el-lului-el-kufi	الحسن بن زياد الؤلؤي الكوفي تكرر · الحسن بن زياد اللؤلؤي
+466	zahiruddin-el-kebir-ebul-mehasin-el-hasan-b-ali-el-merginani	الحسن بن علي بن عبد العزيز بن عبد الرزاق بن أبي نص · ظهير الدين الحسن بن علي المرغيناني
+468	kadi-ebu-sabit-el-hasan-b-ali-el-pezdevi	الحسن بن علي بن محمد بن الحسين بن عبد الكريم بن مو · أبو ثابت الحسن بن علي البزدوي
+475	radiyyuddin-el-hasan-b-muhammed-es-sagani	الحسن بن محمد بن الحسن بن حيدر بن علي بن إسماعيل أ · الصغاني الحسن بن محمد
+482	el-hasan-b-ebu-malik	الحسن بن أبي مالك أبو مالك · الحسن بن أبي مالك
+486	fahreddin-kadihan-el-hasan-b-mansur-el-ozcendi	الحسن بن منصور بن أبي القاسم محمود بن عبد العزيز ا · قاضيخان الحسن بن منصور الأوزجندي
+488	el-hakim-el-hasan-b-nasr-el-kesseni	الحسن بن نصر بن إبراهيم بن يعقوب الحاكم الكشاني ال · الحسن بن نصر الكشني
+501	kadi-ebu-ali-el-huseyin-b-hizir-en-nesefi	الحسين بن الخضر بن محمد بن يوسف · أبو علي الحسين بن خضر النسفي
+504	sehabeddin-el-huseyin-b-suleyman-el-kefri-ed-dimaski	الحسين بن سليمان بن فزارة · الحسين بن سليمان الكفري
+508	husameddin-el-huseyin-b-ali-es-signaki	الحسين بن علي بن الحجاج بن علي · حسام الدين السغناقي
+509	kadi-ebu-abdullah-el-huseyin-b-ali-es-saymeri	الحسين بن علي بن محمد بن جعفر الصيمري أبو عبد الله · أبو عبد الله الصيمري
+511	imaduddin-ebul-kasim-el-huseyin-b-ali-el-lamisi	الحسين بن علي أبي القاسم عماد الدين اللامشي أبو عل · الحسين بن علي اللامشي
+524	necmeddin-el-huseyin-b-muhammed-el-bari	الحسين بن محمد البارع · الحسين بن محمد البارعي
+532	hafs-b-giyas-en-nehai-el-kufi	حفص بن غياث بن طلق بن عمر المعروف بالنخعي · حفص بن غياث النخعي
+538	kivameddin-ebul-mehamid-hammad-b-ibrahim-es-saffar	حماد بن إبراهيم بن إسماعيل بن أحمد بن إسحاق بن شيث · حماد بن إبراهيم الصفار
+545	hammad-b-ebu-hanife	حماد بن النعمان · حماد بن أبي حنيفة
+560	el-hattab-b-ebul-kasim-el-karahisari	الخطاب بن أبي القاسم القره حصارى · الخطاب بن أبي القاسم القره حصاري
+566	ebu-said-halef-b-eyyub-el-belhi	خلف بن أيوب العامري البلخي · خلف بن أيوب البلخي
+569	ebus-seraya-halife-b-suleyman-el-harezmi	خليفة بن سليمان بن خليفة بن محمد القرشي أبو السراي · خليفة بن سليمان الخوارزمي
+577	serefeddin-davud-b-arslan	داود بن أرسلان بن غازي أبو المظفر · داود بن أرسلان
+578	davud-b-resid-el-harezmi	داود بن رشيد · داود بن رشيد الخوارزمي
+580	davud-b-osman-er-rumi	داود بن عثمان بن يعقوب الملقب شهاب الدين الرومي · داود بن عثمان الرومي
+582	davud-b-isa-b-ebu-bekir-b-eyyub	داود بن عيسى بن أبي بكر بن أيوب بن سادير بن مروان  · داود بن عيسى الأيوبي
+583	davud-b-agilbek-er-rumi-el-bedrut-tavil	داود بن عليك بن علي الرومي عرف بالبدر الطويل نشأ ب · داود بن أغلبك الرومي
+586	necmeddin-davud-b-mervan-el-malati	داود بن مروان بن داود الملطي · داود بن مروان الملطي
+599	zufer-b-el-huzeyl-el-basri	زفر بن الهذيل بن قيس العنبري البصري تكرر · زفر بن الهذيل
+612	ebu-nasr-sad-b-abdullah-el-gaznevi	سعيد بن عبد الله بن أبي القاسم الغزنوي أبو نصر · سعد بن عبد الله الغزنوي
+619	ebu-talib-said-b-muhammed-el-berdai	سعيد بن محمد أبو طالب البردعي · سعيد بن محمد البردعي
+632	kadilkudat-sadreddin-ebur-rebi-suleyman-b-vehb	سليمان بن وهيب أبو الربيع بن أبي العز قاضي القضاة  · سليمان بن وهب
+643	sazan-b-ibrahim-el-basri	شاذان بن إبراهيم · شاذان بن إبراهيم البصري
+644	ebul-ganaim-suca-b-el-hasan-el-bagdadi	شجاع بن الحسن بن الفضل البغدادي أبو الغنائم · شجاع بن الحسن البغدادي
+645	kadi-seddad-b-hakim-el-belhi	شداد بن حكيم · شداد بن حكيم البلخي
+662	kadi-ebul-ala-said-b-muhammed-el-istivai	صاعد بن محمد بن أحمد بن عبيد الله أبو العلاء عماد  · صاعد بن محمد الاستوائي
+663	kadi-ebul-ala-said-b-muhammed-ibnur-rasmendi	صاعد بن محمد بن عبد الرحمن أبو العلاء · ابن الراسمندي صاعد بن محمد
+670	iftiharuddin-tahir-b-ahmed-el-buhari	طاهر بن أحمد بن عبد الرشيد · طاهر بن أحمد البخاري صاحب الخلاصة
+674	necmeddin-ebu-tahir-munsin-nazar-el-hafsi	طاهر بن محمد بن عمران ابن أبي العباس الحفصي · أبو طاهر الحفصي منشي النظر
+696	hafizuddin-ebul-berekat-abdullah-b-ahmed-en-nesefi	عبد الله بن أحمد بن محمود حافظ الدين أبو البركات ا · حافظ الدين النسفي
+701	ebu-ali-abdullah-b-cafer-er-razi	عبد الله بن جعفر الرازي أبوعلي · عبد الله بن جعفر الرازي
+705	ebu-muhammed-abdullah-b-el-huseyin-en-nasihi	عبد الله بن الحسين أبو محمد الناصحي قاضي القضاة وإ · عبد الله بن الحسين الناصحي
+716	kadilkudat-cemaleddin-abdullah-b-ali-ibnut-turkmani	عبد الله بن علي بن عثمان الماردبني قاضي القضاة الم · عبد الله بن علي ابن التركماني
+723	ebu-muhammed-abdullah-b-el-fazl-el-hayzahazi	عبد الله بن الفضل الخيزاخزي · عبد الله بن الفضل الخيزاخزي
+725	ebu-abdurrahman-abdullah-b-el-mubarek-el-mervezi	عبد الله بن المبارك · عبد الله بن المبارك
+734	kadilkudat-semseddin-abdullah-b-muhammed-el-ezrai	عبد الله بن محمد بن عطاء قاضي القضاة شمس الدين الأ · عبد الله بن محمد الأذرعي
+739	ustad-ebu-muhammed-abdullah-b-muhammed-es-sebezmuni	عبد الله بن محمد بن يعقوب بن الحارث بن الخليل الحا · الأستاذ عبد الله بن محمد السبذموني
+743	mecduddin-ebul-fazl-abdullah-b-mahmud-el-mevsili	عبد الله بن محمود بن مودود بن محمود الموصلي أبو ال · عبد الله بن محمود الموصلي
+755	abdulcebbar-b-abdulkerim-el-hivari	عبد الجبار بن عبد الكريم الخواري أصله · عبد الجبار بن عبد الكريم الخواري
+763	kadi-ebu-hazim-abdulhamid-b-abdulaziz	عبد الحميد بن عبد العزيز · أبو خازم عبد الحميد بن عبد العزيز
+778	ebul-ferec-abdurrahman-b-suca-el-bagdadi	عبد الرحمن بن شجاع بن الحسن بن الفضل أبو الفرج · عبد الرحمن بن شجاع البغدادي
+786	ruknulislam-ebul-fazl-abdurrahman-b-muhammed-el-kirmani	عبد الرحمن بن محمد بن أميرويه بن محمد بن إبراهيم ا · عبد الرحمن بن محمد الكرماني
+789	abdurrahman-b-muhammed-el-haraki-en-nisaburi	عبد الرحمن بن محمد بن عبد الله بن الحسين النيسابور · عبد الرحمن بن محمد الخرقي
+794	el-hakim-el-katib-abdurrahman-b-muhammed	عبد الرحمن بن محمد بن محمد بن محمد الكاتب الحاكم · عبد الرحمن بن محمد الكاتب الحاكم
+802	seyfeddin-abdurrahim-b-ahmed-el-kermini	عبد الرحيم بن أحمد بن إسماعيل الكرميني المنعوت بسي · عبد الرحيم بن أحمد الكرميني
+814	zahiruddin-ebul-feth-abdurresid-el-velvalici	عبد الرشيد بن أبي حنيفة بن عبد الرزاق بن عبد الله  · عبد الرشيد الولوالجي
+825	alaeddin-abdulaziz-b-ahmed-el-buhari	عبدالعزيز بن أحمد بن محمد البخاري · عبد العزيز البخاري صاحب كشف الأسرار
+826	semsuleimme-abdulaziz-b-ahmed-el-hulvani	عبد العزيز بن أحمد بن نصر بن صالح الحلواني الملقب  · شمس الأئمة الحلواني
+829	abdulaziz-b-abdurrezzak-el-merginani	عبد العزيز بن عبد الرزاق بن أبي نصر بن جعفر بن سلي · عبد العزيز بن عبد الرزاق المرغيناني
+830	ebu-halife-abdulaziz-b-abdusseyyid-el-harezmi	عبد العزيز بن عبد السيد بن عبد العزيز بن محمد أبو  · عبد العزيز بن عبد السيد الخوارزمي
+831	kadi-abdulaziz-b-osman-en-nesefi	عبد العزيز بن عثمان بن إبراهيم بن محمد بن أحمد بن  · عبد العزيز بن عثمان النسفي
+832	abdulaziz-b-ali-ibnut-turkmani-el-mardini	عبد العزيز بن علي بن الحسن قاضي القضاة · عبد العزيز بن علي ابن التركماني
+834	burhanuleimme-burhaneddin-el-kebir-abdulaziz-b-omer-b-maze	عبد العزيز بن عمر بن مازه المعروف ببرهان الأئمة أب · برهان الدين الكبير عبد العزيز بن مازه
+847	tacuddin-ebul-mefahir-abdulgafur-b-lokman-el-kerderi	عبد الغفور بن لقمان بن محمد أبو المفاخر الكردري ال · عبد الغفور بن لقمان الكردري
+854	abdulkerim-b-abdunnur-el-halebi	عبد الكريم بن عبد النور بن منير بن عبد الكريم بن ع · عبد الكريم بن عبد النور الحلبي
+856	ruknuleimme-abdulkerim-b-muhammed	عبد الكريم بن محمد بن أحمد بن علي الصباغي أبو المك · ركن الأئمة عبد الكريم بن محمد
+856	ruknuleimme-ebul-mekarim-abdulkerim-b-muhammed-es-sabbagi	عبد الكريم بن محمد بن أحمد بن علي الصباغي أبو المك · ركن الأئمة الصباغي
+857	ebu-muhammed-abdulkerim-b-muhammed-el-mengi	عبد الكريم بن محمد بن موسى أبو محمد المنغي · عبد الكريم بن محمد المنغي
+860	abdulkerim-b-musa-el-pezdevi	عبد الكريم بن موسى بن عيسى أبو محمد · عبد الكريم بن موسى البزدوي
+861	alaeddin-ebu-nasr-abdulkerim-b-yusuf-ed-dinari	عبد الكريم بن يوسف بن محمد بن عباس الديناري أبو نص · عبد الكريم بن يوسف الديناري
+862	abdulkerim-b-ebu-hanife-el-endaki	عبد الكريم بن أبي حنيفة بن العباس أبو المظفر الأند · عبد الكريم الأندقي
+867	ebu-sad-abdulmecid-b-ismail-el-kaysi-el-herevi	عبد المجيد بن إسماعيل بن محمد أبو سعيد القيسي الهر · عبد المجيد بن إسماعيل الهروي
+871	abdulmelik-b-ibrahim-el-hemedani	عبد الملك بن إبراهيم الهمداني · عبد الملك بن إبراهيم الهمداني
+886	ebul-kasim-abdulvahid-b-ali-ibn-berhan-el-ukberi	عبد الواحد بن علي بن برهان العكبري النحوي أبو القا · ابن برهان العكبري
+897	cemaleddin-ubeydullah-b-ibrahim-el-mahbubi	عبيد الله بن إبراهيم بن أحمد بن عبد الملك بن عمر ب · جمال الدين عبيد الله المحبوبي
+900	ebul-hasan-ubeydullah-b-el-huseyin-el-kerhi	عبيد الله بن الحسين بن دلال بن دلهم أبو الحسن الكر · أبو الحسن الكرخي
+907	kadi-ebu-zeyd-ubeydullah-b-omer-ed-debusi	عبيد الله بن عمر بن عيسى الدبوسي أبو زيد · أبو زيد الدبوسي
+919	ebul-heysem-utbe-b-hayseme-en-nisaburi	عتبة بن خثيمة بن محمد بن حاتم بن خثيمة بن الحسن بن · عتبة بن خيثمة النيسابوري
+931	fahreddin-ebu-muhammed-osman-b-ali-ez-zeylai	عثمان بن علي بن محجن بن يونس أبو عمرو الملقب فخر ا · فخر الدين الزيلعي
+932	ebu-amr-osman-b-ali-el-beykendi-el-buhari	عثمان بن علي بن محمد بن علي أبو عمر البيكندي البخا · عثمان بن علي البيكندي
+933	fahreddin-osman-b-ibrahim-el-mardini	عثمان بن مصطفى بن إبراهيم بن سليمان المارديني أبو  · عثمان بن إبراهيم المارديني
+940	ebu-isme-isam-b-yusuf-el-belhi	عصام بن يوسف بن ميمون بن قدامة أبو عصيمة البلخي ير · عصام بن يوسف البلخي
+943	ata-b-hamza-es-sugdi	عطاء بن حمزة · عطاء بن حمزة السغدي
+950	kadilkudat-imaduddin-ali-b-ahmed-et-tarsusi	علي بن أحمد بن عبد الواحد بن عبد المنعم بن عبد الص · علي بن أحمد الطرسوسي
+953	kemaleddin-ali-b-ahmed-kadil-hisn	علي بن أحمد بن علي بن يوسف بن إبراهيم بن عبد الحق  · علي بن أحمد قاضي الحصن
+956	husameddin-ali-b-ahmed-b-mekki-er-razi	علي بن أحمد بن مكي الرازي · حسام الدين علي بن أحمد الرازي
+960	alaeddin-ali-b-belban-el-farisi	علي بن بلبان بن عبد الله الفارسي الأمير · علي بن بلبان الفارسي
+961	ebul-hasan-ali-b-el-cad-el-cevheri	لي بن الجعد بن عبيد الجوهري أبو الحسن · علي بن الجعد
+967	ebul-hasan-ali-b-el-hasan-en-nisaburi	علي بن الحسن الصندلي النيسابوري أبو الحسن · علي بن الحسن النيسابوري
+969	ebul-hasan-ali-b-el-hasan-el-burhan-el-belhi	علي بن الحسن بن محمد بن محمد بن أبي جعفر وقيل جعفر · البرهان البلخي علي بن الحسن
+975	ruknulislam-ebul-hasan-ali-b-el-huseyin-es-sugdi	علي بن الحسين بن محمد السغدي · علي بن الحسين السغدي
+978	necmeddin-ebul-hasan-ali-b-davud-el-kahfazi	علي بن داود أبو الحسين نجم الدين القحفازي · علي بن داود القحفازي
+980	ebul-hasan-ali-b-said-er-rustugfeni	علي بن سعيد أبو الحسن الرستغفني · أبو الحسن الرستغفني
+989	zahiruddin-el-kebir-ali-b-abdulaziz-el-merginani	علي بن عبد العزيز المرغيناني · ظهير الدين الكبير علي بن عبد العزيز
+990	ebul-hasan-ali-b-abdullah-el-hatibi	علي بن عبيد الله الخطيبي · علي بن عبد الله الخطيبي
+991	alaeddin-ali-b-osman-ibnut-turkmani-el-mardini	علي بن عثمان · علاء الدين ابن التركماني
+1002	fahrulislam-ebul-hasan-ali-b-muhammed-el-pezdevi	علي بن محمد بن الحسين بن عبد الكريم بن موسى بن عيس · فخر الإسلام البزدوي
+1003	kadi-ebul-kasim-ali-b-muhammed-et-tenuhi	علي بن محمد بن إبراهيم بن داود بن إبراهيم التنوخي · أبو القاسم التنوخي
+1005	hamiduddin-ali-b-muhammed-ed-darir-er-rami-i	علي بن محمد بن علي الرامشي البخاري · حميد الدين الضرير
+1011	nureddin-ali-b-muhammed-el-hasiri	علي بن محمد الخاطري نور الدين · علي بن محمد الحاصري
+1015	ebul-kasim-ali-b-muhammed-es-simnani	علي بن محمد بن أحمد الرحبي أبو القاسم ويعرف بابن ا · علي بن محمد السمناني
+1016	ali-b-muhammed-el-vasiti	علي بن محمد الواسطي · علي بن محمد الواسطي
+1018	fahrul-mesayih-ali-b-abdullah-el-imrani	علي بن محمد العمراني الملقب فخر المشائخ أستاذ علاء · علي بن عبد الله العمراني
+1020	ebul-hasan-ali-b-mabed-b-seddad-er-rakki	علي بن معبد بن شداد · علي بن معبد الرقي
+1021	ebul-hasan-ali-b-mevdud-el-kesani	علي بن مودود بن الحسين بن الحسن بن محمد بن إبراهيم · علي بن مودود الكشاني
+1032	zahid-ali-b-yunus	علي بن يونس البلخي · علي بن يونس الزاهد
+1033	ali-er-razi	علي الرازي · علي الرازي
+1036	burhaneddin-ali-b-ebu-bekir-el-merginani	علي بن أبي بكر بن عبد الجليل الفرغاني · صاحب الهداية علي بن أبي بكر المرغيناني
+1041	necmeddin-omer-b-ahmed-el-kahustuvani	عمر بن أحمد بن عمر · عمر بن أحمد الكاخشتواني
+1043	kemaleddin-ebul-kasim-omer-b-ahmed-ibnul-adim-el-halebi	عمر بن أحمد بن هبة الله بن محمد بن هبة الله بن أحم · ابن العديم عمر بن أحمد
+1048	semsuleimme-imaduddin-omer-b-bekr-ez-zerenceri	عمر بن بكر بن محمد بن علي بن الفضل الزرنجري · عماد الدين عمر بن بكر الزرنجري
+1059	es-sadrus-sehid-husameddin-omer-b-abdulaziz-b-maze	عمر بن عبدالعزيز بن عمر بن مازة برهان الأئمة أبو م · الصدر الشهيد عمر بن عبد العزيز
+1061	bedreddin-omer-b-abdulkerim-el-verseki	عمر بن عبد الكريم الورسكي · عمر بن عبد الكريم الورسكي
+1068	necmeddin-ebu-hafs-omer-b-muhammed-en-nesefi	عمر بن محمد بن أحمد بن إسماعيل بن محمد بن علي بن ل · نجم الدين عمر النسفي
+1074	ziyaulislam-ebu-suca-omer-b-muhammed-el-bistami	عمر بن محمد بن عبد الله البسطامي أبو شجاع ضياء الإ · أبو شجاع عمر بن محمد البسطامي
+1077	serefeddin-ebu-hafs-omer-b-muhammed-el-ukayli	عمر بن محمد بن عمر بن محمد بن أحمد شرف الدين أبو ح · عمر بن محمد العقيلي
+1078	celaleddin-omer-b-muhammed-el-habbazi	عمر بن محمد بن عمر · جلال الدين الخبازي
+1080	siraceddin-omer-b-mahmud	عمر بن محمود بن أبي بكر بن عبد القادر ابن أبي بكر  · سراج الدين عمر بن محمود
+1091	kadi-ebu-musa-isa-b-eban	عيسى بن أبان بن صدقة أبو موسى · عيسى بن أبان
+1093	el-melikul-muazzam-serefeddin-isa-b-el-melikul-adil	عيسى الملك المعظم ابن الملك العادل سيف الدين أبي ب · الملك المعظم عيسى بن أبي بكر
+1096	nasiruddin-ebu-ali-ali-b-ibrahim-el-gaznevi	غالي بن إبراهيم بن إسماعيل أبو علي الغزنوي البلقي · عالي بن إبراهيم الغزنوي
+1113	sadrul-efazil-mecduddin-el-kasim-b-el-huseyin-el-harezmi	القاسم بن الحسين بن أحمد الخوارزمي النحوي · صدر الأفاضل القاسم بن الحسين الخوارزمي
+1122	el-kasim-b-man-el-mesudi-el-kufi	القاسم بن معن بن عبد الرحمن بن عبد الله بن مسعود أ · القاسم بن معن
+1152	muhammed-b-ibrahim-ed-darir-el-meydani	محمد بن إبراهيم الضرير الميداني أبو بكر · محمد بن إبراهيم الميداني
+1153	ebul-huseyin-muhammed-b-ahmed-ed-dellal-ez-zaferani	محمد بن أحمد بن محمد بن عبدوس بن كامل أبو الحسن ال · محمد بن أحمد الزعفراني
+1154	alaeddin-ebu-bekir-muhammed-b-ahmed-es-semerkandi	محمد بن أحمد بن أبي أحمد أبو منصور السمرقندي · علاء الدين السمرقندي صاحب التحفة
+1163	seyyid-ebu-suca-muhammed-b-ahmed-el-alevi	محمد بن أحمد بن حمزة بن الحسين بن القاسم بن حمزة ب · السيد أبو شجاع محمد بن أحمد
+1165	ebu-bekir-muhammed-b-ahmed-el-kuduri	محمد بن أحمد بن جعفر بن حمدان أبو بكر القدوري · محمد بن أحمد القدوري
+1167	muhammed-b-ahmed-el-kabi-et-taberi	محمد بن أحمد بن أبي سعيد أحمد بن أبي الخطاب محمد ب · محمد بن أحمد الكعبي الطبري
+1171	ebul-huseyin-muhammed-b-ahmed-el-kemari-el-vasiti	محمد بن أحمد بن الطيب بن جعفر بن كمار الكماري الوا · محمد بن أحمد الكماري الواسطي
+1172	ebu-bekir-muhammed-b-ahmed-el-iyazi	محمد بن أحمد بن العباس بن الحسن بن جبلة بن غالب بن · أبو بكر العياضي
+1180	nasiruddin-muhammed-b-ahmed-el-konevi-ibnur-rabve	محمد بن أحمد بن عبد العزيز القونوي محتدا الدمشقي م · ابن الربوة محمد بن أحمد القونوي
+1183	celaleddin-muhammed-b-ahmed-ibnut-turkmani	محمد بن أحمد بن عثمان بن جلال الدين بن أبي العباس  · محمد بن أحمد ابن التركماني
+1188	ebu-bekir-muhammed-b-ahmed-el-kazzaz-el-belhi	محمد بن أحمد بن علي أبو بكر القزاز أستاذ جماعة · أبو بكر القزاز البلخي
+1191	zahiruddin-ebu-bekir-muhammed-b-ahmed-el-buhari-el-muhtesib	محمد بن أحمد بن عمر · ظهير الدين محمد بن أحمد البخاري
+1192	celaleddin-muhammed-b-ahmed-es-saidi-el-iydi	محمد بن أحمد بن عمر العيدي البخاري جلال الدين · جلال الدين محمد بن أحمد الصاعدي
+1195	kadi-ebu-cafer-muhammed-b-ahmed-es-simnani	محمد بن أحمد بن محمد بن أحمد بن محمد بن محمود · أبو جعفر السمناني
+1200	siraceddin-muhammed-b-ahmed-b-abdulmecid	محمد بن أحمد بن محمد بن عبد المجيد القرنبي الزاهدي · سراج الدين محمد بن أحمد
+1207	ebul-mueyyed-muhammed-b-ahmed-el-mayimurgi-en-nesefi	محمد بن أحمد بن محمود بن محمد بن نصر بن موسى بن أح · محمد بن أحمد المايمرغي
+1208	kadi-ebu-cafer-muhammed-b-ahmed-en-nesefi	محمد بن أحمد بن محمود أبو جعفر النسفي · أبو جعفر محمد بن أحمد النسفي
+1210	kadi-ebu-cafer-muhammed-b-ahmed-el-berkedi-el-buhari	محمد بن أحمد بن موسى بن سلام أبو جعفر · محمد بن أحمد البركدي
+1217	bahaeddin-ebul-meali-muhammed-b-ahmed-el-isbicabi	محمد بن أحمد بن يوسف الملقب بهاء الدين أبو المحامد · بهاء الدين محمد بن أحمد الإسبيجابي
+1219	ebu-bekir-muhammed-b-ahmed-el-iskaf-el-belhi	محمد بن أحمد أبو بكر الإسكاف البلخي إمام كبير جليل · أبو بكر الإسكاف البلخي
+1223	semsuleimme-ebu-bekir-muhammed-b-ahmed-es-serahsi	محمد بن أحمد بن أبي سهل أبو بكر السرخسي تكرر · شمس الأئمة السرخسي
+1230	ebu-abdullah-muhammed-b-el-ezher	محمد بن الأزهر أبو عبد الله · محمد بن الأزهر
+1231	ebul-hasan-muhammed-b-ishak-el-bakarhi	محمد بن إسحاق بن إبراهيم الباقرحي البغدادي · محمد بن إسحاق الباقرحي
+1250	ruknulislam-imamzade-muhammed-b-ebu-bekir-el-cugi	محمد بن أبي بكر المفتي ابن إبراهيم الجرغي الواعظ ع · إمام زاده محمد بن أبي بكر
+1261	ebu-bekir-muhammed-b-cafer-b-tarhan-el-esterabadi	محمد بن جعفر بن طرخان الإسترأبادي أبو عبيد الله جد · محمد بن جعفر الأستراباذي
+1275	imam-muhammed-b-el-hasan-es-seybani	محمد بن الحسن بن فرقد بن أبو عبد الله الشيباني · محمد بن الحسن الشيباني
+1283	ebu-bekir-muhammed-b-el-hasan-en-nesefi	محمد بن الحسن بن منصور أبو بكر النسفي · محمد بن الحسن بن منصور النسفي
+1293	bekir-haherzade-muhammed-b-el-huseyin-el-buhari	محمد بن الحسين بن محمد بن الحسين البخاري المعروف ب · بكر خواهر زاده
+1298	fahrul-kudat-ebu-bekir-muhammed-b-el-huseyin-el-ersabendi	محمد بن الحسين بن محمد الأرسابندي أبو بكر · فخر القضاة الأرسابندي
+1300	ziyaeddin-muhammed-b-el-huseyin-el-bendenici	محمد بن الحسين بن ناصر بن عبد العزيز اليرسوخي المل · ضياء الدين البندنيجي
+1307	ebu-abdullah-muhammed-b-huzeyme-el-kallasi-el-belhi	محمد بن خزيمة أبو عبد الله القرافي بالقاف · محمد بن خزيمة القلاسي
+1310	muhammed-b-resul-b-yunus	محمد بن رسول بن يونس بن محمد الموقاني · محمد بن رسول بن يونس
+1320	ebu-abdullah-muhammed-b-seleme-el-belhi	محمد بن سلمة · محمد بن سلمة البلخي
+1321	semseddin-muhammed-b-suleyman-ed-dimaski	محمد بن سليمان بن أبي العز وهيب شمس الدين الدمشقي  · محمد بن سليمان بن أبي العز
+1323	cemaleddin-ebu-abdullah-muhammed-b-suleyman-ibnun-nakib	محمد بن سليمان بن الحسن بن الحسين البلخي ثم المقدس · ابن النقيب محمد بن سليمان
+1325	ebu-abdullah-muhammed-b-semaa-et-temimi	محمد بن سماعة بن عبد الله بن هلال بن وكيع بن بشر ا · محمد بن سماعة
+1326	ebu-abdullah-muhammed-b-sehl-et-tacir	محمد بن سهل بن إبراهيم بن سهل أبو عبد الله المعروف · محمد بن سهل التاجر
+1328	ebu-abdullah-muhammed-b-suca-es-selci	محمد بن شجاع الثلجي ويقال البلخي · محمد بن شجاع الثلجي
+1332	muhammed-b-tahir-es-sugdi-el-lebbadi	محمد بن طاهر بن عبد الرحمن بن الحسن بن محمد السعيد · محمد بن طاهر اللبادي
+1336	sadreddin-ebu-abdullah-muhammed-b-abbad-el-hilati	محمد بن عباد بن ملك داد بن حسن داد الخلاطي · محمد بن عباد الخلاطي
+1340	kadilkudat-ebu-bekir-muhammed-b-abdullah-en-nasihi	محمد بن عبد الله بن الحسين قاضي القضاة الناصحي إما · أبو بكر الناصحي
+1346	mecduleimme-ebu-bekir-muhammed-b-abdullah-es-serhakti	محمد بن عبد الله بن فاعل · مجد الأئمة السرخكتي
+1347	ebu-cafer-muhammed-b-abdullah-el-hinduvani	محمد بن عبد الله بن محمد بن عمر أبو جعفر · أبو جعفر الهندواني
+1352	kadi-muhammed-b-abdullah-el-ensari	محمد بن عبد الله بن المثنى بن عبد الله بن أنس بن م · محمد بن عبد الله الأنصاري
+1354	kadi-sedid-ebu-abdullah-muhammed-es-saigi	محمد بن عبد الله أبو عبد الله الصائغي قاضي مرو عرف · القاضي السديد الصائغي
+1356	kadi-ebu-mansur-muhammed-b-abdulcebbar-es-semani	محمد بن عبد الجبار بن أحمد بن محمد بن جعفر بن محمد · أبو منصور السمعاني
+1358	alaeddin-ebul-feth-muhammed-b-abdulhamid-el-esmendi	محمد بن عبد الحميد بن الحسن بن الحسين بن حمزة أبو  · العلاء العالم الأسمندي
+1363	alaeddin-ez-zahid-muhammed-b-abdurrahman-el-buhari	محمد بن عبد الرحمن بن أحمد أبو عبد الله البخاري ال · العلاء الزاهد
+1363	ebu-abdullah-muhammed-b-abdurrahman-ez-zahid-el-buhari	محمد بن عبد الرحمن بن أحمد أبو عبد الله البخاري ال · أبو عبد الله محمد بن عبد الرحمن الزاهد
+1372	muhammed-b-abdurrahman-es-semerkandi-es-sencari	محمد بن عبد الرحمن بن محمد بن محمود السمرقندي السن · محمد بن عبد الرحمن السنجاري
+1379	semsuleimme-muhammed-b-abdussettar-el-kerderi	محمد بن عبد الستار بن محمد بن العمادي الكردري · شمس الأئمة الكردري
+1386	muhammed-b-abdulkerim-ibnus-suca	محمد بن عبد الكريم بن عثمان · محمد بن عبد الكريم ابن الشجاع
+1387	burhanuleimme-semseddin-muhammed-b-abdulkerim-et-turkistani	محمد بن عبد الكريم التركستاني الخوارزمي عرف ببرهان · محمد بن عبد الكريم التركستاني
+1402	semseddin-muhammed-b-osman-ibnul-hariri	محمد بن عثمان بن أبي الحسن بن عبد الوهاب الأنصاري  · ابن الحريري محمد بن عثمان
+1423	kadi-ebu-bekir-muhammed-b-ali-ez-zerenceri	محمد بن علي بن الفضل · أبو بكر محمد بن علي الزرنجري
+1425	kadilkudat-ebu-abdullah-muhammed-b-ali-ed-damgani-el-kebir	محمد بن علي بن محمد بن الحسين بن عبد الملك بن عبد  · أبو عبد الله الدامغاني الكبير
+1444	residuddin-ebu-bekir-muhammed-b-omer-en-nisaburi	محمد بن عمر بن عبد الله أبو بكر · رشيد الدين النيسابوري
+1450	zahiruddin-muhammed-b-omer-en-nuhabadi	محمد بن عمر بن محمد المظفر ظهير الدين النوجاباذي ا · ظهير الدين النوحاباذي
+1452	muhammed-b-omer-ibnus-sirac-er-razi	محمد بن عمر سراج الدين بن محمود شهاب الدين بن أبي  · ابن السراج محمد بن عمر
+1461	imam-ebu-bekir-muhammed-b-el-fazl-el-kemari-el-buhari	محمد بن الفضل أبو بكر الفضلي الكماري · أبو بكر محمد بن الفضل
+1476	el-hakimus-sehid-ebul-fazl-muhammed-b-muhammed-el-mervezi	محمد بن محمد بن أحمد بن عبد الله بن عبد المجيد بن  · الحاكم الشهيد
+1482	fahreddin-muhammed-b-muhammed-el-mayimurgi	محمد بن محمد بن إلياس الملقب فخر الدين المايمرغي ت · فخر الدين المايمرغي
+1483	ebu-muhammed-muhammed-b-muhammed-el-katvani	محمد بن محمد بن أيوب القطواني · محمد بن محمد القطواني
+1484	minhacusseria-muhammed-b-muhammed-b-el-hasan	محمد بن محمد بن الحسن إمام الأئمة على الإطلاق منها · منهاج الشريعة محمد بن محمد
+1487	sadrulislam-ebul-yusr-muhammed-b-muhammed-el-pezdevi	محمد بن محمد بن الحسين البزدوي أبو اليسر وكتب عنه  · صدر الإسلام أبو اليسر البزدوي
+1489	ebu-tahir-muhammed-b-muhammed-ed-debbas	محمد بن محمد بن سفيان أبو طاهر الدباس · أبو طاهر الدباس
+1490	ebu-nasr-muhammed-b-muhammed-b-sehl-en-nisaburi	محمد بن محمد بن سهل بن إبراهيم بن سهل أبو نصر · أبو نصر محمد بن محمد بن سهل
+1491	ebu-nasr-muhammed-b-sellam-el-belhi	محمد بن محمد بن سلام البلخي أبو نصر · أبو نصر محمد بن سلام البلخي
+1505	husameddin-muhammed-b-muhammed-el-ahsikesi	محمد بن محمد بن عمر الأخسيكتي أبو عبد الله · حسام الدين الأخسيكثي
+1510	hafizuddin-el-kebir-ebul-fazl-muhammed-b-muhammed-el-buhari	محمد بن محمد بن نصر · حافظ الدين الكبير محمد بن محمد البخاري
+1523	muhammed-b-muhammed-el-merginani	محمد بن محمد بن محمد القباوي نزل مرغينان · محمد بن محمد نزيل مرغينان
+1524	burhaneddin-ebul-fazl-muhammed-b-muhammed-en-nesefi	محمد بن محمد بن محمد · البرهان النسفي
+1529	rukneddin-ebu-hamid-muhammed-b-muhammed-el-amidi-es-semerkandi	محمد بن محمد بن محمد أبو حامد العميدي · ركن الدين العميدي
+1530	radiyyuddin-muhammed-b-muhammed-es-serahsi	محمد بن محمد بن محمد · رضي الدين السرخسي صاحب المحيط
+1532	imamul-huda-ebu-mansur-muhammed-b-muhammed-el-maturidi	محمد بن محمد بن محمود أبو منصور الماتريدي · أبو منصور الماتريدي
+1535	bedreddin-haherzade-muhammed-b-mahmud-el-kerderi	محمد بن محمود بن عبد الكريم الكردري المعروف بخواهر · بدر الدين خواهر زاده
+1540	muhammed-b-mesud-el-kesani	محمد بن مسعود بن الحسين بن الحسن بن محمد بن إبراهي · محمد بن مسعود الكشاني
+1542	fahreddin-hace-hasan-muhammed-b-mustafa-et-turki	محمد بن مصطفى بن زكريا ابن خواجه بن حسن التركي الص · محمد بن مصطفى التركي
+1544	muhammed-b-mukatil-er-razi	محمد بن مقاتل الرازي قاضي الري · محمد بن مقاتل الرازي
+1546	ebu-ishak-muhammed-b-mansur-en-nevkadi	محمد بن منصور بن مخلص أبو إسحاق الحاكم النوقدي · أبو إسحاق النوقدي
+1548	ebu-bekir-muhammed-b-musa-el-harezmi	محمد بن موسى بن محمد الخوارزمي أبو بكر · أبو بكر محمد بن موسى الخوارزمي
+1552	ebul-meali-muhammed-b-nasr-el-amiri-el-hatib	محمد بن نصر بن منصور بن علي بن محمد بن محمد بن يعل · أبو المعالي محمد بن نصر الخطيب
+1562	ebu-ali-muhammed-b-el-velid-es-semerkandi	محمد بن الوليد المعروف بالزاهد السمرقندي · محمد بن الوليد السمرقندي
+1571	ebu-abdullah-muhammed-b-yahya-el-curcani	محمد بن يحيى بن مهدي أبو عبد الله الجرجاني · أبو عبد الله الجرجاني
+1576	ebu-bekir-muhammed-b-el-yeman-es-semerkandi	محمد بن اليمان أبو بكر االسمرقندي · محمد بن اليمان السمرقندي
+1581	ebul-feth-muhammed-b-yusuf-el-kantari	محمد بن يوسف بن أحمد بن علي القنطري · محمد بن يوسف القنطري
+1583	kazasker-muhammed-b-yusuf-ibnul-ebyaz-el-halebi	محمد بن يوسف بن الخضر بن عبد الله الحلبي عرف بإبن  · ابن الأبيض محمد بن يوسف الحلبي
+1584	nasiruddin-ebul-kasim-muhammed-b-yusuf-el-huseyni-es-semerkandi	محمد بن يوسف بن محمد بن علي العلوي الحسنى أبو القا · ناصر الدين السمرقندي
+1586	ebul-fazl-muhammed-b-yusuf-el-gaznevi-el-bagdadi	محمد بن يوسف بن علي بن محمد أبو الفضل الغزنوي ثم ا · محمد بن يوسف الغزنوي البغدادي
+1605	imaduddin-ebul-mehamid-mahmud-b-ahmed	محمود بن أحمد بن أبي الحسن الفاريابي أبو المحامد ا · محمود بن أحمد عماد الدين
+1606	semseddin-mahmud-b-ahmed-el-larendi	محمود بن أحمد بن ظهير الدين ابن شمس الدين اللارندي · محمود بن أحمد اللارندي
+1608	cemaleddin-ebul-mehamid-mahmud-b-ahmed-el-hasiri	محمود بن أحمد بن عبد السيد بن عثمان بن نصر بن عبد  · جمال الدين محمود الحصيري
+1616	tacuddin-mahmud-b-abid-es-sarhadi	محمود بن عابد بن حسين بن محمد بن علي أبو الثناء تا · محمود بن عابد الصرخدي
+1618	seyhulislam-alaeddin-mahmud-b-ubeydullah-el-harisi-el-mervezi	محمود بن عبيد الله بن صاعد بن أحمد بن محمد الطايكا · محمود بن عبيد الله الحارثي
+1621	semsuleimme-mahmud-b-abdulaziz-el-ozcendi	محمود بن عبد العزيز أبو القاسم الملقب شمس الدين جد · شمس الأئمة محمود الأوزجندي
+1625	carullah-ebul-kasim-mahmud-b-omer-ez-zemahseri	محمود بن عمر بن محمد الزمخشري · جار الله الزمخشري
+1627	ebul-mehamid-mahmud-b-muhammed-el-lului-el-buhari	محمود بن محمد بن داود أبو المحامد اللؤلؤي الأفشنجي · محمود بن محمد اللؤلؤي صاحب الحقائق
+1634	semseddin-ebul-ala-mahmud-b-ebu-bekir-el-kelabazi-el-feradi	محمود بن أبي بكر بن أبي العلاء بن علي بن أبي يعلي  · أبو العلاء الكلاباذي الفرضي
+1635	sehabeddin-mahmud-b-abdulkahir-er-razi	محمود بن أبي بكر بن عبد القاهر الملقب شهاب الدين · محمود بن عبد القاهر الرازي
+1637	serefuleimme-burhaneddin-mahmud-et-tercumani-el-mekki	محمود الترجماني لا أدري · محمود الترجماني
+1639	necmeddin-ebur-reca-muhtar-b-mahmud-ez-zahidi	مختار بن محمود بن محمد الزاهدي أبو الرجاء العزميني · مختار بن محمود الزاهدي
+1644	rukneddin-mesud-b-el-huseyin-el-kesani	مسعود بن الحسن بن الحسين بن محمد بن إبراهيم الكشان · مسعود بن الحسين الكشاني
+1646	burhaneddin-ebul-muvaffak-mesud-b-suca-el-emevi	مسعود بن شجاع بن محمد بن الحسن بن محمد بن الحسن ال · مسعود بن شجاع الأموي
+1653	ebul-kasim-mesud-b-muhammed-el-harezmi	مسعود بن محمد بن موسى بن محمد الخوارزمي أبو القاسم · مسعود بن محمد الخوارزمي
+1668	kadilkudat-cemaleddin-ebu-sad-el-mutahhar-b-el-huseyin-el-yezdi	المطهر بن الحسين بن سعد بن علي بن بندار اليزدي · المطهر بن الحسين اليزدي
+1677	ebu-yahya-mualla-b-mansur-er-razi	المعلي بن منصور أبو يحيى الرازي · معلى بن منصور الرازي
+1709	muslihuddin-ebul-feth-musa-b-muhammed-et-tebrizi	موسى بن أمير حاج بن محمد التبريري · موسى بن محمد التبريزي
+1711	ebu-suleyman-musa-b-suleyman-el-cuzcani	موسى بن سليمان أبو سليمان الجوزجاني · أبو سليمان الجوزجاني
+1714	ebu-sehl-musa-b-nasr-er-razi	موسى بن نصر الرازي أبو سهل · موسى بن نصير الرازي
+1715	muvaffakuddin-ahtab-harezm-el-muvaffak-b-ahmed	الموفق بن أحمد بن محمد المكي خطيب خوارزم أستاذ ناص · الموفق بن أحمد خطيب خوارزم
+1719	meymun-b-ismail-el-hatib	ميمون بن إسماعيل بن عبد الصادق بن عبد الله بن سعيد · ميمون بن إسماعيل
+1722	ebul-muin-meymun-b-muhammed-el-mekhuli-en-nesefi	ميمون بن محمد بن محمد بن معتمد بن محمد بن محمد بن  · أبو المعين النسفي
+1723	ebul-feth-nasir-b-abdusseyyid-el-mutarrizi	ناصر بن أبي المكارم عبد السيد بن علي أبو المظفر وأ · ناصر بن عبد السيد المطرزي
+1730	ebu-ahmed-nasr-b-ahmed-el-iyazi	نصر بن أحمد بن العباس بن جبلة بن غالب العياضي أبو  · أبو أحمد العياضي
+1741	fakih-ebul-leys-nasr-b-muhammed-es-semerkandi	نصر بن محمد بن أحمد بن إبراهيم السمرقندي · أبو الليث السمرقندي
+1750	nusayr-b-yahya-el-belhi	نصير بن يحيى وقيل نصر البلخي · نصير بن يحيى البلخي
+1758	muizzuddin-en-numan-b-el-hasan-el-hatibi	النعمان بن الحسن بن يوسف الخطيبي قاضي القضاة بالقا · النعمان بن الحسن الخطيبي
+1769	sucauddin-hibetullah-b-ahmed-et-tarazi	هبة الله بن أحمد بن معلى بن محمد الطرازي شجاع الدي · هبة الله بن أحمد الطرازي
+1774	hisam-b-ubeydullah-er-razi	هشام بن عبيد الله الرازي · هشام بن عبيد الله الرازي
+1778	hilal-b-yahya-er-rey-el-basri	هلال بن يحيى بن مسلم الرأي البصري · هلال الرأي
+1783	el-heysem-b-ebul-heysem-utbe-en-nisaburi	الهيثم بن أبي الهيثم عتبة بن خيثمة التميمي · الهيثم بن أبي الهيثم عتبة
+1785	ebu-sufyan-veki-b-el-cerrah-el-kufi	وكيع بن الجراح بن مليح بن عدي أبو سفيان الكوفي · وكيع بن الجراح
+1792	kadi-yahya-b-eksem	يحيى بن أكثم · يحيى بن أكثم
+1796	yahya-b-zekeriyya-b-ebu-zaide-el-kufi	يحيى بن زكرياء بن أبي زائدة واسم أبي زائدة ميمون ب · يحيى بن زكريا بن أبي زائدة
+1799	yahya-b-suleyman-er-rumi	يحيى بن سليمان بن علي الرومي الآزريجاني · يحيى بن سليمان الرومي
+1803	kadilkudat-ebu-salih-yahya-b-abdullah-en-nasihi	يحيى بن عبد الله بن الحسين أبو صالح · يحيى بن عبد الله الناصحي
+1806	necmeddin-yahya-b-ali-b-ruman-er-rumi	يحيى بن علي بن رومان التروحاني الرومي نجم الدين · يحيى بن علي بن رومان
+1810	cemaleddin-yahya-b-muhammed-ibnul-kuveyr	يحيى بن محمد بن عبد الرحمن بن محمد بن عبد الرحمن ب · ابن القوير يحيى بن محمد
+1825	imam-ebu-yusuf-yakub-b-ibrahim	يعقوب بن إبراهيم · أبو يوسف يعقوب بن إبراهيم
+1831	necmeddin-yusuf-b-ahmed-el-hasi	يوسف بن أحمد بن أبي بكر الخوارزمي الخاصي عرف بذلك · يوسف بن أحمد الخاصي
+1834	sadrul-kurra-ebul-mehasin-yusuf-b-ishak-el-caberi	يوسف بن إسحاق بن إبراهيم بن محمد بن محسن الرهاوي ص · يوسف بن إسحاق الجعبري
+1837	residuddin-yusuf-b-ismail-ibnul-muallim	يوسف بن إسماعيل بن عثمان القرشي شيخنا · يوسف بن إسماعيل ابن المعلم
+1838	siraceddin-ebu-yakub-yusuf-b-muhammed-es-sekkaki	يوسف بن أبي بكر بن محمد بن علي أبو يعقوب السكاكي ا · السكاكي
+1843	yusuf-b-halid-es-semti	يوسف بن خالد بن عمر أبو خالد السمتي · يوسف بن خالد السمتي
+1844	el-bedrul-ebyaz-yusuf-b-el-huseyin-el-halebi	يوسف بن الخضر بن عبد الله الحلبي · البدر الأبيض يوسف بن الحسين
+1846	bedreddin-yusuf-b-abdullah-el-ezrai	يوسف بن عبد الله بن محمد بن عطاء الملقب بدر الدين · يوسف بن عبد الله الأذرعي
+1848	ebu-abdullah-yusuf-b-muhammed-el-curcani	يوسف بن علي بن محمد الجرجاني أبو عبد الله · يوسف بن محمد الجرجاني
+1851	sibt-ibnul-cevzi-semseddin-yusuf-b-kizoglu	يوسف بن قزاعلي بن عبد الله ويقال زعلى أبو المظفر س · سبط ابن الجوزي
+1857	sadrul-kurra-residuleimme-yusuf-b-muhammed-el-harezmi-el-feydi	يوسف بن محمد بن الفيدي الخوارزمي · يوسف بن محمد الخوارزمي الفيدي
+1858	ebu-yakub-yusuf-b-mansur-es-seyyari	يوسف بن منصور بن إبراهيم بن الفضل بن محمد بن شاكر  · أبو يعقوب السياري
+1863	cemaleddin-abdullah-b-yusuf-ez-zeylai	يوسف الزيلعي إمام فاضل وعنده جدل وقوة نفس فى البحث · جمال الدين الزيلعي
+1889	ebu-bekir-b-hamid	أبو بكر بن حامد · أبو بكر بن حامد
+1911	melikul-ulema-alaeddin-ebu-bekir-b-mesud-el-kasani	أبو بكر بن مسعود بن أحمد الكاساني ملك العلماء علاء · الكاساني أبو بكر بن مسعود
+1922	ebu-cafer-el-usruseni	أبو جعفر بن عبد الله الأستروشني · أبو جعفر الأسروشني
+1962	kadi-ve-muftu-ebu-zer-el-buhari	أبو ذر إمام · أبو ذر البخاري
+1975	ebu-sehl-ez-zeccaci	أبو سهل الزجاجي · أبو سهل الزجاجي
+1985	kadi-ebu-asim-muhammed-b-ahmed-el-amiri	أبو عاصم اسمه محمد بن أحمد العامري · أبو عاصم العامري
+1999	ebu-ali-ed-dekkak	أبو علي الدقاق الرازي · أبو علي الدقاق
+2037	hafiz-ebul-leys-nasr-es-semerkandi	أبو الليث يقال · أبو الليث الحافظ
+2043	kadi-ebu-muti-el-hakem-b-abdullah-el-belhi	أبو مطيع البلخي · أبو مطيع البلخي
+2057	ebu-nasr-ed-debusi	أبو نصر الدبوسي إمام كبير · أبو نصر الدبوسي
+2067	ebu-bekir-ahmed-b-ali-ez-zahir-el-belhi	أبو بكر بن أحمد بن علي بن عبد العزيز البلخي الأصل  · أحمد بن علي الظهير البلخي
+2068	ebu-bekir-muhammed-b-ishak-el-kelabazi	أبو بكر بن إسحاق البخاري الكلاباذي · أبو بكر الكلاباذي
+2090	kivameddin-emir-katib-el-itkani	الأتقساني هو · أمير كاتب الإتقاني
+2735	zeynul-mesayih-ebul-fazl-muhammed-b-ebul-kasim-el-bakkali	زين المشائخ عرف بالبقالي والعجم يزيدون الياء · محمد بن أبي القاسم البقالي

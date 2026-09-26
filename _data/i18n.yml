@@ -23,6 +23,7 @@ tr:
     makaleler: Makaleler
     haberler: Haberler
     fukaha: Fukahâ
+    cevahir: Cevâhir
     harita: Harita
     silsile: Silsile
     blog: Blog
@@ -68,6 +69,7 @@ tr:
     kitaplar: İslam hukuku üzerine modern kitaplar, tahkikler ve çeviriler.
     tezler: Türkiye’de İslam hukuku alanında yapılmış yüksek lisans ve doktora tezleri.
     makaleler: Hakemli dergilerde yayımlanmış İslam hukuku makaleleri.
+    cevahir: İbn Ebi’l-Vefâ el-Kureşî’nin (ö. 775/1373) el-Cevâhirü’l-mudıyye’sindeki Hanefî fakihlerin biyografileri, madde madde.
     fukaha: Tabakât kitaplarından aktarılmış fakih biyografileri.
     harita: Leknevî’nin fakihlerinin doğduğu, okuduğu, ders verdiği, kadılık yaptığı ve vefat ettiği yerler.
     silsile: Fakihler arasındaki hoca ve talebe bağları. Bir ismin üzerine gelince kimden okuduğu ve kimleri yetiştirdiği belirir.
@@ -133,6 +135,9 @@ tr:
     translator: Mütercim
     keywords: Anahtar kelimeler
     abstract: Öz
+    entry: Madde
+    part: Kısım
+    cite: Cilt/sayfa
   madhhab:
     hanefi: Hanefî
     maliki: Mâlikî
@@ -186,6 +191,9 @@ tr:
     theses_lead: YÖK Ulusal Tez Merkezi’nde bu fakihi konu alan tezler, yeniden eskiye.
     articles: Hakkında yazılan makaleler
     articles_lead: Hakemli dergilerde bu fakihi ya da eserini konu alan makaleler, yeniden eskiye.
+    cevahir: el-Cevâhirü’l-mudıyye’deki tercümesi
+    cevahir_lead: İbn Ebi’l-Vefâ el-Kureşî’nin (ö. 775/1373) Hanefî tabakâtında bu fakih için yazdığı madde.
+    cevahir_open: Maddeyi kitapta aç
     show_all: Bütün tezleri göster
     source_text: Kaynak metin
     page: s.
@@ -298,6 +306,26 @@ tr:
     source_lead: Kaynak
     poster: Afiş
     past: Bu etkinlik sona erdi.
+  cevahir:
+    book: el-Cevâhirü’l-mudıyye fî tabakâti’l-Hanefiyye
+    book_short: el-Cevâhirü’l-mudıyye
+    author: İbn Ebi’l-Vefâ el-Kureşî (ö. 775/1373)
+    parts: Kısımlar
+    letters: Harfler
+    books: Ekler
+    entries: madde
+    linked: fakih sayfasına bağlı
+    vol: c.
+    page: s.
+    jurist: Fakihin sayfası
+    prev: Önceki kısım
+    next: Sonraki kısım
+    index: Bütün maddelerde ara
+    top: Kısmın başına dön
+    edition: "Karaçi: Mîr Muhammed Kütübhâne baskısı"
+    text_source: Metin OpenITI külliyatındaki dijital nüshadan (JK000806) alındı. Sayfa numaraları bu baskıya aittir.
+    death_note: Vefat yılı, fakih sayfasına bağlı maddelerde o sayfadaki kayıttan, diğerlerinde madde metninden otomatik olarak okunmuştur. Otomatik okunan yıllar yanlış olabilir.
+    kinds: { tercume: Tercüme, menakib: Menâkıb, kunye: Künye, kadin: Kadın, nisbe: Nisbe, lakap: Lakap, ibn: İbn … }
   about:
     images: Görseller ve lisansları
     image: Görsel
@@ -309,7 +337,7 @@ tr:
     sections: Bölümler
     credits: Görseller Wikimedia Commons’tan, kamu malı ya da açık lisanslı olarak alınmıştır.
     credits_link: Görsel kaynakları
-    data: Tez verileri YÖK Ulusal Tez Merkezi’nden, biyografiler Leknevî’nin el-Fevâidü’l-behiyye’sinden alınmıştır.
+    data: Tez verileri YÖK Ulusal Tez Merkezi’nden, biyografiler Leknevî’nin el-Fevâidü’l-behiyye’si ile İbn Ebi’l-Vefâ’nın el-Cevâhirü’l-mudıyye’sinden alınmıştır.
     top: Başa dön
 
 en:
@@ -335,6 +363,7 @@ en:
     makaleler: Articles
     haberler: News
     fukaha: Jurists
+    cevahir: Jawāhir
     harita: Map
     silsile: Network
     blog: Blog
@@ -380,6 +409,7 @@ en:
     kitaplar: Modern books, critical editions and translations on Islamic law.
     tezler: Master’s and doctoral theses on Islamic law written in Turkey.
     makaleler: Articles on Islamic law published in peer-reviewed journals.
+    cevahir: The biographies of Hanafi jurists in Ibn Abi al-Wafa al-Qurashi’s (d. 775/1373) al-Jawahir al-mudiyya, entry by entry.
     fukaha: Biographies of jurists taken from the ṭabaqāt literature.
     harita: Where al-Laknawī’s jurists were born, studied, taught, served as judges and died.
     silsile: The teacher and student ties among the jurists. Point at a name to see from whom he learned and whom he trained.
@@ -445,6 +475,9 @@ en:
     translator: Translator
     keywords: Keywords
     abstract: Abstract
+    entry: Entry
+    part: Part
+    cite: Vol./page
   madhhab:
     hanefi: Ḥanafī
     maliki: Mālikī
@@ -498,6 +531,9 @@ en:
     theses_lead: Theses in the YÖK National Thesis Centre that study this jurist, newest first.
     articles: Articles about him
     articles_lead: Articles in peer-reviewed journals on this jurist or his work, newest first.
+    cevahir: Entry in al-Jawāhir al-muḍiyya
+    cevahir_lead: What Ibn Abi al-Wafa al-Qurashi (d. 775/1373) wrote about this jurist in his biographical dictionary of the Hanafis.
+    cevahir_open: Open the entry in the book
     show_all: Show all theses
     source_text: Source text
     page: p.
@@ -610,6 +646,26 @@ en:
     source_lead: Source
     poster: Poster
     past: This event has ended.
+  cevahir:
+    book: al-Jawāhir al-muḍiyya fī ṭabaqāt al-Ḥanafiyya
+    book_short: al-Jawāhir al-muḍiyya
+    author: Ibn Abi al-Wafa al-Qurashi (d. 775/1373)
+    parts: Parts
+    letters: Letters
+    books: Appendices
+    entries: entries
+    linked: linked to a jurist's page
+    vol: vol.
+    page: p.
+    jurist: Jurist's page
+    prev: Previous part
+    next: Next part
+    index: Search all entries
+    top: Back to the top of this part
+    edition: "Karachi: Mir Muhammad Kutub Khana edition"
+    text_source: The text comes from the digital copy in the OpenITI corpus (JK000806). Page numbers refer to this edition.
+    death_note: For entries linked to a jurist's page the year of death is taken from that page; for the others it was read from the entry automatically and may be wrong.
+    kinds: { tercume: Biography, menakib: Virtues, kunye: Kunya, kadin: Woman, nisbe: Nisba, lakap: Honorific, ibn: Ibn … }
   about:
     images: Images and licences
     image: Image
@@ -621,7 +677,7 @@ en:
     sections: Sections
     credits: Images come from Wikimedia Commons and are in the public domain or openly licensed.
     credits_link: Image credits
-    data: Thesis data come from the YÖK National Thesis Centre; biographies from al-Laknawī’s al-Fawāʾid al-bahiyya.
+    data: Thesis data come from the YÖK National Thesis Centre; biographies from al-Laknawī’s al-Fawāʾid al-bahiyya and Ibn Abi al-Wafa’s al-Jawāhir al-muḍiyya.
     top: Back to top
 
 ar:
@@ -647,6 +703,7 @@ ar:
     makaleler: البحوث
     haberler: الأخبار
     fukaha: الفقهاء
+    cevahir: الجواهر المضية
     harita: الخريطة
     silsile: السلاسل
     blog: المدونة
@@ -692,6 +749,7 @@ ar:
     kitaplar: كتب حديثة وتحقيقات وترجمات في الفقه الإسلامي.
     tezler: رسائل الماجستير وأطروحات الدكتوراه في الفقه الإسلامي المنجزة في تركيا.
     makaleler: بحوث في الفقه الإسلامي منشورة في مجلات محكّمة.
+    cevahir: تراجم فقهاء الحنفية في «الجواهر المضية» لابن أبي الوفاء القرشي (ت 775هـ)، ترجمةً ترجمة.
     fukaha: تراجم الفقهاء منقولة من كتب الطبقات.
     harita: الأماكن التي ولد فيها فقهاء «الفوائد البهية» ودرسوا ودرّسوا وقضوا وتوفوا.
     silsile: صلات الشيوخ والتلاميذ بين الفقهاء. مرّر المؤشر على اسم لترى عمّن أخذ ومن أخذ عنه.
@@ -757,6 +815,9 @@ ar:
     translator: المترجم
     keywords: الكلمات المفتاحية
     abstract: الملخص
+    entry: الترجمة
+    part: القسم
+    cite: الجزء/الصفحة
   madhhab:
     hanefi: الحنفي
     maliki: المالكي
@@ -810,6 +871,9 @@ ar:
     theses_lead: الرسائل المسجلة في المركز الوطني للرسائل الجامعية (YÖK) عن هذا الفقيه، الأحدث أولًا.
     articles: مقالات عنه
     articles_lead: مقالات في مجلات محكّمة عن هذا الفقيه أو عن كتبه، الأحدث أولًا.
+    cevahir: ترجمته في الجواهر المضية
+    cevahir_lead: ما كتبه ابن أبي الوفاء القرشي (ت 775هـ) عن هذا الفقيه في طبقات الحنفية.
+    cevahir_open: افتح الترجمة في الكتاب
     show_all: عرض جميع الرسائل
     source_text: نص المصدر
     page: ص
@@ -922,6 +986,26 @@ ar:
     source_lead: المصدر
     poster: الملصق
     past: انتهت هذه الفعالية.
+  cevahir:
+    book: الجواهر المضية في طبقات الحنفية
+    book_short: الجواهر المضية
+    author: ابن أبي الوفاء القرشي (ت 775هـ)
+    parts: الأقسام
+    letters: الحروف
+    books: الكتب الملحقة
+    entries: ترجمة
+    linked: مرتبطة بصفحة فقيه
+    vol: ج
+    page: ص
+    jurist: صفحة الفقيه
+    prev: القسم السابق
+    next: القسم التالي
+    index: البحث في جميع التراجم
+    top: العودة إلى أول القسم
+    edition: "كراتشي: مير محمد كتب خانه"
+    text_source: النص من النسخة الرقمية في مدونة OpenITI (JK000806)، وأرقام الصفحات لهذه الطبعة.
+    death_note: سنة الوفاة في التراجم المرتبطة بصفحة فقيه مأخوذة من تلك الصفحة، وفي غيرها مستخرجة آليًا من نص الترجمة وقد تخطئ.
+    kinds: { tercume: ترجمة, menakib: مناقب, kunye: كنية, kadin: امرأة, nisbe: نسبة, lakap: لقب, ibn: ابن … }
   about:
     images: الصور وتراخيصها
     image: الصورة
@@ -933,5 +1017,5 @@ ar:
     sections: الأقسام
     credits: الصور مأخوذة من ويكيميديا كومنز، وهي ملك عام أو ذات ترخيص مفتوح.
     credits_link: مصادر الصور
-    data: بيانات الرسائل من المركز الوطني للرسائل الجامعية (YÖK)، والتراجم من «الفوائد البهية» للكنوي.
+    data: بيانات الرسائل من المركز الوطني للرسائل الجامعية (YÖK)، والتراجم من «الفوائد البهية» للكنوي و«الجواهر المضية» لابن أبي الوفاء القرشي.
     top: العودة إلى الأعلى

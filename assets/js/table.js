@@ -72,6 +72,8 @@
 
   // Address of a jurist's own page, when the column links to one.
   function juristUrl(id) { return id && cfg.juristBase ? cfg.juristBase + encodeURIComponent(id) + '/' : null; }
+  // Address of an al-Jawahir entry on its reading page.
+  function entryUrl(row) { return cfg.entryBase && row.part ? cfg.entryBase + row.part + '/#t' + row.id : null; }
   function linked(html, url) { return url ? '<a class="cell-link" href="' + esc(url) + '">' + html + '</a>' : html; }
 
   // "4. asır", "4th century", "القرن 4"
@@ -103,7 +105,9 @@
         return s ? { text: s, html: linked(wrapLang(s), url), sort: s } : empty;
       }
       case 'ar':
-        return v ? { text: v, html: '<span lang="ar" dir="rtl" class="ar">' + esc(v) + '</span>', sort: v } : empty;
+        return v ? { text: v, html: linked('<span lang="ar" dir="rtl" class="ar">' + esc(v) + '</span>', col.link === 'entry' ? entryUrl(row) : null), sort: v } : empty;
+      case 'ckind':
+        return v ? { text: cfg.ckind[v] || v, html: '<span class="tag c-' + esc(v) + '">' + esc(cfg.ckind[v] || v) + '</span>', sort: cfg.ckind[v] || v } : empty;
       case 'madhhab':
         return v ? { text: cfg.madhhab[v] || v, html: '<span class="tag m-' + esc(v) + '">' + esc(cfg.madhhab[v] || v) + '</span>', sort: cfg.madhhab[v] || v } : empty;
       case 'thesis':
@@ -323,7 +327,17 @@
       });
       var keys = Object.keys(counts);
       if (keys.length < 2) return;
+      var names = (cfg.filterNames || {})[f];
+      var named = {}, first = {};
+      if (names && names !== 'ckind') {
+        rows.forEach(function (r, i) {
+          var v = get(r.data, f);
+          if (!(v in first)) { first[v] = i; named[v] = loc(get(r.data, names)); }
+        });
+      }
       var label = function (k) {
+        if (names === 'ckind') return cfg.ckind[k] || k;
+        if (names) return named[k] || k;
         if (col.kind === 'madhhab') return cfg.madhhab[k] || k;
         if (col.kind === 'thesis') return cfg.thesis[k] || k;
         if (col.kind === 'atype') return cfg.atype[k] || k;
@@ -331,7 +345,9 @@
         if (f === 'century') return centuryLabel(Number(k));
         return k;
       };
-      keys.sort(f === 'century' ? function (a, b) { return a - b; } : function (a, b) { return counts[b] - counts[a]; });
+      keys.sort(f === 'century' ? function (a, b) { return a - b; }
+        : names && names !== 'ckind' ? function (a, b) { return first[a] - first[b]; }
+        : function (a, b) { return counts[b] - counts[a]; });
       var wrap = document.createElement('label');
       wrap.className = 'field';
       var html = '<span class="field-label">' + esc((cfg.filterLabels || {})[f] || f) + '</span><select data-filter="' + esc(f) + '">' +

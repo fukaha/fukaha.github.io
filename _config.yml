@@ -45,6 +45,18 @@ defaults:
   - scope: { path: "_fakihler/ar", type: fakihler }
     values: { lang: ar, permalink: "/ar/jurists/:name/" }
 
+  # One page per part of al-Jawahir al-mudiyya and language, written by tools/import_cevahir.py.
+  - scope: { path: "_cevahir", type: cevahir }
+    values: { layout: cevahir, kind: cevahir }
+  - scope: { path: "_cevahir/tr", type: cevahir }
+    values: { lang: tr, permalink: "/cevahir/:name/" }
+  - scope: { path: "_cevahir/en", type: cevahir }
+    values: { lang: en, permalink: "/en/jawahir/:name/" }
+  - scope: { path: "_cevahir/ar", type: cevahir }
+    values: { lang: ar, permalink: "/ar/jawahir/:name/" }
+
 collections:
   fakihler:
+    output: true
+  cevahir:
     output: true

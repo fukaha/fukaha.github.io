@@ -17,6 +17,7 @@ What a student of Islamic law needs is scattered: a jurist’s life is told in t
 - **Theses.** Master’s and doctoral theses on Islamic law written in Turkey.
 - **Articles.** Articles on Islamic law published in peer-reviewed journals.
 - **Jurists.** Biographies of jurists taken from the *ṭabaqāt* literature. Every jurist has his own page, with his works, teachers, students and the theses about him.
+- **Jawāhir.** Ibn Abi al-Wafa al-Qurashi’s (d. 775/1373) *al-Jawāhir al-muḍiyya fī ṭabaqāt al-Ḥanafiyya*, entry by entry. Each letter and appended book can be read on its own page, and all entries can be searched in one table. 358 of the jurists on the site are linked to their entry, which is also shown on the jurist’s page.
 - **Map.** Where the jurists were born, studied, taught, served as judges and died, on one map with the historical regions.
 - **Network.** The ties between teachers and students, drawn as a network along the centuries. Each jurist’s page also shows his own chain, two generations up and down.
 - **News** and **Blog.** What is new on the site; writing on fiqh, its sources and method.
@@ -36,6 +37,7 @@ All collections work the same way: each record is a table row and the full recor
 | Data | Source |
 | --- | --- |
 | Biographies and classical works | Abū l-Ḥasanāt ʿAbd al-Ḥayy al-Laknawī (d. 1304/1887), *al-Fawāʾid al-bahiyya fī tarājim al-Ḥanafiyya*, Cairo: Maṭbaʿat Dār al-Saʿāda, 1324. |
+| al-Jawāhir al-muḍiyya | Ibn Abi al-Wafa al-Qurashi (d. 775/1373), *al-Jawāhir al-muḍiyya fī ṭabaqāt al-Ḥanafiyya*, Karachi: Mir Muhammad Kutub Khana. The text is the digital copy in the [OpenITI](https://github.com/OpenITI/0775AH/tree/master/data/0775IbnAbiWafa) corpus (CC BY-NC-SA 4.0). Entries were matched with the jurists on the site by hand. |
 | Theses | YÖK National Thesis Centre (Turkey). Records, abstracts and full-text links follow the YÖK entry. |
 | Images | Wikimedia Commons; public domain or openly licensed. Details below. |
 | Coordinates | [al-Ṯurayyā Gazetteer](https://althurayya.github.io/) (CC BY 4.0). The 34 places it does not cover, mostly towns of Anatolia and the Balkans, are placed approximately. |

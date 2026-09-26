@@ -2,7 +2,7 @@
 {%- assign t = site.data.i18n[lang] -%}
 {%- assign stats = site.data.stats -%}
 {%- assign tez_item = site.data.nav | where: "key", "tezler" | first -%}
-{%- assign search_keys = "tezler,klasik,fukaha,kitaplar,makaleler" | split: "," -%}
+{%- assign search_keys = "tezler,klasik,fukaha,cevahir,kitaplar,makaleler" | split: "," -%}
 <a class="skip" href="#main">{{ t.skip }}</a>
 <header class="site-header" data-header>
   <div class="wrap header-in">
@@ -19,7 +19,8 @@
         {%- if page.key == item.key -%}{%- assign active = true -%}{%- endif -%}
         {%- if page.kind == "haber" and item.key == "haberler" -%}{%- assign active = true -%}{%- endif -%}
         {%- if page.kind == "blog" and item.key == "blog" -%}{%- assign active = true -%}{%- endif -%}
-        {%- if page.kind == "fakih" and item.key == "fukaha" -%}{%- assign active = true -%}{%- endif %}
+        {%- if page.kind == "fakih" and item.key == "fukaha" -%}{%- assign active = true -%}{%- endif -%}
+        {%- if page.kind == "cevahir" and item.key == "cevahir" -%}{%- assign active = true -%}{%- endif %}
         <li><a href="{{ item.url[lang] }}"{% if active %} aria-current="page"{% endif %}>{{ t.nav[item.key] }}</a></li>
         {%- endfor %}
       </ul>

@@ -21,6 +21,9 @@
 - key: fukaha
   image: ulughbeg
   url: { tr: /fukaha/, en: /en/jurists/, ar: /ar/jurists/ }
+- key: cevahir
+  image: cini
+  url: { tr: /cevahir/, en: /en/jawahir/, ar: /ar/jawahir/ }
 - key: harita
   image: istakhri
   url: { tr: /harita/, en: /en/map/, ar: /ar/map/ }

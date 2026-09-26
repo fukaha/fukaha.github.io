@@ -442,6 +442,7 @@ def main():
             "kitaplar": len(json.loads((OUT / "kitaplar.json").read_text(encoding="utf-8"))),
             "tezler": len(theses),
             "makaleler": len(json.loads((OUT / "makaleler.json").read_text(encoding="utf-8"))),
+            "cevahir": len(json.loads((OUT / "cevahir.json").read_text(encoding="utf-8"))),
             "fukaha": len(jurists),
         },
         "latest_theses": [

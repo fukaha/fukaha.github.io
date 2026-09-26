@@ -13,6 +13,7 @@ layout: default
 {%- if lang == "ar" %}{% assign summary = J.summary.ar %}{% else %}{% assign summary = J.summary[lang] | default: J.summary.tr %}{% endif -%}
 {%- assign months = tj.months | split: "," -%}
 {%- assign arts = site.data.makale_fakih[page.slug] -%}
+{%- assign cv = site.data.cevahir_fakih[page.slug] -%}
 
 <header class="page-head has-image jurist-head">
   <div class="page-head-img" aria-hidden="true"><img src="{{ img.src }}" alt="" width="{{ img.width }}" height="{{ img.height }}"></div>
@@ -93,6 +94,29 @@ layout: default
         {%- endfor %}
       </div>
       <p class="source-ref">{% if lang == "ar" %}{{ J.source.book }}{% else %}<em>{{ J.source.bookTr }}</em>{% endif %}{% if J.source.edition %}, {{ J.source.edition }}{% endif %}{% if J.source.page %}, {{ tj.page }} {{ J.source.page }}{% endif %}{% if J.source.entry %} ({{ tj.entry }} {{ J.source.entry }}){% endif %}.</p>
+    </section>
+    {%- endif %}
+
+    {%- if cv %}
+    {%- assign tc = t.cevahir %}
+    {%- assign cvnav = site.data.nav | where: "key", "cevahir" | first %}
+    <section class="j-sec" aria-labelledby="h-cevahir">
+      <h2 id="h-cevahir">{{ tj.cevahir }}</h2>
+      <p class="j-note">{{ tj.cevahir_lead }}</p>
+      <div class="source-text cv-source" lang="ar" dir="rtl">
+        {%- for para in cv.paras %}
+        {%- assign c0 = para | slice: 0 %}
+        {%- if c0 == "§" %}
+        <h3>{{ para | remove_first: "§" }}</h3>
+        {%- elsif forloop.first %}
+        {%- assign pre = para | slice: 0, cv.name.size %}
+        <p>{% if pre == cv.name %}<strong>{{ cv.name }}</strong>{{ para | slice: cv.name.size, para.size }}{% else %}{{ para }}{% endif %}</p>
+        {%- else %}
+        <p>{{ para }}</p>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+      <p class="source-ref">{% if lang == "ar" %}{{ tc.book }}{% else %}<em>{{ tc.book }}</em>{% endif %}, {{ tc.edition }}{% if cv.page %}, {{ tc.vol }} {{ cv.vol }}, {{ tc.page }} {{ cv.page }}{% if cv.end %}-{{ cv.end }}{% endif %}{% endif %}. <a href="{{ cvnav.url[lang] }}{{ cv.part }}/#t{{ cv.id }}">{{ tj.cevahir_open }}</a></p>
     </section>
     {%- endif %}
   </div>

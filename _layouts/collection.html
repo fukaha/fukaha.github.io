@@ -46,6 +46,11 @@ layout: default
   "data": {{ cfg.data | jsonify }},
   "sort": {{ cfg.sort | jsonify }},
   "juristBase": {{ jurist_base.url[lang] | jsonify }},
+  {%- if page.key == "cevahir" %}{% assign cv_nav = site.data.nav | where: "key", "cevahir" | first %}
+  "entryBase": {{ cv_nav.url[lang] | jsonify }},
+  "ckind": {{ t.cevahir.kinds | jsonify }},
+  {%- endif %}
+  "filterNames": {{ cfg.filter_names | jsonify }},
   "filter": {{ cfg.filter | jsonify }},
   "columns": [{% for c in cfg.columns %}{"field": {{ c.field | jsonify }}, "label": {{ t.col[c.label] | jsonify }}, "kind": {{ c.kind | default: "text" | jsonify }}, "alt": {{ c.alt | jsonify }}, "link": {{ c.link | jsonify }}, "id": {{ c.id | jsonify }}, "detail": {% if c.detail %}true{% else %}false{% endif %}, "hide": {{ c.hide | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}],
   "text": {{ t.table | jsonify }},
@@ -54,6 +59,6 @@ layout: default
   "atype": {{ t.atype | jsonify }},
   "langs": {{ t.lang | jsonify }},
   "links": {{ t.link | jsonify }},
-  "filterLabels": { "century": {{ t.col.century | jsonify }}, "madhhab": {{ t.col.madhhab | jsonify }}, "type": {{ t.col.type | jsonify }}, "lang": {{ t.col.lang | jsonify }} }
+  "filterLabels": { "century": {{ t.col.century | jsonify }}, "madhhab": {{ t.col.madhhab | jsonify }}, "type": {{ t.col.type | jsonify }}, "lang": {{ t.col.lang | jsonify }}, "part": {{ t.col.part | jsonify }}, "kind": {{ t.col.type | jsonify }} }
 }
 </script>
