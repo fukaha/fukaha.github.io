@@ -1,0 +1,15 @@
+{%- comment -%}
+A large card in a coloured band of the home page: a picture above, the title, a few lines and a link.
+img (image id), title, text, href, more
+{%- endcomment -%}
+{%- assign _img = site.data.images[include.img] -%}
+<article class="band-card">
+  {%- if _img %}
+  <a class="band-card-img" href="{{ include.href }}" tabindex="-1" aria-hidden="true"><img src="{{ _img.src }}" alt="" width="{{ _img.width }}" height="{{ _img.height }}" loading="lazy" decoding="async"></a>
+  {%- endif %}
+  <div class="band-card-body">
+    <h3><a href="{{ include.href }}">{{ include.title }}</a></h3>
+    <p>{{ include.text }}</p>
+    <a class="more-link" href="{{ include.href }}" tabindex="-1" aria-hidden="true">{{ include.more }}</a>
+  </div>
+</article>

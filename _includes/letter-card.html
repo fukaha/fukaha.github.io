@@ -1,0 +1,16 @@
+{%- comment -%}A post card in the green box at the foot of the home page. post{%- endcomment -%}
+{%- assign _p = include.post -%}
+{%- assign _t = site.data.i18n[_p.lang] -%}
+{%- assign _img = site.data.images[_p.image] -%}
+{%- if _p.kind == "haber" %}{% assign _k = _t.home.kind_haber %}{% else %}{% assign _k = _t.home.kind_blog %}{% endif -%}
+<li class="letter-card">
+  <a class="letter-img" href="{{ _p.url }}" tabindex="-1" aria-hidden="true">
+    {%- if _img %}<img src="{{ _img.small }}" alt="" loading="lazy" decoding="async">{% endif %}
+    <span class="pill">{{ _k }}</span>
+  </a>
+  <div class="letter-body">
+    <h3><a href="{{ _p.url }}">{{ _p.title }}</a></h3>
+    {%- if _p.summary %}<p>{{ _p.summary }}</p>{% endif %}
+    <p class="letter-foot"><time datetime="{{ _p.date | date: '%Y-%m-%d' }}">{% include date.html date=_p.date lang=_p.lang %}</time><a class="more-link" href="{{ _p.url }}" tabindex="-1" aria-hidden="true">{{ _t.home.more }}</a></p>
+  </div>
+</li>

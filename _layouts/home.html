@@ -4,12 +4,16 @@ layout: default
 {%- assign lang = page.lang | default: "tr" -%}
 {%- assign t = site.data.i18n[lang] -%}
 {%- assign stats = site.data.stats -%}
-{%- assign collection_keys = "klasik,kitaplar,tezler,makaleler,fukaha" | split: "," -%}
-{%- assign post_kinds = "haber,blog" | split: "," -%}
+{%- assign ph = "{n}" -%}
+{%- assign collection_keys = "klasik,kitaplar,tezler,makaleler" | split: "," -%}
+{%- assign number_keys = "klasik,tezler,makaleler,fukaha,cevahir" | split: "," -%}
 {%- assign theses_url = site.data.nav | where: "key", "tezler" | first -%}
 {%- assign jurists_url = site.data.nav | where: "key", "fukaha" | first -%}
 {%- assign news_url = site.data.nav | where: "key", "haberler" | first -%}
 {%- assign blog_url = site.data.nav | where: "key", "blog" | first -%}
+{%- assign cevahir_url = site.data.nav | where: "key", "cevahir" | first -%}
+{%- assign map_url = site.data.nav | where: "key", "harita" | first -%}
+{%- assign net_url = site.data.nav | where: "key", "silsile" | first -%}
 {%- assign home_posts = site.posts | where: "lang", lang -%}
 {%- if lang == "tr" %}{% assign feed_url = "/feed.xml" %}{% else %}{% capture feed_url %}/{{ lang }}/feed.xml{% endcapture %}{% endif -%}
 {%- assign thesis = stats.latest_theses[0] -%}
@@ -68,26 +72,21 @@ layout: default
     {%- endif %}
   </div>
 
-  <div class="seal" aria-hidden="true">
-    <svg viewBox="0 0 120 120">
-      <defs><path id="seal-path" d="M60 60 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs>
-      <text><textPath href="#seal-path"{% unless lang == "ar" %} textLength="286" lengthAdjust="spacing"{% endunless %}>{{ t.home.badge }}</textPath></text>
-    </svg>
-    <span class="seal-mark">{% include mark.html id="ms" %}</span>
-  </div>
-
   <div class="showcase-controls">
     <div class="wrap controls-in">
-      <p class="counter" aria-hidden="true"><strong data-current>01</strong> / <span>{% if n < 10 %}0{% endif %}{{ n }}</span></p>
-      <span class="progress" aria-hidden="true"><span class="progress-fill"></span></span>
-      <button type="button" class="round-btn" data-step="-1" aria-label="{{ t.table.prev }}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
-      <button type="button" class="round-btn" data-step="1" aria-label="{{ t.table.next }}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+      <div class="dots" role="group" aria-label="{{ t.home.showcase }}">
+        {%- for i in (1..n) %}
+        <button type="button" class="dot" data-go="{{ i | minus: 1 }}" aria-label="{{ t.home.slide_n | replace: ph, i }}"{% if i == 1 %} aria-current="true"{% endif %}></button>
+        {%- endfor %}
+      </div>
       <button type="button" class="round-btn small showcase-toggle" data-pause="{{ t.home.pause }}" data-play="{{ t.home.play }}" aria-label="{{ t.home.pause }}"><span class="pp" aria-hidden="true"></span></button>
     </div>
   </div>
+  <a class="scroll-cue" href="#after-hero" aria-label="{{ t.home.scroll }}"><span aria-hidden="true"></span></a>
 </section>
 
-<section class="intro">
+
+<section class="intro" id="after-hero">
   <div class="wrap intro-in">
     <div class="intro-text">
       <h1>{{ t.home.title }}</h1>
@@ -108,22 +107,90 @@ layout: default
   </div>
 </section>
 
+{%- assign news_posts = home_posts | where: "kind", "haber" %}
+{%- if news_posts.size > 0 %}
+<section class="news-sec" data-shelf data-still aria-labelledby="h-news">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-news">{{ t.home.news_title }}</h2>
+      <div class="sec-arrows">
+        <button type="button" class="arrow-btn" data-move="-1" aria-label="{{ t.table.prev }}"><span class="chev-s prev" aria-hidden="true"></span></button>
+        <button type="button" class="arrow-btn" data-move="1" aria-label="{{ t.table.next }}"><span class="chev-s next" aria-hidden="true"></span></button>
+      </div>
+      <a class="btn-pill" href="{{ news_url.url[lang] }}">{{ t.home.view_all }}</a>
+    </div>
+    <ul class="news-track">
+      {%- for post in news_posts limit: 12 %}
+      {% include news-card.html post=post %}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+
+<section class="color-band band-teal" aria-labelledby="h-band-jurists">
+  <div class="wrap">
+    <header class="band-head">
+      <h2 id="h-band-jurists">{{ t.home.band_jurists }}</h2>
+      <p>{{ t.home.band_jurists_lead }}</p>
+    </header>
+    <div class="band-cards">
+      {%- capture fk_title %}{{ t.nav.fukaha }}{% endcapture %}
+      {%- capture cv_title %}{{ t.cevahir.book_short }}{% endcapture %}
+      {%- assign fk_href = jurists_url.url[lang] %}{% assign cv_href = cevahir_url.url[lang] %}
+      {% include band-card.html img="ulughbeg" title=fk_title text=t.collection.fukaha href=fk_href more=t.home.more %}
+      {% include band-card.html img="cini" title=cv_title text=t.collection.cevahir href=cv_href more=t.home.more %}
+    </div>
+  </div>
+</section>
+
 {% include home-discover.html %}
+
+<section class="numbers" aria-labelledby="h-numbers">
+  <div class="wrap">
+    <h2 id="h-numbers" class="sec-title">{{ t.home.numbers }}</h2>
+    <ul class="num-list">
+      {%- for key in number_keys %}
+      {%- assign item = site.data.nav | where: "key", key | first %}
+      <li>
+        <a href="{{ item.url[lang] }}">
+          {% include icon.html name=key %}
+          {%- assign cnt = stats.counts[key] %}
+          <strong>{% include number.html n=cnt %}</strong>
+          <span>{{ t.home.num[key] }}</span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="color-band band-brown" aria-labelledby="h-band-tools">
+  <div class="wrap">
+    <header class="band-head">
+      <h2 id="h-band-tools">{{ t.home.band_tools }}</h2>
+      <p>{{ t.home.band_tools_lead }}</p>
+    </header>
+    <div class="band-cards">
+      {%- assign map_href = map_url.url[lang] %}{% assign net_href = net_url.url[lang] %}
+      {% include band-card.html img="istakhri" title=t.nav.harita text=t.collection.harita href=map_href more=t.home.more %}
+      {% include band-card.html img="registan" title=t.nav.silsile text=t.collection.silsile href=net_href more=t.home.more %}
+    </div>
+  </div>
+</section>
 
 {%- if stats.latest_theses.size > 0 %}
 <section class="shelf-sec" data-shelf aria-labelledby="h-shelf">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <h2 id="h-shelf">{{ t.home.latest_theses }}</h2>
-        <p>{{ t.home.shelf_lead }}</p>
+    <div class="sec-head">
+      <h2 id="h-shelf">{{ t.home.latest_theses }}</h2>
+      <div class="sec-arrows">
+        <button type="button" class="arrow-btn" data-move="-1" aria-label="{{ t.table.prev }}"><span class="chev-s prev" aria-hidden="true"></span></button>
+        <button type="button" class="arrow-btn" data-move="1" aria-label="{{ t.table.next }}"><span class="chev-s next" aria-hidden="true"></span></button>
       </div>
-      <div class="shelf-nav">
-        <a class="more" href="{{ theses_url.url[lang] }}">{{ t.home.all_theses }}</a>
-        <button type="button" class="round-btn" data-move="-1" aria-label="{{ t.table.prev }}"><span class="chev-s prev" aria-hidden="true"></span></button>
-        <button type="button" class="round-btn" data-move="1" aria-label="{{ t.table.next }}"><span class="chev-s next" aria-hidden="true"></span></button>
-      </div>
+      <a class="btn-pill" href="{{ theses_url.url[lang] }}">{{ t.home.view_all }}</a>
     </div>
+    <p class="sec-lead">{{ t.home.shelf_lead }}</p>
   </div>
   <ul class="shelf-track">
     {%- for th in stats.latest_theses %}
@@ -141,52 +208,47 @@ layout: default
 </section>
 {%- endif %}
 
-{% include home-theses.html %}
-
-<section class="section wrap" aria-labelledby="h-collections">
-  <div class="section-head">
-    <div>
-      <h2 id="h-collections">{{ t.home.collections }}</h2>
-      <p>{{ t.home.collections_lead }}</p>
-    </div>
-  </div>
-  <ol class="index">
+<section class="series wrap" aria-labelledby="h-collections">
+  <h2 id="h-collections" class="visually-hidden">{{ t.home.collections }}</h2>
+  <ul class="series-list">
     {%- for key in collection_keys %}
     {%- assign item = site.data.nav | where: "key", key | first -%}
-    {%- assign img = site.data.images[item.image] -%}
     {%- assign cnt = stats.counts[key] | default: 0 %}
-    <li{% if cnt == 0 %} class="soon"{% endif %}>
-      {%- if img %}<img src="{{ img.small }}" alt="" loading="lazy" decoding="async">{% else %}<span class="index-blank"></span>{% endif %}
-      <div class="index-body">
-        <h3><a href="{{ item.url[lang] }}">{{ t.nav[key] }}</a></h3>
-        <p>{{ t.collection[key] }}</p>
-      </div>
-      <p class="index-count">{% if cnt > 0 %}<strong>{% include number.html n=cnt %}</strong> {{ t.home.records }}{% else %}{{ t.home.soon }}{% endif %}</p>
+    <li class="s-{{ key }}{% if cnt == 0 %} soon{% endif %}">
+      <a href="{{ item.url[lang] }}">
+        <span class="series-top"><span class="series-name">{{ t.nav[key] }}</span><span class="series-quill" aria-hidden="true"></span></span>
+        <span class="series-foot">
+          <strong>{{ t.nav[key] }}</strong>
+          <span>{% if cnt > 0 %}{% include number.html n=cnt %} {{ t.home.records }}{% else %}{{ t.home.soon }}{% endif %}</span>
+          <span class="more-link">{{ t.home.view_all }}</span>
+        </span>
+      </a>
     </li>
     {%- endfor %}
-  </ol>
+  </ul>
+</section>
+
+<section class="charts-sec" aria-label="{{ t.home.charts }}">
+  {% include home-theses.html %}
 </section>
 
 {%- if stats.jurists.size > 0 %}
-<section class="band" aria-labelledby="h-jurists">
-  <div class="wrap section">
-    <div class="section-head">
-      <div>
-        <h2 id="h-jurists">{{ t.home.jurists }}</h2>
-        <p>{{ t.home.jurists_lead }}</p>
-      </div>
-      <a class="more" href="{{ jurists_url.url[lang] }}">{{ t.home.all_jurists }}</a>
+<section class="color-band band-navy" aria-labelledby="h-jurists">
+  <div class="wrap">
+    <div class="sec-head on-dark">
+      <h2 id="h-jurists">{{ t.home.jurists }}</h2>
+      <a class="btn-pill light" href="{{ jurists_url.url[lang] }}">{{ t.home.view_all }}</a>
     </div>
-    <div class="jurists">
+    <p class="band-lead">{{ t.home.jurists_lead }}</p>
+    <div class="media-cards">
       {%- for j in stats.jurists %}
-      <article class="jurist">
-        <p class="ar-name" lang="ar" dir="rtl">{{ j.name.ar }}</p>
-        <h3><a href="{{ jurists_url.url[lang] }}{{ j.id }}/">{{ j.name[lang] | default: j.name.tr }}</a></h3>
-        <p class="dates">{{ t.madhhab[j.madhhab] }}{% if j.death %} · {{ t.died }} <bdi dir="ltr">{{ j.death }}/{{ j.deathM }}</bdi>{% endif %} · {{ j.theses }} {{ t.home.theses_n }}</p>
-        {%- if lang == "ar" %}{% assign summary = j.summary.ar %}{% else %}{% assign summary = j.summary[lang] | default: j.summary.tr %}{% endif %}
-        {%- if summary %}
-        <p>{{ summary | truncatewords: 30 }}</p>
-        {%- endif %}
+      <article class="media-card">
+        <a class="media-top" href="{{ jurists_url.url[lang] }}{{ j.id }}/" tabindex="-1" aria-hidden="true"><span lang="ar" dir="rtl">{{ j.name.ar }}</span></a>
+        <div class="media-body">
+          <h3><a href="{{ jurists_url.url[lang] }}{{ j.id }}/">{{ j.name[lang] | default: j.name.tr }}</a></h3>
+          <p class="media-meta">{{ t.madhhab[j.madhhab] }}{% if j.death %} · {{ t.died }} <bdi dir="ltr">{{ j.death }}/{{ j.deathM }}</bdi>{% endif %} · {{ j.theses }} {{ t.home.theses_n }}</p>
+          <a class="more-link" href="{{ jurists_url.url[lang] }}{{ j.id }}/" tabindex="-1" aria-hidden="true">{{ t.home.more }}</a>
+        </div>
       </article>
       {%- endfor %}
     </div>
@@ -194,27 +256,25 @@ layout: default
 </section>
 {%- endif %}
 
-<section class="section wrap">
-  <div class="two-col">
-    {%- for kind in post_kinds %}
-    {%- if kind == "haber" %}{% assign head = t.home.news %}{% assign link = news_url %}{% else %}{% assign head = t.home.blog %}{% assign link = blog_url %}{% endif %}
-    {%- assign posts = home_posts | where: "kind", kind %}
-    <div>
-      <div class="section-head">
-        <h2>{{ head }}</h2>
-        <a class="more" href="{{ link.url[lang] }}">{{ t.home.all }}</a>
-      </div>
-      {%- if posts.size > 0 %}
-      <ul class="post-list">
-        {%- for post in posts limit: 3 %}
-        {% include post-item.html post=post %}
-        {%- endfor %}
-      </ul>
-      {%- else %}
-      <p class="empty-note">{{ t.post.no_posts }}</p>
-      {%- endif %}
+{%- assign blog_posts = home_posts | where: "kind", "blog" %}
+{%- assign more_posts = "" | split: "" %}
+{%- for p in plain_posts %}{% if p.kind == "haber" %}{% assign more_posts = more_posts | push: p %}{% endif %}{% endfor %}
+{%- assign fill = 3 | minus: blog_posts.size %}
+<section class="wrap letter-sec" aria-labelledby="h-blog">
+  <div class="letter">
+    <div class="sec-head on-dark">
+      <h2 id="h-blog">{{ t.nav.blog }}</h2>
+      <a class="btn-pill light" href="{{ blog_url.url[lang] }}">{{ t.home.view_all }}</a>
     </div>
-    {%- endfor %}
+    <p class="band-lead">{{ t.home.blog_lead }}</p>
+    <ul class="letter-cards">
+      {%- for post in blog_posts limit: 3 %}
+      {% include letter-card.html post=post %}
+      {%- endfor %}
+      {%- if fill > 0 %}{% for post in more_posts limit: fill %}
+      {% include letter-card.html post=post %}
+      {%- endfor %}{% endif %}
+    </ul>
+    <p class="follow"><span class="follow-icon" aria-hidden="true"></span><span><strong>{{ t.explore.follow }}.</strong> {{ t.explore.follow_lead }}</span> <a href="{{ feed_url }}">{{ t.explore.rss }}</a></p>
   </div>
-  <p class="follow"><span class="follow-icon" aria-hidden="true"></span><span><strong>{{ t.explore.follow }}.</strong> {{ t.explore.follow_lead }}</span> <a href="{{ feed_url }}">{{ t.explore.rss }}</a></p>
 </section>

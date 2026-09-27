@@ -87,6 +87,7 @@
     var counter = box.querySelector('[data-current]');
     var fill = box.querySelector('.progress-fill');
     var toggle = box.querySelector('.showcase-toggle');
+    var dots = [].slice.call(box.querySelectorAll('[data-go]'));
     var delay = 7000, current = 0, timer = null, playing = !still, held = false;
     if (slides.length < 2) return;
 
@@ -103,6 +104,7 @@
         }
       });
       if (counter) counter.textContent = slides[current].dataset.no;
+      dots.forEach(function (d, n) { if (n === current) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); });
       // the poster of an event slide takes the corner where the seal turns
       box.classList.toggle('on-event', slides[current].classList.contains('slide-event'));
       schedule(true);
@@ -137,6 +139,9 @@
     box.querySelectorAll('[data-step]').forEach(function (b) {
       b.addEventListener('click', function () { spent = 0; show(current + Number(b.dataset.step)); });
     });
+    dots.forEach(function (d) {
+      d.addEventListener('click', function () { spent = 0; show(Number(d.dataset.go)); });
+    });
     if (toggle) toggle.addEventListener('click', function () { setPlaying(!playing); });
     var stage = box.querySelector('.slides');
     stage.addEventListener('mouseenter', function () { hold(true); });
@@ -164,10 +169,11 @@
 
   // --- shelf: a row of covers that moves one cover at a time ---
   document.querySelectorAll('[data-shelf]').forEach(function (box) {
-    var track = box.querySelector('.shelf-track');
+    var track = box.querySelector('.shelf-track, .news-track');
     var timer = null, held = false;
     function step() {
       var item = track.querySelector('li');
+      if (box.hasAttribute('data-still')) return track.clientWidth + parseFloat(getComputedStyle(track).columnGap || 0);
       return item ? item.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0) : 200;
     }
     function atEnd() { return Math.abs(track.scrollLeft) + track.clientWidth >= track.scrollWidth - 4; }
@@ -183,7 +189,7 @@
     });
     function restart() {
       clearInterval(timer);
-      if (!still && !held) timer = setInterval(function () { if (!document.hidden) move(1); }, 4500);
+      if (!still && !held && !box.hasAttribute('data-still')) timer = setInterval(function () { if (!document.hidden) move(1); }, 4500);
     }
     box.addEventListener('mouseenter', function () { held = true; restart(); });
     box.addEventListener('mouseleave', function () { held = false; restart(); });

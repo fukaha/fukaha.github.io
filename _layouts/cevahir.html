@@ -15,24 +15,20 @@ layout: default
 {%- assign jnav = site.data.nav | where: "key", "fukaha" | first -%}
 {%- assign jbase = jnav.url[lang] -%}
 {%- assign JP = site.data.jurists.pages -%}
-{%- assign img = site.data.images.cini -%}
 {%- assign linked = P.entries | where_exp: "e", "e.jurists" -%}
 {%- for p in parts %}{% if p.slug == page.part %}{% assign pi = forloop.index0 %}{% endif %}{% endfor -%}
 {%- assign prev_i = pi | minus: 1 -%}
 {%- assign next_i = pi | plus: 1 -%}
 
-<header class="page-head has-image cv-head" id="part-top">
-  <div class="page-head-img" aria-hidden="true"><img src="{{ img.src }}" alt="" width="{{ img.width }}" height="{{ img.height }}" fetchpriority="high"></div>
-  <div class="page-head-pattern" aria-hidden="true"></div>
+<header class="page-head cv-head" id="part-top">
   <div class="wrap page-head-in">
-    <p class="crumbs"><a href="{{ base }}">{{ tc.book_short }}</a></p>
+    <p class="crumbs"><a href="{{ site.data.nav[0].url[lang] }}">{{ t.nav.home }}</a><span class="crumb-sep" aria-hidden="true"></span><a href="{{ base }}">{{ tc.book_short }}</a></p>
     {%- if P.letter %}
     <p class="cv-letter" lang="ar" dir="rtl" aria-hidden="true">{{ P.letter }}</p>
     {%- endif %}
     <h1>{{ P.title[lang] }}</h1>
     <p class="lead">{% if lang == "ar" %}{{ tc.book }}{% else %}<em>{{ tc.book }}</em>{% endif %} · {{ tc.author }}. {% include number.html n=P.count %} {{ tc.entries }}{% if linked.size > 0 %}, {% include number.html n=linked.size %} {{ tc.linked }}{% endif %}.</p>
   </div>
-  <p class="page-head-credit wrap">{{ img[lang] }} · <a href="{{ img.page }}" rel="noopener">{{ img.license }}</a></p>
 </header>
 
 <div class="wrap cv-body">

@@ -64,6 +64,24 @@ tr:
     news: Haberler
     blog: Blog’dan
     all: Tümü
+    news_title: Duyurular ve Haberler
+    view_all: Tümünü Gör
+    more: Devamı
+    scroll: Aşağı in
+    slide_n: "{n}. slayt"
+    band_jurists: Fakihler
+    band_jurists_lead: Fakihlerin hayatları iki tabakât kitabından aktarılıyor. Her fakihin kendi sayfası, her maddenin de kaynak metni var.
+    numbers: Rakamlarla Fukahâ
+    num:
+      klasik: Klasik eser
+      tezler: Tez
+      makaleler: Makale
+      fukaha: Fakih sayfası
+      cevahir: Cevâhir maddesi
+    band_tools: Araştırma araçları
+    band_tools_lead: Fakihlerin yaşadığı şehirler haritada, aralarındaki hoca-talebe bağları da zaman ekseni üzerindeki bir ağda gezilebilir.
+    charts: Tezler rakamlarla
+    blog_lead: Koleksiyonların nasıl derlendiğini ve kaynakların nasıl aktarıldığını anlatan yazılar.
   collection:
     klasik: Fakihlerin yazdığı fıkıh, usûl ve fetva eserleri. Her eser müellifi, müellifin vefat tarihi ve mezhebiyle listelenir.
     kitaplar: İslam hukuku üzerine modern kitaplar, tahkikler ve çeviriler.
@@ -339,6 +357,7 @@ tr:
     credits_link: Görsel kaynakları
     data: Tez verileri YÖK Ulusal Tez Merkezi’nden, biyografiler Leknevî’nin el-Fevâidü’l-behiyye’si ile İbn Ebi’l-Vefâ’nın el-Cevâhirü’l-mudıyye’sinden alınmıştır.
     top: Başa dön
+    explore: Keşfet
 
 en:
   name: Fukahâ
@@ -404,6 +423,24 @@ en:
     news: News
     blog: From the blog
     all: All
+    news_title: Announcements & News
+    view_all: View All
+    more: More
+    scroll: Scroll down
+    slide_n: "Slide {n}"
+    band_jurists: Jurists
+    band_jurists_lead: The lives of the jurists come from two biographical dictionaries. Every jurist has a page of their own, and every entry keeps its source text.
+    numbers: Fukahâ in numbers
+    num:
+      klasik: Classical works
+      tezler: Theses
+      makaleler: Articles
+      fukaha: Jurist pages
+      cevahir: Jawāhir entries
+    band_tools: Research tools
+    band_tools_lead: The cities where the jurists lived are on a map, and the ties between teachers and students can be explored as a network along a timeline.
+    charts: The theses in numbers
+    blog_lead: Notes on how the collections are compiled and how the sources are transcribed.
   collection:
     klasik: Works of law, legal theory and fatwa written by the jurists, with author, date of death and school.
     kitaplar: Modern books, critical editions and translations on Islamic law.
@@ -679,6 +716,7 @@ en:
     credits_link: Image credits
     data: Thesis data come from the YÖK National Thesis Centre; biographies from al-Laknawī’s al-Fawāʾid al-bahiyya and Ibn Abi al-Wafa’s al-Jawāhir al-muḍiyya.
     top: Back to top
+    explore: Explore
 
 ar:
   name: فقهاء
@@ -744,6 +782,24 @@ ar:
     news: الأخبار
     blog: من المدونة
     all: الكل
+    news_title: الإعلانات والأخبار
+    view_all: عرض الكل
+    more: المزيد
+    scroll: مرّر إلى الأسفل
+    slide_n: "الشريحة {n}"
+    band_jurists: الفقهاء
+    band_jurists_lead: تراجم الفقهاء مأخوذة من كتابين من كتب الطبقات، ولكل فقيه صفحته، ولكل ترجمة نصّها الأصلي.
+    numbers: «فقهاء» بالأرقام
+    num:
+      klasik: مصنَّفًا فقهيًّا
+      tezler: رسالة جامعية
+      makaleler: مقالة
+      fukaha: صفحة فقيه
+      cevahir: ترجمة من «الجواهر»
+    band_tools: أدوات البحث
+    band_tools_lead: المدن التي عاش فيها الفقهاء على خريطة، وصلات الشيوخ بالتلاميذ شبكةٌ على محور زمني يمكن التنقل فيها.
+    charts: الرسائل الجامعية بالأرقام
+    blog_lead: مقالات عن طريقة جمع المجموعات ونقل النصوص من مصادرها.
   collection:
     klasik: مصنفات الفقه وأصوله والفتاوى التي ألّفها الفقهاء، مع المؤلف وسنة الوفاة والمذهب.
     kitaplar: كتب حديثة وتحقيقات وترجمات في الفقه الإسلامي.
@@ -1019,3 +1075,4 @@ ar:
     credits_link: مصادر الصور
     data: بيانات الرسائل من المركز الوطني للرسائل الجامعية (YÖK)، والتراجم من «الفوائد البهية» للكنوي و«الجواهر المضية» لابن أبي الوفاء القرشي.
     top: العودة إلى الأعلى
+    explore: استكشف

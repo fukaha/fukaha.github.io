@@ -25,7 +25,7 @@
   {%- assign og = site.data.images[_ogid] | default: site.data.images.muwatta %}
   <meta property="og:image" content="{{ site.url }}{{ og.src }}">
   <link rel="alternate" type="application/atom+xml" title="{{ t.name }}" href="{% if lang == "tr" %}/feed.xml{% else %}/{{ lang }}/feed.xml{% endif %}">
-  <meta name="theme-color" content="#14332f">
+  <meta name="theme-color" content="#0091ad">
   <script>
     // Apply the saved or system colour scheme before the page paints.
     (function () {
@@ -38,14 +38,14 @@
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Noto+Naskh+Arabic:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600&family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap">
   <link rel="stylesheet" href="/assets/css/site.css?v={{ site.time | date: '%s' }}">
   <script src="/assets/js/site.js?v={{ site.time | date: '%s' }}" defer></script>
   {%- if page.layout == "collection" %}
   <script src="/assets/js/table.js?v={{ site.time | date: '%s' }}" defer></script>
   {%- endif %}
 </head>
-<body class="page-{{ page.key | default: page.kind | default: 'page' }}">
+<body class="page-{{ page.key | default: page.kind | default: 'page' }} layout-{{ page.layout }}">
 {% include header.html %}
 <main id="main">
 {{ content }}

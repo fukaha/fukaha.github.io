@@ -6,7 +6,9 @@ layout: default
 {%- if page.kind == "haber" -%}{%- assign list = site.data.nav | where: "key", "haberler" | first -%}{%- assign back = t.post.back_news -%}
 {%- else -%}{%- assign list = site.data.nav | where: "key", "blog" | first -%}{%- assign back = t.post.back_blog -%}{%- endif -%}
 {%- capture eyebrow -%}{% if page.kind == "haber" %}{{ t.nav.haberler }}{% else %}{{ t.nav.blog }}{% endif %}{%- endcapture -%}
-{% include page-head.html eyebrow=eyebrow lead=page.summary %}
+{%- if page.kind == "haber" %}{% assign _sec = site.data.nav | where: "key", "haberler" | first %}{% else %}{% assign _sec = site.data.nav | where: "key", "blog" | first %}{% endif -%}
+{%- assign sec_url = _sec.url[lang] -%}
+{% include page-head.html eyebrow=eyebrow eyebrow_url=sec_url lead=page.summary %}
 <div class="wrap prose-wrap">
   <article class="prose">
     <p class="post-date"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{% include date.html date=page.date lang=lang %}</time></p>

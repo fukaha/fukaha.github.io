@@ -1,0 +1,24 @@
+{%- comment -%}
+A news card on the home page: a poster or picture on one side, the title and a link on the other.
+A symposium without a poster gets a small card with its dates in place of the picture.
+post
+{%- endcomment -%}
+{%- assign _p = include.post -%}
+{%- assign _t = site.data.i18n[_p.lang] -%}
+{%- assign _img = site.data.images[_p.image] -%}
+<li class="news-card">
+  <a class="news-thumb" href="{{ _p.url }}" tabindex="-1" aria-hidden="true">
+    {%- if _p.event.poster %}
+    <img src="{{ _p.event.poster }}" alt="" loading="lazy" decoding="async">
+    {%- elsif _p.event %}
+    <span class="news-poster"><span class="np-kind">{{ _t.event.kind }}</span><span class="np-title">{{ _p.short | default: _p.title }}</span><span class="np-when">{{ _p.event.when }}</span></span>
+    {%- elsif _img %}
+    <img src="{{ _img.small }}" alt="" loading="lazy" decoding="async">
+    {%- endif %}
+  </a>
+  <div class="news-body">
+    <time datetime="{{ _p.date | date: '%Y-%m-%d' }}">{% include date.html date=_p.date lang=_p.lang %}</time>
+    <h3><a href="{{ _p.url }}">{{ _p.short | default: _p.title }}</a></h3>
+    <a class="more-link" href="{{ _p.url }}" tabindex="-1" aria-hidden="true">{{ _t.home.more }}</a>
+  </div>
+</li>

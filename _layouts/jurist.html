@@ -8,18 +8,15 @@ layout: default
 {%- assign brief = site.data.jurists.brief -%}
 {%- assign base = site.data.nav | where: "key", "fukaha" | first -%}
 {%- assign base = base.url[lang] -%}
-{%- assign img = site.data.images.mabsut -%}
 {%- assign name = J.name[lang] | default: J.name.tr -%}
 {%- if lang == "ar" %}{% assign summary = J.summary.ar %}{% else %}{% assign summary = J.summary[lang] | default: J.summary.tr %}{% endif -%}
 {%- assign months = tj.months | split: "," -%}
 {%- assign arts = site.data.makale_fakih[page.slug] -%}
 {%- assign cv = site.data.cevahir_fakih[page.slug] -%}
 
-<header class="page-head has-image jurist-head">
-  <div class="page-head-img" aria-hidden="true"><img src="{{ img.src }}" alt="" width="{{ img.width }}" height="{{ img.height }}"></div>
-  <div class="page-head-pattern" aria-hidden="true"></div>
+<header class="page-head jurist-head">
   <div class="wrap page-head-in">
-    <p class="crumbs"><a href="{{ base }}">{{ t.nav.fukaha }}</a>{% if J.century %}<span aria-hidden="true"> / </span><a href="{{ base }}?century={{ J.century }}">{% include century.html n=J.century tpl=tj.century %}</a>{% endif %}</p>
+    <p class="crumbs"><a href="{{ site.data.nav[0].url[lang] }}">{{ t.nav.home }}</a><span class="crumb-sep" aria-hidden="true"></span><a href="{{ base }}">{{ t.nav.fukaha }}</a>{% if J.century %}<span class="crumb-sep" aria-hidden="true"></span><a href="{{ base }}?century={{ J.century }}">{% include century.html n=J.century tpl=tj.century %}</a>{% endif %}</p>
     {%- unless lang == "ar" %}
     <p class="jurist-ar" lang="ar" dir="rtl">{{ J.name.ar }}</p>
     {%- endunless %}
@@ -34,7 +31,6 @@ layout: default
     <p class="lead">{{ summary }}</p>
     {%- endif %}
   </div>
-  <p class="page-head-credit wrap">{{ img[lang] }} · <a href="{{ img.page }}" rel="noopener">{% if img.license == "Public domain" %}{{ t.about.public_domain }}{% else %}{{ img.license }}{% endif %}</a></p>
 </header>
 
 <div class="wrap jurist-body">

@@ -1,0 +1,15 @@
+{%- comment -%}Filled icons for the numbers on the home page. name: klasik, tezler, makaleler, fukaha, cevahir{%- endcomment -%}
+<svg class="num-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+{%- case include.name -%}
+{%- when "klasik" -%}
+<path d="M6 10c6-2 12-1.5 16 2v28c-4-3-10-3.5-16-2Zm36 0c-6-2-12-1.5-16 2v28c4-3 10-3.5 16-2Z"/><path d="M9 16h9M9 21h9M9 26h9M30 16h9M30 21h9M30 26h9" stroke="#fff" stroke-width="1.6" opacity=".7"/>
+{%- when "tezler" -%}
+<path d="M24 8 2 17l22 9 16-6.5V31h3V18.3L46 17Z"/><path d="M11 23.5V32c3.5 3.3 8 5 13 5s9.5-1.7 13-5v-8.5L24 29Z"/>
+{%- when "makaleler" -%}
+<path d="M12 5h17l9 9v29H12Z"/><path d="M29 5v9h9" fill="#fff" opacity=".45"/><path d="M17 22h16M17 28h16M17 34h11" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+{%- when "fukaha" -%}
+<circle cx="24" cy="13" r="7"/><path d="M10 42c0-9 6-15 14-15s14 6 14 15Z"/><path d="M17 8.5c2-3 12-3 14 0-2 1-12 1-14 0Z" opacity=".55"/>
+{%- when "cevahir" -%}
+<path d="M24 4 30 18h14l-11 9 4 15-13-8-13 8 4-15L4 18h14Z"/>
+{%- endcase -%}
+</svg>
