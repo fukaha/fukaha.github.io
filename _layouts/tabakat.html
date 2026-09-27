@@ -2,15 +2,16 @@
 layout: default
 ---
 {%- comment -%}
-  One part of al-Jawahir al-mudiyya (a letter of the alphabet or one of the appended books),
-  read from _data/cevahir.json. Each entry has the anchor #t<id>.
+  One part of a biographical dictionary, read from _data/<book>.json: a letter of al-Fawaid
+  al-bahiyya, or a letter or appended book of al-Jawahir al-mudiyya. Each entry has the anchor #t<id>.
 {%- endcomment -%}
 {%- assign lang = page.lang | default: "tr" -%}
 {%- assign t = site.data.i18n[lang] -%}
-{%- assign tc = t.cevahir -%}
-{%- assign parts = site.data.cevahir.parts -%}
+{%- assign book = page.book | default: "cevahir" -%}
+{%- assign tc = t[book] -%}
+{%- assign parts = site.data[book].parts -%}
 {%- assign P = parts | where: "slug", page.part | first -%}
-{%- assign nav_item = site.data.nav | where: "key", "cevahir" | first -%}
+{%- assign nav_item = site.data.nav | where: "key", book | first -%}
 {%- assign base = nav_item.url[lang] -%}
 {%- assign jnav = site.data.nav | where: "key", "fukaha" | first -%}
 {%- assign jbase = jnav.url[lang] -%}
@@ -22,7 +23,7 @@ layout: default
 
 <header class="page-head cv-head" id="part-top">
   <div class="wrap page-head-in">
-    <p class="crumbs"><a href="{{ site.data.nav[0].url[lang] }}">{{ t.nav.home }}</a><span class="crumb-sep" aria-hidden="true"></span><a href="{{ base }}">{{ tc.book_short }}</a></p>
+    <p class="crumbs"><a href="{{ site.data.nav[0].url[lang] }}">{{ t.nav.home }}</a><span class="crumb-sep" aria-hidden="true"></span><a href="{{ jbase }}">{{ t.nav.fukaha }}</a><span class="crumb-sep" aria-hidden="true"></span><a href="{{ base }}">{{ tc.book_short }}</a></p>
     {%- if P.letter %}
     <p class="cv-letter" lang="ar" dir="rtl" aria-hidden="true">{{ P.letter }}</p>
     {%- endif %}
@@ -50,7 +51,7 @@ layout: default
     <article class="cv-entry{% if e.ref %} is-ref{% endif %}{% if e.jurists %} is-linked{% endif %}" id="t{{ e.id }}">
       <p class="cv-meta">
         <a class="cv-n" href="#t{{ e.id }}" aria-label="{{ t.col.entry }} {{ e.id }}">{{ e.id }}</a>
-        {%- if e.page %}<span class="cv-cite">{{ tc.vol }} {{ e.vol }}{% if lang == "ar" %}،{% else %},{% endif %} {{ tc.page }} {{ e.page }}{% if e.end %}-{{ e.end }}{% endif %}</span>{% endif %}
+        {%- if e.page %}<span class="cv-cite">{% if e.vol %}{{ tc.vol }} {{ e.vol }}{% if lang == "ar" %}،{% else %},{% endif %} {% endif %}{{ tc.page }} {{ e.page }}{% if e.end %}-{{ e.end }}{% endif %}</span>{% endif %}
         {%- if e.kind %}<span class="cv-kind">{{ tc.kinds[e.kind] }}</span>{% endif %}
         {%- for j in e.jurists %}{% assign JJ = JP[j] %}
         <a class="cv-jurist" href="{{ jbase }}{{ j }}/">{{ JJ.name[lang] | default: JJ.name.tr }}</a>
@@ -61,6 +62,8 @@ layout: default
         {%- assign c0 = para | slice: 0 %}
         {%- if c0 == "§" %}
         <h3>{{ para | remove_first: "§" }}</h3>
+        {%- elsif forloop.first and book == "fevaid" %}
+        <p><strong>{{ e.name }}</strong> {{ para }}</p>
         {%- elsif forloop.first %}
         {%- assign pre = para | slice: 0, e.name.size %}
         <p>{% if pre == e.name %}<strong>{{ e.name }}</strong>{{ para | slice: e.name.size, para.size }}{% else %}{{ para }}{% endif %}</p>
@@ -83,5 +86,5 @@ layout: default
     {%- endif %}
   </nav>
 
-  <p class="source-note">{% if lang == "ar" %}{{ tc.book }}{% else %}<em>{{ tc.book }}</em>{% endif %}, {{ tc.edition }}. {{ tc.text_source }} <a href="https://github.com/OpenITI/0775AH/tree/master/data/0775IbnAbiWafa" rel="noopener">OpenITI</a> (CC BY-NC-SA 4.0).</p>
+  <p class="source-note">{% if lang == "ar" %}{{ tc.book }}{% else %}<em>{{ tc.book }}</em>{% endif %}, {{ tc.edition }}. {{ tc.text_source }} <a href="{{ tc.source_url }}" rel="noopener">{{ tc.source_name }}</a>{% if tc.license %} ({{ tc.license }}){% endif %}.</p>
 </div>

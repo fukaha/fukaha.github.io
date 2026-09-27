@@ -87,7 +87,8 @@ makaleler:
 fukaha:
   data: /data/fukaha.json
   sort: { field: death, dir: asc }
-  filter: [century, madhhab]
+  filter: [book, century]
+  filter_names: { book: bookName }
   columns:
     - { field: name, label: name, kind: loc, link: jurist, id: id }
     - { field: name.ar, label: name_ar, kind: ar, hide: [ar] }
@@ -110,6 +111,19 @@ cevahir:
     - { field: name, label: name, kind: ar, link: entry }
     - { field: partName, label: part, kind: loc }
     - { field: kind, label: type, kind: ckind }
+    - { field: death, label: death, kind: hijri, alt: deathM }
+    - { field: cite, label: cite, kind: short }
+    - { field: jurists, label: jurists, kind: list, link: jurist, id: id }
+
+fevaid:
+  data: /data/fevaid.json
+  sort: { field: id, dir: asc }
+  filter: [part, century]
+  filter_names: { part: partName }
+  columns:
+    - { field: n, label: entry, kind: text }
+    - { field: name, label: name, kind: ar, link: entry }
+    - { field: partName, label: part, kind: loc }
     - { field: death, label: death, kind: hijri, alt: deathM }
     - { field: cite, label: cite, kind: short }
     - { field: jurists, label: jurists, kind: list, link: jurist, id: id }

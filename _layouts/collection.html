@@ -46,9 +46,12 @@ layout: default
   "data": {{ cfg.data | jsonify }},
   "sort": {{ cfg.sort | jsonify }},
   "juristBase": {{ jurist_base.url[lang] | jsonify }},
-  {%- if page.key == "cevahir" %}{% assign cv_nav = site.data.nav | where: "key", "cevahir" | first %}
+  {%- if page.key == "cevahir" or page.key == "fevaid" %}{% assign cv_nav = site.data.nav | where: "key", page.key | first %}
   "entryBase": {{ cv_nav.url[lang] | jsonify }},
   "ckind": {{ t.cevahir.kinds | jsonify }},
+  {%- endif %}
+  {%- if page.key == "fukaha" %}{% assign cv_nav = site.data.nav | where: "key", "cevahir" | first %}
+  "cevahirBase": {{ cv_nav.url[lang] | jsonify }},
   {%- endif %}
   "filterNames": {{ cfg.filter_names | jsonify }},
   "filter": {{ cfg.filter | jsonify }},
@@ -59,6 +62,6 @@ layout: default
   "atype": {{ t.atype | jsonify }},
   "langs": {{ t.lang | jsonify }},
   "links": {{ t.link | jsonify }},
-  "filterLabels": { "century": {{ t.col.century | jsonify }}, "madhhab": {{ t.col.madhhab | jsonify }}, "type": {{ t.col.type | jsonify }}, "lang": {{ t.col.lang | jsonify }}, "part": {{ t.col.part | jsonify }}, "kind": {{ t.col.type | jsonify }} }
+  "filterLabels": { "century": {{ t.col.century | jsonify }}, "madhhab": {{ t.col.madhhab | jsonify }}, "type": {{ t.col.type | jsonify }}, "lang": {{ t.col.lang | jsonify }}, "part": {{ t.col.part | jsonify }}, "book": {{ t.col.source | jsonify }}, "kind": {{ t.col.type | jsonify }} }
 }
 </script>

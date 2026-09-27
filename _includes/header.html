@@ -2,7 +2,8 @@
 {%- assign t = site.data.i18n[lang] -%}
 {%- assign stats = site.data.stats -%}
 {%- assign tez_item = site.data.nav | where: "key", "tezler" | first -%}
-{%- assign search_keys = "tezler,klasik,fukaha,cevahir,kitaplar,makaleler" | split: "," -%}
+{%- assign fk_kinds = "fakih,cevahir,fevaid" | split: "," -%}
+{%- assign search_keys = "tezler,klasik,fukaha,fevaid,cevahir,kitaplar,makaleler" | split: "," -%}
 <a class="skip" href="#main">{{ t.skip }}</a>
 <header class="site-header" data-header>
   <div class="wrap header-in">
@@ -15,13 +16,26 @@
     <nav class="site-nav" id="site-nav" aria-label="{{ t.menu }}">
       <ul>
         {%- for item in site.data.nav offset: 1 %}
+        {%- if item.parent %}{% continue %}{% endif -%}
         {%- assign active = false -%}
         {%- if page.key == item.key -%}{%- assign active = true -%}{%- endif -%}
         {%- if page.kind == "haber" and item.key == "haberler" -%}{%- assign active = true -%}{%- endif -%}
         {%- if page.kind == "blog" and item.key == "blog" -%}{%- assign active = true -%}{%- endif -%}
-        {%- if page.kind == "fakih" and item.key == "fukaha" -%}{%- assign active = true -%}{%- endif -%}
-        {%- if page.kind == "cevahir" and item.key == "cevahir" -%}{%- assign active = true -%}{%- endif %}
+        {%- if item.key == "fukaha" and fk_kinds contains page.kind -%}{%- assign active = true -%}{%- endif -%}
+        {%- assign subs = site.data.nav | where: "parent", item.key %}
+        {%- if subs.size > 0 %}
+        {%- if item.key == "fukaha" and fk_kinds contains page.key %}{% assign active = true %}{% endif %}
+        <li class="has-sub"><a href="{{ item.url[lang] }}"{% if active %} aria-current="page"{% endif %}>{{ t.nav[item.key] }}<span class="chev-d" aria-hidden="true"></span></a>
+          <ul class="sub-nav">
+            <li><a href="{{ item.url[lang] }}"{% if page.key == item.key %} aria-current="page"{% endif %}>{{ t.home.all_jurists }}</a></li>
+            {%- for sub in subs %}
+            <li><a href="{{ sub.url[lang] }}"{% if page.key == sub.key or page.kind == sub.key %} aria-current="page"{% endif %}>{{ t[sub.key].book_short }}</a></li>
+            {%- endfor %}
+          </ul>
+        </li>
+        {%- else %}
         <li><a href="{{ item.url[lang] }}"{% if active %} aria-current="page"{% endif %}>{{ t.nav[item.key] }}</a></li>
+        {%- endif %}
         {%- endfor %}
       </ul>
     </nav>

@@ -73,6 +73,8 @@
   // Address of a jurist's own page, when the column links to one.
   function juristUrl(id) { return id && cfg.juristBase ? cfg.juristBase + encodeURIComponent(id) + '/' : null; }
   // Address of an al-Jawahir entry on its reading page.
+  // A jurist of al-Jawahir without a page of his own links to his entry in the book.
+  function personUrl(row, col) { return row.cv && cfg.cevahirBase ? cfg.cevahirBase + row.cv.part + '/#t' + row.cv.id : juristUrl(get(row, col.id)); }
   function entryUrl(row) { return cfg.entryBase && row.part ? cfg.entryBase + row.part + '/#t' + row.id : null; }
   function linked(html, url) { return url ? '<a class="cell-link" href="' + esc(url) + '">' + html + '</a>' : html; }
 
@@ -101,7 +103,7 @@
     switch (col.kind) {
       case 'loc': {
         var s = loc(v);
-        var url = col.link === 'jurist' ? juristUrl(get(row, col.id)) : null;
+        var url = col.link === 'jurist' ? personUrl(row, col) : null;
         return s ? { text: s, html: linked(wrapLang(s), url), sort: s } : empty;
       }
       case 'ar':

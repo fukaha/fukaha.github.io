@@ -12,6 +12,7 @@ layout: default
 {%- assign news_url = site.data.nav | where: "key", "haberler" | first -%}
 {%- assign blog_url = site.data.nav | where: "key", "blog" | first -%}
 {%- assign cevahir_url = site.data.nav | where: "key", "cevahir" | first -%}
+{%- assign fevaid_url = site.data.nav | where: "key", "fevaid" | first -%}
 {%- assign map_url = site.data.nav | where: "key", "harita" | first -%}
 {%- assign net_url = site.data.nav | where: "key", "silsile" | first -%}
 {%- assign home_posts = site.posts | where: "lang", lang -%}
@@ -135,10 +136,10 @@ layout: default
       <p>{{ t.home.band_jurists_lead }}</p>
     </header>
     <div class="band-cards">
-      {%- capture fk_title %}{{ t.nav.fukaha }}{% endcapture %}
+      {%- capture fk_title %}{{ t.fevaid.book_short }}{% endcapture %}
       {%- capture cv_title %}{{ t.cevahir.book_short }}{% endcapture %}
-      {%- assign fk_href = jurists_url.url[lang] %}{% assign cv_href = cevahir_url.url[lang] %}
-      {% include band-card.html img="ulughbeg" title=fk_title text=t.collection.fukaha href=fk_href more=t.home.more %}
+      {%- assign fk_href = fevaid_url.url[lang] %}{% assign cv_href = cevahir_url.url[lang] %}
+      {% include band-card.html img="ulughbeg" title=fk_title text=t.collection.fevaid href=fk_href more=t.home.more %}
       {% include band-card.html img="cini" title=cv_title text=t.collection.cevahir href=cv_href more=t.home.more %}
     </div>
   </div>

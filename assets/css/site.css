@@ -154,6 +154,20 @@ html[dir="rtl"] .site-nav a { background-position: 100% 100%; }
 html[lang="ar"] .site-nav a { font-family: var(--font-ar); font-size: 1.05rem; letter-spacing: 0; text-transform: none; }
 .site-nav a:hover { color: inherit; background-size: 100% 2px; }
 .site-nav a[aria-current="page"] { background-size: 100% 2px; }
+/* a section with branches opens them in a list below it */
+.site-nav .has-sub { position: relative; }
+.site-nav .has-sub > a { display: flex; align-items: center; gap: 0.4rem; }
+.site-nav .has-sub > a .chev-d { width: 0.35rem; height: 0.35rem; }
+.sub-nav {
+  position: absolute; top: 100%; inset-inline-start: -1rem; z-index: 5; min-width: 15rem; margin: 0; padding: 0.4rem; list-style: none;
+  background: var(--surface); color: var(--ink); border-radius: var(--radius); box-shadow: 0 12px 30px rgb(0 0 0 / 18%);
+  opacity: 0; visibility: hidden; translate: 0 6px; transition: opacity 0.2s, translate 0.2s, visibility 0s linear 0.2s;
+}
+.site-nav .has-sub:hover .sub-nav, .site-nav .has-sub:focus-within .sub-nav { opacity: 1; visibility: visible; translate: 0 0; transition: opacity 0.2s, translate 0.2s; }
+.site-nav .sub-nav { display: block; }
+.sub-nav a { padding: 0.55rem 0.8rem !important; border-radius: var(--radius-s); color: var(--ink) !important; text-transform: none; letter-spacing: 0; font-size: 0.98rem; background: none !important; }
+.sub-nav a:hover { background: var(--row-hover) !important; color: var(--link) !important; }
+.sub-nav a[aria-current="page"] { color: var(--link) !important; }
 
 .header-tools { display: flex; align-items: center; gap: 0.35rem; flex-shrink: 0; margin-inline-start: 0.6rem; }
 .site-nav + .header-tools { margin-inline-start: clamp(1rem, 1.6vw, 2rem); }
@@ -220,6 +234,10 @@ html[lang="ar"] .site-nav a { font-family: var(--font-ar); font-size: 1.05rem; l
   .site-nav a { padding-block: 0.8rem; border-bottom: 1px solid var(--line); font-size: 1.05rem; background: none; }
   .site-nav a:hover { background: none; color: var(--link); }
   .site-nav a[aria-current="page"] { color: var(--link); background: none; }
+  .site-nav .has-sub > a .chev-d { display: none; }
+  .sub-nav { position: static; opacity: 1; visibility: visible; translate: none; box-shadow: none; padding: 0 0 0 1.2rem; min-width: 0; background: none; }
+  html[dir="rtl"] .sub-nav { padding: 0 1.2rem 0 0; }
+  .sub-nav a { border-radius: 0; border-bottom: 1px solid var(--line); padding: 0.65rem 0 !important; }
 }
 @media (max-width: 560px) {
   :root { --header-h: 4.5rem; }

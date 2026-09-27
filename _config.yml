@@ -47,16 +47,28 @@ defaults:
 
   # One page per part of al-Jawahir al-mudiyya and language, written by tools/import_cevahir.py.
   - scope: { path: "_cevahir", type: cevahir }
-    values: { layout: cevahir, kind: cevahir }
+    values: { layout: tabakat, kind: cevahir, book: cevahir }
   - scope: { path: "_cevahir/tr", type: cevahir }
-    values: { lang: tr, permalink: "/cevahir/:name/" }
+    values: { lang: tr, permalink: "/fukaha/cevahir/:name/" }
   - scope: { path: "_cevahir/en", type: cevahir }
-    values: { lang: en, permalink: "/en/jawahir/:name/" }
+    values: { lang: en, permalink: "/en/jurists/jawahir/:name/" }
   - scope: { path: "_cevahir/ar", type: cevahir }
-    values: { lang: ar, permalink: "/ar/jawahir/:name/" }
+    values: { lang: ar, permalink: "/ar/jurists/jawahir/:name/" }
+
+  # One page per letter of al-Fawaid al-bahiyya and language, written by tools/import_fevaid.py.
+  - scope: { path: "_fevaid", type: fevaid }
+    values: { layout: tabakat, kind: fevaid, book: fevaid }
+  - scope: { path: "_fevaid/tr", type: fevaid }
+    values: { lang: tr, permalink: "/fukaha/fevaid/:name/" }
+  - scope: { path: "_fevaid/en", type: fevaid }
+    values: { lang: en, permalink: "/en/jurists/fawaid/:name/" }
+  - scope: { path: "_fevaid/ar", type: fevaid }
+    values: { lang: ar, permalink: "/ar/jurists/fawaid/:name/" }
 
 collections:
   fakihler:
     output: true
   cevahir:
+    output: true
+  fevaid:
     output: true

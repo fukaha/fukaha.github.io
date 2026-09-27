@@ -1,0 +1,26 @@
+{%- comment -%}
+The parts of a biographical dictionary (al-Jawahir al-mudiyya or al-Fawaid al-bahiyya), shown
+above the table of all its entries. book: cevahir (the default) or fevaid
+{%- endcomment -%}
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign book = include.book | default: "cevahir" -%}
+{%- assign tc = t[book] -%}
+{%- assign nav_item = site.data.nav | where: "key", book | first -%}
+{%- assign parts = site.data[book].parts -%}
+<p class="source-note">{% if lang == "ar" %}{{ tc.book }}{% else %}<em>{{ tc.book }}</em>{% endif %}, {{ tc.edition }}. {{ tc.text_source }} <a href="{{ tc.source_url }}" rel="noopener">{{ tc.source_name }}</a>{% if tc.license %} ({{ tc.license }}){% endif %}. {{ tc.death_note }}</p>
+<section class="cv-toc" aria-labelledby="cv-toc-h">
+  <h2 id="cv-toc-h" class="visually-hidden">{{ tc.parts }}</h2>
+  {%- assign groups = "harf,kitap" | split: "," %}
+  {%- for g in groups %}
+  {%- assign in_group = parts | where: "kind", g %}
+  {%- if in_group.size > 0 %}
+  <h3>{% if g == "harf" %}{{ tc.letters }}{% else %}{{ tc.books }}{% endif %}</h3>
+  <ul class="cv-toc-list cv-toc-{{ g }}">
+    {%- for p in in_group %}
+    <li><a href="{{ nav_item.url[lang] }}{{ p.slug }}/">{% if p.letter %}<span class="l" lang="ar">{{ p.letter }}</span>{% endif %}<span class="t">{% if p.letter %}{{ p.title[lang] | remove: " harfi" | remove: "Letter " }}{% else %}{{ p.title[lang] }}{% endif %}</span><span class="n">{% include number.html n=p.count %}</span></a></li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+  {%- endfor %}
+</section>

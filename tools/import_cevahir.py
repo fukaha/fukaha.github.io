@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Splits Ibn Abi al-Wafa's al-Jawahir al-mudiyya into its biographies.
+"""Run after tools/import_fuqaha.py: it also adds the jurists of al-Jawahir to data/fukaha.json.
+Splits Ibn Abi al-Wafa's al-Jawahir al-mudiyya into its biographies.
 
     python3 tools/import_cevahir.py
 
@@ -24,6 +25,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "tools/cevahir"
 LANGS = ("tr", "en", "ar")
 BOOK = {"tr": "el-Cevâhirü’l-mudıyye", "en": "al-Jawāhir al-muḍiyya", "ar": "الجواهر المضية"}
+BOOK_NAMES = {"fevaid": {"tr": "el-Fevâidü’l-behiyye", "en": "al-Fawāʾid al-bahiyya", "ar": "الفوائد البهية"}, "cevahir": BOOK}
 
 # The letters of the main part, in the book's order: source heading word → slug, Turkish, English.
 LETTERS = [
@@ -298,6 +300,140 @@ def build(path):
     return [p for p in parts if p["entries"]]
 
 
+# --- Turkish and English readings of the names, for the jurists table ------------------------------
+
+SUN = {"ت": "t", "ط": "t", "ث": "s", "س": "s", "ص": "s", "ش": "ş", "د": "d", "ض": "d", "ذ": "z", "ز": "z", "ظ": "z",
+       "ر": "r", "ن": "n"}
+CUT_WORDS = set("""له فى في على عن سنة مولده اسمه أخو وقيل منعوت المنعوت ملقب الملقب معروف المعروف يعرف عرف مذكور
+المذكور أصل أصله عنه أبوه والده قرأ سئل إلى نزيل النزيل هكذا كذا ثم يروي حكى كتب رحمه ذكره إذا كان وكان مع لا بها هذه
+قال تفقه سمع روى حدث سكن قدم ولد مات توفي أن من قاضي القاضي قاضى الإمام إمام الشيخ شيخنا الأستاذ أستاذ الحافظ الفقيه
+الواعظ المدرس المفتي الخطيب صاحب صحب جد الجد جده عم عمه ابنه أخي أخت سبط حفيد والد مولى المولى يلقب لقبه نسبه بضم
+بالحاء مهملة المهملة حرف الحرف تقدم وتقدم ويأتي يأتي ياتي تكرر وأربع وخمس وستين وخمسين مائة إحدى ثلاث أربع خمس عشرة كل
+رجل يمان عمن بإمام بإبن بابن بفخر بالبدر لغوي""".split())
+ALLAH = {"هبة": "Hibetullah", "هبه": "Hibetullah", "عبيد": "Ubeydullah"}
+
+
+def readings():
+    rows = (line.split("\t") for line in (ROOT / "tools/translit/cevahir.tsv").read_text(encoding="utf-8").splitlines()
+            if line and not line.startswith("#"))
+    return {a: t.strip() for a, t in rows}
+
+
+def name_words(ar, R):
+    """The words of a name as the entry gives it, up to the first word that is not part of it."""
+    words = []
+    for w in re.sub("[ً-ْـ]", "", ar).split():
+        stem = w[2:] if w.startswith("ال") and len(w) > 3 else w
+        if w in CUT_WORDS or R.get(stem) == "!" or re.search(r"\d", w):
+            break
+        words.append(w)
+    while words and words[-1] in ("بن", "ابن", "بنت", "أبو", "أبي", "أبى", "أبا", "عبد", "أم"):
+        words.pop()
+    return words
+
+
+def tr_name(ar, R):
+    """The Turkish reading of a name as the entry gives it."""
+    words = name_words(ar, R)
+
+    def art(w):  # "el-Kufi", "et-Temimi"
+        stem = w[2:] if w.startswith("ال") and len(w) > 3 else w
+        r = R.get(stem)
+        if not r or r == "!":
+            return None, None
+        if stem is w:
+            return r, None
+        return r, SUN.get(stem[0], "l")
+
+    def abd(w):  # "Abdullah", "Abdurrahman", "Abdülaziz", "Abdüssamed"
+        if w == "الله":
+            return "Abdullah"
+        if w == "الرحمن":
+            return "Abdurrahman"
+        r, a = art(w)
+        if not r:
+            return None
+        return "Abdül" + r.lower() if a == "l" else "Abdü" + r.lower()[0] + r.lower() if a else "Abd" + r.lower()
+
+    out, i = [], 0
+    while i < len(words):
+        w, nxt = words[i], words[i + 1] if i + 1 < len(words) else None
+        if w == "عبد" and nxt:
+            r = abd(nxt)
+            if r:
+                out.append(r)
+            i += 2
+            continue
+        if nxt == "الله" and w not in ("عبد",):
+            r = ALLAH.get(w) or ((R.get(w) or "") + "ullah" if R.get(w) not in (None, "!") else None)
+            if r:
+                out.append(r)
+            i += 2
+            continue
+        if nxt == "الدين":
+            r, _ = art(w)
+            if r:
+                out.append(r + "eddin")
+            i += 2
+            continue
+        if w in ("أبو", "أبي", "أبى", "أبا") and nxt:
+            if nxt == "عبد" and i + 2 < len(words):
+                r = abd(words[i + 2])
+                if r:
+                    out.append("Ebu " + r)
+                i += 3
+                continue
+            r, a = art(nxt)
+            if r:
+                out.append(f"Ebu'{a}-{r}" if a else f"Ebu {r}")
+            i += 2
+            continue
+        if w == "أم" and nxt:
+            r, a = art(nxt)
+            if r:
+                out.append(f"Ümmü'{a}-{r}" if a else f"Ümmü {r}")
+            i += 2
+            continue
+        if w in ("بن", "ابن"):
+            if not out and nxt:
+                r, a = art(nxt)
+                if r:
+                    out.append(f"İbnü'{a}-{r}" if a else f"İbn {r}")
+                i += 2
+                continue
+            out.append("b.")
+            i += 1
+            continue
+        if w == "بنت":
+            out.append("bt.")
+            i += 1
+            continue
+        r, a = art(w)
+        if r:
+            out.append(f"e{a}-{r}" if a else r)
+        i += 1
+    while out and out[-1] in ("b.", "bt."):
+        out.pop()
+    return " ".join(out)
+
+
+EN_CHARS = str.maketrans({"ş": "sh", "Ş": "Sh", "ç": "ch", "Ç": "Ch", "ğ": "gh", "ı": "i", "İ": "I", "ö": "o", "Ö": "O",
+                          "ü": "u", "Ü": "U", "â": "a", "î": "i", "û": "u", "c": "j", "C": "J"})
+
+
+def en_name(tr):
+    """A rough English reading made from the Turkish one."""
+    s = re.sub(r"\b(Ebu|Ümmü|İbnü)'[a-zşl]-", lambda m: {"Ebu": "Abu", "Ümmü": "Umm", "İbnü": "Ibn"}[m.group(1)] + " al-", tr)
+    s = re.sub(r"\be[a-zş]-", "al-", s)
+    s = re.sub(r"(\w+)eddin\b", r"\1 al-Din", s)
+    s = s.replace("Ebu ", "Abu ").replace("Abdullah", "Abd Allah").replace("Hüseyin", "Husayn")
+    s = re.sub(r"\bAbd[üu][a-zşl]?(\w)", lambda m: "Abd al-" + m.group(1).upper(), s)
+    s = re.sub(r"\bE", "A", s).replace("Bekir", "Bakr")
+    s = s.translate(EN_CHARS)
+    s = re.sub(r"(?<![A-Za-z-])(al|Abu|Ibn|Umm|b)(?=[ .-])|e", lambda m: m.group(1) or "a", s)
+    return s
+
+
 def main():
     src = next(SRC.glob("*.completed"))
     parts = build(src)
@@ -371,8 +507,35 @@ def main():
             (d / f"{p['slug']}.md").write_text(
                 f"---\ntitle: {json.dumps(title, ensure_ascii=False)}\npart: {p['slug']}\n---\n", encoding="utf-8")
 
+    # The jurists of al-Jawahir who have no page of their own join the jurists table, each linked to its entry.
+    R = readings()
+    people = [r for r in json.loads((ROOT / "data/fukaha.json").read_text(encoding="utf-8")) if not str(r["id"]).startswith("cv-")]
+    for r in people:
+        r["book"] = "fevaid"
+        r["bookName"] = BOOK_NAMES["fevaid"]
+    order = max(r.get("order", 0) for r in people)
+    added = 0
+    for p in parts:
+        for e in p["entries"]:
+            if e["kind"] not in ("tercume", "kadin", "kunye") or e["refonly"] or e["id"] in links:
+                continue
+            tr = tr_name(e["name"], R)
+            if not tr:
+                continue
+            order += 1
+            added += 1
+            row = {"id": f"cv-{e['id']}", "name": {"tr": tr, "en": en_name(tr), "ar": " ".join(name_words(e["name"], R))}, "madhhab": "hanefi",
+                   "works": 0, "theses": 0, "book": "cevahir", "bookName": BOOK_NAMES["cevahir"],
+                   "cv": {"part": p["slug"], "id": e["id"]}, "order": order,
+                   "source": {lang: f"{BOOK[lang]}, {e.get('vol')}/{e.get('page')}" for lang in LANGS} if e.get("page") else None}
+            if e["death"]:
+                row.update(death=e["death"], deathM=miladi(e["death"]), century=century(e["death"]))
+            people.append({k: v for k, v in row.items() if v not in (None, "", [])})
+    (ROOT / "data/fukaha.json").write_text(json.dumps(people, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
     stats = ROOT / "_data/stats.yml"
     text = stats.read_text(encoding="utf-8")
+    text = re.sub(r"(?m)^  fukaha: \d+$", f"  fukaha: {len(people)}", text)
     n = len(rows)
     if re.search(r"(?m)^  cevahir: \d+$", text):
         text = re.sub(r"(?m)^  cevahir: \d+$", f"  cevahir: {n}", text)
@@ -384,7 +547,7 @@ def main():
     for r in rows:
         kinds[r["kind"]] = kinds.get(r["kind"], 0) + 1
     print(f"{len(parts)} kısım, {n} madde {kinds}; vefat yılı bulunan {sum(1 for r in rows if 'death' in r)}; "
-          f"fakihe bağlı {len(by_jurist)}")
+          f"fakihe bağlı {len(by_jurist)}; fakihler tablosuna eklenen {added}")
 
 
 if __name__ == "__main__":
