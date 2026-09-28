@@ -1,0 +1,38 @@
+---
+layout: default
+---
+{%- comment -%}
+Search in the core Hanafi books of OpenITI (assets/js/search.js, index in /data/ara/).
+{%- endcomment -%}
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign ts = t.ara -%}
+{%- assign rd = site.data.nav | where: "key", "oku" | first -%}
+{% include page-head.html lead=ts.lead %}
+<div class="wrap s-app" data-search>
+  <form class="s-form" data-s-form role="search">
+    <div class="s-tabs" role="tablist">
+      <span class="s-tab is-on">{{ ts.words_tab }}</span>
+    </div>
+    <label for="s-q" class="visually-hidden">{{ ts.label }}</label>
+    <div class="search-row">
+      <input id="s-q" name="q" type="search" lang="ar" dir="rtl" placeholder="{{ ts.placeholder }}" autocomplete="off">
+      <button type="submit">{{ t.home.search_button }}</button>
+    </div>
+    <div class="s-filters">
+      <label>{{ ts.book }}
+        <select data-s-book><option value="">{{ t.table.all }}</option></select>
+      </label>
+      <label>{{ t.col.century }}
+        <select data-s-century><option value="">{{ t.table.all }}</option>{% for c in (2..14) %}<option value="{{ c }}">{% include century.html n=c tpl=t.table.century %}</option>{% endfor %}</select>
+      </label>
+    </div>
+    <p class="s-hint">{{ ts.hint }} <span data-s-stats></span></p>
+  </form>
+  <div class="s-results" data-s-results aria-live="polite"></div>
+  <p class="source-note">{{ ts.source }}</p>
+</div>
+<script type="application/json" id="search-config">
+{"lang": {{ lang | jsonify }}, "text": {{ ts | jsonify }}, "reader": {{ rd.url[lang] | jsonify }}}
+</script>
+<script src="/assets/js/search.js?v={{ site.time | date: '%s' }}" defer></script>

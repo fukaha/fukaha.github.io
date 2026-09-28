@@ -72,5 +72,7 @@
       <input type="search" name="q" placeholder="{{ t.search.placeholder }}" aria-label="{{ t.search.placeholder }}" autocomplete="off" spellcheck="false">
       <button type="submit">{{ t.home.search_button }}</button>
     </form>
+    {%- assign ara_item = site.data.nav | where: "key", "ara" | first %}
+    <p class="wrap search-books"><a class="more-link" href="{{ ara_item.url[lang] }}">{{ t.collection.ara }}</a></p>
   </div>
 </header>

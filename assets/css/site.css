@@ -1410,3 +1410,33 @@ html[lang="ar"] .rd-page { font-family: var(--font-ar); }
   .rd-side { position: static; max-height: none; }
   .rd-toc { max-height: 40vh; }
 }
+
+/* ---------- search in the books ---------- */
+
+.search-books { margin: 0; padding-bottom: 1rem; font-size: 0.95rem; }
+.s-app { padding-block: 0.5rem 3.5rem; max-width: 64rem; }
+.layout-search .s-app { margin-inline: auto; }
+.s-form { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.4rem 1.5rem 1.2rem; margin-bottom: 1.6rem; }
+.s-tabs { display: flex; gap: 0.4rem; margin-bottom: 1rem; }
+.s-tab { padding: 0.35rem 1rem; border-radius: 20px; background: var(--accent-soft); color: var(--link); font-weight: 600; font-size: 0.95rem; border: 0; cursor: pointer; font-family: inherit; }
+.s-tab:not(.is-on) { background: none; color: var(--muted); }
+.s-form .search-row input { font: 400 1.2rem/1.5 var(--font-ar); }
+.s-filters { display: flex; flex-wrap: wrap; gap: 0.8rem 1.2rem; margin-top: 1rem; }
+.s-filters label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem; font-weight: 600; color: var(--muted); flex: 1 1 14rem; min-width: 0; }
+.s-filters select { font: inherit; font-weight: 400; font-size: 1rem; color: var(--ink); background: var(--paper); border: 1px solid var(--line-strong); border-radius: var(--radius-s); padding: 0.5rem 0.6rem; min-width: 0; width: 100%; }
+.s-hint { margin: 1rem 0 0; font-size: 0.9rem; color: var(--muted); }
+.s-count { font-weight: 600; margin: 0 0 0.8rem; }
+.s-note { color: var(--muted); }
+.s-facets { margin-bottom: 1.2rem; }
+.s-facets [lang="ar"] { font-family: var(--font-ar); }
+.s-list { list-style: none; margin: 0; padding: 0; }
+.s-list li { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1rem 1.3rem; margin-bottom: 0.9rem; }
+.s-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.8rem; margin: 0 0 0.4rem; }
+.s-head a { font: 700 1.2rem/1.5 var(--font-ar-display); text-decoration: none; color: var(--link); }
+.s-head a:hover { text-decoration: underline; }
+.s-meta { color: var(--muted); font-size: 0.88rem; }
+.s-snip { margin: 0; font: 400 1.2rem/1.95 var(--font-ar-display); text-align: justify; }
+.s-snip mark { background: #ffe58a; color: inherit; border-radius: 2px; }
+:root[data-theme="dark"] .s-snip mark, :root[data-theme="dark"] .rd-text mark, :root[data-theme="dark"] .rd-results mark { background: #7a5d00; }
+.s-wait { color: var(--muted); font: italic 400 0.95rem var(--font-body); }
+.s-more-wrap { text-align: center; }

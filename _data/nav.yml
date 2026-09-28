@@ -11,6 +11,10 @@
   image: mabsut
   hidden: true
   url: { tr: /klasik-eserler/oku/, en: /en/classical-works/read/, ar: /ar/classical-works/read/ }
+- key: ara
+  image: mabsut
+  hidden: true
+  url: { tr: /ara/, en: /en/search/, ar: /ar/search/ }
 - key: kitaplar
   image: kharaj
   url: { tr: /kitaplar/, en: /en/books/, ar: /ar/books/ }

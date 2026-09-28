@@ -1,0 +1,87 @@
+# Arama dizinine giren çekirdek kitaplar: OpenITI URI <tab> vefat <tab> kitap <tab> müellif <tab> kelime
+0150AbuHanifa.FiqhAbsat.Shamela0006387-ara1	150	الفقه الأبسط	أبو حنيفة	4504
+0150AbuHanifa.FiqhAkbar.JK001085-ara1	150	الفقه الأكبر	أبو حنيفة	1656
+0182AbuYusufYacqub.Athar.Shamela0012987-ara1	182	كتاب الآثار	أبو يوسف	44561
+0182AbuYusufYacqub.IkhtilafAbiHanifa.Shamela0096606-ara1	182	اختلاف أبي حنيفة و ابن أبي ليلى	أبو يوسف	19198
+0182AbuYusufYacqub.Kharaj.ShamAY0034334-ara1	182	الخراج	أبو يوسف	66024
+0182AbuYusufYacqub.RaddCalaSiyarAwzaci.Shamela0007225-ara1	182	الرد على سير الأوزاعي	أبو يوسف	11970
+0189MuhammadShaybani.Asl.Sham19Y0014285-ara1	189	الأصل	الشيباني	1419314
+0189MuhammadShaybani.Athar.JK011277-ara1	189	الآثار لمحمد ابن الحسن	الشيباني	14805
+0189MuhammadShaybani.HujjaCalaAhlMadina.Shamela0006161-ara1	189	الحجة على أهل المدينة	الشيباني	126646
+0189MuhammadShaybani.JamicSaghir.Shamela0006160-ara1	189	الجامع الصغير	الشيباني	34527
+0189MuhammadShaybani.Kasb.JK000626-ara1	189	الكسب	الشيباني	17786
+0189MuhammadShaybani.MakharijFiHiyal.Sham19Y0018264-ara1	189	المخارج في الحيل	الشيباني	39118
+0189MuhammadShaybani.Siyar.JK000197-ara1	189	السير	الشيباني	32124
+0261Khassaf.Hiyal.Kraken22041020273100-ara1	261	Hiyal	الخصاف	61860
+0261Khassaf.Nafaqat.Kraken220410202732-ara1	261	Nafaqat	الخصاف	37536
+0321Tahawi.SharhMacaniAthar.JK000469-ara1	321	شرح معاني الآثار	الطحاوي	583698
+0340AbuHasanKarkhi.Usul.ShamAY0037496-ara1	340	أصول الكرخي	أبو الحسن عبيد الله بن الحسين بن دلال بن دلهم الكرخي	713
+0344NizamDinShashi.Usul.JK000194-ara1	344	أصول الشاشي	الشاشي	18172
+0370IbnCaliJassas.AhkamQuran.JK000871-ara1	370	أحكام القرآن	الجساس	743451
+0370IbnCaliJassas.FusulFiUsul.JK000286-ara1	370	الفصول في الأصول	الجساس	110061
+0370IbnCaliJassas.SharhMukhtasarTahawi.Sham19Y0016546-ara1	370	شرح مختصر الطحاوي	الجساس	579827
+0373AbuLaythSamarqandi.CuyunMasail.Sham19Y0014335-ara1	373	عيون المسائل للسمرقندي الحنفي	أبو الليث السمرقندي	85621
+0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1	428	مختصر القدوري	أبو الحسين القدوري	42840
+0428AbuHusaynQuduri.Tajrid.Sham19Y0017768-ara1	428	التجريد للقدوري	أبو الحسين القدوري	951867
+0430AbuZaydDabusi.Taqwim.Sham19Y0013782-ara1	430	تقويم الأدلة في أصول الفقه	أبو زيد الدبوسي	141605
+0430AbuZaydDabusi.TasisNazar.Kraken211129080600-ara1	430	Tasis Nazar	أبو زيد الدبوسي	32619
+0461IbnHusaynSughdi.NutafFifatawa.JK000282-ara1	461	النتف في الفتاوى	السغدي	130583
+0482IbnMuhammadBazdawi.KanzWusul.JK000173-ara1	482	أصول البزدوي	علي بن محمد البزدوي الحنفيى	101063
+0483IbnAhmadSarakhsi.Mabsut.JK000266-ara1	483	المبسوط	ابن أحمد السرخسي	2474865
+0483IbnAhmadSarakhsi.SharhSiyarKabir.JK009218-ara1	483	شرح كتاب السير الكبير	ابن أحمد السرخسي	389313
+0483IbnAhmadSarakhsi.Usul.JK000211-ara1	483	أصول السرخسي	ابن أحمد السرخسي	224621
+0499IbnSimnani.RawdatQudat.Sham19Y0018608-ara1	499	روضة القضاة وطريق النجاة	علي بن محمد بن أحمد، أبو القاسم الرحبي المعروف بابن السمناني (المتوفى: 499 ه)	212144
+0536SadrShahid.SharhAdabQadi.Sham19Y0150967-ara1	536	شرح «أدب القاضي للخصاف» للصدر الشهيد ت سرحان	برهان الأئمة حسام الدين عمر بن عبد العزيز بن مازة البخاري المعروف بالصدر الشهيد (المتوفى شهيدا: سنة 536 ه)	172510
+0537NajmDinAbuHafsNasafi.TalibatTalaba.JK007118-ara1	537	طلبة الطلبة في الإصطلاحات الفقهية	نجم الدين أبي حفص عمر بن محمد النسفي	71707
+0540IbnAhmadCalaDinSamarqandi.TuhfatFuqaha.JK000220-ara1	540	تحفة الفقهاء	علاء الدين السمرقندي	195437
+0552CalaUsmandi.Badhl.Sham19Y0133362-ara1	552	بذل النظر في الأصول	العَلَاءَ الأُسْمَنْدي	118094
+0552CalaUsmandi.Tariqa.Sham19Y0133415-ara1	552	طريقة الخلاف في الفقه بين الأئمة الأسلاف	العلاء الأسمندي	93565
+0570IbnMuhammadKarabisiNaysaburi.Furuq.JK000234-ara1	570	الفروق	الكرابيسي	107012
+0586IbnMuhammadAbuNasrCattabi.SharhNukat.JK000285-ara1	586	النكت	السرخسي	26936
+0587IbnMascudCalaDinKasani.BadaicSanaic.JK000150-ara1	587	بدائع الصنائع في ترتيب الشرائع	علاء الدين الكاساني	1451241
+0592QadiKhanFarghani.Fatawa.ShamAY0033176-ara1	592	فتاوى قاضيخان	قاضي خان الفرغاني	657828
+0593BurhanDinFarghaniMarghinani.Bidaya.JK000278-ara1	593	بداية المبتدي	برهان الدين علي بن أبي بكر بن عبد الجليل الفرغاني المرغيناني	77189
+0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1	593	الهداية شرح بداية المبتدي	المرغياني	345738
+0616BurhanDinBukhari.MuhitBurhani.Shamela0010875-ara1	616	المحيط البرهاني في الفقه النعماني فقه الإمام أبي حنيفة رضي الله عنه	برهان الدين البخاري	1910249
+0666IbnAbiBakrZaynDinRazi.TuhfatMuluk.JK000114-ara1	666	تحفة الملوك	محمد بن أبي بكر بن عبد القادر الرازي	14922
+0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.JK009404-ara1	683	الاختيار لتعليل المختار	ابن محمود مجد الدين الموصلي	276698
+0686IbnZakariyaManbiji.LubabFiJamc.JK007036-ara1	686	اللباب في الجمع بين السنة والكتاب	الامام جمال الدين أبو محمد علي بن أبي يحيى زكريا بن مسعود الأنصاري الخزرجي المنبجي	114905
+0694MuzaffarDinIbnSacati.BadicNizam.Sham19Y0018570-ara1	694	بديع النظام = نهاية الوصول إلى علم الأصول	مظفر الدين ابن الساعاتي	60821
+0696CumarSunami.NisabIhtisab.JK001311-ara1	696	نصاب الاحتساب(م)	عمر السنامي(م)	46037
+0710IbnAhmadHafizDinNasafi.KanzDaqaiq.Sham19Y0014262-ara1	710	كنز الدقائق	النسفي، أبو البركات	37434
+0710IbnAhmadHafizDinNasafi.ManarAnwar.ShamAY0037542-ara1	710	متن المنار = منار الأنوار في أصول الفقه	النسفي، أبو البركات	5789
+0730IbnAhmadCalaDinBukhari.KashfAsrar.JK007126-ara1	730	كشف الأسرار	علاء الدين عبد العزيز بن أحمد البخاري	746309
+0743FakhrDinZaylaci.TabyinHaqaiq.JK005200-ara1	743	تبين الحقائق شرح كنز الدقائق	الزيلعي الحنفي	898471
+0747IbnMascudMahbubiBukhari.Tawdih.JK007109-ara1	747	شرح التلويح على التوضيح لمتن التنقيح في أصول الفقه.	عبيد الله بن مسعود المحبوبي البخاري الحنفي.	110530
+0758NajmDinTarsusi.TuhfatTurk.Shamela0001044-ara1	758	تحفة الترك فيما يجب أن يعمل في الملك	نجم الدين ابراهيم بن علي الطرسوسي	12664
+0773IbnIshaqSirajDinGhaznawi.GhurraMunifa.JK000240-ara1	773	الغرة المنيفة في تحقيق بعض مسائل الإمام أبي حنيفة	أبو حفص الغزنوي	42183
+0775IbnAbiWafa.JawahirMudiya.JK000806BK1-ara1	775	طبقات الحنفية	ابن أبي الوفاء	202750
+0786IbnMuhammadBabarti.CinayaSharhHidaya.JK011690BK2-ara1	786	العناية شرح الهداية	محمد بن محمد البابرتي (المتوفى : 786هـ)	833794
+0792SadrDinIbnAbiCizzAdhraci.Tanbih.Sham19Y0018259-ara1	792	التنبيه على مشكلات الهداية	ابن أبي العز	227590
+0800IbnCaliYamaniZabidi.JawharaNayyira.JK011696-ara1	800	الجوهرة النيرة	أبو بكر بن علي بن محمد الحدادي العبادي اليمني - الزبيدي (المتوفى : 800هـ)	383494
+0803IbnMusaJamalDinMalati.MuctasarMinMukhtasar.JK000232-ara1	803	معتصر المختصر	أبو المحاسن يوسف بن موسى الحنفي	224744
+0827IbnShihabBazzazi.Fatawa.ShamAY0037657-ara1	827	الفتاوى البزازية أو الجامع الوجيز في مذهب الامام الأعظم أبي حنيفة النعمان	البزازي	333353
+0834IbnHamzaFanari.FusulBadaic.Sham19Y0098083-ara1	834	فصول البدائع في أصول الشرائع	الفناري	293595
+0844IbnKhalilCalaDinTarabulusi.MucinHukkam.JK011699-ara1	844	معين الحكام	علاء الدين الطرابلسي	106685
+0855BadrDinCayni.BinayaSharhHidaya.Shamela0000427BK2-ara1	855	البناية شرح الهداية	بدر الدين العيني	2319518
+0855BadrDinCayni.MinhatSuluk.Sham19Y0013784-ara1	855	منحة السلوك في شرح تحفة الملوك	بدر الدين العيني	79950
+0861IbnHumam.FathQadir.Shamela0021744-ara1	861	فتح القدير	الكمال ابن الهمام	2078691
+0879IbnQutlubugha.TajTarajim.Shamela0010925-ara1	879	تاج التراجم	ابن قطلوبغا	23278
+0882LisanDinIbnShihnaHalabi.LisanHukkam.JK000262-ara1	882	لسان الحكام	ابن الشحنة	106570
+0885IbnFaramurzMullaKhusraw.DurarHukkam.JK011703-ara1	885	درر الحكام شرح غرر الأحكام	محمد بن فراموز الشهير بمنلا خسرو (المتوفى : 885هـ)	645343
+0922IbnShaykhTarabulusi.IscafAwqaf.Shamela0096262-ara1	922	الإسعاف فى أحكام الأوقاف	إبراهيم بن موسى بن أبي بكر ابن الشيخ علي الطرابلسي، الحنفي (المتوفى: 922هـ)	43232
+0970IbnIbrahimIbnNujaymMisri.AshbahWaNazair.Shamela0001666-ara1	970	الأشباه والنظائر على مذهب أبي حنيفة النعمان	ابن ابراهيم بن نجيم المصري	115005
+0970IbnIbrahimIbnNujaymMisri.BahrRaiq.JK000189BK1-ara1	970	البحر الرائق شرح كنز الدقائق	ابن ابراهيم بن نجيم المصري	1315334
+1005SirajDinIbnNujaym.NahrFaiq.Sham19Y0013620-ara1	1005	النهر الفائق شرح كنز الدقائق	ابن نجيم، سراج الدين	605089
+1014MullaCaliQari.FathBabCinaya.ShamAY0033181-ara1	1014	فتح باب العناية بشرح النقاية	الملا على القاري	517633
+1030IbnGhanimBaghdadiHanafi.MajmacDamanat.JK007131-ara1	1030	مجمع الضمانات في مذهب الامام الأعظم أبي حنيفة النعمان	أبي محمد بن غانم بن محمد البغدادي	223588
+1069IbnCammarShurunbulali.MaraqiFalahSharhNurIdah.Shamela0000412-ara1	1069	مراقي الفلاح شرح متن نور الإيضاح	حسن بن عمار بن علي الشرنبلالي المصري الحنفي (المتوفى: 1069هـ)	102755
+1069IbnCammarShurunbulali.NurIdah.JK000284-ara1	1069	نور الإيضاح ونجاة الأرواح	الشرنبلالي	20051
+1078ShaykhiZadahDamadAfandi.MajmacAnhur.JK007130-ara1	1078	مجمع الأنهر في شرح ملتقى الأبحر	عبد الرحمن بن محمد بن سليمان الكليبولي المدعو بشيخي زاده	588477
+1088IbnCaliHaskafi.DurrMukhtar.JK000176-ara1	1088	الدر المختار	الحصكفي	312467
+1090NizamDinBalkhi.FatawaHindiyya.JK007073-ara1	1090	الفتاوى الهندية في مذهب الإمام الأعظم أبي حنيفة النعمان	الشيخ نظام وجماعة من علماء الهند	1719924
+1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1	1252	حاشية ابن عابدين	ابن عابدين.	2532766
+1252IbnCabidinDimashqi.TanqihFatawa.JK011743-ara1	1252	تنقيح الفتاوى الحامدية	ابن عابدين	390780
+1298IbnTalibDimashqiMaydani.LubabFiSharhKitab.Shamela0021496-ara1	1298	اللباب في شرح الكتاب	عبد الغني بن طالب بن حمادة بن إبراهيم الغنيمي الدمشقي الميداني الحنفي (المتوفى: 1298هـ)	221101
+1304CabdHayyLaknawi.FawaidBahiyya.Sham19Y0132617-ara1	1304	الفوائد البهية في تراجم الحنفية	أبو الحسنات اللكنوي	84681
+1306MuhammadQadriBasha.MurshidHayran.Sham19Y0014450-ara1	1306	مرشد الحيران إلى معرفة أحوال الإنسان	محمد قدري باشا (المتوفى: 1306ه)	33272

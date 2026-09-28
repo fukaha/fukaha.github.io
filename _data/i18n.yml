@@ -16,6 +16,7 @@ tr:
     to_dark: Koyu görünüm
     to_light: Açık görünüm
   nav:
+    ara: Kitaplarda Ara
     oku: Okuma
     home: Ana Sayfa
     klasik: Klasik Eserler
@@ -85,6 +86,7 @@ tr:
     charts: Tezler rakamlarla
     blog_lead: Koleksiyonların nasıl derlendiğini ve kaynakların nasıl aktarıldığını anlatan yazılar.
   collection:
+    ara: Hanefî fıkıh ve tabakât kitaplarının metninde arama.
     klasik: Fakihlerin yazdığı fıkıh, usûl ve fetva eserleri. Her eser müellifi, müellifin vefat tarihi ve mezhebiyle listelenir.
     kitaplar: İslam hukuku üzerine modern kitaplar, tahkikler ve çeviriler.
     tezler: Türkiye’de İslam hukuku alanında yapılmış yüksek lisans ve doktora tezleri.
@@ -411,6 +413,29 @@ tr:
     jurist_texts: OpenITI'deki eserleri
     jurist_texts_lead: KITAB projesinin OpenITI külliyatında bu müellife ait metinler. Başlığa tıklayınca metin bu sitede açılır.
     ocr: düzeltilmemiş OCR
+  ara:
+    lead: KITAB projesinin OpenITI külliyatındaki çekirdek Hanefî fıkıh, usûl, fetva ve tabakât kitaplarının metninde arayın.
+    words_tab: Kelime araması
+    meaning_tab: Anlam araması
+    label: Aranacak kelime
+    placeholder: Arapça kelime ya da ibare, ör. الوقف أو "بيع الوفاء"
+    book: Kitap
+    hint: Bütün kelimelerin aynı pasajda geçtiği yerler bulunur. Harekeler, hemze biçimleri ve و ف ب ل ك ال önekleri yok sayılır.
+    stats: "{b} kitap, {p} pasaj."
+    searching: Aranıyor…
+    count: "{n} pasajda, {b} kitapta geçiyor."
+    none: Bulunamadı.
+    too_common: Bu kelimeler çok sık geçtiği için dizine alınmadı; daha belirgin bir kelime ekleyin.
+    need_arabic: Arapça harflerle en az iki harfli bir kelime yazın.
+    more: Daha fazla sonuç
+    phrase_scan: "İbare aranıyor: {m} / {n} pasaj tarandı…"
+    phrase_count: "İbare aynen {n} pasajda bulundu ({m} pasaj tarandı)."
+    phrase_more: "Taranacak {n} pasaj daha var."
+    loading_text: Metin OpenITI'den getiriliyor…
+    no_text: Metin şu an getirilemedi; kaynak dosya değişmiş olabilir. Başlığa tıklayınca kitap açılır.
+    vol: c.
+    page: s.
+    source: "Metinler ve dizinin kaynağı: OpenITI (KITAB projesi), CC BY-NC-SA 4.0. Metin sitede saklanmaz; her sonucun metni OpenITI'deki dosyasından o an getirilir."
 
 en:
   name: Fukahâ
@@ -428,6 +453,7 @@ en:
     to_dark: Dark mode
     to_light: Light mode
   nav:
+    ara: Search the Books
     oku: Reading
     home: Home
     klasik: Classical Works
@@ -497,6 +523,7 @@ en:
     charts: The theses in numbers
     blog_lead: Notes on how the collections are compiled and how the sources are transcribed.
   collection:
+    ara: Search the text of the Hanafi law and biographical books.
     klasik: Works of law, legal theory and fatwa written by the jurists, with author, date of death and school.
     kitaplar: Modern books, critical editions and translations on Islamic law.
     tezler: Master’s and doctoral theses on Islamic law written in Turkey.
@@ -823,6 +850,29 @@ en:
     jurist_texts: Their works in OpenITI
     jurist_texts_lead: Texts by this author in the OpenITI corpus of the KITAB project. Click a title to read it on this site.
     ocr: uncorrected OCR
+  ara:
+    lead: Search the text of the core Hanafi books of law, legal theory, fatwas and biography in the OpenITI corpus of the KITAB project.
+    words_tab: Word search
+    meaning_tab: Meaning search
+    label: Words to search
+    placeholder: An Arabic word or phrase, e.g. الوقف or "بيع الوفاء"
+    book: Book
+    hint: Finds the passages that contain all the words. Vowel signs, hamza forms and the prefixes و ف ب ل ك ال are ignored.
+    stats: "{b} books, {p} passages."
+    searching: Searching…
+    count: "Found in {n} passages in {b} books."
+    none: Nothing found.
+    too_common: These words are too common to be indexed; add a more distinctive word.
+    need_arabic: Type a word of at least two letters in Arabic script.
+    more: More results
+    phrase_scan: "Looking for the phrase: {m} of {n} passages read…"
+    phrase_count: "The exact phrase is in {n} passages ({m} passages read)."
+    phrase_more: "{n} more passages to read."
+    loading_text: Fetching the text from OpenITI…
+    no_text: The text cannot be fetched now; the source file may have changed. Click the title to open the book.
+    vol: vol.
+    page: p.
+    source: "Texts and index: OpenITI (KITAB project), CC BY-NC-SA 4.0. No text is stored on this site; each result's text is fetched from its OpenITI file."
 
 ar:
   name: فقهاء
@@ -840,6 +890,7 @@ ar:
     to_dark: الوضع الداكن
     to_light: الوضع الفاتح
   nav:
+    ara: البحث في الكتب
     oku: القراءة
     home: الرئيسية
     klasik: المصنفات الكلاسيكية
@@ -909,6 +960,7 @@ ar:
     charts: الرسائل الجامعية بالأرقام
     blog_lead: مقالات عن طريقة جمع المجموعات ونقل النصوص من مصادرها.
   collection:
+    ara: البحث في نصوص كتب الفقه الحنفي وطبقاته.
     klasik: مصنفات الفقه وأصوله والفتاوى التي ألّفها الفقهاء، مع المؤلف وسنة الوفاة والمذهب.
     kitaplar: كتب حديثة وتحقيقات وترجمات في الفقه الإسلامي.
     tezler: رسائل الماجستير وأطروحات الدكتوراه في الفقه الإسلامي المنجزة في تركيا.
@@ -1235,3 +1287,26 @@ ar:
     jurist_texts: مصنفاته في OpenITI
     jurist_texts_lead: نصوص هذا المؤلف في مدونة OpenITI التابعة لمشروع KITAB. انقر العنوان لقراءته في هذا الموقع.
     ocr: نص ضوئي غير مصحح
+  ara:
+    lead: ابحث في نصوص الكتب الأساسية في الفقه الحنفي وأصوله وفتاواه وطبقاته من مدونة OpenITI التابعة لمشروع KITAB.
+    words_tab: البحث بالكلمات
+    meaning_tab: البحث بالمعنى
+    label: الكلمات المطلوبة
+    placeholder: كلمة أو عبارة عربية، مثل الوقف أو "بيع الوفاء"
+    book: الكتاب
+    hint: تُعرض المقاطع التي تجتمع فيها الكلمات كلها، مع إهمال الحركات وصور الهمزة والسوابق و ف ب ل ك ال.
+    stats: "{b} كتابًا، {p} مقطعًا."
+    searching: جارٍ البحث…
+    count: "وردت في {n} مقطعًا في {b} كتابًا."
+    none: لا توجد نتائج.
+    too_common: هذه الكلمات شائعة جدًا فلم تُفهرس؛ أضف كلمة أدق.
+    need_arabic: اكتب كلمة عربية من حرفين على الأقل.
+    more: مزيد من النتائج
+    phrase_scan: "جارٍ البحث عن العبارة: قُرئ {m} من {n} مقطعًا…"
+    phrase_count: "وردت العبارة بنصها في {n} مقطعًا (قُرئ {m} مقطعًا)."
+    phrase_more: "بقي {n} مقطعًا للقراءة."
+    loading_text: جارٍ جلب النص من OpenITI…
+    no_text: تعذّر جلب النص الآن، وربما تغيّر الملف المصدر. انقر العنوان لفتح الكتاب.
+    vol: ج
+    page: ص
+    source: "مصدر النصوص والفهرس: OpenITI (مشروع KITAB)، CC BY-NC-SA 4.0. لا تُخزَّن النصوص في هذا الموقع، بل يُجلب نص كل نتيجة من ملفه في OpenITI."
