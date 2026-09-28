@@ -33,7 +33,7 @@ layout: default
         </dl>
         <p class="event-links">
           {%- if ev.web %}<a class="btn" href="{{ ev.web }}" rel="noopener">{{ te.web }}</a>{% endif %}
-          <span class="event-source">{{ te.source_lead }}: <a href="{{ ev.source }}" rel="noopener">{{ te.source }}</a></span>
+          <span class="event-source">{{ te.source_lead }}: <a href="{{ ev.source }}" rel="noopener">{{ ev.source_name | default: te.source }}</a></span>
         </p>
       </div>
     </aside>
