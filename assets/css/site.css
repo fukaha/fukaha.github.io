@@ -663,6 +663,16 @@ html[lang="ar"] .media-card h3 { display: none; }
 .page-head h1 { font-size: clamp(1.9rem, 3.4vw, 2.5rem); font-weight: 600; color: var(--head-ink); text-transform: uppercase; margin: 0 0 0.9rem; max-width: 30ch; letter-spacing: 0.01em; }
 html[lang="ar"] .page-head h1 { text-transform: none; }
 .page-head .lead { font-size: clamp(1.02rem, 1.3vw, 1.12rem); max-width: 48rem; color: var(--muted); margin: 0; }
+/* a picture beside the title (the network page) */
+.page-head.has-image .page-head-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 34rem); gap: 1.5rem 3rem; align-items: center; }
+.page-head-fig { margin: 0; }
+.page-head-fig img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 16px; box-shadow: var(--shadow-2); }
+.page-head-fig figcaption { margin-top: 0.5rem; font-size: 0.82rem; color: var(--muted); }
+.page-head-fig figcaption a { color: inherit; }
+@media (max-width: 900px) {
+  .page-head.has-image .page-head-in { grid-template-columns: 1fr; }
+  .page-head-fig img { aspect-ratio: 21 / 9; border-radius: 12px; }
+}
 .crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 0.2rem 0.6rem; margin: 0 0 clamp(2rem, 4vw, 3.4rem); font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.02em; color: var(--muted); }
 html[lang="ar"] .crumbs { text-transform: none; font-size: 1rem; }
 .crumbs a { color: var(--link); text-decoration: none; }
@@ -1108,9 +1118,27 @@ html[lang="ar"] .event-kind { letter-spacing: 0; font-size: 1rem; }
 .map-find input { min-width: 16rem; }
 .map-stats { margin: 0 0 0 auto; color: var(--muted); font-variant-numeric: lining-nums; }
 html[dir="rtl"] .map-stats { margin: 0 auto 0 0; }
-.map-stage { display: grid; grid-template-columns: minmax(0, 1fr) 23rem; height: min(80vh, 54rem); border-block: 1px solid var(--line); }
+/* the map fills the width and the height of the screen under the bar; the list of a place floats over
+   its south-eastern corner, the sea and the far east, where there are fewest places */
+.layout-map .page-head-in { padding-bottom: 0.4rem; }
+.layout-map .crumbs { margin-bottom: 1.4rem; }
+.layout-map .map-app { padding-top: 1.2rem; }
+.map-stage { position: relative; height: calc(100svh - 4.5rem); min-height: 30rem; max-height: 62rem; border-block: 1px solid var(--line); background: #c4deee; }
+.map-stage:fullscreen { height: 100%; max-height: none; border: 0; }
 .map-canvas { height: 100%; background: #c4deee; }
-.map-panel { overflow: auto; padding: 1.4rem 1.5rem; background: var(--surface); border-inline-start: 1px solid var(--line); }
+.map-panel {
+  position: absolute; z-index: 1000; bottom: 1.4rem; right: 1rem; width: 21rem; max-height: calc(100% - 2.4rem); overflow: auto;
+  padding: 1rem 1.2rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 6px 24px rgb(0 0 0 / 18%);
+}
+.map-panel.is-open { padding: 1.2rem 1.35rem; width: 23rem; }
+.map-panel h2 { padding-inline-end: 2rem; }
+.map-close {
+  position: absolute; top: 0.6rem; inset-inline-end: 0.6rem; width: 2rem; height: 2rem; border: 0; border-radius: 50%;
+  background: none; color: var(--muted); font: 400 1.5rem/1 var(--font-body); cursor: pointer;
+}
+.map-close:hover { background: var(--surface-2); color: var(--ink); }
+.map-zoom .map-fs svg { width: 17px; height: 17px; fill: none; stroke: #1b2226; stroke-width: 1.8; vertical-align: middle; }
+.map-zoom .map-fs.is-on svg { transform: rotate(180deg); }
 .map-panel h2 { margin: 0; font-size: 1.8rem; font-weight: 500; }
 .map-p-ar { margin: 0.1rem 0 0; font: 400 1.4rem/1.5 var(--font-ar-display); color: var(--muted); text-align: start; }
 .map-p-meta { margin: 0.3rem 0 1rem; color: var(--muted); }
@@ -1122,16 +1150,19 @@ html[dir="rtl"] .map-stats { margin: 0 auto 0 0; }
 .map-role { font-size: 0.85rem; font-style: italic; color: var(--rubric); }
 .map-date { font-size: 0.85rem; color: var(--muted); font-variant-numeric: lining-nums; }
 .map-src { margin: 1rem 0 0; font-size: 0.88rem; color: var(--muted); }
-.map-legend { list-style: none; margin: 1.2rem 0 0; padding: 0; color: var(--muted); font-size: 0.92rem; }
+.map-legend { list-style: none; margin: 0.8rem 0 0; padding: 0; color: var(--muted); font-size: 0.92rem; }
 .map-legend li { display: flex; align-items: center; gap: 0.45rem; margin-bottom: 0.4rem; }
 .lg-dot { width: 9px; height: 9px; border-radius: 50%; background: #7d2618; border: 1.5px solid #fbf6ea; box-shadow: 0 0 0 1px rgb(0 0 0 / 15%); }
 .lg-dot.big { width: 16px; height: 16px; }
 .lg-dot.ring { background: transparent; border: 2px solid #7d2618; box-shadow: none; }
 .map-credit { font-size: 0.85rem; color: var(--muted); padding-block: 0.9rem 2.4rem; margin: 0; }
 @media (max-width: 900px) {
-  .map-stage { grid-template-columns: 1fr; height: auto; }
-  .map-canvas { height: 66svh; }
-  .map-panel { border-inline-start: 0; border-top: 1px solid var(--line); max-height: none; }
+  .map-stage { height: auto; min-height: 0; max-height: none; background: none; }
+  .map-canvas { height: 70svh; }
+  .map-panel, .map-panel.is-open { position: static; width: auto; max-height: none; border: 0; border-top: 1px solid var(--line); border-radius: 0; box-shadow: none; padding: 1.2rem var(--gutter); }
+  .map-stage:fullscreen { display: flex; flex-direction: column; background: var(--surface); }
+  .map-stage:fullscreen .map-canvas { flex: 1; height: auto; }
+  .map-stage:fullscreen .map-panel { max-height: 40%; }
   .map-find input, .map-tools select { min-width: 0; width: 100%; }
   .map-tools label { flex: 1 1 10rem; }
   .map-stats { flex-basis: 100%; margin: 0; }

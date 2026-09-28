@@ -76,16 +76,32 @@
     return layer;
   }
 
-  function zoomButtons(L, map, i18n) {
+  // zoom buttons; with stage, also a button that shows the stage on the whole screen
+  function zoomButtons(L, map, i18n, stage) {
+    var full = stage && document.fullscreenEnabled && stage.requestFullscreen;
     var ctl = L.control({ position: 'topleft' });
     ctl.onAdd = function () {
       var box = L.DomUtil.create('div', 'map-zoom');
       box.innerHTML = '<button type="button" data-z="1" aria-label="' + esc(i18n.zoom_in) + '">+</button>' +
-        '<button type="button" data-z="-1" aria-label="' + esc(i18n.zoom_out) + '">−</button>';
+        '<button type="button" data-z="-1" aria-label="' + esc(i18n.zoom_out) + '">−</button>' +
+        (full ? '<button type="button" class="map-fs" data-fs aria-label="' + esc(i18n.fullscreen) + '" title="' + esc(i18n.fullscreen) + '">' +
+          '<svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 8V3h5M12 3h5v5M17 12v5h-5M8 17H3v-5"/></svg></button>' : '');
       L.DomEvent.disableClickPropagation(box);
       box.addEventListener('click', function (e) {
-        var z = e.target.getAttribute('data-z');
-        if (z) map.setZoom(map.getZoom() + Number(z));
+        var b = e.target.closest('button');
+        if (!b) return;
+        if (b.hasAttribute('data-fs')) {
+          if (document.fullscreenElement) document.exitFullscreen(); else stage.requestFullscreen();
+          return;
+        }
+        map.setZoom(map.getZoom() + Number(b.getAttribute('data-z')));
+      });
+      if (full) document.addEventListener('fullscreenchange', function () {
+        var on = document.fullscreenElement === stage, b = box.querySelector('[data-fs]');
+        b.setAttribute('aria-label', on ? i18n.exit_fullscreen : i18n.fullscreen);
+        b.title = on ? i18n.exit_fullscreen : i18n.fullscreen;
+        b.classList.toggle('is-on', on);
+        map.invalidateSize();
       });
       return box;
     };
@@ -112,7 +128,7 @@
       var map = bm.map;
       map.fitBounds(HOME);
       addLabels(L, map, meta, lang);
-      zoomButtons(L, map, i18n);
+      zoomButtons(L, map, i18n, el.querySelector('.map-stage'));
 
       var places = data.places, jurists = data.jurists;
       var byId = {};
@@ -217,12 +233,15 @@
 
       function showPanel(at) {
         if (!picked || !at[picked]) {
+          panel.classList.remove('is-open');
           panel.innerHTML = '<p class="map-pick">' + esc(i18n.pick) + '</p>' + legend();
           return;
         }
         var p = places[picked];
+        panel.classList.add('is-open');
         var rows = at[picked].slice().sort(function (a, b) { return (a.j.death || 9999) - (b.j.death || 9999); });
-        var html = '<h2>' + esc(p.name[lang] || p.name.tr) + '</h2>';
+        var html = '<button type="button" class="map-close" data-map-close aria-label="' + esc(i18n.close) + '" title="' + esc(i18n.close) + '">×</button>' +
+          '<h2>' + esc(p.name[lang] || p.name.tr) + '</h2>';
         if (lang !== 'ar') html += '<p class="map-p-ar" lang="ar" dir="rtl">' + esc(p.name.ar) + '</p>';
         html += '<p class="map-p-meta">' + esc(meta.regions[p.region] ? (meta.regions[p.region][lang] || meta.regions[p.region].tr) : '') + ' · ' + esc(i18n.at_place.replace('{n}', rows.length)) + '</p>';
         html += '<ul class="map-list">' + rows.map(function (x) {
@@ -250,6 +269,16 @@
         if (history.replaceState) history.replaceState(null, '', location.pathname + (focus ? '?j=' + focus : ''));
       }
 
+      panel.addEventListener('click', function (e) {
+        if (!e.target.closest('[data-map-close]')) return;
+        picked = null;
+        Object.keys(markers).forEach(function (id) {
+          var path = markers[id].dot.getElement();
+          if (path) path.classList.remove('is-picked');
+        });
+        showPanel(visible());
+        if (history.replaceState) history.replaceState(null, '', location.pathname + (focus ? '?j=' + focus : ''));
+      });
       fCentury.addEventListener('change', draw);
       fRole.addEventListener('change', draw);
       fName.addEventListener('change', setFocusByName);

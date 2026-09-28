@@ -9,7 +9,7 @@ layout: default
 {%- capture centuries -%}{
   {%- for c in (1..15) -%}"{{ c }}":{% capture lab %}{% include century.html n=c tpl=t.jurist.century %}{% endcapture %}{{ lab | jsonify }}{% unless forloop.last %},{% endunless %}{%- endfor -%}
 }{%- endcapture -%}
-{% include page-head.html %}
+{% include page-head.html image="registan" %}
 <section class="net-app" data-net data-src="/data/silsile.json" aria-label="{{ tn.title }}">
   <div class="wrap map-tools">
     <label class="map-find"><span>{{ tn.focus }}</span>

@@ -1,19 +1,25 @@
 {%- comment -%}
 The head of an inner page, as on İSAR: a trail from the home page, the title in teal and a lead.
 eyebrow, eyebrow_url: the section a post belongs to, shown in the trail; lead
+image: id of a picture in _data/images.yml, shown beside the title with its caption
 {%- endcomment -%}
 {%- assign lang = page.lang | default: "tr" -%}
 {%- assign t = site.data.i18n[lang] -%}
 {%- assign _title = page.title | default: t.nav[page.key] -%}
 {%- assign _me = site.data.nav | where: "key", page.key | first -%}
 {%- if _me.parent and include.eyebrow == nil %}{% assign _parent = site.data.nav | where: "key", _me.parent | first %}{% else %}{% assign _parent = nil %}{% endif -%}
-<header class="page-head">
+<header class="page-head{% if include.image %} has-image{% endif %}">
   <div class="wrap page-head-in">
+    <div class="page-head-text">
     <p class="crumbs"><a href="{{ site.data.nav[0].url[lang] }}">{{ t.nav.home }}</a><span class="crumb-sep" aria-hidden="true"></span>{% if _parent %}<a href="{{ _parent.url[lang] }}">{{ t.nav[_parent.key] }}</a><span class="crumb-sep" aria-hidden="true"></span>{% endif %}{% if include.eyebrow %}<a href="{{ include.eyebrow_url }}">{{ include.eyebrow }}</a>{% else %}<span aria-current="page">{{ _title }}</span>{% endif %}</p>
     <h1>{{ _title }}</h1>
     {%- assign lead = include.lead | default: page.lead | default: t.collection[page.key] -%}
     {%- if lead %}
     <p class="lead">{{ lead }}</p>
+    {%- endif %}
+    </div>
+    {%- if include.image %}
+    {% include figure.html id=include.image class="page-head-fig" loading="eager" %}
     {%- endif %}
   </div>
 </header>

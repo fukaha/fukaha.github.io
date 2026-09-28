@@ -290,6 +290,9 @@ tr:
     reset: Temizle
     zoom_in: Yakınlaştır
     zoom_out: Uzaklaştır
+    fullscreen: Tam ekran
+    exit_fullscreen: Tam ekrandan çık
+    close: Kapat
     fullmap: Bütün fakihlerin haritası
     credit: "Zemin: Natural Earth (kamu malı). Bölgeler: G. Cornu, Atlas du monde arabo-islamique; koordinatlar: al-Ṯurayyā Gazetteer (CC BY 4.0). Yaklaşık konumlar içi boş halkayla gösterilir."
     legend_many: Daha çok fakih
@@ -736,6 +739,9 @@ en:
     reset: Clear
     zoom_in: Zoom in
     zoom_out: Zoom out
+    fullscreen: Full screen
+    exit_fullscreen: Exit full screen
+    close: Close
     fullmap: Map of all jurists
     credit: "Base map: Natural Earth (public domain). Regions after G. Cornu, Atlas du monde arabo-islamique; coordinates from the al-Ṯurayyā Gazetteer (CC BY 4.0). Approximate positions are drawn as open rings."
     legend_many: More jurists
@@ -1182,6 +1188,9 @@ ar:
     reset: مسح
     zoom_in: تكبير
     zoom_out: تصغير
+    fullscreen: ملء الشاشة
+    exit_fullscreen: الخروج من ملء الشاشة
+    close: إغلاق
     fullmap: خريطة جميع الفقهاء
     credit: "الخريطة الأساسية: Natural Earth (ملك عام). الأقاليم عن أطلس جورجيت كورنو، والإحداثيات من معجم الثريا (CC BY 4.0). المواضع التقريبية مرسومة بحلقات مفرغة."
     legend_many: فقهاء أكثر
