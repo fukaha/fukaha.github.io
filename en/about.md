@@ -45,6 +45,7 @@ All collections work the same way: each record is a table row and the full recor
 | Base map | [Natural Earth](https://www.naturalearthdata.com/) (public domain), drawn with [Leaflet](https://leafletjs.com/). |
 | Articles | A [DergiPark](https://dergipark.org.tr) article search export: citation, DOI, abstract and keywords. The jurists the articles study were matched by hand. |
 | Symposium notices | The [DAVET](https://davet.org.tr/tr/sempozyum) symposium list and the organisers’ pages. Posters belong to the organisers. |
+| Classical texts, reading and search | The [OpenITI](https://doi.org/10.5281/zenodo.3082463) corpus ([KITAB project](https://kitab-project.org/)), CC BY-NC-SA 4.0. Works and authors were matched with the OpenITI records; uncertain matches were checked by hand. The texts are not stored on this site; they are fetched from their OpenITI files when read or searched. |
 
 ## Method
 
@@ -55,6 +56,26 @@ All collections work the same way: each record is a table row and the full recor
 **Network.** Al-Laknawī often names a teacher or student briefly: “Abū Yūsuf”, “the author of the Hidāya”, “his father Ḥammād”. Where such a name certainly belongs to a jurist with an entry, it is linked to his page; where we were not sure, the person is kept separate.
 
 **Search.** Table search ignores case, diacritics and Arabic vowel signs: “fawaid” finds “Fawāʾid”.
+
+## Data
+
+Every table on the site is read from an open JSON file. Other websites and applications can use these files directly; GitHub Pages serves them so that other sites may read them. Please cite the source. Data that comes from OpenITI is under OpenITI's licence (CC BY-NC-SA 4.0, non-commercial use).
+
+| File | Contents |
+| --- | --- |
+| [`/data/fukaha.json`](https://fukaha.github.io/data/fukaha.json) | Jurists: `id`, `name` (tr/en/ar), `death`/`deathM` (Hijri/Gregorian), `century`, `book` (fevaid or cevahir), `source`. For those from al-Jawāhir, `cv` points to their entry in the book. |
+| [`/data/klasik-eserler.json`](https://fukaha.github.io/data/klasik-eserler.json) | Classical works: `title`, `author`, `authorId` (the jurist's `id`), `death`, `oi` (the OpenITI text id, when there is one). |
+| [`/data/fevaid.json`](https://fukaha.github.io/data/fevaid.json), [`/data/cevahir.json`](https://fukaha.github.io/data/cevahir.json) | The entries of the two biographical dictionaries: page, letter, year of death and linked jurist. |
+| [`/data/tezler.json`](https://fukaha.github.io/data/tezler.json), [`/data/makaleler.json`](https://fukaha.github.io/data/makaleler.json) | Theses and articles, with their bibliographic records. |
+| [`/data/openiti.json`](https://fukaha.github.io/data/openiti.json) | The OpenITI texts of the works and jurists: title, author, word count, edition and raw text address (`raw`) of each. |
+| [`/data/ara/books.json`](https://fukaha.github.io/data/ara/books.json), [`manifest.json`](https://fukaha.github.io/data/ara/manifest.json) | The books in the search index and the format of the index. The passage table and index files are described in `tools/build_search.py`. |
+
+Example: to get the jurists of al-Fawāʾid in an application
+
+```js
+const jurists = await fetch('https://fukaha.github.io/data/fukaha.json').then(r => r.json());
+const fawaid = jurists.filter(j => j.book === 'fevaid');
+```
 
 ## Corrections and contributions
 

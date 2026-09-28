@@ -45,6 +45,7 @@ Koleksiyonların hepsi aynı biçimde çalışır: her kayıt bir tablo satırı
 | Harita zemini | [Natural Earth](https://www.naturalearthdata.com/) (kamu malı). Harita [Leaflet](https://leafletjs.com/) ile çiziliyor. |
 | Makaleler | [DergiPark](https://dergipark.org.tr) makale arama dökümü: künye, DOI, öz ve anahtar kelimeler. Makalelerin konu edindiği fakihler elle eşleştirildi. |
 | Sempozyum duyuruları | [DAVET](https://davet.org.tr/tr/sempozyum) sempozyum listesi ve düzenleyicilerin sayfaları. Afişler düzenleyicilere aittir. |
+| Klasik metinler, okuma ve arama | [OpenITI](https://doi.org/10.5281/zenodo.3082463) külliyatı ([KITAB projesi](https://kitab-project.org/)), CC BY-NC-SA 4.0. Eserler ve müellifler OpenITI künyeleriyle eşleştirildi; belirsiz eşleşmeler elle kontrol edildi. Metinler sitede saklanmaz, okunurken ve aranırken OpenITI'deki dosyasından getirilir. |
 
 ## Yöntem
 
@@ -55,6 +56,26 @@ Koleksiyonların hepsi aynı biçimde çalışır: her kayıt bir tablo satırı
 **Silsile.** Leknevî bir hocayı ya da talebeyi çoğu zaman kısa adıyla anar: “Ebû Yûsuf”, “Hidâye sahibi”, “babası Hammâd”. Bu adların kaydı olan bir fakihe ait olduğu kesinse o fakihin sayfasına bağladık. Emin olmadıklarımızı ayrı kişi olarak bıraktık.
 
 **Arama.** Tablolardaki arama büyük-küçük harf, şapka ve Arapça hareke farkı gözetmez. “fevaid” yazan “Fevâid”i, hemzesiz yazan hemzeli kelimeyi de bulur.
+
+## Veriler
+
+Sitedeki bütün tablolar açık JSON dosyalarından okunur. Bu dosyaları başka bir web sitesi ya da uygulama doğrudan kullanabilir; GitHub Pages dosyaları başka sitelerin okumasına izin vererek sunar. Kaynak gösterilmesi yeterlidir. OpenITI'den gelen veriler ise OpenITI'nin lisansına (CC BY-NC-SA 4.0, ticari olmayan kullanım) tabidir.
+
+| Dosya | İçerik |
+| --- | --- |
+| [`/data/fukaha.json`](https://fukaha.github.io/data/fukaha.json) | Fakihler: `id`, `name` (tr/en/ar), `death`/`deathM` (hicrî/miladî), `century`, `book` (fevaid ya da cevahir), `source`. Cevâhir'den gelenlerde `cv` alanı kitaptaki maddeyi gösterir. |
+| [`/data/klasik-eserler.json`](https://fukaha.github.io/data/klasik-eserler.json) | Klasik eserler: `title`, `author`, `authorId` (fakihin `id`'si), `death`, `oi` (OpenITI metin kimliği, varsa). |
+| [`/data/fevaid.json`](https://fukaha.github.io/data/fevaid.json), [`/data/cevahir.json`](https://fukaha.github.io/data/cevahir.json) | İki tabakât kitabının maddeleri: sayfa, harf, vefat yılı ve bağlı fakih. |
+| [`/data/tezler.json`](https://fukaha.github.io/data/tezler.json), [`/data/makaleler.json`](https://fukaha.github.io/data/makaleler.json) | Tezler ve makaleler, künyeleriyle. |
+| [`/data/openiti.json`](https://fukaha.github.io/data/openiti.json) | Eser ve fakihlerin OpenITI'deki karşılıkları: her metnin başlığı, müellifi, kelime sayısı, baskısı ve ham metin adresi (`raw`). |
+| [`/data/ara/books.json`](https://fukaha.github.io/data/ara/books.json), [`manifest.json`](https://fukaha.github.io/data/ara/manifest.json) | Arama dizinindeki kitaplar ve dizinin biçimi. Pasaj tablosu ve dizin dosyalarının yapısı `tools/build_search.py` dosyasında anlatılır. |
+
+Örnek: bir uygulamada Fevâid'deki fakihleri almak için
+
+```js
+const fakihler = await fetch('https://fukaha.github.io/data/fukaha.json').then(r => r.json());
+const fevaid = fakihler.filter(f => f.book === 'fevaid');
+```
 
 ## Hata ve katkı
 

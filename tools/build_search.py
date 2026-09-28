@@ -12,6 +12,7 @@ argument), cuts each into passages of about 300 words at paragraph ends, and wri
   t/<key>.bin      the word index, split by the first two letters of the stem. Each file holds
                    terms and, for each, the passages it is in: varint count, then varint gaps.
   manifest.json    counts, the list of index files and the stemming rules
+When the passages change, tools/embed_passages.mjs must be run again for data/ara/vec.bin.
 
 Usage: python3 tools/build_search.py <folder with the raw texts, named by version URI>
 """
@@ -149,10 +150,10 @@ def main():
             last = p
         counts[key] += 1
 
-    if OUT.exists():
-        for f in OUT.rglob("*"):
-            if f.is_file():
-                f.unlink()
+    # only the files this script writes; vec.bin (tools/embed_passages.mjs) and sozluk.json stay
+    for f in list((OUT / "t").glob("*.bin")) + [OUT / n for n in ("passages.bin", "books.json", "manifest.json")]:
+        if f.exists():
+            f.unlink()
     (OUT / "t").mkdir(parents=True, exist_ok=True)
     names = {}
     for i, (key, data) in enumerate(sorted(shards.items())):

@@ -12,7 +12,8 @@ Search in the core Hanafi books of OpenITI (assets/js/search.js, index in /data/
 <div class="wrap s-app" data-search>
   <form class="s-form" data-s-form role="search">
     <div class="s-tabs" role="tablist">
-      <span class="s-tab is-on">{{ ts.words_tab }}</span>
+      <button type="button" class="s-tab is-on" role="tab" aria-selected="true" data-s-mode="words">{{ ts.words_tab }}</button>
+      <button type="button" class="s-tab" role="tab" aria-selected="false" data-s-mode="meaning">{{ ts.meaning_tab }}</button>
     </div>
     <label for="s-q" class="visually-hidden">{{ ts.label }}</label>
     <div class="search-row">
@@ -27,7 +28,8 @@ Search in the core Hanafi books of OpenITI (assets/js/search.js, index in /data/
         <select data-s-century><option value="">{{ t.table.all }}</option>{% for c in (2..14) %}<option value="{{ c }}">{% include century.html n=c tpl=t.table.century %}</option>{% endfor %}</select>
       </label>
     </div>
-    <p class="s-hint">{{ ts.hint }} <span data-s-stats></span></p>
+    <p class="s-hint" data-s-hint-words>{{ ts.hint }} <span data-s-stats></span></p>
+    <p class="s-hint" data-s-hint-meaning hidden>{{ ts.meaning_hint }}</p>
   </form>
   <div class="s-results" data-s-results aria-live="polite"></div>
   <p class="source-note">{{ ts.source }}</p>

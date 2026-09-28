@@ -45,6 +45,7 @@ lead: «فقهاء» دليل مستقل يعرض التراث الفقهي ال
 | الخريطة الأساسية | [Natural Earth](https://www.naturalearthdata.com/) (ملك عام)، مرسومة بمكتبة [Leaflet](https://leafletjs.com/). |
 | البحوث | نتائج بحث في [DergiPark](https://dergipark.org.tr): بيانات النشر ورقم DOI والملخص والكلمات المفتاحية، ورُبطت البحوث بالفقهاء الذين تتناولهم يدويًا. |
 | إعلانات الندوات | قائمة الندوات في [DAVET](https://davet.org.tr/tr/sempozyum) وصفحات الجهات المنظمة، والملصقات لأصحابها. |
+| النصوص التراثية وقراءتها والبحث فيها | مدونة [OpenITI](https://doi.org/10.5281/zenodo.3082463) ([مشروع KITAB](https://kitab-project.org/))، CC BY-NC-SA 4.0. رُبطت المصنفات والمؤلفون ببيانات OpenITI، ورُوجعت الحالات المشكلة يدويًا. لا تُخزَّن النصوص في الموقع، بل تُجلب من ملفاتها في OpenITI عند القراءة والبحث. |
 
 ## المنهج
 
@@ -53,6 +54,18 @@ lead: «فقهاء» دليل مستقل يعرض التراث الفقهي ال
 **الأسماء.** تُكتب أسماء الفقهاء في الصفحات التركية والإنجليزية بنطق لاتيني مبسّط، ويُذكر الأصل العربي في عمود مستقل.
 
 **البحث.** لا يتأثر البحث في الجداول بالحركات ولا بصور الهمزة ولا بالتاء المربوطة والهاء.
+
+## البيانات
+
+تُقرأ جداول الموقع كلها من ملفات JSON مفتوحة، ويمكن لأي موقع أو تطبيق آخر أن يستعملها مباشرة مع ذكر المصدر. وتخضع البيانات المأخوذة من OpenITI لترخيصه (CC BY-NC-SA 4.0، للاستعمال غير التجاري).
+
+| الملف | المحتوى |
+| --- | --- |
+| [`/data/fukaha.json`](https://fukaha.github.io/data/fukaha.json) | الفقهاء: `id` و`name` (tr/en/ar) و`death`/`deathM` (هجري/ميلادي) و`century` و`book` (fevaid أو cevahir) و`source`، ويدل الحقل `cv` على الترجمة في «الجواهر». |
+| [`/data/klasik-eserler.json`](https://fukaha.github.io/data/klasik-eserler.json) | المصنفات: `title` و`author` و`authorId` و`death` و`oi` (معرّف النص في OpenITI إن وُجد). |
+| [`/data/fevaid.json`](https://fukaha.github.io/data/fevaid.json)، [`/data/cevahir.json`](https://fukaha.github.io/data/cevahir.json) | تراجم الكتابين: الصفحة والحرف وسنة الوفاة والفقيه المرتبط. |
+| [`/data/openiti.json`](https://fukaha.github.io/data/openiti.json) | نصوص OpenITI للمصنفات والفقهاء: العنوان والمؤلف وعدد الكلمات والطبعة وعنوان النص الخام (`raw`). |
+| [`/data/ara/books.json`](https://fukaha.github.io/data/ara/books.json)، [`manifest.json`](https://fukaha.github.io/data/ara/manifest.json) | الكتب المفهرسة للبحث وصيغة الفهرس. |
 
 ## التصحيح والمشاركة
 

@@ -226,27 +226,112 @@
     return { html: (from ? '… ' : '') + html + (to < text.length ? ' …' : ''), adjacent: adjacent };
   }
 
+
+  // --- meaning search: the query and the passages as vectors of multilingual-e5-small ---
+  var mode = 'words', model = null, vecs = null, glossary = null;
+  var TRANSFORMERS = 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.5/+esm';
+  function loadMeaning(progress) {
+    var v = vecs ? Promise.resolve(vecs) : fetch(BASE + 'vec.bin').then(function (r) { if (!r.ok) throw new Error('vec'); return r.arrayBuffer(); }).then(function (b) { return (vecs = new Uint8Array(b)); });
+    var g = glossary ? Promise.resolve(glossary) : fetch(BASE + 'sozluk.json').then(function (r) { return r.json(); }).then(function (x) { return (glossary = x); });
+    var m = model ? Promise.resolve(model) : import(TRANSFORMERS).then(function (tf) {
+      tf.env.allowLocalModels = false;
+      // a static site is not cross-origin isolated: the model runs on one thread, in WebAssembly
+      if (tf.env.backends && tf.env.backends.onnx && tf.env.backends.onnx.wasm) { tf.env.backends.onnx.wasm.numThreads = 1; tf.env.backends.onnx.wasm.proxy = false; }
+      return tf.pipeline('feature-extraction', 'Xenova/multilingual-e5-small', {
+        dtype: 'q8',
+        progress_callback: function (e) { if (e.status === 'progress' && /onnx/.test(e.file)) progress(e.progress); }
+      });
+    }).then(function (p) { return (model = p); });
+    return Promise.all([v, g, m]);
+  }
+  // Turkish or English words of the law are read in Arabic, which the model knows best
+  function toArabic(q) {
+    if (/[\u0621-\u064A]/.test(q)) return { text: q, used: [] };
+    var low = q.toLocaleLowerCase(cfg.lang === 'tr' ? 'tr' : 'en'), used = [];
+    glossary.forEach(function (g) {
+      // a word of four letters or more may carry suffixes (boşaması, sarhoşun, endowments)
+      var hit = g.tr.concat(g.en).some(function (w) { return new RegExp('(^|[^a-zçğıöşüâîû])' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + (w.length >= 4 ? "['’]?[a-zçğıöşüâîû]*" : '') + '($|[^a-zçğıöşüâîû])', 'i').test(low); });
+      if (hit) used.push(g.ar);
+    });
+    return { text: used.join(' '), used: used };
+  }
+  function runMeaning(q) {
+    var out = $('[data-s-results]');
+    q = q.trim();
+    if (!q) return;
+    out.innerHTML = '<p class="s-note" data-s-load>' + esc(T.model_loading) + '</p>';
+    loadMeaning(function (pct) {
+      var el = $('[data-s-load]');
+      if (el) el.textContent = T.model_loading + ' ' + Math.round(pct) + '%';
+    }).then(function () {
+      var a = toArabic(q);
+      if (!a.text) { out.innerHTML = '<p class="s-note">' + esc(T.meaning_arabic) + '</p>'; return; }
+      return model(['query: ' + a.text], { pooling: 'mean', normalize: true }).then(function (e) {
+        // vec.bin (tools/embed_passages.mjs): 384 float32 means and a float32 step, then 192 bytes a
+        // passage, two 4-bit codes to a byte. The score of a passage is the dot product of the query
+        // with its centred vector; the step and the means are the same for every passage, so they
+        // are left out. A table of the score of each byte value at each position makes it fast.
+        var qv = e.data, HEAD = 384 * 4 + 4, n = (vecs.length - HEAD) / 192, bf = $('[data-s-book]').value, cf = $('[data-s-century]').value;
+        var tab = new Float32Array(192 * 256);
+        for (var j = 0; j < 192; j++) for (var b = 0; b < 256; b++) tab[j * 256 + b] = qv[2 * j] * ((b & 15) - 7.5) + qv[2 * j + 1] * ((b >> 4) - 7.5);
+        var scores = [];
+        for (var i = 0; i < n; i++) {
+          if (bf !== '' || cf !== '') {
+            var p = passage(i);
+            if (bf !== '' && p.book !== +bf) continue;
+            if (cf !== '' && Math.ceil(books[p.book].date / 100) !== +cf) continue;
+          }
+          var s = 0, base = HEAD + i * 192;
+          for (var j2 = 0; j2 < 192; j2++) s += tab[j2 * 256 + vecs[base + j2]];
+          scores.push([s, i]);
+        }
+        scores.sort(function (x, y) { return y[0] - x[0]; });
+        hits = scores.slice(0, 200).map(function (x) { return x[1]; });
+        query = { q: q, words: /[\u0621-\u064A]/.test(q) ? words(q) : words(a.text), phrase: false };
+        shown = 0; found = 0;
+        out.innerHTML = (a.used.length ? '<p class="s-note">' + esc(T.meaning_read) + ' <span lang="ar" dir="rtl">' + esc(a.used.join('، ')) + '</span></p>' : '') +
+          '<p class="s-count">' + esc(T.meaning_count) + '</p><ol class="s-list" data-s-list></ol><p class="s-more-wrap"><button type="button" class="btn btn-quiet" data-s-more hidden>' + esc(T.more) + '</button></p>';
+        more();
+        writeUrl();
+      });
+    }).catch(function () { out.innerHTML = '<p class="s-note">' + esc(T.model_failed) + '</p>'; });
+  }
+
   // --- address ---
   function writeUrl() {
     var p = new URLSearchParams();
     p.set('q', query.q);
+    if (mode === 'meaning') p.set('tur', 'anlam');
     if ($('[data-s-book]').value !== '') p.set('kitap', books[+$('[data-s-book]').value].uri);
     if ($('[data-s-century]').value !== '') p.set('asir', $('[data-s-century]').value);
     history.replaceState(null, '', location.pathname + '?' + p.toString());
   }
 
   var form = $('[data-s-form]');
-  form.addEventListener('submit', function (e) { e.preventDefault(); ready.then(function () { run(form.q.value); }); });
+  function go() { ready.then(function () { if (mode === 'meaning') runMeaning(form.q.value); else run(form.q.value); }); }
+  form.addEventListener('submit', function (e) { e.preventDefault(); go(); });
+  root.querySelectorAll('[data-s-mode]').forEach(function (b) {
+    b.addEventListener('click', function () { setMode(b.dataset.sMode); if (form.q.value.trim()) go(); });
+  });
+  function setMode(m) {
+    mode = m;
+    root.querySelectorAll('[data-s-mode]').forEach(function (b) { var on = b.dataset.sMode === m; b.classList.toggle('is-on', on); b.setAttribute('aria-selected', on); });
+    $('[data-s-hint-words]').hidden = m !== 'words';
+    $('[data-s-hint-meaning]').hidden = m !== 'meaning';
+    form.q.setAttribute('dir', m === 'meaning' ? 'auto' : 'rtl');
+    form.q.placeholder = m === 'meaning' ? T.meaning_placeholder : T.placeholder;
+  }
   root.addEventListener('click', function (e) {
     if (e.target.closest('[data-s-more]')) { more(); return; }
     var f = e.target.closest('[data-book]');
-    if (f) { e.preventDefault(); $('[data-s-book]').value = f.dataset.book; run(form.q.value); }
+    if (f) { e.preventDefault(); $('[data-s-book]').value = f.dataset.book; go(); }
   });
-  ['[data-s-book]', '[data-s-century]'].forEach(function (s) { $(s).addEventListener('change', function () { if (form.q.value.trim()) run(form.q.value); }); });
+  ['[data-s-book]', '[data-s-century]'].forEach(function (s) { $(s).addEventListener('change', function () { if (form.q.value.trim()) go(); }); });
   ready.then(function () {
     var p = new URLSearchParams(location.search);
     if (p.get('kitap')) books.forEach(function (b, i) { if (b.uri === p.get('kitap')) $('[data-s-book]').value = i; });
     if (p.get('asir')) $('[data-s-century]').value = p.get('asir');
-    if (p.get('q')) { form.q.value = p.get('q'); run(p.get('q')); }
+    if (p.get('tur') === 'anlam') setMode('meaning');
+    if (p.get('q')) { form.q.value = p.get('q'); go(); }
   });
 })();

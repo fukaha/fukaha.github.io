@@ -430,6 +430,13 @@ tr:
     too_common: Bu kelimeler çok sık geçtiği için dizine alınmadı; daha belirgin bir kelime ekleyin.
     need_arabic: Arapça harflerle en az iki harfli bir kelime yazın.
     more: Daha fazla sonuç
+    meaning_placeholder: Arapça bir soru ya da ifade; Türkçe fıkıh terimleri de olur (ör. vakıftan dönme)
+    meaning_hint: "Anlam araması kelimeleri değil anlamı arar: aynı meseleyi başka kelimelerle anlatan pasajları da bulur. En iyi sonucu Arapça sorgu verir; Türkçe ya da İngilizce yazılan fıkıh terimleri bir sözlükle Arapçaya çevrilir. İlk aramada yaklaşık 120 MB'lık dil modeli bir kez indirilir."
+    model_loading: Dil modeli yükleniyor (ilk seferde yaklaşık 120 MB)…
+    model_failed: Dil modeli yüklenemedi. Bağlantınızı kontrol edin ya da kelime aramasını kullanın.
+    meaning_arabic: Bu sorgudaki terimleri sözlükte bulamadım. Arapça yazın ya da bilinen bir fıkıh terimi kullanın (ör. vakıf, faiz, nafaka).
+    meaning_read: "Sorgu şu terimlerle okundu:"
+    meaning_count: Anlamca en yakın 200 pasaj, yakından uzağa.
     phrase_scan: "İbare aranıyor: {m} / {n} pasaj tarandı…"
     phrase_count: "İbare aynen {n} pasajda bulundu ({m} pasaj tarandı)."
     phrase_more: "Taranacak {n} pasaj daha var."
@@ -869,6 +876,13 @@ en:
     too_common: These words are too common to be indexed; add a more distinctive word.
     need_arabic: Type a word of at least two letters in Arabic script.
     more: More results
+    meaning_placeholder: An Arabic question or phrase; English legal terms work too (e.g. revocation of waqf)
+    meaning_hint: "The meaning search looks for the sense, not the words: it also finds passages that treat the same question in other words. Arabic queries work best; legal terms written in English or Turkish are turned into Arabic with a glossary. The first search downloads a language model of about 120 MB once."
+    model_loading: Loading the language model (about 120 MB the first time)…
+    model_failed: The language model could not be loaded. Check your connection or use the word search.
+    meaning_arabic: None of these terms is in the glossary. Write in Arabic or use a known legal term (e.g. waqf, usury, maintenance).
+    meaning_read: "The query was read as:"
+    meaning_count: The 200 passages closest in meaning, closest first.
     phrase_scan: "Looking for the phrase: {m} of {n} passages read…"
     phrase_count: "The exact phrase is in {n} passages ({m} passages read)."
     phrase_more: "{n} more passages to read."
@@ -1308,6 +1322,13 @@ ar:
     too_common: هذه الكلمات شائعة جدًا فلم تُفهرس؛ أضف كلمة أدق.
     need_arabic: اكتب كلمة عربية من حرفين على الأقل.
     more: مزيد من النتائج
+    meaning_placeholder: سؤال أو عبارة بالعربية، مثل لزوم الوقف ورجوع الواقف
+    meaning_hint: "يبحث البحث بالمعنى عن المعنى لا عن الألفاظ، فيجد المقاطع التي تتناول المسألة نفسها بألفاظ أخرى. ويُنزَّل نموذج لغوي بحجم 120 ميغابايت تقريبًا مرة واحدة عند أول بحث."
+    model_loading: جارٍ تحميل النموذج اللغوي (نحو 120 ميغابايت في المرة الأولى)…
+    model_failed: تعذّر تحميل النموذج اللغوي. تحقق من الاتصال أو استعمل البحث بالكلمات.
+    meaning_arabic: لم أجد هذه المصطلحات في المعجم. اكتب بالعربية.
+    meaning_read: "قُرئ السؤال بهذه المصطلحات:"
+    meaning_count: أقرب 200 مقطع في المعنى، الأقرب فالأقرب.
     phrase_scan: "جارٍ البحث عن العبارة: قُرئ {m} من {n} مقطعًا…"
     phrase_count: "وردت العبارة بنصها في {n} مقطعًا (قُرئ {m} مقطعًا)."
     phrase_more: "بقي {n} مقطعًا للقراءة."
