@@ -12,7 +12,7 @@ event:
   organizer: İstanbul Üniversitesi İlahiyat Fakültesi, Malaya Üniversitesi, Sultan Kābûs Üniversitesi, İstanbul İl Müftülüğü, Dârülfünûn İlâhiyat Vakfı
   web: https://asirasirislamiilimlersempozyumu.istanbul.edu.tr/tr/_
   source: https://davet.org.tr/tr/sempozyum
-  order: 2
+  order: 3
 ---
 
 İstanbul Üniversitesi İlahiyat Fakültesi, her yüzyılı ayrı bir toplantıda ele aldığı **Asır Asır İslâmî İlimler** dizisini sürdürüyor. Dizinin yeni halkası, **Hicrî Yedinci Asrın İslâmî İlimlerin Gelişmesindeki Yeri Uluslararası Sempozyumu**, 22-24 Ekim 2026’da İstanbul’da yapılacak.

@@ -12,7 +12,7 @@ event:
   organizer: Hitit University Faculty of Theology, HİSAM
   web: https://hitit.edu.tr/tr/dinvecografya
   source: https://davet.org.tr/tr/sempozyum
-  order: 3
+  order: 4
 ---
 
 The fourth meeting of the **Religion and Geography** series, organised by Hitit University’s Faculty of Theology and its Centre for Islamic Studies (HİSAM), takes place in Çorum on 8–9 October 2026 under the title **Geography and the Islamic Sciences**.

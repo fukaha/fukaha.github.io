@@ -12,7 +12,7 @@ event:
   organizer: Hitit Üniversitesi İlahiyat Fakültesi, HİSAM
   web: https://hitit.edu.tr/tr/dinvecografya
   source: https://davet.org.tr/tr/sempozyum
-  order: 3
+  order: 4
 ---
 
 Hitit Üniversitesi İlahiyat Fakültesi ile İslami İlimler Uygulama ve Araştırma Merkezinin (HİSAM) altı toplantılık **Din ve Coğrafya** dizisinin dördüncüsü 8-9 Ekim 2026’da Çorum’da yapılacak. Bu yılın başlığı **Coğrafya ve İslam Bilimleri**.

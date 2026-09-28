@@ -15,7 +15,7 @@ event:
   source_name: Selçuk Üniversitesi duyurusu
   poster: /assets/img/sempozyum/maturidi-sempozyumu.jpg
   poster_credit: 'Afiş: Selçuk Üniversitesi İlahiyat Fakültesi'
-  order: 4
+  order: 1
 ---
 
 Selçuk Üniversitesi İlahiyat Fakültesinin düzenlediği **VIII. Uluslararası Mâtürîdî İlahiyat Araştırmaları Sempozyumu** 25-26 Aralık 2026’da Konya’da yapılacak. Bu yılın teması **Hanefî-Mâtürîdî Mirasta Birlikte Yaşama Kültürü**.

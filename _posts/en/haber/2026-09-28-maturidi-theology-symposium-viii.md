@@ -15,7 +15,7 @@ event:
   source_name: Selçuk University notice
   poster: /assets/img/sempozyum/maturidi-sempozyumu.jpg
   poster_credit: 'Poster: Selçuk University, Faculty of Theology'
-  order: 4
+  order: 1
 ---
 
 The **8th International Symposium on Māturīdī Theological Studies** (*VIII. Uluslararası Mâtürîdî İlahiyat Araştırmaları Sempozyumu*), organised by the Faculty of Theology at Selçuk University, takes place in Konya on 25–26 December 2026. Its theme this year is **the culture of coexistence in the Māturīdī heritage**.

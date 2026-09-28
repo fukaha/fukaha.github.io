@@ -14,7 +14,7 @@ event:
   source: https://davet.org.tr/tr/sempozyum
   poster: /assets/img/sempozyum/osmanli-avrupasinda-fikih.jpg
   poster_credit: 'Afiş: Balkan Çalışmaları Vakfı'
-  order: 1
+  order: 2
 ---
 
 Balkan Çalışmaları Vakfı ve İSAR’ın düzenlediği **Osmanlı Avrupası’nda Fıkıh Çalıştayı** 23-25 Ekim 2026’da Üsküp’te yapılacak. Çalıştay 1400-1918 arasında Balkanlarda doğmuş, yetişmiş ya da bu bölgede eser vermiş fakihleri ele alıyor. Saraybosna, Üsküp, Sofya ve İşkodra gibi ilim merkezlerinin Osmanlı fıkıh geleneğine katkısı da oturumların ana konularından biri.

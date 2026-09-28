@@ -12,7 +12,7 @@ event:
   organizer: Istanbul University Faculty of Theology, University of Malaya, Sultan Qaboos University, Istanbul Mufti’s Office, Darülfünun Theology Foundation
   web: https://asirasirislamiilimlersempozyumu.istanbul.edu.tr/tr/_
   source: https://davet.org.tr/tr/sempozyum
-  order: 2
+  order: 3
 ---
 
 Istanbul University’s Faculty of Theology devotes each meeting of its series **The Islamic Sciences Century by Century** to a single century. The next one, the **International Symposium on the Place of the Seventh Hijri Century in the Development of the Islamic Sciences**, is held in Istanbul on 22–24 October 2026.

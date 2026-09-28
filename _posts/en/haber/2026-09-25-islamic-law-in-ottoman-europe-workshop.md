@@ -14,7 +14,7 @@ event:
   source: https://davet.org.tr/tr/sempozyum
   poster: /assets/img/sempozyum/osmanli-avrupasinda-fikih.jpg
   poster_credit: 'Poster: Balkan Studies Foundation'
-  order: 1
+  order: 2
 ---
 
 The workshop **Islamic Law in Ottoman Europe** (*Osmanlı Avrupası’nda Fıkıh*), organised by the Balkan Studies Foundation and ISAR, takes place in Skopje on 23–25 October 2026. It is devoted to jurists who were born, trained or wrote in the Balkans between 1400 and 1918, and to the part that Sarajevo, Skopje, Sofia, Shkodër and other centres of learning played in Ottoman legal scholarship.
