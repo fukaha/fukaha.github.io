@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{%- comment -%}
+The page of a menu item that has sub-items (Kitaplar): a card for each of them, with its lead and
+the number of its records.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign subs = site.data.nav | where: "parent", page.key -%}
+{% include page-head.html %}
+<section class="color-band band-teal hub-band" aria-label="{{ t.nav[page.key] }}">
+  <div class="wrap">
+    <div class="band-cards">
+      {%- for sub in subs %}
+      {%- assign cnt = site.data.stats.counts[sub.key] | default: 0 %}
+      {%- capture text %}{{ t.collection[sub.key] }} {% if cnt > 0 %}({% include number.html n=cnt %} {{ t.home.records }}){% else %}({{ t.home.soon }}){% endif %}{% endcapture %}
+      {%- assign href = sub.url[lang] %}{% assign title = t.nav[sub.key] %}
+      {% include band-card.html img=sub.image title=title text=text href=href more=t.home.view_all %}
+      {%- endfor %}
+    </div>
+    {{ content }}
+  </div>
+</section>

@@ -12,8 +12,8 @@ What a student of Islamic law needs is scattered: a jurist’s life is told in t
 
 ## Sections
 
-- **Classical Works.** Works of law, legal theory and fatwa written by the jurists, with author, date of death and school.
-- **Books.** Modern books, critical editions and translations on Islamic law.
+- **Classical Sources.** Works of law, legal theory and fatwa written by the jurists, with author, date of death and school.
+- **Modern Sources.** Present-day monographs on Islamic law, critical editions and translations.
 - **Theses.** Master’s and doctoral theses on Islamic law written in Turkey.
 - **Articles.** Articles on Islamic law published in peer-reviewed journals.
 - **Jurists.** Biographies of jurists taken from the *ṭabaqāt* literature. Every jurist has his own page, with his works, teachers, students and the theses about him.

@@ -19,8 +19,9 @@ tr:
     ara: Kitaplarda Ara
     oku: Okuma
     home: Ana Sayfa
-    klasik: Klasik Eserler
-    kitaplar: Kitaplar
+    klasik: Klasik Kaynaklar
+    kitaplar: Modern Kaynaklar
+    kutub: Kitaplar
     tezler: Tezler
     makaleler: Makaleler
     haberler: Haberler
@@ -88,7 +89,8 @@ tr:
   collection:
     ara: Hanefî fıkıh ve tabakât kitaplarının metninde arama.
     klasik: Fakihlerin yazdığı fıkıh, usûl ve fetva eserleri. Her eser müellifi, müellifin vefat tarihi ve mezhebiyle listelenir.
-    kitaplar: İslam hukuku üzerine modern kitaplar, tahkikler ve çeviriler.
+    kitaplar: Günümüzde İslam hukuku üzerine yazılmış monografiler, tahkikler ve çeviriler.
+    kutub: Fakihlerin yazdığı klasik eserler ve İslam hukuku üzerine günümüzde yazılmış çalışmalar.
     tezler: Türkiye’de İslam hukuku alanında yapılmış yüksek lisans ve doktora tezleri.
     makaleler: Hakemli dergilerde yayımlanmış İslam hukuku makaleleri.
     fevaid: Leknevî’nin el-Fevâidü’l-behiyye’sindeki fakihlerin biyografileri, harf harf.
@@ -409,7 +411,7 @@ tr:
     open_raw: Ham metni aç
     whole: Kitabın tamamını sayfa sırasıyla oku
     part: Kısım
-    not_found: Bu adreste bir kitap yok. Klasik Eserler tablosundaki "Oku" bağlantılarından birini kullanın.
+    not_found: Bu adreste bir kitap yok. Klasik Kaynaklar tablosundaki "Oku" bağlantılarından birini kullanın.
     jurist_texts: OpenITI'deki eserleri
     jurist_texts_lead: KITAB projesinin OpenITI külliyatında bu müellife ait metinler. Başlığa tıklayınca metin bu sitede açılır.
     ocr: düzeltilmemiş OCR
@@ -456,8 +458,9 @@ en:
     ara: Search the Books
     oku: Reading
     home: Home
-    klasik: Classical Works
-    kitaplar: Books
+    klasik: Classical Sources
+    kitaplar: Modern Sources
+    kutub: Books
     tezler: Theses
     makaleler: Articles
     haberler: News
@@ -525,7 +528,8 @@ en:
   collection:
     ara: Search the text of the Hanafi law and biographical books.
     klasik: Works of law, legal theory and fatwa written by the jurists, with author, date of death and school.
-    kitaplar: Modern books, critical editions and translations on Islamic law.
+    kitaplar: Present-day monographs on Islamic law, critical editions and translations.
+    kutub: The classical works written by the jurists, and modern studies of Islamic law.
     tezler: Master’s and doctoral theses on Islamic law written in Turkey.
     makaleler: Articles on Islamic law published in peer-reviewed journals.
     fevaid: The biographies of the jurists in al-Laknawi’s al-Fawāʾid al-bahiyya, letter by letter.
@@ -846,7 +850,7 @@ en:
     open_raw: Open the raw text
     whole: Read the whole book in page order
     part: Part
-    not_found: There is no book at this address. Use one of the "Read" links in the Classical Works table.
+    not_found: There is no book at this address. Use one of the "Read" links in the Classical Sources table.
     jurist_texts: Their works in OpenITI
     jurist_texts_lead: Texts by this author in the OpenITI corpus of the KITAB project. Click a title to read it on this site.
     ocr: uncorrected OCR
@@ -893,8 +897,9 @@ ar:
     ara: البحث في الكتب
     oku: القراءة
     home: الرئيسية
-    klasik: المصنفات الكلاسيكية
-    kitaplar: الكتب
+    klasik: المصادر التراثية
+    kitaplar: المصادر الحديثة
+    kutub: الكتب
     tezler: الرسائل الجامعية
     makaleler: البحوث
     haberler: الأخبار
@@ -962,7 +967,8 @@ ar:
   collection:
     ara: البحث في نصوص كتب الفقه الحنفي وطبقاته.
     klasik: مصنفات الفقه وأصوله والفتاوى التي ألّفها الفقهاء، مع المؤلف وسنة الوفاة والمذهب.
-    kitaplar: كتب حديثة وتحقيقات وترجمات في الفقه الإسلامي.
+    kitaplar: دراسات معاصرة في الفقه الإسلامي، وتحقيقات وترجمات.
+    kutub: المصادر التراثية التي كتبها الفقهاء، والدراسات الحديثة عن الفقه الإسلامي.
     tezler: رسائل الماجستير وأطروحات الدكتوراه في الفقه الإسلامي المنجزة في تركيا.
     makaleler: بحوث في الفقه الإسلامي منشورة في مجلات محكّمة.
     fevaid: تراجم الفقهاء في «الفوائد البهية» للكنوي، حرفًا حرفًا.
@@ -1283,7 +1289,7 @@ ar:
     open_raw: فتح النص الخام
     whole: اقرأ الكتاب كاملًا بترتيب صفحاته
     part: القسم
-    not_found: لا يوجد كتاب بهذا العنوان. استعمل روابط «اقرأ» في جدول المصنفات الكلاسيكية.
+    not_found: لا يوجد كتاب بهذا العنوان. استعمل روابط «اقرأ» في جدول المصادر التراثية.
     jurist_texts: مصنفاته في OpenITI
     jurist_texts_lead: نصوص هذا المؤلف في مدونة OpenITI التابعة لمشروع KITAB. انقر العنوان لقراءته في هذا الموقع.
     ocr: نص ضوئي غير مصحح

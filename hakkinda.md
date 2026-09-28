@@ -12,8 +12,8 @@ lead: Fukahâ, fakihleri ve onlar üzerine yapılan çalışmaları kaynak göst
 
 ## Bölümler
 
-- **Klasik Eserler.** Fakihlerin yazdığı fıkıh, usûl ve fetva eserleri, müellifleri, vefat tarihleri ve mezhepleriyle birlikte.
-- **Kitaplar.** İslam hukuku üzerine modern kitaplar, tahkikler ve çeviriler.
+- **Klasik Kaynaklar.** Fakihlerin yazdığı fıkıh, usûl ve fetva eserleri, müellifleri, vefat tarihleri ve mezhepleriyle birlikte.
+- **Modern Kaynaklar.** Günümüzde İslam hukuku üzerine yazılmış monografiler, tahkikler ve çeviriler.
 - **Tezler.** Türkiye’de İslam hukuku alanında yapılmış yüksek lisans ve doktora tezleri.
 - **Makaleler.** Hakemli dergilerde yayımlanmış İslam hukuku makaleleri.
 - **Fukahâ.** Tabakât kitaplarından aktarılmış fakih biyografileri. Her fakihin eserleri, hocaları, talebeleri ve hakkında yazılan tezlerle birlikte kendi sayfası var.

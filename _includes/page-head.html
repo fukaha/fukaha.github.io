@@ -5,9 +5,11 @@ eyebrow, eyebrow_url: the section a post belongs to, shown in the trail; lead
 {%- assign lang = page.lang | default: "tr" -%}
 {%- assign t = site.data.i18n[lang] -%}
 {%- assign _title = page.title | default: t.nav[page.key] -%}
+{%- assign _me = site.data.nav | where: "key", page.key | first -%}
+{%- if _me.parent and include.eyebrow == nil %}{% assign _parent = site.data.nav | where: "key", _me.parent | first %}{% else %}{% assign _parent = nil %}{% endif -%}
 <header class="page-head">
   <div class="wrap page-head-in">
-    <p class="crumbs"><a href="{{ site.data.nav[0].url[lang] }}">{{ t.nav.home }}</a><span class="crumb-sep" aria-hidden="true"></span>{% if include.eyebrow %}<a href="{{ include.eyebrow_url }}">{{ include.eyebrow }}</a>{% else %}<span aria-current="page">{{ _title }}</span>{% endif %}</p>
+    <p class="crumbs"><a href="{{ site.data.nav[0].url[lang] }}">{{ t.nav.home }}</a><span class="crumb-sep" aria-hidden="true"></span>{% if _parent %}<a href="{{ _parent.url[lang] }}">{{ t.nav[_parent.key] }}</a><span class="crumb-sep" aria-hidden="true"></span>{% endif %}{% if include.eyebrow %}<a href="{{ include.eyebrow_url }}">{{ include.eyebrow }}</a>{% else %}<span aria-current="page">{{ _title }}</span>{% endif %}</p>
     <h1>{{ _title }}</h1>
     {%- assign lead = include.lead | default: page.lead | default: t.collection[page.key] -%}
     {%- if lead %}
