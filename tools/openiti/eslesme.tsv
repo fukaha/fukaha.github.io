@@ -1,0 +1,38 @@
+# Tür	bizim kimlik	OpenITI URI	+ (doğru) / - (yanlış) / ? (bakılmadı)	puan · bizim ad · OpenITI adı · müellif
+work	24	0730IbnAhmadCalaDinBukhari.KashfAsrar.JK007126-ara1	+	0.70 · كشف الأسرار شرح أصول البزدوي · كشف الأسرار · علاء الدين عبد العزيز بن أحمد البخاري
+work	31	0750IbnTurkamani.JawharNaqi.Shia000963Vols-ara1	+	0.50 · الجوهر النقي في الرد على البيهقي · الجوهر النقي · المارديني
+work	45	0552CalaUsmandi.Tariqa.Sham19Y0133415-ara1	-	0.50 · تعليقة في الخلاف · طريقة الخلاف في الفقه بين الأئمة الأسلاف · العلاء الأسمندي
+work	58	0483IbnAhmadSarakhsi.Mabsut.JK000266-ara1	+	0.50 · المبسوط · المبسوط · ابن أحمد السرخسي
+work	61	0593BurhanDinFarghaniMarghinani.Bidaya.JK000278-ara1	-	0.70 · الهداية شرح بداية المبتدي · بداية المبتدي · برهان الدين علي بن أبي بكر بن عبد الجليل الفرغاني المرغيناني
+work	62	0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1	-	0.70 · بداية المبتدي · الهداية شرح بداية المبتدي · المرغياني
+work	92	0762IbnYusufZaylaci.TakhrijAhadith.JK001492-ara1	+	0.67 · تخريج أحاديث الكشاف · تخريج الأحاديث والآثار · جمال الدين عبد الله بن يوسف بن محمد الزيلعي
+work	111	0230AbuMushal.Nawadir.Shamela0005376-ara1	-	0.50 · النوادر · نوادر أبي مسحل · عبد الوهاب بن حريش الأعرابي أبو محمد، الملقب بـ أبي مسحل (المتوفى: نحو 230هـ)
+work	132	0370IbnCaliJassas.AhkamQuran.JK000871-ara1	+	0.50 · أحكام القرآن · أحكام القرآن · الجساس
+work	134	0370IbnCaliJassas.SharhMukhtasarTahawi.Sham19Y0016546-ara1	+	0.50 · شرح مختصر الطحاوي · شرح مختصر الطحاوي · الجساس
+work	136	0370IbnCaliJassas.FusulFiUsul.JK000286-ara1	+	0.50 · الفصول في أصول الفقه · الفصول في الأصول · الجساس
+work	148	0321Tahawi.SharhMushkilAthar.JK007043-ara1	-	0.50 · شرح معاني الآثار · شرح مشكل الاثار · الطحاوي
+work	149	0321Tahawi.SharhMushkilAthar.JK007043-ara1	+	0.70 · مشكل الآثار · شرح مشكل الاثار · الطحاوي
+work	155	0322AbuJacfarCuqayli.DucafaKabir.Shamela0013041-ara1	-	0.50 · التاريخ الكبير · الضعفاء الكبير · أبو جعفر محمد بن عمرو بن موسى بن حماد العقيلي المكي (المتوفى: 322هـ)
+work	156	0375AnonymousTranslator.TarikhCalamUrusiyus.Kraken220810162528-ara1	-	0.50 · التاريخ · تأريخ العالم · مترجم مجهول
+work	170	0710IbnIbrahimShamsDinSuruji.NafahatNasamat.Shamela0026925-ara1	+	0.67 · نفحات النسمات في وصول الثواب إلى الأموات · نفحات النسمات في وصول إهداء الثواب للأموات · أحمد بن إبراهيم بن عبد الغني السروجي، أبو العباس، شمس الدين (المتوفى: 710هـ)
+work	231	0816IbnMuhammadSharifJurjani.Nahw.Shamela0038149-ara1	-	0.50 · صرف مير · نحو مير = مبادئ قواعد اللغة العربية · ابن محمد الشريف الجرجاني
+work	255	0483IbnAhmadSarakhsi.Mabsut.JK000266-ara1	+	0.50 · المبسوط · المبسوط · ابن أحمد السرخسي
+work	284	0827IbnShihabBazzazi.Fatawa.ShamAY0037657-ara1	-	0.50 · مناقب الإمام الأعظم · الفتاوى البزازية أو الجامع الوجيز في مذهب الامام الأعظم أبي حنيفة النعمان · البزازي
+work	344	0182AbuYusufYacqub.Kharaj.ShamAY0034334-ara1	+	0.50 · كتاب الخراج · الخراج · أبو يوسف
+work	379	0423AbuQasimHurfi.Fawaid.Shamela0026533-ara1	-	0.50 · الفوائد · الكتاب: فوائد أبي القاسم الحرفي · عبد الرحمن بن عبيد الله بن عبد الله ابن محمد، أبو القاسم الحربي الحرفي (المتوفى: 423هـ)
+work	379	0425Anonymous.FawaidIbnSaltWaAbiAhmadFaradi.Sham19Y0027098-ara1	-	0.50 · الفوائد · فوائد منتقاة من رواية الشيخين أبي الحسن أحمد بن محمد بن الصلت وأبي أحمد عبيد الله بن محمد بن أبي مسلم الفرضي · أبو الحسن أحمد بن محمد بن الصلت (405 ه) - وأبو أحمد عبيد الله بن محمد بن أبي مسلم الفرضي (406 ه)
+work	402	0855BadrDinCayni.MinhatSuluk.Sham19Y0013784-ara1	+	0.70 · منحة السلوك · منحة السلوك في شرح تحفة الملوك · بدر الدين العيني
+work	405	0855BadrDinCayni.MaqasidNahwiyya.Sham19Y0016714-ara1	+	0.70 · المقاصد النحوية · المقاصد النحوية في شرح شواهد شروح الألفية · بدر الدين العيني
+work	409	0592QadiKhanFarghani.Fatawa.ShamAY0033176-ara1	+	0.50 · الفتاوى · فتاوى قاضيخان · قاضي خان الفرغاني
+work	423	0660IbnCadim.ZubdatHalab.Shamela0009872-ara1	-	0.67 · بغية الطلب في تاريخ حلب · زبدة الحلب من تاريخ حلب · ابن العديم
+work	429	0861IbnHumam.FathQadir.Shamela0021744-ara1	+	0.70 · فتح القدير شرح الهداية · فتح القدير · الكمال ابن الهمام
+work	434	0940IbnKamalBasha.TaghyirTanqih.ShamAY0037541-ara1	+	0.70 · تغيير التنقيح وشرحه · تغيير التنقيح · شيخ الإسلام ابن كمال باشا (ت941ه)
+work	459	0885IbnFaramurzMullaKhusraw.DurarHukkam.JK011703-ara1	+	0.70 · غرر الأحكام · درر الحكام شرح غرر الأحكام · محمد بن فراموز الشهير بمنلا خسرو (المتوفى : 885هـ)
+work	478	0775IbnAbiWafa.JawahirMudiya.JK000806BK1-ara1	+	0.50 · الجواهر المضية في طبقات الحنفية · طبقات الحنفية · ابن أبي الوفاء
+work	498	0694MuzaffarDinIbnSacati.BadicNizam.Sham19Y0018570-ara1	+	0.67 · البديع في أصول الفقه · بديع النظام = نهاية الوصول إلى علم الأصول · مظفر الدين ابن الساعاتي
+work	589	0747IbnMascudMahbubiBukhari.Tawdih.JK007109-ara1	-	0.70 · التنقيح · شرح التلويح على التوضيح لمتن التنقيح في أصول الفقه. · عبيد الله بن مسعود المحبوبي البخاري الحنفي.
+work	589	0748Dhahabi.TanqihTahqiq.JK007039-ara1	-	0.50 · التنقيح · تنقيح في أحاديث التعليق · الذهبي
+jurist	alaeddin-abdulaziz-b-ahmed-el-buhari	0730IbnAhmadCalaDinBukhari.KashfAsrar.JK007126-ara1	+	0.67 · Alaeddin Abdülaziz b. Ahmed el-Buhari · كشف الأسرار · علاء الدين عبد العزيز بن أحمد البخاري
+jurist	burhaneddin-ebul-fazl-muhammed-b-muhammed-en-nesefi	0686MuhammadIbnMuhammadNasafi.SharhAsasKiyasa.AOCP20251104078-ara1	+	0.50 · Burhaneddin Ebu'l-Fazl Muhammed b. Muhammed en-Nesefi · شرح أساس الكياسة · محمد بن محمد النسفي
+work	94	0637IbnAthirDiyaDin.JamicKabir.Shamela0037475-ara1	-	0.40 · شرح الجامع الكبير · الجامع الكبير في صناعة المنظوم من الكلام والمنثور · ضياء الدين ابن الأثير
+work	653	0773IbnIshaqSirajDinGhaznawi.GhurraMunifa.JK000240-ara1	+	0.40 · الغرة المنيفة في ترجيح مذهب أبي حنيفة · الغرة المنيفة في تحقيق بعض مسائل الإمام أبي حنيفة · أبو حفص الغزنوي

@@ -1359,3 +1359,54 @@ html[dir="ltr"] .cv-jurist::before { content: "← "; }
   .cv-pager .cv-up { grid-column: 1 / -1; grid-row: 2; text-align: center; }
   .cv-pager .cv-next { grid-column: 2; }
 }
+
+/* ---------- reading an OpenITI text ---------- */
+
+.rd-title { text-transform: none !important; font: 700 clamp(1.9rem, 3.4vw, 2.6rem)/1.5 var(--font-ar-display); max-width: none; }
+html[dir="ltr"] .rd-title { text-align: left; }
+.rd-words { color: var(--muted); font-size: 0.95rem; margin-inline-start: 0.6rem; }
+.reader { display: grid; grid-template-columns: 21rem minmax(0, 1fr); gap: 2.5rem; align-items: start; padding-block: 1rem 3.5rem; }
+.rd-side { position: sticky; top: 5.5rem; display: flex; flex-direction: column; gap: 1.2rem; max-height: calc(100vh - 7rem); }
+.rd-find label { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem; }
+.rd-results { flex-shrink: 0; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 0.8rem 1rem; max-height: 45vh; overflow: auto; }
+.rd-results ol { list-style: none; margin: 0; padding: 0; }
+.rd-results li a { display: block; padding: 0.5rem 0; border-top: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+.rd-results li a:hover { color: var(--link); }
+.rd-snip { display: block; font: 400 1.1rem/1.8 var(--font-ar-display); }
+.rd-where { display: block; font-size: 0.82rem; color: var(--muted); }
+.rd-count { margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--muted); }
+.rd-toc-wrap { min-height: 0; display: flex; flex-direction: column; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1rem 0.4rem 1rem 1rem; }
+.rd-toc-wrap h2 { font-size: 1.1rem; color: var(--head-ink); margin: 0 0 0.6rem; }
+.rd-toc { list-style: none; margin: 0; padding: 0 0 0 0.6rem; overflow: auto; font: 400 1.08rem/1.6 var(--font-ar-display); }
+.rd-toc a { display: block; padding: 0.2rem 0.5rem; border-radius: var(--radius-s); color: var(--ink); text-decoration: none; }
+.rd-toc a:hover { background: var(--row-hover); }
+.rd-toc a[aria-current] { color: var(--link); font-weight: 700; }
+.rd-toc .lv2 a { padding-inline-start: 1.2rem; font-size: 1rem; }
+.rd-toc .lv3 a { padding-inline-start: 2rem; font-size: 0.95rem; color: var(--muted); }
+.rd-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.2rem; }
+.rd-bar-end { margin: 2rem 0 1.4rem; }
+.rd-part { color: var(--muted); font-variant-numeric: lining-nums tabular-nums; }
+.rd-bar .btn:disabled { opacity: 0.4; cursor: default; }
+.rd-status { padding: 3rem 1rem; text-align: center; color: var(--muted); background: var(--surface); border-radius: var(--radius); }
+.rd-status.is-error { color: var(--t-doktora); }
+.reader.is-loading .rd-bar, .reader.is-loading .rd-toc-wrap, .reader.is-loading .rd-find { visibility: hidden; }
+.rd-text { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(1.2rem, 3vw, 2.4rem); }
+.rd-text p { margin: 0 0 0.8em; }
+.rd-h { font-family: var(--font-ar-display); font-weight: 700; color: var(--head-ink); margin: 1.4em 0 0.5em; line-height: 1.6; }
+h2.rd-h { font-size: 1.6rem; } h3.rd-h { font-size: 1.35rem; } h4.rd-h { font-size: 1.2rem; }
+.rd-h:first-child { margin-top: 0; }
+.rd-page { display: inline-block; margin-inline: 0.3rem; padding: 0 0.45rem; border-radius: 20px; background: var(--accent-soft); color: var(--link); font: 600 0.72rem/1.7 var(--font-body); text-decoration: none; vertical-align: 0.2em; direction: ltr; unicode-bidi: isolate; }
+html[lang="ar"] .rd-page { font-family: var(--font-ar); }
+.rd-matn { color: var(--brown); font-weight: 700; }
+:root[data-theme="dark"] .rd-matn { color: var(--accent); }
+.rd-var { color: var(--muted); font-size: 0.85em; }
+.rd-var::before { content: "["; } .rd-var::after { content: "]"; }
+.rd-text mark, .rd-results mark { background: #ffe58a; color: inherit; border-radius: 2px; }
+.rd-hit { animation: hit 2.4s ease; }
+@keyframes hit { 0%, 40% { background: var(--accent-soft); } 100% { background: transparent; } }
+.oi-list .by [lang="ar"] { font-size: 0.95rem; }
+@media (max-width: 960px) {
+  .reader { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; }
+  .rd-side { position: static; max-height: none; }
+  .rd-toc { max-height: 40vh; }
+}

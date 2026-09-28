@@ -1,12 +1,16 @@
 # Site sections in menu order. `url` is the address of the page in each language;
 # `image` is the id of its picture in _data/images.yml. An item with a `parent` is shown under that
-# item in the menu, not on its own.
+# item in the menu, not on its own; a `hidden` item is not in the menu at all.
 - key: home
   image: muwatta
   url: { tr: /, en: /en/, ar: /ar/ }
 - key: klasik
   image: mabsut
   url: { tr: /klasik-eserler/, en: /en/classical-works/, ar: /ar/classical-works/ }
+- key: oku
+  image: mabsut
+  hidden: true
+  url: { tr: /klasik-eserler/oku/, en: /en/classical-works/read/, ar: /ar/classical-works/read/ }
 - key: kitaplar
   image: kharaj
   url: { tr: /kitaplar/, en: /en/books/, ar: /ar/books/ }

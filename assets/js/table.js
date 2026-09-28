@@ -143,6 +143,8 @@
         }
         return links.length ? { text: text.join(' '), html: '<span class="links">' + links.join('') + '</span>', sort: links.length } : empty;
       }
+      case 'reader':
+        return v ? { text: cfg.readerBase + '?b=' + v, html: '<span class="links"><a href="' + esc(cfg.readerBase + '?b=' + encodeURIComponent(v)) + '">' + esc(cfg.links.read) + '</a></span>', sort: 1 } : empty;
       case 'doi':
         return v ? { text: 'https://doi.org/' + v, html: '<a href="https://doi.org/' + esc(v) + '" target="_blank" rel="noopener" dir="ltr">' + esc(v) + '</a>', sort: v } : empty;
       case 'list': {

@@ -26,6 +26,7 @@ klasik:
     - { field: death, label: death, kind: hijri, alt: deathM }
     - { field: madhhab, label: madhhab, kind: madhhab }
     - { field: source, label: source, kind: loc }
+    - { field: oi, label: text, kind: reader }
 
 kitaplar:
   data: /data/kitaplar.json

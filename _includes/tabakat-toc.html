@@ -8,7 +8,7 @@ above the table of all its entries. book: cevahir (the default) or fevaid
 {%- assign tc = t[book] -%}
 {%- assign nav_item = site.data.nav | where: "key", book | first -%}
 {%- assign parts = site.data[book].parts -%}
-<p class="source-note">{% if lang == "ar" %}{{ tc.book }}{% else %}<em>{{ tc.book }}</em>{% endif %}, {{ tc.edition }}. {{ tc.text_source }} <a href="{{ tc.source_url }}" rel="noopener">{{ tc.source_name }}</a>{% if tc.license %} ({{ tc.license }}){% endif %}. {{ tc.death_note }}</p>
+<p class="source-note">{% if lang == "ar" %}{{ tc.book }}{% else %}<em>{{ tc.book }}</em>{% endif %}, {{ tc.edition }}. {{ tc.text_source }} <a href="{{ tc.source_url }}" rel="noopener">{{ tc.source_name }}</a>{% if tc.license %} ({{ tc.license }}){% endif %}. {{ tc.death_note }}{% if tc.oi %}{% assign rd = site.data.nav | where: "key", "oku" | first %} <a href="{{ rd.url[lang] }}?b={{ tc.oi }}">{{ t.reader.whole }}</a>{% endif %}</p>
 <section class="cv-toc" aria-labelledby="cv-toc-h">
   <h2 id="cv-toc-h" class="visually-hidden">{{ tc.parts }}</h2>
   {%- assign groups = "harf,kitap" | split: "," %}

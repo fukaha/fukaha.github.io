@@ -16,6 +16,7 @@ tr:
     to_dark: Koyu görünüm
     to_light: Açık görünüm
   nav:
+    oku: Okuma
     home: Ana Sayfa
     klasik: Klasik Eserler
     kitaplar: Kitaplar
@@ -116,6 +117,7 @@ tr:
     open: Aç
     century: "{n}. asır"
   col:
+    text: Metin
     century: Asır
     name: Ad
     name_ar: Arapça ad
@@ -182,6 +184,7 @@ tr:
     ur: Urduca
     kk: Kazakça
   link:
+    read: Oku
     detail: YÖK
     pdf: PDF
   jurist:
@@ -344,6 +347,7 @@ tr:
     top: Kısmın başına dön
     edition: "Karaçi: Mîr Muhammed Kütübhâne baskısı"
     text_source: Metin OpenITI külliyatındaki dijital nüshadan (JK000806) alındı. Sayfa numaraları bu baskıya aittir.
+    oi: 0775IbnAbiWafa.JawahirMudiya.JK000806BK1-ara1
     death_note: Vefat yılı, fakih sayfasına bağlı maddelerde o sayfadaki kayıttan, diğerlerinde madde metninden otomatik olarak okunmuştur. Otomatik okunan yıllar yanlış olabilir.
     source_name: OpenITI
     source_url: https://github.com/OpenITI/0775AH/tree/master/data/0775IbnAbiWafa
@@ -367,6 +371,7 @@ tr:
     top: Harfin başına dön
     edition: "Mısır: Matbaatü Dâri’s-saâde, 1324"
     text_source: Metin Şâmile’deki dijital nüshadan alındı. Sayfa numaraları bu baskıya aittir.
+    oi: 1304CabdHayyLaknawi.FawaidBahiyya.Sham19Y0132617-ara1
     source_name: el-Mektebetü’ş-Şâmile
     source_url: https://shamela.ws/book/132617
     death_note: Her madde, aynı fakihin kendi sayfasına bağlıdır; vefat yılları o sayfadan alınmıştır.
@@ -385,6 +390,27 @@ tr:
     data: Tez verileri YÖK Ulusal Tez Merkezi’nden, biyografiler Leknevî’nin el-Fevâidü’l-behiyye’si ile İbn Ebi’l-Vefâ’nın el-Cevâhirü’l-mudıyye’sinden alınmıştır.
     top: Başa dön
     explore: Keşfet
+  reader:
+    title: Metni oku
+    lead: Metin, KITAB projesinin OpenITI külliyatından okunduğu anda çekilir.
+    loading: Metin OpenITI'den yükleniyor…
+    failed: Metin yüklenemedi. Bağlantınızı kontrol edip sayfayı yenileyin.
+    contents: İçindekiler
+    find: Bu kitapta ara
+    find_placeholder: Arapça kelime veya ibare…
+    matches: "{n} yerde geçiyor"
+    no_match: Bulunamadı
+    vol: c.
+    page: s.
+    words: kelime
+    source: "Kaynak: OpenITI (KITAB projesi), CC BY-NC-SA 4.0."
+    open_raw: Ham metni aç
+    whole: Kitabın tamamını sayfa sırasıyla oku
+    part: Kısım
+    not_found: Bu adreste bir kitap yok. Klasik Eserler tablosundaki "Oku" bağlantılarından birini kullanın.
+    jurist_texts: OpenITI'deki eserleri
+    jurist_texts_lead: KITAB projesinin OpenITI külliyatında bu müellife ait metinler. Başlığa tıklayınca metin bu sitede açılır.
+    ocr: düzeltilmemiş OCR
 
 en:
   name: Fukahâ
@@ -402,6 +428,7 @@ en:
     to_dark: Dark mode
     to_light: Light mode
   nav:
+    oku: Reading
     home: Home
     klasik: Classical Works
     kitaplar: Books
@@ -502,6 +529,7 @@ en:
     open: Open
     century: "{n} century"
   col:
+    text: Text
     century: Century
     name: Name
     name_ar: Arabic name
@@ -568,6 +596,7 @@ en:
     ur: Urdu
     kk: Kazakh
   link:
+    read: Read
     detail: YÖK
     pdf: PDF
   jurist:
@@ -730,6 +759,7 @@ en:
     top: Back to the top of this part
     edition: "Karachi: Mir Muhammad Kutub Khana edition"
     text_source: The text comes from the digital copy in the OpenITI corpus (JK000806). Page numbers refer to this edition.
+    oi: 0775IbnAbiWafa.JawahirMudiya.JK000806BK1-ara1
     death_note: For entries linked to a jurist's page the year of death is taken from that page; for the others it was read from the entry automatically and may be wrong.
     source_name: OpenITI
     source_url: https://github.com/OpenITI/0775AH/tree/master/data/0775IbnAbiWafa
@@ -753,6 +783,7 @@ en:
     top: Back to the top of this letter
     edition: "Cairo: Matbaʿat Dar al-Saʿada, 1324"
     text_source: The text comes from the digital copy in al-Maktaba al-Shamila. Page numbers refer to this edition.
+    oi: 1304CabdHayyLaknawi.FawaidBahiyya.Sham19Y0132617-ara1
     source_name: al-Maktaba al-Shamila
     source_url: https://shamela.ws/book/132617
     death_note: Every entry is linked to the jurist's own page; the years of death are taken from there.
@@ -771,6 +802,27 @@ en:
     data: Thesis data come from the YÖK National Thesis Centre; biographies from al-Laknawī’s al-Fawāʾid al-bahiyya and Ibn Abi al-Wafa’s al-Jawāhir al-muḍiyya.
     top: Back to top
     explore: Explore
+  reader:
+    title: Read the text
+    lead: The text is fetched from the OpenITI corpus of the KITAB project as you open it.
+    loading: Loading the text from OpenITI…
+    failed: The text could not be loaded. Check your connection and reload the page.
+    contents: Contents
+    find: Search this book
+    find_placeholder: An Arabic word or phrase…
+    matches: "{n} matches"
+    no_match: Not found
+    vol: vol.
+    page: p.
+    words: words
+    source: "Source: OpenITI (KITAB project), CC BY-NC-SA 4.0."
+    open_raw: Open the raw text
+    whole: Read the whole book in page order
+    part: Part
+    not_found: There is no book at this address. Use one of the "Read" links in the Classical Works table.
+    jurist_texts: Their works in OpenITI
+    jurist_texts_lead: Texts by this author in the OpenITI corpus of the KITAB project. Click a title to read it on this site.
+    ocr: uncorrected OCR
 
 ar:
   name: فقهاء
@@ -788,6 +840,7 @@ ar:
     to_dark: الوضع الداكن
     to_light: الوضع الفاتح
   nav:
+    oku: القراءة
     home: الرئيسية
     klasik: المصنفات الكلاسيكية
     kitaplar: الكتب
@@ -888,6 +941,7 @@ ar:
     open: فتح
     century: "القرن {n}"
   col:
+    text: النص
     century: القرن
     name: الاسم
     name_ar: الاسم بالعربية
@@ -954,6 +1008,7 @@ ar:
     ur: الأردية
     kk: الكازاخية
   link:
+    read: اقرأ
     detail: YÖK
     pdf: PDF
   jurist:
@@ -1116,6 +1171,7 @@ ar:
     top: العودة إلى أول القسم
     edition: "كراتشي: مير محمد كتب خانه"
     text_source: النص من النسخة الرقمية في مدونة OpenITI (JK000806)، وأرقام الصفحات لهذه الطبعة.
+    oi: 0775IbnAbiWafa.JawahirMudiya.JK000806BK1-ara1
     death_note: سنة الوفاة في التراجم المرتبطة بصفحة فقيه مأخوذة من تلك الصفحة، وفي غيرها مستخرجة آليًا من نص الترجمة وقد تخطئ.
     source_name: OpenITI
     source_url: https://github.com/OpenITI/0775AH/tree/master/data/0775IbnAbiWafa
@@ -1139,6 +1195,7 @@ ar:
     top: العودة إلى أول الحرف
     edition: "مصر: مطبعة دار السعادة، 1324هـ"
     text_source: النص من النسخة الرقمية في المكتبة الشاملة، وأرقام الصفحات لهذه الطبعة.
+    oi: 1304CabdHayyLaknawi.FawaidBahiyya.Sham19Y0132617-ara1
     source_name: المكتبة الشاملة
     source_url: https://shamela.ws/book/132617
     death_note: كل ترجمة مرتبطة بصفحة الفقيه نفسه، ومنها أُخذت سنوات الوفاة.
@@ -1157,3 +1214,24 @@ ar:
     data: بيانات الرسائل من المركز الوطني للرسائل الجامعية (YÖK)، والتراجم من «الفوائد البهية» للكنوي و«الجواهر المضية» لابن أبي الوفاء القرشي.
     top: العودة إلى الأعلى
     explore: استكشف
+  reader:
+    title: قراءة النص
+    lead: يُجلب النص من مدونة OpenITI التابعة لمشروع KITAB عند فتحه.
+    loading: جارٍ تحميل النص من OpenITI…
+    failed: تعذّر تحميل النص. تحقق من الاتصال ثم أعد تحميل الصفحة.
+    contents: الفهرس
+    find: البحث في هذا الكتاب
+    find_placeholder: كلمة أو عبارة عربية…
+    matches: "ورد في {n} موضعًا"
+    no_match: لا توجد نتائج
+    vol: ج
+    page: ص
+    words: كلمة
+    source: "المصدر: OpenITI (مشروع KITAB)، CC BY-NC-SA 4.0."
+    open_raw: فتح النص الخام
+    whole: اقرأ الكتاب كاملًا بترتيب صفحاته
+    part: القسم
+    not_found: لا يوجد كتاب بهذا العنوان. استعمل روابط «اقرأ» في جدول المصنفات الكلاسيكية.
+    jurist_texts: مصنفاته في OpenITI
+    jurist_texts_lead: نصوص هذا المؤلف في مدونة OpenITI التابعة لمشروع KITAB. انقر العنوان لقراءته في هذا الموقع.
+    ocr: نص ضوئي غير مصحح

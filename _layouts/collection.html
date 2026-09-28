@@ -50,6 +50,9 @@ layout: default
   "entryBase": {{ cv_nav.url[lang] | jsonify }},
   "ckind": {{ t.cevahir.kinds | jsonify }},
   {%- endif %}
+  {%- if page.key == "klasik" %}{% assign rd = site.data.nav | where: "key", "oku" | first %}
+  "readerBase": {{ rd.url[lang] | jsonify }},
+  {%- endif %}
   {%- if page.key == "fukaha" %}{% assign cv_nav = site.data.nav | where: "key", "cevahir" | first %}
   "cevahirBase": {{ cv_nav.url[lang] | jsonify }},
   {%- endif %}

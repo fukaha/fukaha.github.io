@@ -1,0 +1,54 @@
+---
+layout: default
+---
+{%- comment -%}
+Reads one OpenITI text in the browser (assets/js/reader.js). The text is chosen with ?b=<version URI>
+and fetched from its OpenITI repository; nothing of it is stored on this site.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: "tr" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign tr_ = t.reader -%}
+{%- assign kl = site.data.nav | where: "key", "klasik" | first -%}
+<header class="page-head reader-head">
+  <div class="wrap page-head-in">
+    <p class="crumbs"><a href="{{ site.data.nav[0].url[lang] }}">{{ t.nav.home }}</a><span class="crumb-sep" aria-hidden="true"></span><a href="{{ kl.url[lang] }}">{{ t.nav.klasik }}</a><span class="crumb-sep" aria-hidden="true"></span><span aria-current="page">{{ tr_.title }}</span></p>
+    <h1 class="rd-title" lang="ar" dir="rtl" data-r-title>{{ tr_.title }}</h1>
+    <p class="lead"><span lang="ar" dir="rtl" data-r-author></span> <span class="rd-words" data-r-words></span></p>
+  </div>
+</header>
+
+<div class="wrap reader is-loading" data-reader>
+  <aside class="rd-side">
+    <form class="rd-find" data-r-find role="search">
+      <label for="rd-q">{{ tr_.find }}</label>
+      <div class="search-row">
+        <input id="rd-q" name="q" type="search" lang="ar" dir="rtl" placeholder="{{ tr_.find_placeholder }}" autocomplete="off">
+        <button type="submit">{{ t.home.search_button }}</button>
+      </div>
+    </form>
+    <div class="rd-results" data-r-results hidden></div>
+    <nav class="rd-toc-wrap" aria-labelledby="rd-toc-h">
+      <h2 id="rd-toc-h">{{ tr_.contents }}</h2>
+      <ol class="rd-toc" data-r-toc lang="ar" dir="rtl"></ol>
+    </nav>
+  </aside>
+
+  <div class="rd-main">
+    <div class="rd-bar">
+      <button type="button" class="btn btn-quiet" data-r-step="-1">{{ t.cevahir.prev }}</button>
+      <span class="rd-part" data-r-part></span>
+      <button type="button" class="btn btn-quiet" data-r-step="1">{{ t.cevahir.next }}</button>
+    </div>
+    <p class="rd-status" data-r-status role="status">{{ tr_.loading }}</p>
+    <div class="rd-text cv-text" data-r-text lang="ar" dir="rtl"></div>
+    <div class="rd-bar rd-bar-end">
+      <button type="button" class="btn btn-quiet" data-r-step="-1">{{ t.cevahir.prev }}</button>
+      <button type="button" class="btn btn-quiet" data-r-step="1">{{ t.cevahir.next }}</button>
+    </div>
+    <p class="source-note">{{ tr_.lead }} {{ tr_.source }} <a href="#" data-r-raw rel="noopener">{{ tr_.open_raw }}</a></p>
+  </div>
+</div>
+<script type="application/json" id="reader-config">
+{"lang": {{ lang | jsonify }}, "text": {{ tr_ | jsonify }}, "texts": {{ site.data.openiti.texts | jsonify }}}
+</script>
+<script src="/assets/js/reader.js?v={{ site.time | date: '%s' }}" defer></script>

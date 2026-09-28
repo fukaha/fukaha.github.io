@@ -115,6 +115,24 @@ layout: default
       <p class="source-ref">{% if lang == "ar" %}{{ tc.book }}{% else %}<em>{{ tc.book }}</em>{% endif %}, {{ tc.edition }}{% if cv.page %}, {{ tc.vol }} {{ cv.vol }}, {{ tc.page }} {{ cv.page }}{% if cv.end %}-{{ cv.end }}{% endif %}{% endif %}. <a href="{{ cvnav.url[lang] }}{{ cv.part }}/#t{{ cv.id }}">{{ tj.cevahir_open }}</a></p>
     </section>
     {%- endif %}
+
+    {%- assign oi_texts = site.data.openiti.jurists[page.slug] %}
+    {%- if oi_texts %}
+    {%- assign tr_ = t.reader %}
+    {%- assign rdnav = site.data.nav | where: "key", "oku" | first %}
+    <section class="j-sec" aria-labelledby="h-openiti">
+      <h2 id="h-openiti">{{ tr_.jurist_texts }} <span class="n">{{ oi_texts.size }}</span></h2>
+      <p class="j-note">{{ tr_.jurist_texts_lead }}</p>
+      <ul class="j-theses oi-list">
+        {%- for u in oi_texts %}{% assign x = site.data.openiti.texts[u] %}
+        <li>
+          <a href="{{ rdnav.url[lang] }}?b={{ u }}" lang="ar" dir="rtl">{{ x.title_ar | default: x.title_lat }}</a>
+          <span class="by"><span dir="ltr">{% include number.html n=x.words %} {{ tr_.words }}</span>{% if x.edition %}<span lang="ar" dir="rtl">{{ x.edition | truncate: 90 }}</span>{% endif %}{% if x.ocr %}<span class="tag">{{ tr_.ocr }}</span>{% endif %}</span>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+    {%- endif %}
   </div>
 
   <aside class="jurist-aside">
